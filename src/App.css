@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* font-family: "Noto Sans KR", sans-serif; */
+/* font-family: 'yg-jalnan'; */
+
 :root {
   --main-blue: #62C3CA;
   --sub-blue: #0C8E97;
@@ -5,12 +16,13 @@
   --bg-grey: #EAE9E9;
   --yellow: #F8CF03;
   --font-black: #222222;
-  --txt-font-size : calc( 100vw * (12 / 400));
-  --detail-tit-font : calc( 100vw * (18 / 400));
-  --notice-padding : calc( 100vw * (10 / 400));
-  --notice-gap : calc( 100vw * (10 / 400));
-  --small-font-size : calc( 100vw * (20 / 400));
 }
+
+*{
+  font-family: "Noto Sans KR", sans-serif;
+}
+html {font-size:16px}
+p {font-size:1rem}
 
 .w1440{
   width: 1440px;
@@ -23,11 +35,12 @@
 
 @media screen and (max-width : 1440px) {
   .w1440{
-    padding: calc(100% - 60px);
+    width: calc(100% - 60px);
   }
 }
 @media screen and (max-width : 768px) {
   .w1440{
-    padding: calc(100% - 30px);
+    width: calc(100% - 30px);
   }
+  
 }

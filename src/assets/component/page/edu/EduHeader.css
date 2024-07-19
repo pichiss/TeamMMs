@@ -1,6 +1,30 @@
 .eduProfile{
     justify-content: space-between;
 }
+.eduProfile h2, .eduProfile p{
+    font-family: 'yg-jalnan';
+}
+
+
+/* 왼쪽 */
+.eduPfL{
+    position: relative;
+}
+.eduPfL>h2{
+    font-size: 22px;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    position: absolute;
+    top: 15px;
+    left: calc(30% + 25px);
+}
+.eduPfL>p{
+    position: absolute;
+    left: calc(30% + 25px);
+    bottom: calc(50% - 3px);
+}
+
+
+/* 오른쪽 */
 .eduPfR{
     margin-right: 40px;
     gap: 18px;

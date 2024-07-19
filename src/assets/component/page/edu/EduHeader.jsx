@@ -8,8 +8,10 @@ import './EduHeader.css';
 function EduHeader(){
     return(
         <article className='flex eduProfile'>
-            <div>
-                <img src={pf_bg} alt="" />
+            <div className='eduPfL'>
+                <h2>금주</h2>
+                <p>1레벨 1단원</p>
+                <img src={pf_bg} alt="profile-background-image" />
             </div>
             <div className='flex eduPfR'>
                 <div className='eduPtWrap'>

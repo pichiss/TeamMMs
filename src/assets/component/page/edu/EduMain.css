@@ -3,18 +3,111 @@
     height: 100vh;
     background-image: url(../../../img/bggreen.png);
 }
-.eduSec h2{
+.eduSec h2, .eduSec p{
     font-family: 'yg-jalnan';
 }
 
 
-/* eduCont */
-.eduCont{
-    display: grid;
-    grid-template-columns: auto auto;
+/* 메뉴 */
+.eduMenu{
+    justify-content: center;
+    gap: 25px;
+}
+.eduVideo{
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../img/edu_video_bg.png);
+}
+.eduVideo>h2{
+    padding-bottom: 80px;
+    font-size: 70px;
+    color: #fff;
+    text-shadow: -1px 3px #C73395, 3px 1px #C73395, 1px 3px #C73395, 3px -1px #C73395;
+}
+.eduVideo>img{
+    width: 395px;
+}
+.eduToday{
+    width: 500px;
+    padding: 70px 0;
+    border-radius: 20px;
+    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../img/edu_today_bg.png);
+}
+.eduToday>h2{
+    padding-bottom: 80px;
+    font-size: 70px;
+    color: #fff;
+    text-shadow: -1px 3px #15539B, 3px 1px #15539B, 1px 3px #15539B, 3px -1px #15539B;
+}
+.eduToday>img{
+    width: 330px;
 }
 .eduCont>div{
-    width: 500px;
-    height: 765px;
-    background-color: aqua;
+    padding: 30px 0;
 }
+.eduNote{
+    width: 500px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../img/edu_note_bg.png);
+}
+.eduNote>h2{
+    padding-top: 30px;
+    font-size: 48px;
+    color: #fff;
+    text-shadow: -1px 3px #4D1A8E, 3px 1px #4D1A8E, 1px 3px #4D1A8E, 3px -1px #4D1A8E;
+}
+.eduNote>img{
+    width: 235px;
+    padding-left: 25px;
+}
+.eduPoint{
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../img/edu_point_bg.png);
+}
+.eduPoint>h2{
+    padding-top: 30px;
+    font-size: 48px;
+    color: #fff;
+    text-shadow: -1px 3px #882121, 3px 1px #882121, 1px 3px #882121, 3px -1px #882121;
+}
+.eduPoint>img{
+    width: 200px;
+}
+
+
+@media screen and (max-width : 1440px) {
+    .eduVideo, .eduToday, .eduNote, .eduPoint{
+      width: calc(100% - 60px);
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .eduMenu{
+      width: calc(100% - 30px);
+      flex-direction: column;
+    }
+    .eduVideo{
+        width: 100%;
+    }
+    .eduCont{
+        display: flex;
+    }
+  }

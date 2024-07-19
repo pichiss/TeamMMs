@@ -1,0 +1,8 @@
+.eduTodaySec{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../img/bgsky.png);
+}
+.eduTodaySec h2, .eduTodaySec p{
+    font-family: 'yg-jalnan';
+}

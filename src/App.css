@@ -31,3 +31,7 @@
     padding: calc(100% - 30px);
   }
 }
+
+.p1{font-size: var(--txt-font-size);}
+.p2{font-size: var(--detail-tit-font);}
+.p3{font-size: var(--small-font-size);}

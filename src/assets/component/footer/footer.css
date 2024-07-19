@@ -28,7 +28,44 @@ footer{
 }
 .footerTxt p{
     color: #7C7C7C;
+    font-size: 14px;
 }
 .footerInfo{
     padding-bottom: 10px;
 }
+
+
+/* 반응형 */
+@media screen and (max-width : 1024px){
+    .footerInfo{
+        flex-direction: column;
+    }
+    .footerInfo ul:first-child span{
+        display: none;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    footer{
+        font-size: 12px;
+    }
+    .footerWrap{
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 40px 0;
+    }
+    .footer_top{
+        justify-content: center;
+    }
+    .footerInfo{
+        padding-bottom: 20px;
+    }
+    .footerInfo ul:last-child{
+        justify-content: center;
+    }
+    .footerTxt p{
+        text-align: center;
+        font-size: 12px;
+    }
+  }

@@ -1,0 +1,45 @@
+.eduProfile{
+    justify-content: space-between;
+}
+.eduPfR{
+    margin-right: 40px;
+    gap: 18px;
+    align-items: center;
+}
+.eduPtWrap{
+    position: relative;
+}
+.eduPtWrap>h2{
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 25%;
+    right: 15%;
+}
+.eduHelpWrap{
+    position: relative;
+}
+.eduHelpWrap>h2, .eduExitWrap>h2{
+    color: #fff;
+    text-shadow: -1px 3px #50834F, 3px 1px #50834F, 1px 3px #50834F, 3px -1px #50834F;
+    font-size: 1.5rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 10%;
+}
+.helpBtn{
+    width: 71px;
+    position: absolute;
+    top: 5%;
+    left: 15%;
+}
+.eduExitWrap{
+    position: relative;
+}
+.exitBtn{
+    width: 82px;
+    position: absolute;
+    top: 2%;
+    left: 10%;
+}

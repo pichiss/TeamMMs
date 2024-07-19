@@ -1,20 +1,15 @@
-import pf_bg from '../../../img/profile_bg.svg';
-import pt_bg from '../../../img/point_bg.svg';
-import cc_bg from '../../../img/circle_bg.svg';
+import EduHeader from "./EduHeader.jsx";
 import './EduMain.css';
 
 function EduMain(){
     return(
         <section className='eduSec'>
-            <article className='flex eduProfile'>
-                <div>
-                    <img src={pf_bg} alt="" />
-                </div>
-                <div>
-                    <img src={pt_bg} alt="" />
-                    <img src={cc_bg} alt="" />
-                    <img src={cc_bg} alt="" />
-                </div>
+            <EduHeader />
+            <article className="eduCont">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
             </article>
         </section>
     )

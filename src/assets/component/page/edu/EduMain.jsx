@@ -6,7 +6,7 @@ import './EduMain.css';
 function EduMain(){
     return(
         <section className='eduSec'>
-            <article className='flex'>
+            <article className='flex eduProfile'>
                 <div>
                     <img src={pf_bg} alt="" />
                 </div>

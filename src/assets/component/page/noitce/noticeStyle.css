@@ -1,0 +1,37 @@
+/* 게시판 리스트 */
+.noticeTit{
+    font-size: 40px;
+    text-align: center;
+    padding: 55px 0;
+}
+.noticeListWrap table{
+    width: 100%;
+    margin: 0 auto;
+}
+.noticeListWrap table th,td{
+    height: 70px;
+    border-bottom: 1px solid var(--line-grey);
+}
+.noticeListWrap table>thead{
+    border-top: 2px solid var(--font-black);
+    border-bottom: 1px solid var(--line-grey);
+}
+.noticeListWrap table>thead th{
+    font-weight: 400;
+    text-align: center;
+}
+.noticeListWrap table>thead th:first-child{
+ width: 10%;
+}
+.noticeListWrap table>thead th:nth-child(2){
+ width: 70%;
+}
+.noticeListWrap table>thead th:nth-child(3){
+ width: 10%;
+}
+.noticeListWrap table>thead th:last-child{
+ width: 10%;
+}
+.noticeListWrap table td:not(:nth-child(2)){
+    text-align: center;
+}

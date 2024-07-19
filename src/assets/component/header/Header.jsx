@@ -1,5 +1,5 @@
 import './header.css'
-import img from '../../img/몬스터/로고2.png'
+import img from '../../img/몬스터/로고3.png'
 
 function Header() {
 
@@ -18,6 +18,11 @@ function Header() {
             <li>로그인</li>
             <li>|</li>
             <li>회원가입</li>
+        </ul>
+        <ul className='navHam'>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
     </nav>
   )

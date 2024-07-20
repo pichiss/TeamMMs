@@ -66,7 +66,6 @@ export default function NoticeList() {
         return sortingList
     }
 
-
     return (
         <>
          <section className="w1440 noticeListWrap">
@@ -84,7 +83,7 @@ export default function NoticeList() {
                     {notis.map((noti)=>
                     <tr key={noti.id}>
                         <td>{noti.id}</td>
-                        <td><Link to={`/noticeList/${noti.Id}`}>{'['}{noti.notiType}{'] '}{noti.notiName} </Link></td>
+                        <td><Link key={noti.id} to={`/noticeList/${noti.id}`}>{'['}{noti.notiType}{'] '}{noti.notiName} </Link></td>
                         <td>{noti.date}</td>
                         <td>{noti.views}</td>
                     </tr>)}

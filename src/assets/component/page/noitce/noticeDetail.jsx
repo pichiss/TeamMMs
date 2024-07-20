@@ -1,15 +1,16 @@
-import './noticeStyle.css';
-import { useReducer } from "react";
-import { Contents, notiReducer } from '../noitce/noticeData';
+import "./noticeStyle.css";
+import { useParams } from "react-router-dom";
 
-export default function NoticeDetail({id}) {
+export default function NoticeDetail() {
 
-    const [state, dispatch] = useReducer(notiReducer, Contents);
-    const { notis } = state;
 
-    return(
-        <section className='w1440' key={id}>
-            <h2 className='noticeTit'>공지사항 & 이벤트</h2>
-        </section>
-    )
+    const { id } = useParams();
+  
+
+  return (
+    <section className="w1440">
+      <h2 className="noticeTit">공지사항 & 이벤트</h2>
+      <p>제목 {id}</p>
+    </section>
+  );
 }

@@ -1,37 +1,240 @@
 /* 게시판 리스트 */
-.noticeTit{
+.noticeListWrap{
+    gap: 55px;
+}
+.noticeTit {
     font-size: 40px;
     text-align: center;
     padding: 55px 0;
 }
-.noticeListWrap table{
+
+.noticeListWrap table {
     width: 100%;
     margin: 0 auto;
+    table-layout: fixed;
 }
-.noticeListWrap table th,td{
+
+.noticeListWrap table th,td {
     height: 70px;
     border-bottom: 1px solid var(--line-grey);
 }
-.noticeListWrap table>thead{
+
+.noticeListWrap table>thead {
     border-top: 2px solid var(--font-black);
     border-bottom: 1px solid var(--line-grey);
 }
-.noticeListWrap table>thead th{
+
+.noticeListWrap table>thead th {
     font-weight: 400;
     text-align: center;
 }
-.noticeListWrap table>thead th:first-child{
- width: 10%;
+
+.noticeListWrap table>thead th:first-child {
+    width: 10%;
 }
-.noticeListWrap table>thead th:nth-child(2){
- width: 70%;
+
+.noticeListWrap table>thead th:nth-child(2) {
+    width: 65%;
 }
-.noticeListWrap table>thead th:nth-child(3){
- width: 10%;
+
+.noticeListWrap table>thead th:nth-child(3) {
+    width: 15%;
 }
-.noticeListWrap table>thead th:last-child{
- width: 10%;
+
+.noticeListWrap table>thead th:last-child {
+    width: 10%;
 }
-.noticeListWrap table td:not(:nth-child(2)){
+
+.noticeListWrap table td:nth-child(2) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.noticeListWrap table td:not(:nth-child(2)) {
     text-align: center;
+}
+
+/* 페이지네이션 */
+.noticeListWrap .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 55px 0 0;
+}
+
+.noticeListWrap .pagination li {
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.noticeListWrap .pagination .active a {
+    color: #FF1E1E;
+    font-weight: bold;
+}
+
+.noticeListWrap .pagination li:first-child {
+    width: 48px;
+    height: 48px;
+    background-image: url(../../../img/icon/past2.png);
+    font-size: 0;
+    line-height: 0;
+}
+
+.noticeListWrap .pagination li:nth-child(2) {
+    width: 48px;
+    height: 48px;
+    background-image: url(../../../img/icon/past1.png);
+    font-size: 0;
+    line-height: 0;
+}
+
+.noticeListWrap .pagination li:nth-child(3) {
+    padding-left: 40px;
+    padding-right: 14px;
+    margin: 0;
+}
+
+.noticeListWrap .pagination li:nth-child(4) {
+    padding-left: 14px;
+    padding-right: 40px;
+    margin: 0;
+}
+
+.noticeListWrap .pagination li:nth-child(5) {
+    width: 48px;
+    height: 48px;
+    background-image: url(../../../img/icon/past1.png);
+    transform: rotate(-180deg);
+    font-size: 0;
+    line-height: 0;
+}
+
+.noticeListWrap .pagination li:nth-child(6) {
+    width: 48px;
+    height: 48px;
+    background-image: url(../../../img/icon/past2.png);
+    transform: rotate(-180deg);
+    font-size: 0;
+    line-height: 0;
+}
+
+
+
+/* 디테일 페이지 */
+.noticeDetailWrap{
+    gap: 55px;
+}
+.noticeDetail{
+    width: 100%;
+}
+.noticeDetail h3 {
+    font-size: 22px;
+    text-align: center;
+    padding: 23px 0;
+    border-top: 2px solid var(--font-black);
+    border-bottom: 1px solid var(--line-grey);
+}
+
+.noticeDetail ul {
+    border-bottom: 1px solid var(--line-grey);
+}
+
+.noticeDetail li {
+    width: 25%;
+    padding: 23px 0;
+}
+
+.noticeDetail li:nth-child(2n+1) {
+    width: 15%;
+    background-color: var(--bg-grey);
+    text-align: center;
+}
+
+.noticeDetail li:nth-child(2n) {
+    padding-left: 25px;
+}
+.noticeDetail li:nth-child(2) {
+    width: 40%;
+}
+
+.noticeDetail p {
+    padding: 40px 20px 40px;
+    white-space: pre-wrap;
+}
+
+/* 반응형*/
+@media screen and (max-width : 768px) {
+    .noticeTit {
+        font-size: 30px;
+        padding: 50px 0;
+    }
+    .noticeListWrap{
+        gap: 50px;
+    }
+    .noticeListWrap table {
+        font-size: 14px;
+    }
+    .noticeListWrap table>thead th:first-child {
+        display: none;
+    }
+    .noticeListWrap table>thead th:nth-child(2) {
+        width: 60%;
+    }
+    
+    .noticeListWrap table>thead th:nth-child(3) {
+        width: 25%;
+    }
+    
+    .noticeListWrap table>thead th:last-child {
+        width: 15%;
+    }
+    .noticeListWrap table td:first-child {
+        display: none;
+    }
+    .noticeListWrap .pagination {
+        padding: 50px 0;
+    }
+    .noticeListWrap .pagination li:first-child {
+        width: 38px;
+        height: 38px;
+        background-size: cover;
+    }
+    .noticeListWrap .pagination li:nth-child(2) {
+        width: 38px;
+        height: 38px;
+        background-size: cover;
+    }
+    .noticeListWrap .pagination li:nth-child(5) {
+        width: 38px;
+        height: 38px;
+        background-size: cover;
+    }
+    
+    .noticeListWrap .pagination li:nth-child(6) {
+        width: 38px;
+        height: 38px;
+        background-size: cover;
+    }
+
+    .noticeDetailWrap{
+        gap: 50px;
+    }
+    .noticeDetail h3 {
+        font-size: 20px;
+    }
+    .noticeDetail li {
+        font-size: 14px;
+    }
+    .noticeDetail li:nth-child(2n+1) {
+        width: 25%;
+    }
+    .noticeDetail li:nth-child(2n) {
+        padding-left: 10px;
+    }
+    .noticeDetail p {
+        font-size: 14px;
+    }
+    
 }

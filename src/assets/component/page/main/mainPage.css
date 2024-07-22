@@ -13,16 +13,20 @@
     }
     @media screen and (max-width : 1032px) {
         --main-more-font : 10px;
-        --main-number-font : 15px
+        --main-number-font : 15px;
     }
     @media screen and (max-width : 880px) {
         --main-list-txt-font : 15px;
+        --main-number-font : 17px;
     }
 }
 
 
 main{
     width: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 main>section{
     width: 100%;
@@ -30,25 +34,30 @@ main>section{
 
 /* sec1----------------------------------------------------------------- */
 .mainSec1{
-    height: 100vh;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.mainMonsters{
-    width: 100%; height: 100%;
+    height: 90vh;
     position: relative;
 }
-.mainMonster{
+.mainMonsters{
+    width: 100%;
     position: absolute;
+    top: 45%;
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    padding-left: 300px;
+}
+.mainMonster{
+    width: 200px;
+    position: relative;
 }
 .mainMonster>img{
-    width: 200px;
+    width: 100%;
 }
 .mainMonster>h2{
-    position: absolute;
     font-size: 50px;
     color: white;
     font-family: 'yg-jalnan';
+    text-align: center;
 }
 /* .bobo{
     width: 500px; height: 450px;
@@ -58,30 +67,191 @@ main>section{
     -webkit-text-stroke: 3px #271649;
 } */
 .log{
-    top: 35%;
-    right: 45%;
+    padding-top: 5vw;
 }
 .log>h2{
     -webkit-text-stroke: 3px #857724;
-}
-.pie{
-    top: 23%; 
-    right: 30%;
 }
 .pie>h2{
     -webkit-text-stroke: 3px #203B3F;
 }
 .bero{
-    top: 30%; 
-    right: 15%;
+    padding-top: 2.5vw;
 }
 .bero>h2{
     right: 0; bottom: -7%;
     -webkit-text-stroke: 3px #CC637D;
 }
+.mainIntro{
+    position: absolute;
+    top: -80px;
+}
+.log .mainIntro{
+    top: -55px;
+}
+.log .mainIntro{
+    filter: drop-shadow(2px 2px 1px #FFE337);
+}
+.pie .mainIntro{
+    top: -100px;
+}
+.pie .mainIntro{
+    filter: drop-shadow(2px 2px 1px #7ECCF0);
+}
+.bero .mainIntro{
+    top: -90px;
+}
+.bero .mainIntro{
+    filter: drop-shadow(2px 2px 1px #FFA9BE);
+}
+.mainIntro>p{
+    opacity: 0;
+}
+.mainMonster:hover .mainIntro>p{
+    position:relative; 
+    width: 140%;
+    padding: 20px;
+    border-radius: 10px; 
+    background-color: #fff;
+    font-size: var(--main-tit-font);
+    text-align: center;
+    transition: all 0.5s;
+    opacity: 1;
+}
+.mainMonster:hover .mainIntro>p::after{
+    content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #fff;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+  transition: all 0.5s;
+}
 
-/* 메인 캐릭터 부분 추후 다시 수정 */
-
+@media screen and (max-width : 1476px) {
+    .mainMonsters{
+        top: 25%;
+        gap: 4vw;
+        padding-left: 400px;
+    }
+    .log .mainIntro{
+        top: -55px; left: -30px; right: 30px;
+    }
+    .bero .mainIntro{
+        top: -90px; left: 20px;
+    }
+}
+@media screen and (max-width : 1275px) {
+    .mainMonsters{
+        top: 18%;
+        gap: 3vw;
+    }
+    .mainMonster{
+        width: 160px;
+    }
+}
+@media screen and (max-width : 1112px) {
+    .mainMonsters{
+        top: 35%;
+        padding-left: 0;
+        justify-content: space-evenly;
+    }
+    .mainMonster{
+        width: 250px;
+    }
+    .log{
+        padding-top: 0;
+    }
+    .bero{
+        padding-top: 0;
+    }
+    .log .mainIntro{
+        top: -120px;
+    }
+    .pie .mainIntro{
+        top: -90px; left: 80px;
+    }
+    .bero .mainIntro{
+        right: 20px;
+    }
+}
+@media screen and (max-width : 870px) {
+    main{
+        background-position: top left 30%;
+    }
+    .mainMonsters{
+        top: 45%;
+    }
+    .mainMonster{
+        width: 200px;
+    }
+    .pie .mainIntro{
+        left: 30%;
+    }
+    .bero .mainIntro{
+        top: -110px;
+    }
+}
+@media screen and (max-width : 500px) {
+    .mainMonsters{
+        height: 65%;
+        top: 35%;
+        padding-left: 0;
+        display: block;
+    }
+    .mainMonster{
+        width: 150px;
+        position: absolute;
+    }
+    .pie{
+        right: 0; top: 20%;
+    }
+    .bero{
+        bottom: 0;
+    }
+    .log .mainIntro{
+        top: -30%;
+        right: -100%;
+        left: 100%;
+    }
+    .log:hover .mainIntro>p::after{
+        left: 20%;
+        border: 20px solid transparent;
+        border-top-color: #fff;
+        border-bottom: 0;
+        border-left: 0;
+    }
+    .pie .mainIntro{
+        top: -30%;
+        left: -100%;
+        right: 100%;
+    }
+    .pie:hover .mainIntro>p::after{
+        left: 80%;
+        border: 20px solid transparent;
+        border-top-color: #fff;
+        border-bottom: 0;
+        border-right: 0;
+    }
+    .bero .mainIntro{
+        top: -30%;
+        right: -90%;
+        left: 90%;
+    }
+    .bero:hover .mainIntro>p::after{
+        left: 20%;
+        border: 20px solid transparent;
+        border-top-color: #fff;
+        border-bottom: 0;
+        border-left: 0;
+    }
+}
 
 /* sec2----------------------------------------------------------------- */
 .mainSec2{
@@ -162,7 +332,7 @@ main>section{
     margin-bottom: 40px;
 }
 .mainBubble{
-    width: 60%;
+    width: 70%;
     background-color: #37D0FF;
     border-radius: 50px;
     position: relative;
@@ -186,7 +356,7 @@ main>section{
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 2vw;
 }
 .sec3Reason{
     display: flex;
@@ -197,23 +367,31 @@ main>section{
 .numberCircle{
     background-color: #00A9F6;
     border-radius: 50%;
-    width: 60px; height: 60px;
-    line-height: 55px;
+    width: 70px; height: 70px;
+    line-height: 65px;
     text-align: center;
     color: #fff;
-    font-size: 38px;
+    font-size: var(--main-number-font);
     font-weight: bold;
 }
 .numberText{
-    font-size: 33px;
+    font-size: var(--main-number-font);
     font-weight: bold;
 }
-
-@media screen and (max-width : 1097px) {
-    .mainBubble{
-        width: 100%;
-    }
+.mainSec3 .numberText::after{
+    content: "";
+    display: block;
+    border-bottom: 1px solid #B1B1B1;
+    margin-top: 1vw;
 }
+.reasonMonster{
+    width: 40%;
+}
+.reasonMonster>img{
+    width: 100%;
+}
+
+
 /* sec4----------------------------------------------------------------- */
 .mainSec4{
     background-color: #fff;
@@ -234,18 +412,32 @@ main>section{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 2vw;
 }
 .mainpro{
     width: 40%;
     border: 1px solid #ddd;
     border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0,0,0,0.3);
+    padding: 37px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+.sec4Tit{
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 .processArrow{
-    width: 10%;
+    width: 8%;
     display: flex;   
     justify-content: center;
     align-items: center;
+}
+.processArrow>img{
+    width: 100%;
 }
 .mainpro>div:nth-child(1){
     display: flex;
@@ -253,19 +445,124 @@ main>section{
     align-items: center;
 }
 .mainpro>div:nth-child(2){
-
+    width: 95%;
+}
+.mainpro>div:nth-child(2)>img{
+    width: 100%;
 }
 .mainpro>div:nth-child(3){
-    font-size: 20px;
+    font-size: var(--main-list-txt-font);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
 }
 .mainpro>div:nth-child(3)>p:nth-child(1){
-    font-size: 20px;
+    font-size: var(--main-list-txt-font);
     display: flex;
     align-items: center;
 }
+.mainpro>div:nth-child(3)>p:nth-child(2){
+    font-size: var(--main-list-txt-font);
+}
 .mainpro>div:nth-child(3) span{
-    font-size: 30px;
+    font-size: var(--main-tit-font);
     font-weight: bold;
     font-family: 'yg-jalnan';
     padding-left: 0.8vw;
+}
+
+
+.topBtn{
+    width: 80px;
+    position: fixed;
+    bottom: 8.5vw; right: 1vw;
+    cursor: pointer;
+}
+.topBtn>p{
+    font-family: 'yg-jalnan';
+    font-size: 32px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    -webkit-text-stroke: 4px #481B92;
+
+}
+.topBtn>img{
+    width: 100%;
+}
+
+.mainBanner{
+    width: 100%; 
+    /* height: 16%; */
+    position: fixed;
+    bottom: 0;
+    display: flex;
+}
+.mainBanner>img{
+    display: inline-block;
+    width: 100%;
+}
+
+
+@media screen and (max-width : 1097px) {
+    .mainSec3{
+        padding: 30px 20px 60px;
+    }
+    .mainSec4{
+        padding: 30px 20px 20px;
+    }
+    .mainProcess>ul{
+        padding: 0;
+    }
+    .processArrow{
+        width: 3%;
+    }
+    .mainBubble{
+        width: 100%;
+    }
+    .numberCircle{
+        width: 50px; height: 50px;
+        line-height: 45px;
+    }
+    .reasonMonster{
+        display: flex;
+        align-items: end;
+    }
+    .sec3Reason{
+        gap: 15px;
+    }
+    .mainReasons{
+        justify-content: start;
+        gap: 8vw;
+    }
+    .sec4Tit{
+        gap: 15px;
+    }
+    .mainpro{
+        width: 100%;
+    }
+}
+@media screen and (max-width : 768px) {
+    .mainSec3{
+        padding: 30px 20px 20px;
+    }
+    .mainBubble{
+        padding: 23px 20px;
+    }
+    .mainReasons{
+        display: block;
+    }
+    .sec3Reasons{
+        display: flex;
+        flex-direction: column;
+    }
+    .reasonMonster{
+        display: none;
+    }
+    .processArrow{
+        display: none;
+    }
 }

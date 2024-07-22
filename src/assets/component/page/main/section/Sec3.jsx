@@ -26,7 +26,7 @@ function Sec3(){
                     <span className='numberText'>수학 공부에 자신감 형성</span>
                 </li>
             </ul>
-            <div>
+            <div className='reasonMonster'>
                 <img src={monster} alt="monster"/>
             </div>
         </div>

@@ -13,7 +13,7 @@ function Sec4(){
         <div className="mainProcess">
             <ul>
                 <li className="mainpro">
-                    <div>
+                    <div className='sec4Tit'>
                         <p className="numberCircle">1</p> 
                         <span className="numberText">개념 이해하기</span>
                     </div>
@@ -29,7 +29,7 @@ function Sec4(){
                     <img src={arrows} alt='arrows'/>
                 </li>
                 <li className="mainpro">
-                    <div>
+                    <div className='sec4Tit'>
                         <p className="numberCircle">2</p> 
                         <span className="numberText">개념 및 유형 익히기</span>
                     </div>
@@ -42,7 +42,7 @@ function Sec4(){
                     </div>
                 </li>
                 <li className="mainpro">
-                    <div>
+                    <div className='sec4Tit'>
                         <p className="numberCircle">3</p> 
                         <span className="numberText">틀린 문제 복습하기</span>
                     </div>
@@ -58,7 +58,7 @@ function Sec4(){
                     <img src={arrows} alt='arrows'/>
                 </li>
                 <li className="mainpro">
-                    <div>
+                    <div className='sec4Tit'>
                         <p className="numberCircle">4</p> 
                         <span className="numberText">학습 동기부여</span>
                     </div>

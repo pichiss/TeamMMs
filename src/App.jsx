@@ -9,13 +9,11 @@ import './App.css';
 function App() {
 
   return (
-    <>
     <Routes>
       <Route path='/education' element={<EduMain />} />
       <Route path='/education/today' element={<EduToday />} />
       <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} />} />
     </Routes>
-    </>
   )
 }
 

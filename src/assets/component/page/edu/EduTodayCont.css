@@ -1,0 +1,49 @@
+.eduUnitWrap{
+    padding: 0 90px;
+}
+.eduUnitWrap h2, .eduUnitWrap h3{
+    -webkit-text-stroke: 1px #fff;
+    font-family: 'yg-jalnan';
+}
+.eduUnitWrap h2{
+    text-align: center;
+    font-size: 36px;
+}
+.eduUnitWrap h3{
+    font-size: 30px;
+}
+.eduUnitL{
+    width: 1125px;
+    height: 712px;
+    padding: 45px;
+    background-image: url(../../../img/note_bg2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.eduMainUnit{
+    width: 91%;
+    padding: 30px 0;
+    border-radius: 20px;
+    background-color: #FFA9BE;
+}
+.eduSubUnit{
+    margin-top: 35px;
+    flex-wrap: wrap;
+    gap: 25px 35px;
+}
+.eduSubUnitBox{
+    width: 44%;
+    height: 223px;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #FFDDE5;
+    align-items: center;
+    gap: 20px;
+}
+.eduSubUnitBox>div{
+    width: 53px;
+    height: 53px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 10px solid #fff;
+    border-radius: 5px;
+}

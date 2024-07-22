@@ -5,7 +5,7 @@
 }
 .eduTodaySec>img{
     position: absolute;
-    top: 3%;
+    top: 2%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -14,14 +14,14 @@
 
 /* 슬라이드 */
 .mySwiper{
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 100px 0 50px 0;
     background-color: rgba(255, 255, 255, 0.6);
 }
 .swiper-wrapper{
     position: relative;
 }
-.swiper-wrapper>a>div:not(:last-child)::after{
+.swiper-wrapper>div:not(:last-child)::after{
     content: "";
     width: 80px;
     height: 7px;
@@ -31,16 +31,16 @@
     right: -10%;
     transform: translateY(-40%);
 }
-.swiper-slide>a{
+.swiper-slide{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.swiper-slide>a>h3{
+.swiper-slide>h3{
     padding-top: 75px;
     font-family: 'yg-jalnan';
     font-size: 40px;
-    text-shadow: -2px 7px #fff, 7px -1px #fff, 1px 7px #fff, 7px -2px #fff;
+    -webkit-text-stroke: 1px #fff;
 }
 .eduUnit{
     position: relative;

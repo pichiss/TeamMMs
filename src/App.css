@@ -23,7 +23,6 @@
   }
   
 }
-
 *{
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -35,6 +34,9 @@
 
 .flex{
   display: flex;
+}
+.pa60{
+  padding: 60px 0;
 }
 
 @media screen and (max-width : 1440px) {

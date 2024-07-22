@@ -1,4 +1,4 @@
-import monster from '../../../../img/몬스터/main.png'
+import monster from '../../../../img/monster/main.png'
 
 function Sec3(){
 

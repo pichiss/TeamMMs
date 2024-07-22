@@ -478,6 +478,7 @@ main>section{
     position: fixed;
     bottom: 8.5vw; right: 1vw;
     cursor: pointer;
+    z-index: 4;
 }
 .topBtn>p{
     font-family: 'yg-jalnan';
@@ -504,6 +505,10 @@ main>section{
 .mainBanner>img{
     display: inline-block;
     width: 100%;
+}
+.mainBannerPosition{
+    position: relative;
+    bottom: -1px;
 }
 
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import './header.css'
-import img from '../../img/몬스터/로고3.png'
+import img from '../../img/monster/로고3.png'
 import monsters from '../../img/monsters.png'
 
 function Header() {

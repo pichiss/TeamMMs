@@ -1,4 +1,4 @@
-import arrows from '../../../../img/아이콘/arrows_blue.png'
+import arrows from '../../../../img/icon/arrows_blue.png'
 import pro1 from '../../../../img/pro1.png'
 import pro2 from '../../../../img/pro2.png'
 import pro3 from '../../../../img/pro3.png'

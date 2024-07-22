@@ -1,6 +1,6 @@
-import log from '../../../../img/몬스터/monster3.png'
-import pie from '../../../../img/몬스터/monster2.png'
-import bero from '../../../../img/몬스터/monster5_2.png'
+import log from '../../../../img/monster/monster3.png'
+import pie from '../../../../img/monster/monster2.png'
+import bero from '../../../../img/monster/monster5_2.png'
 
 function Sec1(){
     return(

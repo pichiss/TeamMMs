@@ -1,4 +1,4 @@
-import service from '../../../../img/아이콘/고객센터.png'
+import service from '../../../../img/icon/고객센터.png'
 
 function Sec2(){
     let datas = [

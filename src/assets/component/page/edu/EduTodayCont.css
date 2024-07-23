@@ -1,0 +1,138 @@
+/* 노트 왼쪽 */
+.eduUnitWrap{
+    padding: 0 90px;
+    gap: 20px;
+}
+.eduUnitWrap h2, .eduUnitWrap h3, .eduSelect>div>a{
+    -webkit-text-stroke: 1px #fff;
+    font-family: 'yg-jalnan';
+}
+.eduUnitWrap h2{
+    text-align: center;
+    font-size: 36px;
+}
+.eduUnitWrap h3{
+    font-size: 30px;
+}
+.eduUnitL{
+    width: 1125px;
+    padding: 45px;
+    border: 12px solid #BAE2FF;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.eduMainUnit{
+    width: 93.5%;
+    padding: 30px 0;
+    border-radius: 20px;
+    background-color: #FFA9BE;
+}
+.eduSubUnit{
+    margin-top: 35px;
+    flex-wrap: wrap;
+    gap: 25px 35px;
+}
+.eduSubUnitBox{
+    width: 45%;
+    height: 230px;
+    padding: 40px;
+    border-radius: 20px;
+    word-break: keep-all;
+    background-color: #FFDDE5;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+.eduSubUnitBox>div{
+    width: 53px;
+    height: 53px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 10px solid #fff;
+    border-radius: 5px;
+}
+.eduUnitWrap>img{
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 59.2%;
+}
+
+
+/* 노트 오른쪽 */
+.eduUnitR{
+    width: 595px;
+    padding: 45px;
+    border: 12px solid #BAE2FF;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+
+/* 소단원 선택 X */
+.eduNoSelect{
+    flex-direction: column;
+    align-items: center;
+}
+.eduSpeechBln{
+    width: 400px;
+    padding: 35px;
+    border-radius: 20px;
+    background-color: #FFDDE5;
+    position: relative;
+}
+.eduSpeechBln::after{
+    content: "";
+    border-top: 60px solid #FFDDE5;
+    border-right: 80px solid transparent;
+    position: absolute;
+    left: 50%;
+    bottom: -20%;
+}
+.eduSpeechBln>p{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 50px;
+}
+.eduNoSelect>img{
+    width: 260px;
+    padding-top: 40px;
+}
+
+
+/* 소단원 선택 O */
+.eduSelect{
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.eduSelect>div{
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #FFA9BE;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.eduSelect>div:not(:last-child){
+    margin-bottom: 25px;
+}
+.eduSelect::-webkit-scrollbar{
+    width: 10px;
+}
+.eduSelect::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background-color: var(--yellow);
+}
+.eduSelect::-webkit-scrollbar-track{
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.eduTodaySec .on{
+    display: block;
+}
+.eduTodaySec .off{
+    display: none;
+}

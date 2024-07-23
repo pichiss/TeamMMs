@@ -1,3 +1,3 @@
-import Logo from './로고2.png'
+import Logo from './logo.png'
 
 export default Logo

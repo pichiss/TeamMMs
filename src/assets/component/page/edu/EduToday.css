@@ -1,0 +1,63 @@
+.eduTodaySec{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../img/bgsky.png);
+}
+.eduTodaySec>img{
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+
+/* 슬라이드 */
+.mySwiper{
+    margin-top: 30px;
+    padding: 100px 0 50px 0;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.swiper-wrapper{
+    position: relative;
+}
+.swiper-wrapper>div:not(:last-child)::after{
+    content: "";
+    width: 80px;
+    height: 7px;
+    background-color: #53B8FF;
+    position: absolute;
+    top: 40%;
+    right: -10%;
+    transform: translateY(-40%);
+}
+.swiper-slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.swiper-slide>h3{
+    padding-top: 75px;
+    font-family: 'yg-jalnan';
+    font-size: 40px;
+    -webkit-text-stroke: 1px #fff;
+}
+.eduUnit{
+    position: relative;
+}
+.eduStarWrap>img{
+    position: absolute;
+}
+.firstStar{
+    bottom: 30%;
+    left: 23%;
+}
+.secondStar{
+    bottom: 23%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.thirdStar{
+    bottom: 30%;
+    right: 23%;
+}

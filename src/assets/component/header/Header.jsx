@@ -11,6 +11,9 @@ function Header() {
   function hamAction(){
     setHamClick((e)=>!e)
   }
+  function close(){
+    setHamClick((e)=>!e)
+  }
 
   return (
     <>
@@ -22,7 +25,7 @@ function Header() {
               <li>캐치! 수학몬스터즈</li>
               <li>학습하기</li>
               <Link to='/TeamMMs/noticeList'><li>알림나무</li></Link>
-              <li>학부모코너</li>
+              <Link to='/TeamMMs/mypage'><li>학부모코너</li></Link>
           </ul>
           <ul className='navLogin flex'>
               <Link to='/TeamMMs/login'><li>로그인</li></Link>
@@ -41,12 +44,12 @@ function Header() {
             <li>캐치! 수학 몬스터즈</li>
             <li>학습하기</li>
             <Link to='/TeamMMs/noticeList'><li>알림나무</li></Link>
-            <li>학부모코너</li>
+            <Link to='/TeamMMs/mypage'><li>학부모코너</li></Link>
           </ul>
           <ul className='hamLogin'>
-            <li>로그인</li>
+            <Link to='/TeamMMs/login'><li onClick={close}>로그인</li></Link>
             <li>|</li>
-            <li>회원가입</li>
+            <Link to='/TeamMMs/join'><li onClick={close}>회원가입</li></Link>
           </ul>
           <div className='monsters'>
             <img src={monsters}/>

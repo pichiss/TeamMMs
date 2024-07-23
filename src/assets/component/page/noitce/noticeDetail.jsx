@@ -1,8 +1,11 @@
 import "./noticeStyle.css";
 import { useParams } from "react-router-dom";
-import { useReducer } from "react";
+import { useReducer, useState, useContext } from "react";
 import { Contents, notiReducer } from '../noitce/noticeData';
 import Subnav from "../../common/Subnav";
+import Btn from "./btn";
+
+import { editContext } from './noticeInfo'
 
 export default function NoticeDetail() {
 
@@ -10,13 +13,54 @@ export default function NoticeDetail() {
   const { notis } = state;
   const { id } = useParams();
 
+  const { removeNoti, editNoti } = useContext(editContext)
+  const [onUpdate, setOnUpdate] = useState(true)
+
+  const [editNotice, setEditNotices] = useState({
+    id: notis.id,
+    notiName: notis.notiName,
+    notiText: notis.notiText
+  })
+
+  function editBtn() {
+    setOnUpdate(!onUpdate)
+  }
+
+  function editChange(e){
+    setEditNotices(e.target.value)
+}
+
+function saveBtn(){
+  if(window.confirm(`${notiType} 을/를 수정 하시겠습니까?`)){
+    editNoti(id, notiType, notiName, notiText)
+    editBtn() //다시 리스트로 돌아가라
+  }
+}
+
+  const btns1 = {
+    tit: '수정',
+    link: '',
+    Bclass: 'editBtn',
+    func: editBtn()
+  }
+  const btns2 = {
+    tit: '삭제',
+    link: '/TeamMMs/noticeList',
+    Bclass: 'removeBtn',
+  }
+  const btns3 = {
+    tit: '목록',
+    link: '/TeamMMs/noticeList',
+    Bclass: 'listBtn'
+  }
+
 
   return (
     <section className="w1440 flex pa55 noticeDetailWrap">
       {/* <Subnav/> */}
       <div className="noticeDetail">
         <h2 className="noticeTit">공지사항 & 이벤트</h2>
-        <div>
+        {onUpdate? <div>
           <h3>{notis[id].notiName}</h3>
           <ul className="flex">
             <li>등록일</li>
@@ -25,6 +69,25 @@ export default function NoticeDetail() {
             <li>{notis[id].views}</li>
           </ul>
           <p>{notis[id].notiText}</p>
+        </div>
+        :
+        <div>
+           <div>
+        <select name="notiType" value={notiType} onChange={onChangeNoti}>
+            <option value={"공지사항"}>공지사항</option>
+            <option value={"이벤트"}>이벤트</option>
+        </select>
+        <input type="text" name="notiName" value={notiName} onChange={onChangeNoti}/>
+      </div>
+      <textarea name="notiText" value={notiText} onChange={onChangeNoti}></textarea>
+        </div>
+        }
+        <div className="flex detailBtnWrap">
+          <div className="flex">
+            <Btn {...btns1} />
+            <Btn {...btns2} />
+          </div>
+          <Btn {...btns3} />
         </div>
       </div>
     </section>

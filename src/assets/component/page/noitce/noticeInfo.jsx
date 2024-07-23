@@ -1,8 +1,12 @@
-import { useCallback, useReducer, useRef, useState } from "react";
+import { useCallback, useReducer, useRef, useState, useMemo, createContext } from "react";
 import { Contents, notiReducer } from '../noitce/noticeData';
 
 import NoticeList from "./noticeList";
 import NoticeDetail from "./noticeDetail";
+import NoticeWrite from "./noitceWrite";
+
+export const NotiContext = createContext();
+export const editContext = createContext();
 
 export default function NoticeInfo() {
 
@@ -10,7 +14,6 @@ export default function NoticeInfo() {
     const { notis } = state;
     const { notiType, notiName, notiText } = state.inputs;
     const notiId = useRef(12);
-    const [sortList, setSortList] = useState();
 
     const createNoti = useCallback((notiType, notiName, notiText) => {
         const today = new Date();
@@ -51,25 +54,19 @@ export default function NoticeInfo() {
         })
     }
 
-    const getSortList = () => {
-        const sortItem = (item) => {
-            switch (sortList) {
-                case '공지사항':
-                    return item.notiType === '공지사항';
-                case '이벤트':
-                    return item.notiType === '이벤트';
-                default:
-                    return null
-            }
-        }
-        const sortingList = sortList === notis.filter((item) => sortItem(item))
-        return sortingList
-    }
+    const memoNoti = useMemo(() => { //필요한것만 저장
+        return { createNoti, editNoti, removeNoti, searchNoti }
+    }, [])
 
     return (
         <>
-            <NoticeList />
-            <NoticeDetail/>
+            <NotiContext.Provider value={notis}>
+                <editContext.Provider value={memoNoti}>
+                    <NoticeList />
+                    <NoticeDetail />
+                    <NoticeWrite />
+                </editContext.Provider>
+            </NotiContext.Provider>
         </>
     );
 }

@@ -5,7 +5,7 @@ import { useReducer, useState } from "react";
 import { Contents, notiReducer } from '../noitce/noticeData';
 import NoticePagination from './noticePagination';
 import Subnav from '../../common/Subnav';
-import Btn from '../../common/btn';
+import Btn from './btn';
 
 
 export default function NoticeList() {
@@ -21,9 +21,10 @@ export default function NoticeList() {
     const indexOfFirstPost = indexOfLastPost - postPerPage
     const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost)
 
+
     const btns = {
         tit : '글쓰기',
-        link :'/write',
+        link :'/TeamMMs/write',
         Bclass :'writeBtn'
     }
 

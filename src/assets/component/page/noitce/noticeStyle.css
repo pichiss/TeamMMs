@@ -61,7 +61,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 55px 0 0;
+    padding: 20px 0 0;
 }
 
 .noticeListWrap .pagination li {
@@ -162,6 +162,22 @@
 .noticeDetail p {
     padding: 40px 20px 40px;
     white-space: pre-wrap;
+    border-bottom: 1px solid var(--line-grey);
+}
+/* 디테일페이지 버튼 */
+.detailBtnWrap{
+    justify-content: space-between;
+}
+.detailBtnWrap>div{
+    gap: 28px;
+}
+
+/* 게시판 글쓰기 */
+.noticeWriteWrap{
+    width: 100%;
+}
+.noticeWriteBtnWrap{
+    justify-content: space-between;
 }
 
 /* 반응형*/
@@ -192,9 +208,6 @@
     }
     .noticeListWrap table td:first-child {
         display: none;
-    }
-    .noticeListWrap .pagination {
-        padding: 50px 0;
     }
     .noticeListWrap .pagination li:first-child {
         width: 38px;
@@ -236,5 +249,7 @@
     .noticeDetail p {
         font-size: 14px;
     }
-    
+    .detailBtnWrap>div{
+        gap: 20px;
+    }
 }

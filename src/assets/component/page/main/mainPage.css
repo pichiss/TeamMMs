@@ -480,7 +480,7 @@ main>section{
 .topBtn{
     width: 80px;
     position: fixed;
-    bottom: 8.5vw; right: 1vw;
+    bottom: 12%; right: 1vw;
     cursor: pointer;
     z-index: 4;
 }
@@ -511,7 +511,7 @@ main>section{
 }
 .studyBtn{
     position: fixed;
-    bottom: 3.5vw; right: 1vw;
+    bottom: 3%; right: 1vw;
     width: 80px; height: 80px;
     border-radius: 50%;
     background-color: #481B92;

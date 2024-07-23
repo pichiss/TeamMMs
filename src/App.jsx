@@ -23,6 +23,7 @@ function App() {
         <Route path="/TeamMMs/" element={<Main />}/>
         <Route path="/TeamMMs/login" element={<Login />}/>
         <Route path="/TeamMMs/join" element={<Join />}/>
+        <Route path="/TeamMMs/mypage" element={<Profile />}/>
       </Routes>
     <Footer />
     </>

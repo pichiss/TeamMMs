@@ -210,6 +210,7 @@
     outline: none;
     border-radius: 5px;
     padding: 20px;
+    resize: none;
 }
 .noticeWriteBtnWrap{
     justify-content: space-between;
@@ -288,6 +289,20 @@
         gap: 20px;
     }
     .noticeWriteWrap{
-        gap: 50px;
+        gap: 0px;
+    }
+    .noticeWriteText select{
+        padding: 10px 0;
+        width: 50%;
+        font-size: 14px;
+    }
+    .noticeWriteText input{
+        width: 100%;
+        font-size: 14px;
+        
+    }
+    .noticeWriteText textarea{
+        height: 400px;
+        font-size: 14px;
     }
 }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import eduContents from './eduData.js';
+import { eduContents } from './eduData.js';
 import EduHeader from './EduHeader.jsx';
 import EduFooter from './EduFooter.jsx';
 

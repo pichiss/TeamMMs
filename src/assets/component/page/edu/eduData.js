@@ -44,4 +44,50 @@ const eduContents = [
         }
 ]
 
-export default eduContents;
+const qDatas = [
+    {
+        id: 1,
+        question: "기초 문제 1"
+    },
+    {
+        id: 1,
+        question: "기초 문제 2"
+    },
+    {
+        id: 1,
+        question: "기초 문제 3"
+    },
+    {
+        id: 1,
+        question: "기초 문제 4"
+    },
+    {
+        id: 1,
+        question: "기초 문제 5"
+    },
+    {
+        id: 1,
+        question: "기초 문제 6"
+    },
+    {
+        id: 1,
+        question: "기초 문제 7"
+    },
+    {
+        id: 1,
+        question: "기초 문제 8"
+    },
+    {
+        id: 1,
+        question: "기초 문제 9"
+    },
+    {
+        id: 1,
+        question: "기초 문제 10"
+    }
+]
+
+export {
+    eduContents,
+    qDatas
+};

@@ -1,6 +1,13 @@
+import { useState, useEffect } from 'react'
 
 import './reset.css'
 import './App.css'
+
+import Header from './assets/component/header/Header'
+import Main from './assets/component/page/main/Main'
+import Login from './assets/component/page/login/Login'
+import Join from './assets/component/page/login/Join'
+
 import {Route, Routes, Link} from 'react-router-dom';
 
 
@@ -12,10 +19,14 @@ import NoticeWrite from './assets/component/page/noitce/noitceWrite';
 
 function App() {
 
+
+
   return (
     <>
-    <Routes>
-      <Route path='/' element={<NoticeMain/>}/>
+    <Header/>
+    <Main/>
+      <Routes>
+      <Route path='/' element={<Main/>}/>
       <Route path='/TeamMMs/noticeList' element={<NoticeList/>}/>
       <Route path='/TeamMMs/detail/:id' element={<NoticeDetail />}/>
       <Route path='/TeamMMs/write' element={<NoticeWrite />}/>

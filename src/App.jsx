@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import { Routes, Route } from 'react-router-dom';
+// import { loginData, reducer } from './assets/component/page/login/loginData'
 
 import './reset.css'
 import './App.css'
@@ -11,9 +12,11 @@ import Join from './assets/component/page/login/Join'
 
 import Footer from './assets/component/footer/footer'
 
+// export const loginContext = createContext();
+// export const editContext = createContext();
+
 function App() {
-
-
+  
 
   return (
     <>

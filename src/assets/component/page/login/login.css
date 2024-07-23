@@ -144,7 +144,8 @@
     width: 100%;
     text-align: end;
 }
-.JoinBtn>button{
+.JoinBtn button{
+    cursor: pointer;
     background-color: #62C3CA;
     color: #fff;
     font-size: 13px;

@@ -89,28 +89,30 @@ nav>h1 img{
     align-items: center;
     gap: 20px;
 }
-.hamSubMenu>li{
+.hamSubMenu a{
     cursor: pointer;
     width: 50%;
     text-align: center;
     padding: 17px 24px;
     border-radius: 20px;
     font-size: 20px;
+}
+.hamSubMenu a>li{
     font-family: 'yg-jalnan';
 }
-.hamSubMenu>li:hover{
+.hamSubMenu a:hover{
     outline: 2px solid black;
 }
-.hamSubMenu>li:nth-child(1){
+.hamSubMenu a:nth-child(1){
     background-color: #FFE337;
 }
-.hamSubMenu>li:nth-child(2){
+.hamSubMenu a:nth-child(2){
     background-color: #6CCCDA;
 }
-.hamSubMenu>li:nth-child(3){
+.hamSubMenu a:nth-child(3){
     background-color: #FFA9BE;
 }
-.hamSubMenu>li:nth-child(4){
+.hamSubMenu a:nth-child(4){
     background-color: #A441B8;
 }
 .monsters{

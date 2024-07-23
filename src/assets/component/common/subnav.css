@@ -24,6 +24,7 @@
     border: 1px solid var(--line-grey);
     padding: 20px;
     position: relative;
+    border-radius: 5px;
 }
 
 .subnavList li::after{
@@ -37,3 +38,36 @@
     border-bottom: 2px solid #ccc;
     transform: rotate(-45deg);
 }
+
+.subnavList li.blue{
+    background-color: var(--main-blue);
+    color: #fff;
+}
+
+@media screen and (max-width : 768px) {
+    .subnav{
+      display: none;
+    }
+    .subnavList ul{
+        width: 100%;
+        display: flex;
+        flex: 1;
+      }
+      .subnavList li{
+        width: 100%;
+        font-size: 12px;
+        padding: 15px;
+        text-align: center;
+      }
+      .subnavList li::after{
+        display: none;
+      }
+  }
+  @media screen and (max-width : 405px) {
+
+      .subnavList li{
+        padding: 15px 2px;
+
+      }
+
+  }

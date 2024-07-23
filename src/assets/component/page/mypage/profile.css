@@ -1,13 +1,19 @@
 .profileBox{
-    padding: 0 76px;
+    padding-left: 5%;
+    width: 100%;
 }
 .profileBox h2{
     font-size: 40px;
     text-align: center;
     margin-bottom: 65px;
 }
+.proFirst{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
 .profilWrap{
-    width: 1135px;
+    max-width: 1135px;
     box-shadow: 0 4px 4px #bfbfbf;
     padding: 5px;
 }
@@ -46,16 +52,62 @@
     padding: 10px 20px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    font-size: 20px;
+    font-size: 16px;
 }
-
+.bgBlue h3{
+    font-size: 18px;
+}
+.bgBlue td{
+    font-size: 18px;
+}
+.expend{
+    padding: 10px;
+    cursor: pointer;
+}
 
 /* 변경 버튼 */
 .bluelineBtn{
-    padding: 9px 25px;
+    padding: 7px 25px;
     border: 1px solid var(--main-blue);
     border-radius: 10px;
     margin-left: 20px;
     background-color: #fff;
+    cursor: pointer;
 }
 
+@media screen and (max-width : 1280px) {
+    .bgBlue{
+        font-size: 16px
+    }
+    .profilWrap td{
+        padding: 10px 15px;
+    }
+  }
+
+  @media screen and (max-width : 950px) {
+    .profileBox td{
+        font-size: 14px;
+    }
+    .bgBlue{
+        font-size: 16px
+    }
+  }
+@media screen and (max-width : 768px) {
+    section{
+      flex-direction: column;
+    }
+    .profileBox h2{
+        font-size: 30px;
+        padding: 50px 0;
+        margin-bottom: 0px
+    }
+    .bluelineBtn{
+        text-align: center;
+    }
+    .profileBox{
+        padding: 0px;
+    }
+    .profilWrap td.silver{
+        width: 30%;
+    }
+  }

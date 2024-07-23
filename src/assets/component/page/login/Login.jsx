@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import './login.css'
-import logo from '../../../img/로고2.png'
+import logo from '../../../img/logo.png'
 import banner from '../../../img/loginBanner.png'
 import kakao from '../../../img/icon/kakao.png';
 import naver from '../../../img/icon/naver.png';

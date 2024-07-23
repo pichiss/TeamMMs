@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 
 function Join(){
+    function ale(){
+        alert('가입되었습니다');
+    }
+    
+    
     return(
     <Link to='/TeamMMs/Join'>
     <section className='Login'>
@@ -43,7 +48,7 @@ function Join(){
                 </form>
             </div>
             <div className='JoinBtn'>
-                <button>가입하기</button>
+                <button onClick={ale}>가입하기</button>
             </div>
         </div>
     </section>

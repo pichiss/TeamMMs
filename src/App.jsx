@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
-
-import './reset.css'
-import './App.css'
+import { Route, Routes, Link } from 'react-router-dom';
+import { eduContents, qDatas } from './assets/component/page/edu/eduData.js';
+import { useState, useEffect, createContext } from 'react'
 
 import Header from './assets/component/header/Header'
 import Main from './assets/component/page/main/Main'
@@ -18,25 +17,51 @@ import NoticeMain from './assets/component/page/noitce/noticeMain';
 import NoticeWrite from './assets/component/page/noitce/noitceWrite';
 import Profile from './assets/component/page/mypage/profile'
 
-function App() {
+import EduMain from './assets/component/page/edu/EduMain.jsx';
+import EduToday from './assets/component/page/edu/EduToday.jsx';
+import EduTodayCont from './assets/component/page/edu/EduTodayCont.jsx';
+import EduMathQ1 from './assets/component/page/edu/EduMath/EduMathQ1.jsx';
 
+import './reset.css'
+import './App.css'
+
+function App() {
+  const [page, setPage] = useState(true);
 
 
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/TeamMMs/" element={<Main />} />
-        <Route path="/TeamMMs/login" element={<Login />} />
-        <Route path="/TeamMMs/join" element={<Join />} />
-        <Route path='/TeamMMs/noticeList' element={<NoticeList />} />
-        <Route path='/TeamMMs/detail/:id' element={<NoticeDetail />} />
-        <Route path='/TeamMMs/write' element={<NoticeWrite />} />
-        <Route path='/TeamMMs/mypage' element={<Profile/>}/>
-      </Routes>
-      <Footer />
+
+      {page == true ?
+        <>
+          <Header setPage={setPage} />
+          {console.log(page)}
+          <Routes>
+            <Route path="/TeamMMs/" element={<Main />} />
+            <Route path="/TeamMMs/login" element={<Login />} />
+            <Route path="/TeamMMs/join" element={<Join />} />
+            <Route path='/TeamMMs/noticeList' element={<NoticeList />} />
+            <Route path='/TeamMMs/detail/:id' element={<NoticeDetail />} />
+            <Route path='/TeamMMs/write' element={<NoticeWrite />} />
+            <Route path='/TeamMMs/mypage' element={<Profile />} />
+            <Route path="/TeamMMs/" element={<Main />} />
+            <Route path="/TeamMMs/login" element={<Login />} />
+            <Route path="/TeamMMs/join" element={<Join />} />
+            <Route path="/TeamMMs/mypage" element={<Profile />} />
+            <Route path='/education' element={<EduMain />} />
+            <Route path='/education/today' element={<EduToday />} />
+            <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} />} />
+            <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
+          </Routes>
+          <Footer />
+        </>
+        :
+        <>
+          <div>학습하기 페이지 출력</div>
+        </>
+      }
     </>
   )
 }
 
-export default App
+export default App;

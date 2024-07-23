@@ -5,7 +5,7 @@ import './header.css'
 import img from '../../img/monster/로고3.png'
 import monsters from '../../img/monsters.png'
 
-function Header() {
+function Header({setPage}) {
   // 햄버거 메뉴
   let [hamClick, setHamClick] = useState(false);
   function hamAction(){

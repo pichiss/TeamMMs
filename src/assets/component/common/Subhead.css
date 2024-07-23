@@ -1,0 +1,10 @@
+.subHeadWrap{
+    width: 100%;
+    position: relative;
+}
+.subHeadChara{
+    width: 135px;
+    position: absolute;
+    top: 15%;
+    right: 35%;
+}

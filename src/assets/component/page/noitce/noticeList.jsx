@@ -31,7 +31,7 @@ export default function NoticeList() {
     return (
         <>
          <section className="w1440 flex noticeListWrap pa55">
-         <Subnav/>
+         <Subnav tit={'알림나무'}/>
          <div>
          <h2 className='noticeTit'>공지사항 & 이벤트</h2>
             <table>

@@ -4,7 +4,7 @@ import './subnav.css'
 
 function Subnav(props){
 const navNoti = [
-    {tit:'알림마당',
+    {tit:'알림나무',
     icon: navNotiIcon,
     key:'1'}]
 const mypage =
@@ -32,7 +32,7 @@ const mypageList=[
 
     return(
         <>
-        {props.tit==='알림마당'?  <div>
+        {props.tit==='알림나무'?  <div>
         <div className='subnav'>
             <p>{props.tit}</p>
             {navNoti.map((list)=>

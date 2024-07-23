@@ -24,9 +24,8 @@ function App() {
   return (
     <>
     <Header/>
-    <Main/>
       <Routes>
-      <Route path='/' element={<Main/>}/>
+      <Route path='/TeamMMs' element={<Main/>}/>
       <Route path='/TeamMMs/noticeList' element={<NoticeList/>}/>
       <Route path='/TeamMMs/detail/:id' element={<NoticeDetail />}/>
       <Route path='/TeamMMs/write' element={<NoticeWrite />}/>

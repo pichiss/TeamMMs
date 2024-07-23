@@ -32,10 +32,10 @@ function Main(){
 
     useEffect(() => {
         window.addEventListener("scroll", onScroll);
-        console.log(height)
+        // console.log(height)
 
         window.addEventListener("resize", handleResize);
-        console.log(width)
+        // console.log(width)
         
         if(width >= 1310 && height >= 2700){
             setBanClass('mainBanner mainBannerPosition')

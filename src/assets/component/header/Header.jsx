@@ -21,7 +21,7 @@ function Header() {
           <ul className='navTab flex'>
               <li>캐치! 수학몬스터즈</li>
               <li>학습하기</li>
-              <li>알림나무</li>
+              <Link to='/TeamMMs/noticeList'><li>알림나무</li></Link>
               <li>학부모코너</li>
           </ul>
           <ul className='navLogin flex'>
@@ -40,7 +40,7 @@ function Header() {
           <ul className='hamSubMenu'>
             <li>캐치! 수학 몬스터즈</li>
             <li>학습하기</li>
-            <li>알림나무</li>
+            <Link to='/TeamMMs/noticeList'><li>알림나무</li></Link>
             <li>학부모코너</li>
           </ul>
           <ul className='hamLogin'>

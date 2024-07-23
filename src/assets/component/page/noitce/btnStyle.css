@@ -1,7 +1,7 @@
 .writeBtn{
     justify-content: flex-end;
 }
-.writeBtn div,.listBtn div,.saveBtn div {
+.writeBtn div,.listBtn div,.saveBtn {
     background-color: var(--sub-blue);
     color: white;
     border: 1px solid var(--sub-blue);

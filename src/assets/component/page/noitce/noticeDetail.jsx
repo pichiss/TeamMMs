@@ -5,22 +5,13 @@ import { Contents, notiReducer } from '../noitce/noticeData';
 import Subnav from "../../common/Subnav";
 import Btn from "./btn";
 
-import { editContext } from './noticeInfo'
-
 export default function NoticeDetail() {
 
   const [state, dispatch] = useReducer(notiReducer, Contents);
   const { notis } = state;
   const { id } = useParams();
 
-  const { removeNoti, editNoti } = useContext(editContext)
   const [onUpdate, setOnUpdate] = useState(true)
-
-  const [editNotice, setEditNotices] = useState({
-    id: notis.id,
-    notiName: notis.notiName,
-    notiText: notis.notiText
-  })
 
   function editBtn() {
     setOnUpdate(!onUpdate)
@@ -41,7 +32,6 @@ function saveBtn(){
     tit: '수정',
     link: '',
     Bclass: 'editBtn',
-    func: editBtn()
   }
   const btns2 = {
     tit: '삭제',
@@ -57,7 +47,7 @@ function saveBtn(){
 
   return (
     <section className="w1440 flex pa55 noticeDetailWrap">
-      {/* <Subnav/> */}
+      {/* <Subnav tit={'알림나무'}/> */}
       <div className="noticeDetail">
         <h2 className="noticeTit">공지사항 & 이벤트</h2>
         {onUpdate? <div>

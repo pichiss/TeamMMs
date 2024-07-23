@@ -1,9 +1,12 @@
-import { useCallback, useReducer, useRef } from "react";
-import { Contents, notiReducer } from './noticeData';
+import { useCallback, useReducer, useRef, useMemo, createContext } from "react";
+import { Contents, notiReducer } from './assets/component/page/noitce/noticeData';
 
-import NoticeList from "./noticeList";
-import NoticeDetail from "./noticeDetail";
-import NoticeWrite from "./noitceWrite";
+import NoticeList from "./assets/component/page/noitce/noticeList";
+import NoticeDetail from "./assets/component/page/noitce/noticeDetail";
+import NoticeWrite from "./assets/component/page/noitce/noitceWrite";
+
+export const NotiContext = createContext();
+export const editContext = createContext();
 
 export default function NoticeInfo() {
 
@@ -51,12 +54,19 @@ export default function NoticeInfo() {
         })
     }
 
+    const memoNoti = useMemo(() => { //필요한것만 저장
+        return { createNoti, editNoti, removeNoti, searchNoti }
+    }, [createNoti, editNoti, removeNoti, searchNoti]);
 
     return (
         <>
-            <NoticeList />
-            <NoticeDetail />
-            <NoticeWrite />
+            <NotiContext.Provider value={notis}>
+                <editContext.Provider value={memoNoti}>
+                    <NoticeList />
+                    <NoticeDetail />
+                    <NoticeWrite />
+                </editContext.Provider>
+            </NotiContext.Provider>
         </>
     );
 }

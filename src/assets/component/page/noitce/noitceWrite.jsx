@@ -1,24 +1,32 @@
 import "./noticeStyle.css";
-import NoticeInput from "./inputHook";
 import Subnav from "../../common/Subnav";
+import './btnStyle.css'
 import Btn from "./btn";
+import { useState, useCallback } from "react";
 
-import { useContext } from "react"
-import { editContext } from "./noticeInfo";
+export default function NoticeWrite({ createNoti }) {
 
-export default function NoticeWrite() {
 
-  const [{ notiType, notiName, notiText }, onChangeNoti, reset] = NoticeInput({
+  const [inputs, setInputs] = useState({
     notiType: '',
     notiName: '',
-    notiText: ''
+    notiText: '',
   })
 
-  const {createNoti} = useContext(editContext)
-  console.log('17'+createNoti)
-  function createBtn(){
-    let cate = notiType;
-    createNoti(notiName, notiText, cate)
+  const { notiType, notiName, notiText } = inputs;
+
+  function onChangeNoti(e) {
+    const { name, value } = e.target
+    setInputs({
+      ...inputs,
+      [name]: value
+    })
+  }
+
+  const reset = useCallback(() => setInputs(inputs), [inputs])
+
+  function createBtn() {
+    createNoti(notiType, notiName, notiText)
     reset()
     history.back()
   }
@@ -37,21 +45,23 @@ export default function NoticeWrite() {
 
 
   return (
-    <section className="w1440 flex pa55">
-      <Subnav />
-      <div className="noticeWriteWrap">
+    <section className="w1440 flex pa55 noticeWriteWrap">
+      <Subnav tit={'알림나무'} />
+      <div className="noticeWrite">
         <h2 className="noticeTit">공지사항 & 이벤트</h2>
-        <div>
-          <select name="notiType" value={notiType} onChange={onChangeNoti}>
-            <option value={"공지사항"}>공지사항</option>
-            <option value={"이벤트"}>이벤트</option>
-          </select>
-          <input type="text" name="notiName" value={notiName} onChange={onChangeNoti} placeholder="제목을 입력하세요." />
+        <div className="noticeWriteText">
+          <div className="flex">
+            <select name="notiType" value={notiType} onChange={onChangeNoti}>
+              <option value={"공지사항"}>공지사항</option>
+              <option value={"이벤트"}>이벤트</option>
+            </select>
+            <input type="text" name="notiName" value={notiName} onChange={onChangeNoti} placeholder="제목을 입력하세요." />
+          </div>
+          <textarea name="notiText" value={notiText} onChange={onChangeNoti} placeholder="내용을 입력하세요."></textarea>
         </div>
-        <textarea name="notiText" value={notiText} onChange={onChangeNoti} placeholder="내용을 입력하세요."></textarea>
         <div className="flex noticeWriteBtnWrap">
           <Btn {...btns1} />
-          <Btn {...btns2} />
+          <div onClick={createBtn} className={`${btns2.Bclass} boardBtn`}>{btns2.tit}</div>
         </div>
       </div>
     </section>

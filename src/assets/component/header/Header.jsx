@@ -5,7 +5,7 @@ import './header.css'
 import img from '../../img/monster/로고3.png'
 import monsters from '../../img/monsters.png'
 
-function Header() {
+function Header({setPage}) {
   // 햄버거 메뉴
   let [hamClick, setHamClick] = useState(false);
   function hamAction(){
@@ -23,7 +23,7 @@ function Header() {
           </h1>
           <ul className='navTab flex'>
             <Link to='/TeamMMs/'><li>캐치! 수학몬스터즈</li></Link>
-              <Link to='/TeamMMs/'><li>학습하기</li></Link>
+              <Link to='/TeamMMs/'><li onClick={()=>setPage(false)}>학습하기</li></Link>
               <Link to='/TeamMMs/'><li>알림나무</li></Link>
               <Link to='/TeamMMs/'><li>학부모코너</li></Link>
           </ul>

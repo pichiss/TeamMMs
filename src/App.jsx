@@ -38,16 +38,17 @@ function App() {
           <Route path="/TeamMMs/login" element={<Login />}/>
           <Route path="/TeamMMs/join" element={<Join />}/>
           <Route path="/TeamMMs/mypage" element={<Profile />}/>
-          <Route path='/education' element={<EduMain />} />
-          <Route path='/education/today' element={<EduToday />} />
-          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} />} />
-          <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
         </Routes>
       <Footer />
     </>
     :
     <>
-      <div>학습하기 페이지 출력</div>
+      <Routes>
+          <Route path='/education' element={<EduMain />} />
+          <Route path='/education/today' element={<EduToday />} />
+          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} />} />
+          <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
+      </Routes>
     </>
     }
     </>

@@ -7,14 +7,11 @@ import './App.css'
 import Header from './assets/component/header/Header'
 import Main from './assets/component/page/main/Main'
 import Login from './assets/component/page/login/Login'
+import Join from './assets/component/page/login/Join'
 
 import Footer from './assets/component/footer/footer'
 
 function App() {
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const toggleMenu = () => {
-  //   setIsMenuOpen((prevState) => !prevState);
-  // };
 
 
 
@@ -24,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/TeamMMs/" element={<Main />}/>
         <Route path="/TeamMMs/login" element={<Login />}/>
+        <Route path="/TeamMMs/join" element={<Join />}/>
       </Routes>
     <Footer />
     </>

@@ -4,11 +4,12 @@ nav{
     align-items: center;
     padding: 8px 35px;
     background-color: #fff;
+    border-bottom: 1px solid #ddd;
 }
 nav>h1{
     height: 80px;
 }
-nav>h1>img{
+nav>h1 img{
     height: 100%;
 }
 .navTab{
@@ -18,14 +19,17 @@ nav>h1>img{
 .navLogin{
     background-color: var(--main-blue);
     padding: 10px 20px;
-    color: #fff;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     font-size: 15px;
 }
+.navLogin li{
+    color: #fff;
+}
 .navHam{
+    cursor: pointer;
     display: none;
     width: 30px; height: 30px;
     flex-direction: column;

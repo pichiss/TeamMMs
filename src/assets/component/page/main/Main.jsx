@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import './mainPage.css'
 import top from '../../../img/monster/비비.png'
 import Sec1 from './section/Sec1'
@@ -18,9 +18,10 @@ function Main(){
         })
     }
     
-    // 화면 너비/높이
+    // 배너 sticky
     const [height, setHeight] = useState(0);
     const [width, setWidth] = useState(window.innerWidth);
+    let [banClass, setBanClass] = useState('');
 
     function onScroll() {
         setHeight(window.scrollY);
@@ -36,13 +37,30 @@ function Main(){
         window.addEventListener("resize", handleResize);
         console.log(width)
         
+        if(width >= 1310 && height >= 2700){
+            setBanClass('mainBanner mainBannerPosition')
+        }else if(width >= 1100 && height >= 2330){
+            setBanClass('mainBanner mainBannerPosition')
+        }else if(width < 1100 && height >= 4900){
+            setBanClass('mainBanner mainBannerPosition')
+        }else if(width < 1025 && height >= 4800){
+            setBanClass('mainBanner mainBannerPosition')
+        }else if(width < 992 && height >= 4590){
+            setBanClass('mainBanner mainBannerPosition')
+        }else if(width < 905 && height >= 4400){
+            setBanClass('mainBanner mainBannerPosition')
+        }else if(width < 591 && height >= 4300){
+            setBanClass('mainBanner mainBannerPosition')
+        }else if(width < 504 && height >= 3800){
+            setBanClass('mainBanner mainBannerPosition')
+        }else{
+            setBanClass('mainBanner')
+        }
     }, [height, width]);
 
-    // ~889 이면, 2748
-    // width 889 일때, height 4270
 
 
-
+    
     return(
     <Link to='/TeamMMs/'>
         <main style={{backgroundImage : `url(${back})`}}>
@@ -54,7 +72,7 @@ function Main(){
                 <p>TOP</p>
                 <img src={top} alt='top btn'/>
             </div>
-            <div className={height >= 2748 ? `mainBanner mainBannerPosition` : 'mainBanner'}>
+            <div className={banClass}>
                 <img src={banner} alt='banner'/>
             </div>
         </main>

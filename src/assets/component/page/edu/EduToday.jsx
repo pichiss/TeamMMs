@@ -5,7 +5,7 @@ import { eduContents } from './eduData.js';
 import EduHeader from './EduHeader.jsx';
 import EduFooter from './EduFooter.jsx';
 
-import logo from '../../../img/monster/logo.png';
+import logo from '../../../img/logo.png';
 import firstUnit from '../../../img/monster/monster5_Ellipse.png';
 import secondUnit from '../../../img/monster/monster2_Ellipse.png';
 import thirdUnit from '../../../img/monster/monster3_Ellipse.png';

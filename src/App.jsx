@@ -32,6 +32,7 @@ function App() {
         <Route path='/TeamMMs/noticeList' element={<NoticeList />} />
         <Route path='/TeamMMs/detail/:id' element={<NoticeDetail />} />
         <Route path='/TeamMMs/write' element={<NoticeWrite />} />
+        <Route path='/TeamMMs/mypage' element={<Profile/>}/>
       </Routes>
       <Footer />
     </>

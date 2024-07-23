@@ -1,10 +1,13 @@
 import navNotiIcon from '../../img/icon/noticeIcon.svg';
 import mypageIcon from '../../img/icon/mypageIcon.svg';
+import { useState } from "react";
 import './subnav.css'
 
 function Subnav(props){
+    const [selectedKey, setSelectedKey] = useState(null);
+
 const navNoti = [
-    {tit:'알림마당',
+    {tit:'알림나무',
     icon: navNotiIcon,
     key:'1'}]
 const mypage =
@@ -30,9 +33,13 @@ const mypageList=[
     {tit:'1:1 문의',
     key : '4'}]
 
+    function changeblue(key){
+        setSelectedKey(key);
+    }
+
     return(
         <>
-        {props.tit==='알림마당'?  <div>
+        {props.tit==='알림나무'?  <div>
         <div className='subnav'>
             <p>{props.tit}</p>
             {navNoti.map((list)=>
@@ -41,7 +48,7 @@ const mypageList=[
         </div>
         <div className='subnavList'>
             <ul>
-                {notiList.map((item)=><a href="/"><li key={item.key}>{item.tit}</li></a>)}
+                {notiList.map((item)=><li className={selectedKey === item.key ? 'blue' : null} onClick={() => changeblue(item.key)} key={item.key}>{item.tit}</li>)}
             </ul>
         </div>
         </div>: <div>
@@ -53,7 +60,7 @@ const mypageList=[
         </div>
         <div className='subnavList'>
             <ul>
-            {mypageList.map((item)=><a href="/"><li key={item.key}>{item.tit}</li></a>)}
+            {mypageList.map((item)=><li className={selectedKey === item.key ? 'blue' : null} onClick={() => changeblue(item.key)} key={item.key}>{item.tit}</li>)}
             </ul>
         </div>
         </div>

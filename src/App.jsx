@@ -11,6 +11,7 @@ import Login from './assets/component/page/login/Login'
 import Join from './assets/component/page/login/Join'
 
 import Footer from './assets/component/footer/footer'
+import Profile from './assets/component/page/mypage/profile'
 
 // export const loginContext = createContext();
 // export const editContext = createContext();
@@ -25,6 +26,7 @@ function App() {
         <Route path="/TeamMMs/" element={<Main />}/>
         <Route path="/TeamMMs/login" element={<Login />}/>
         <Route path="/TeamMMs/join" element={<Join />}/>
+        <Route path="/TeamMMs/mypage" element={<Profile />}/>
       </Routes>
     <Footer />
     </>

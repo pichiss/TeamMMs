@@ -3,6 +3,7 @@ import Subnav from '../../common/Subnav'
 import LearningBarChart from './learningBarChart';
 import LearningDonutChart from './learningDonutChart';
 import LearningScore from './learningScore';
+import LearningAttendance from './learningAttendance';
 
 export default function Learning() {
 
@@ -19,8 +20,9 @@ export default function Learning() {
                         <LearningDonutChart />
                         <LearningBarChart />
                     </div>
+                    <LearningScore/>
+                    <LearningAttendance/>
                 </div>
-                <LearningScore/>
             </div>
 
         </section>

@@ -117,7 +117,7 @@ export default function LearningDonutChart() {
                 <h4>진도율</h4>
                 <Ring data={myData} content={myContent} />
             </div>
-            <div className='attendance'>
+            <div className='attendanceRate'>
                 <h4>출석률</h4>
                 <Ring2 data={myData2} content={myContent2} />
             </div>

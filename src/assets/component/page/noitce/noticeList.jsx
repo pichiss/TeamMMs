@@ -1,76 +1,40 @@
 import './noticeStyle.css'
-import { useCallback, useReducer, useRef, useState } from "react";
-import { Contents, notiReducer } from '../noitce/noticeData';
 import { Link } from "react-router-dom";
+
+import { useReducer, useState } from "react";
+import { Contents, notiReducer } from '../noitce/noticeData';
+import NoticePagination from './noticePagination';
+import Subnav from '../../common/Subnav';
+import Btn from './btn';
 
 
 export default function NoticeList() {
 
     const [state, dispatch] = useReducer(notiReducer, Contents);
     const { notis } = state;
-    const { notiType, notiName, notiText } = state.inputs;
-    const notiId = useRef(13);
-    const [sortList, setSortList] = useState();
+    const noitsReverse = [...notis].reverse()
 
-    const createNoti = useCallback((notiType, notiName, notiText) => {
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = (today.getMonth() + 1).toString().padStart(2, '0');
-        const day = today.getDate().toString().padStart(2, '0');
-        const createDate = `${year}-${month}-${day}`;
+    // 페이지네이션
+    const [page, setPage] = useState(1);
+    const postPerPage = 10
+    const indexOfLastPost = page * postPerPage
+    const indexOfFirstPost = indexOfLastPost - postPerPage
+    const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost)
 
-        dispatch({
-            type: 'create',
-            noti: {
-                notiType, notiName, notiText,
-                id: notiId.current,
-                createDate
-            }
-        })
-        notiId.current++
-    }, [notiType, notiName, notiText]);
 
-    const editNoti = (id, notiType, notiName, notiText) => {
-        dispatch({
-            type: 'edit',
-            id, notiType, notiName, notiText
-        })
-    }
-
-    const removeNoti = (id) => {
-        dispatch({
-            type: 'remove',
-            id
-        })
-    }
-
-    const searchNoti = (notiName, notiText) => {
-        dispatch({
-            type: 'search',
-            notiName, notiText
-        })
-    }
-
-    const getSortList = () => {
-        const sortItem = (item) => {
-            switch(sortList){
-                case '공지사항' :
-                return item.notiType === '공지사항';
-                case '이벤트' :
-                return item.notiType === '이벤트';
-                default:
-                return null
-            }
-        }
-        const sortingList = sortList === notis.filter((item)=>sortItem(item))
-        return sortingList
+    const btns = {
+        tit : '글쓰기',
+        link :'/TeamMMs/write',
+        Bclass :'writeBtn'
     }
 
     return (
         <>
-         <section className="w1440 noticeListWrap">
-         <h2 className='noticeTit'>공지사항 & 이벤트</h2>
-            <table>
+         <section className="w1440 flex noticeListWrap pa55">
+         <Subnav tit={'알림나무'}/>
+         <div>
+         <h2>공지사항 & 이벤트</h2>
+            <table className='notiTable'>
                 <thead>
                     <tr>
                         <th>번호</th>
@@ -80,15 +44,22 @@ export default function NoticeList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {notis.map((noti)=>
+                    {currentPost.map((noti)=>
                     <tr key={noti.id}>
-                        <td>{noti.id}</td>
-                        <td><Link key={noti.id} to={`/noticeList/${noti.id}`}>{'['}{noti.notiType}{'] '}{noti.notiName} </Link></td>
+                       <td>{noti.id + 1}</td>
+                       <td>
+                       <Link to={`/TeamMMs/detail/${noti.id}`}>
+                        {'['}{noti.notiType}{'] '}{noti.notiName}
+                        </Link>
+                        </td>
                         <td>{noti.date}</td>
                         <td>{noti.views}</td>
                     </tr>)}
                 </tbody>
             </table>
+            <Btn {...btns}/>
+            <NoticePagination page={page} setPage={setPage} postPerPage={postPerPage} notis={notis}/>
+         </div>
         </section>
         </>
     )

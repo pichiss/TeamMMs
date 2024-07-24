@@ -67,6 +67,9 @@ function Main(){
     };
 
     useEffect(() => {
+        window.addEventListener("scroll", onScroll);
+        // console.log(height)
+
         window.addEventListener("resize", handleResize);
         console.log(width)
     }, [width]);

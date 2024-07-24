@@ -1,0 +1,113 @@
+.learning{
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 학습현황 개요 */
+.LearningChartWrap h3{
+    color: #fff;
+    font-size: 20px;
+    background-color: var(--main-blue);
+    padding: 10px 20px;
+}
+.LearningChartWrap h4{
+    font-size: 20px;
+    text-align: center;
+    padding: 35px 0;
+}
+.donutWrap{
+    width: 50%;
+    justify-content: center;
+}
+.progress{
+    width: 50%;
+}
+.attendanceRate{
+    width: 50%;
+}
+.barWrap{
+    width: 50%;
+}
+.barWrap .recharts-wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+.barWrap .recharts-cartesian-axis-tick line{
+    display: none;
+}
+
+/* 점수판 */
+.scoreWrap{
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+.score{
+    width: 100%;
+}
+.score th, td{
+    padding: 10px 20px;
+    text-align: center;
+}
+.score th{
+    font-size: 20px;
+    background-color: var(--main-blue);
+    color: white;
+}
+.score td{
+    border: 1px solid var(--line-grey);
+}
+.score th:first-child{
+    width: 20%;
+}
+.score th:nth-child(2){
+    width: 60%;
+}
+.score th:nth-child(3){
+    width: 20%;
+}
+
+/* 반응형 */
+@media screen and (max-width : 1290px) {
+    .LearningChart{
+        flex-direction: column;
+        align-items: center;
+    }
+    .donutWrap{
+        width: 100%;
+    }
+    .barWrap{
+        width: 100%;
+    }
+    .LearningChartWrap h4{
+        padding: 15px 0;
+    }
+}
+@media screen and (max-width : 768px) {
+    .LearningChartWrap h3{
+        font-size: 16px;
+        text-align: center;
+    }
+    .LearningChartWrap h4{
+        font-size: 16px;
+    }
+    .barWrap .recharts-wrapper{
+        width: 400px;
+    }
+    .score th,.score td{
+        font-size: 14px;
+    }
+    .score th:first-child{
+        width: 25%;
+    }
+    .score th:nth-child(2){
+        width: 50%;
+    }
+    .score th:nth-child(3){
+        width: 25%;
+    }
+}
+@media screen and (max-width : 500px) {
+    .donutWrap{
+       gap: 4px;
+    }
+}

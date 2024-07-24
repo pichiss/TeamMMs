@@ -44,7 +44,7 @@
 .score{
     width: 100%;
 }
-.score th, td{
+.score th,.score td{
     padding: 10px 20px;
     text-align: center;
 }
@@ -65,6 +65,46 @@
 .score th:nth-child(3){
     width: 20%;
 }
+
+
+/* 출석체크 */
+.calendarWrap{
+    padding-top: 50px;
+}
+.calendar{
+    padding-top: 50px;
+}
+.calendar .react-calendar {
+    width: 500px;
+    margin: 0 auto;
+    border: none;
+}
+.react-calendar .react-calendar__navigation {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.react-calendar .react-calendar__month-view__weekdays{
+    background-color: var(--main-blue);
+    color: white;
+    padding: 10px 0;
+}
+.react-calendar .react-calendar__month-view__weekdays__weekday{
+    padding: 0;
+}
+.react-calendar abbr{
+    text-decoration: none;
+    font-size: 18px;
+}
+.react-calendar .react-calendar__month-view__days__day--weekend {
+    color: var(--font-black);
+  }
+  .react-calendar .react-calendar__tile{
+    padding: 5px 5px 50px;
+    text-align: inherit;
+    border: 1px solid var(--line-grey);
+  }
+
+
 
 /* 반응형 */
 @media screen and (max-width : 1290px) {
@@ -104,6 +144,18 @@
     }
     .score th:nth-child(3){
         width: 25%;
+    }
+    .calendarWrap{
+        padding-top: 30px;
+    }
+    .calendar{
+        padding-top: 15px;
+    }
+    .react-calendar .react-calendar__navigation {
+        font-size: 16px;
+    }
+    .react-calendar abbr{
+        font-size: 14px;
     }
 }
 @media screen and (max-width : 500px) {

@@ -48,7 +48,7 @@ export default function NoticeWrite({ createNoti }) {
     <section className="w1440 flex pa55 noticeWriteWrap">
       <Subnav tit={'알림나무'} />
       <div className="noticeWrite">
-        <h2 className="noticeTit">공지사항 & 이벤트</h2>
+        <h2>공지사항 & 이벤트</h2>
         <div className="noticeWriteText">
           <div className="flex">
             <select name="notiType" value={notiType} onChange={onChangeNoti}>

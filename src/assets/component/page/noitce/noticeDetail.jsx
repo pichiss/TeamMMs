@@ -35,12 +35,12 @@ function saveBtn(){
   }
   const btns2 = {
     tit: '삭제',
-    link: '/TeamMMs/noticeList',
+    link: '/noticeList',
     Bclass: 'removeBtn',
   }
   const btns3 = {
     tit: '목록',
-    link: '/TeamMMs/noticeList',
+    link: '/noticeList',
     Bclass: 'listBtn'
   }
 
@@ -49,7 +49,7 @@ function saveBtn(){
     <section className="w1440 flex pa55 noticeDetailWrap">
       {/* <Subnav tit={'알림나무'}/> */}
       <div className="noticeDetail">
-        <h2 className="noticeTit">공지사항 & 이벤트</h2>
+        <h2>공지사항 & 이벤트</h2>
         {onUpdate? <div>
           <h3>{notis[id].notiName}</h3>
           <ul className="flex">

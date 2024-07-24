@@ -19,18 +19,18 @@ function Header({setPage}) {
     <>
       <nav className='flex'>
           <h1>
-            <Link to='/TeamMMs/'><img src={img} alt='logo'/></Link>
+            <Link to='/'><img src={img} alt='logo'/></Link>
           </h1>
           <ul className='navTab flex'>
               <li>캐치! 수학몬스터즈</li>
               <li>학습하기</li>
-              <Link to='/TeamMMs/noticeList'><li>알림나무</li></Link>
-              <Link to='/TeamMMs/mypage'><li>학부모코너</li></Link>
+              <Link to='/noticeList'><li>알림나무</li></Link>
+              <Link to='/mypage'><li>학부모코너</li></Link>
           </ul>
           <ul className='navLogin flex'>
-              <Link to='/TeamMMs/login'><li>로그인</li></Link>
+              <Link to='/login'><li>로그인</li></Link>
               <li>|</li>
-              <Link to='/TeamMMs/join'><li>회원가입</li></Link>
+              <Link to='/join'><li>회원가입</li></Link>
           </ul>
           <ul className={hamClick == false ? `navHam` : `navHam hamAction`} onClick={hamAction}>
             <li></li>
@@ -43,13 +43,13 @@ function Header({setPage}) {
           <ul className='hamSubMenu'>
             <li>캐치! 수학 몬스터즈</li>
             <li>학습하기</li>
-            <Link to='/TeamMMs/noticeList'><li>알림나무</li></Link>
-            <Link to='/TeamMMs/mypage'><li>학부모코너</li></Link>
+            <Link to='/noticeList'><li>알림나무</li></Link>
+            <Link to='/mypage'><li>학부모코너</li></Link>
           </ul>
           <ul className='hamLogin'>
-            <Link to='/TeamMMs/login'><li onClick={close}>로그인</li></Link>
+            <Link to='/login'><li onClick={close}>로그인</li></Link>
             <li>|</li>
-            <Link to='/TeamMMs/join'><li onClick={close}>회원가입</li></Link>
+            <Link to='/join'><li onClick={close}>회원가입</li></Link>
           </ul>
           <div className='monsters'>
             <img src={monsters}/>

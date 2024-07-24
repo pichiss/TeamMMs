@@ -48,7 +48,7 @@ export default function NoticeList() {
                     <tr key={noti.id}>
                        <td>{noti.id + 1}</td>
                        <td>
-                       <Link to={`/TeamMMs/detail/${noti.id}`}>
+                       <Link to={`/detail/${noti.id}`}>
                         {'['}{noti.notiType}{'] '}{noti.notiName}
                         </Link>
                         </td>

@@ -4,7 +4,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: auto;
 }
 .LoginWrap{
     width: 320px;
@@ -21,7 +20,7 @@
     flex-direction: column;
     gap: 15px;
 }
-.LoginInput>form:nth-child(1){
+.LoginInput>div:nth-child(1){
     margin-bottom: 20px;
 }
 .LoginInput label{
@@ -44,6 +43,7 @@
     font-size: 20px;
     color: #fff;
     border: none;
+    margin-top: 15px;
 }
 .LoginSns{
     display: flex;
@@ -120,24 +120,28 @@
   -webkit-appearance: none;
   margin: 0;
 }
-.JoinInput>form input:nth-child(3){
+.JoinInput>div input:nth-child(3){
     margin-top: 3px;
 }
 .JoinCheck{
     width: 100%;
     font-size: 10px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .JoinCheck label{
     cursor: pointer;
 }
-.JoinCheck>form{
+.JoinCheck>div{
     display: flex;
     gap: 7px;
 }
 .JoinCheck span{
     color: #FF0000;
 }
-.JoinCheck>form:nth-child(3) span{
+.JoinCheck>div:nth-child(3) span{
     color: #0029FF;
 }
 .JoinBtn{

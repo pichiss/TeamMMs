@@ -15,17 +15,18 @@ import Profile from './assets/component/page/mypage/profile'
 
 function App() {
   const [page, setPage] = useState(true);
-  
+  // 로그인
+  const code = new URL(window.location.href).searchParams.get("code");
+  // console.log(code)
   
   return (
     <>
     {page == true ?
     <>
-      <Header setPage={setPage}/>
-      {console.log(page)}
+      <Header setPage={setPage} code={code}/>
         <Routes>
           <Route path="/TeamMMs/" element={<Main />}/>
-          <Route path="/TeamMMs/login" element={<Login />}/>
+          <Route path="/TeamMMs/login" element={<Login code={code} />}/>
           <Route path="/TeamMMs/join" element={<Join />}/>
           <Route path="/TeamMMs/mypage" element={<Profile />}/>
         </Routes>

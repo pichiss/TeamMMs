@@ -28,6 +28,108 @@ nav>h1 img{
 .navLogin li{
     color: #fff;
 }
+
+/* nav my */
+.navMy{
+    z-index: 1;
+}
+.navMyName{
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background-color: #FFE337;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navMyName>p{
+    font-family: 'yg-jalnan';
+    font-size: 30px;
+}
+.navMyTab{
+    position: absolute;
+    right: 0;
+    margin: 10px 20px;
+    padding: 20px 20px 40px;
+    width: 400px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.1);
+}
+.navMyTab>ul{
+    width: 100%; height: 100%;
+}
+.navClose{
+    display: flex;
+    justify-content: end;
+}
+.navClose>div{
+    cursor: pointer;
+    width: 55px;
+}
+.navClose>div:hover{
+    background-color: rgba(255, 227, 55, 0.8);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+.navClose img{
+    width: 100%;
+    filter: brightness(0);
+}
+.navLoginInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navMyImg{
+    width: 100px; 
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 8px solid rgb(255, 227, 55);;
+    position: relative;
+}
+.navMyImg>img{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.navLoginInfo>p{
+    font-size: 31px;
+    font-family: 'yg-jalnan';
+    margin-top: 5%;
+}
+.navMyLog{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    margin-top: 5%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.navMyLog>a:nth-child(1){
+    width: 50%;
+    border-radius: 20px 0 0 20px;
+    background-color: rgb(255, 227, 55, 0.8);
+    padding: 1vw;
+    text-align: center;
+}
+.navMyLog>a:nth-child(2){
+    width: 50%;
+    border-radius: 0 20px 20px 0;
+    background-color: rgb(255, 227, 55, 0.8);
+    padding: 1vw;
+    text-align: center;
+}
+
+/* 햄버거 메뉴 */
 .navHam{
     cursor: pointer;
     display: none;

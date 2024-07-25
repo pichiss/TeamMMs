@@ -1,0 +1,8 @@
+.pointWrap{
+    width: 100%;
+}
+.pointHistory{
+    max-width: 1150px;
+    box-shadow: 0 4px 4px #bfbfbf;
+    padding: 5px;
+}

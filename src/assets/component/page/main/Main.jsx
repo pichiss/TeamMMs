@@ -71,34 +71,32 @@ function Main(){
         // console.log(height)
 
         window.addEventListener("resize", handleResize);
-        console.log(width)
+        // console.log(width)
     }, [width]);
 
 
     
     return(
-    <Link to='/TeamMMs/'>
-        <main style={{backgroundImage : `url(${back})`}}>
-            <Sec1/>
-            <Sec2/>
-            <Sec3/>
-            <Sec4/>
-            <div className='mainBanner'>
-                {width < 1100 ? 
-                    <img src={banner2} alt='banner'/>
-                :
-                    <img src={banner} alt='banner'/>
-                }
-            </div>
-            <div className='topBtn' onClick={scrollToTop}>
-                <p>TOP</p>
-                <img src={top} alt='top btn'/>
-            </div>
-            <div className='studyBtn' onClick={scrollToTop}>
-                <p>무료<br/>체험</p>
-            </div>
-        </main>
-    </Link>
+    <main style={{backgroundImage : `url(${back})`}}>
+        <Sec1/>
+        <Sec2/>
+        <Sec3/>
+        <Sec4/>
+        <div className='mainBanner'>
+            {width < 1100 ? 
+                <img src={banner2} alt='banner'/>
+            :
+                <img src={banner} alt='banner'/>
+            }
+        </div>
+        <div className='topBtn' onClick={scrollToTop}>
+            <p>TOP</p>
+            <img src={top} alt='top btn'/>
+        </div>
+        <div className='studyBtn' onClick={scrollToTop}>
+            <p>무료<br/>체험</p>
+        </div>
+    </main>
     )
 }
 

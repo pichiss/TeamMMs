@@ -28,6 +28,114 @@ nav>h1 img{
 .navLogin li{
     color: #fff;
 }
+
+/* nav my */
+.navMy{
+    z-index: 1;
+}
+.navMyName{
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background-color: var(--main-blue);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navMyName>p{
+    font-family: 'yg-jalnan';
+    font-size: 23px;
+}
+.navMyTab{
+    position: absolute;
+    right: 0;
+    margin: 10px 20px;
+    padding: 20px 30px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.1);
+}
+.navMyTab>ul{
+    width: 100%; height: 100%;
+}
+.navClose{
+    display: flex;
+    justify-content: end;
+}
+.navClose>div{
+    cursor: pointer;
+    width: 40px;
+}
+.navClose>div:hover{
+    background-color: var(--main-blue);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+.navClose img{
+    width: 100%;
+    filter: brightness(0);
+}
+.navLoginInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navMyImg{
+    width: 100px; 
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 8px solid var(--main-blue);;
+    position: relative;
+}
+.navMyImg>img{
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.navLoginInfo>p{
+    font-size: 20px;
+    font-family: 'yg-jalnan';
+    margin-top: 5%;
+}
+.navPoint{
+    width: 100%; height: 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+    margin-top: 5%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--main-blue);
+    border-radius: 20px;
+    padding: 0.5vw 1vw;
+}
+.navPoint>img{
+    height: 100%;
+}
+.navPoint>div{
+    width: 100%; 
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.navMyLog{
+    text-align: end;
+    padding-top: 30px;
+}
+.navMyLog div{
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 햄버거 메뉴 */
 .navHam{
     cursor: pointer;
     display: none;

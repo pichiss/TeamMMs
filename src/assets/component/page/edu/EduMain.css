@@ -26,6 +26,7 @@
     padding-bottom: 80px;
     font-size: 70px;
     color: #fff;
+    -webkit-text-stroke: 1px #C73395;
     text-shadow: -1px 3px #C73395, 3px 1px #C73395, 1px 3px #C73395, 3px -1px #C73395;
 }
 .eduVideo>img{
@@ -45,6 +46,7 @@
     padding-bottom: 80px;
     font-size: 70px;
     color: #fff;
+    -webkit-text-stroke: 1px #15539B;
     text-shadow: -1px 3px #15539B, 3px 1px #15539B, 1px 3px #15539B, 3px -1px #15539B;
 }
 .eduToday>img{
@@ -67,6 +69,7 @@
     padding-top: 30px;
     font-size: 48px;
     color: #fff;
+    -webkit-text-stroke: 1px #4D1A8E;
     text-shadow: -1px 3px #4D1A8E, 3px 1px #4D1A8E, 1px 3px #4D1A8E, 3px -1px #4D1A8E;
 }
 .eduNote>img{
@@ -86,6 +89,7 @@
     padding-top: 30px;
     font-size: 48px;
     color: #fff;
+    -webkit-text-stroke: 1px #882121;
     text-shadow: -1px 3px #882121, 3px 1px #882121, 1px 3px #882121, 3px -1px #882121;
 }
 .eduPoint>img{

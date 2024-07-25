@@ -26,4 +26,5 @@
 .eduVideos ul {
     width: 70%;
     background-color: var(--yellow);
+    border-radius: 0 20px 20px 0;
 }

@@ -58,5 +58,9 @@
   .w1440{
     width: calc(100% - 30px);
   }
+  .subtit{
+    font-size: 30px;
+    padding: 50px 0;
+  }
   
 }

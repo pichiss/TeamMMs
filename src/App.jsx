@@ -99,7 +99,6 @@ function App() {
 
   return (
     <>
-
     {page == true ?
     <>
       <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout}/>

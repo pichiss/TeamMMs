@@ -5,7 +5,7 @@ import question from '../../../img/icon/question.png';
 import door from '../../../img/icon/door.png';
 import './EduHeader.css';
 
-function EduHeader(){
+function EduHeader({setPage}){
     return(
         <article className='flex eduProfile'>
             <div className='eduPfL'>
@@ -24,9 +24,9 @@ function EduHeader(){
                         <img src={question} alt="help-button" className='helpBtn' />
                     </div>
                 </div>
-                <div className='eduExitWrap'>
+                <div className='eduExitWrap' onClick={()=>setPage(true)}>
                     <h2>나가기</h2>
-                    <Link to={'/TeamMMs/'}>
+                    <Link to='/'>
                         <div className='flex eduCircle'>
                             <img src={door} alt="exit-button" className='exitBtn' />
                         </div>

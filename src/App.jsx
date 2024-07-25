@@ -107,7 +107,6 @@ function App() {
     {page == true ?
     <>
       <Header setPage={setPage}/>
-      {console.log(page)}
         <Routes>
           <Route path="/TeamMMs/" element={<Main />}/>
           <Route path="/TeamMMs/login" element={<Login />}/>

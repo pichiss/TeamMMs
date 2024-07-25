@@ -15,7 +15,7 @@ import spring from '../../../../img/note_spring.png';
 
 import './EduMathQ.css';
 
-function EduMathQ2(){
+function EduMathQ2({setPage}){
 
     const [onBasic, setOnBasic] = useState(true);
     const [onDeepQ, setOnDeepQ] = useState(false);
@@ -36,7 +36,7 @@ function EduMathQ2(){
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader />
+            <EduHeader setPage={setPage} />
             <div className='flex eduQBtn'>
                 <div className={onBasic ? "active" : " "} onClick={onClickBasic}>기초문제</div>
                 <div className={onDeepQ ? "active" : " "} onClick={onClickDeep}>응용문제</div>

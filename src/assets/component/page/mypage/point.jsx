@@ -10,7 +10,7 @@ function Point(){
             <section className='w1440 flex pa55'>
                 <Subnav key={1} tit={'학부모 코너'} />
                 <article className='pointWrap'>
-                    <h2 className='subtitle'>학부모 코너</h2>
+                    <h2 className='subtit'>학부모 코너</h2>
                     <h3>포인트 적립 내역</h3>
                 </article>
             </section>

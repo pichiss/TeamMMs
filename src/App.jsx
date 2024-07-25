@@ -120,11 +120,11 @@ function App() {
     <>
       <Routes>
           <Route path='/education' element={<EduMain setPage={setPage}/>} />
-          <Route path='/education/today' element={<EduToday />} />
-          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} />} />
-          <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
-          <Route path='/education/today/:unitId/2' element={<EduMathQ2 />} />
-          <Route path='/education/today/:unitId/3' element={<EduMathQ3 />} />
+          <Route path='/education/today' element={<EduToday setPage={setPage} />} />
+          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} />} />
+          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} />} />
+          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} />} />
+          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} />} />
           <Route path="/eduVideo" element={<EduVideo />}/>
       </Routes>
     </>

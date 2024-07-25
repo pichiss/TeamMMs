@@ -32,7 +32,7 @@ function EduTodayCont(props){
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader />
+            <EduHeader setPage={props.setPage} />
             <article className='flex eduUnitWrap'>
                 <div className='eduUnitL'>
                     <div className='eduMainUnit'>

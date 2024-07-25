@@ -1,5 +1,5 @@
 import './footer.css';
-import Logo from '../../img/img';
+import {Logo} from '../../img/img';
 
 export default function Footer() {
     return (

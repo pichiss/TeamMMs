@@ -498,17 +498,17 @@ main>section{
     width: 100%;
 }
 
-.mainBanner{
+.mainBanner>a{
     width: 100%;
     position: relative;
     bottom: -1px;
     display: flex;
 }
-.mainBanner>img{
+.mainBanner>a>img{
     width: 100%;
     display: inline-block;
 }
-.studyBtn{
+.studyBtn>a{
     position: fixed;
     bottom: 3%; right: 1vw;
     width: 80px; height: 80px;
@@ -518,7 +518,7 @@ main>section{
     color: #fff;
     box-shadow: 3px 3px 2px var(--yellow);
 }
-.studyBtn>p{
+.studyBtn>a>p{
     position: absolute;
     top: 50%;
     left: 50%;

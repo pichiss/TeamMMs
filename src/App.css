@@ -41,7 +41,12 @@
 .pa55{
   padding: 55px 0;
 }
-
+.subtit{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding: 55px 0;
+}
 
 @media screen and (max-width : 1440px) {
   .w1440{
@@ -53,7 +58,8 @@
   .w1440{
     width: calc(100% - 30px);
   }
-  .pa55{
+  .subtit{
+    font-size: 30px;
     padding: 50px 0;
   }
   

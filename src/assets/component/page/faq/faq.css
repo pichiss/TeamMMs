@@ -2,7 +2,7 @@
     width: 100%;
 }
 .faqWrap li{
-    padding: 25px 37px;
+    padding: 25px 37px 0 37px;
     border-bottom: 1px solid var(--line-grey);
 }
 
@@ -14,9 +14,22 @@
     font-weight: bold;
 }
 .faqAns{
-    /* display: none; */
-    padding: 25px 37px;
+        position: relative;
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+        padding-right: 2rem;
+        border-top-width: 1px;
+        transition:padding-top 0.5s, padding-bottom 0.5s, height 0.5s, transform 0.5s;
 }
+.faq-card-none {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    height: 0px;
+    
+    visibility: hidden;
+    transition:padding-top 0.5s, padding-bottom 0.5s, height 0.5s, transform 0.5s;
+  }
+
 .faqAns::before{
     content: 'A';
     display: inline-block;

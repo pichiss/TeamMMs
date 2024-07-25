@@ -1,3 +1,117 @@
-canvas{
-    height: 634px;
+.eduQBtn>div{
+    width: 180px;
+    padding: 10px;
+    border: 7px solid #fff;
+    border-radius: 50px;
+    text-align: center;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    color: #898989;
+    background-color: #BAE2FF;
+    font-family: 'yg-jalnan';
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+}
+.eduQBtn>div.active{
+    color: var(--font-black);
+    background-color: var(--yellow);
+}
+.eduQBtn>div:first-child{
+    top: 5%;
+    left: 52%;
+}
+.eduQBtn>div:first-child::after{
+    content: "";
+    width: 30px;
+    height: 7px;
+    background-color: #fff;
+    position: absolute;
+    top: 45%;
+    right: -20%;
+}
+.eduQBtn>div:last-child{
+    top: 5%;
+    right: 28%;
+}
+
+
+/* 문제 */
+.eduArrowWrap img{
+    width: 129px;
+    position: absolute;
+    top: 50%;
+}
+.eduLeftArrow{
+    left: 3%;
+}
+.eduRightArrow{
+    right: 2%;
+}
+.eduUnitL>h1{
+    font-size: 40px;
+    word-break: keep-all;
+}
+.eduUnitR{
+    flex-direction: column;
+    justify-content: space-between;
+}
+.eduAnswer{
+    padding-left: 80px;
+}
+.eduAnswer>h1{
+    padding-bottom: 15px;
+    font-size: 40px;
+}
+.eduAnswer input{
+    width: 200px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 40px;
+    font-weight: 700;
+    background-color: var(--line-grey);
+}
+.eduAnswer>div{
+    align-items: center;
+    gap: 10px;
+}
+.eduAnswer>div p{
+    font-size: 40px;
+    font-weight: 700;
+}
+.eduAnswer>div:nth-child(2){
+    padding-bottom: 35px;
+}
+.eduSubBtn{
+    justify-content: center;
+    gap: 40px;
+}
+.eduSubBtn>div{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.askWrap>img{
+    width: 50px;
+}
+.checkWrap>img{
+    width: 50px;
+}
+.eduSubBtn h3{
+    font-family: 'yg-jalnan';
+    font-size: 20px;
+    color: #fff;
+}
+.askWrap>h3{
+    -webkit-text-stroke: 1px #FF8296;
+    text-shadow: -1px 2px #FF8296, 2px 1px #FF8296, 1px 2px #FF8296, 2px -1px #FF8296;
+}
+.hintWrap>h3{
+    -webkit-text-stroke: 1px #F8CF03;
+    text-shadow: -1px 2px #F8CF03, 2px 1px #F8CF03, 1px 2px #F8CF03, 2px -1px #F8CF03;
+}
+.checkWrap>h3{
+    -webkit-text-stroke: 1px #CD2D2D;
+    text-shadow: -1px 2px #CD2D2D, 2px 1px #CD2D2D, 1px 2px #CD2D2D, 2px -1px #CD2D2D;
 }

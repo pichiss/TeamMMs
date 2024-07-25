@@ -26,6 +26,7 @@ import EduMathQ3 from './assets/component/page/edu/EduMath/EduMathQ3.jsx';
 
 import Leaning from './assets/component/page/learning/learning';
 import EduVideo from './assets/component/page/eduVideo/eduVideo';
+import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
 
 function App() {
@@ -123,7 +124,8 @@ function App() {
           <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
           <Route path='/education/today/:unitId/2' element={<EduMathQ2 />} />
           <Route path='/education/today/:unitId/3' element={<EduMathQ3 />} />
-          <Route path="/eduVideo" element={<EduVideo />}/>
+          <Route path="/eduVideo" element={<EduVideo setPage={setPage}/>}/>
+          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage}/>}/>
       </Routes>
     </>
     }

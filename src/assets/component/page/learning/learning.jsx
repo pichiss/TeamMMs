@@ -13,7 +13,7 @@ export default function Learning() {
         <section className='w1440 pa55 flex learningWrap'>
             <Subnav tit={'학부모코너'} />
             <div className='learning'>
-                <h2>학습현황</h2>
+                <h2 className='subtit'>학습현황</h2>
                 <div className='LearningChartWrap'>
                     <h3>학습현황 개요</h3>
                     <div className='flex LearningChart'>

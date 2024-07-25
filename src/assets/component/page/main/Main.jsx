@@ -68,7 +68,7 @@ function Main(){
 
     useEffect(() => {
         window.addEventListener("resize", handleResize);
-        console.log(width)
+        // console.log(width)
     }, [width]);
 
 

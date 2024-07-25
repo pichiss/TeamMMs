@@ -1,13 +1,14 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './header.css'
 import img from '../../img/monster/로고3.png'
 import monsters from '../../img/monsters.png'
-import my from '../../img/icon/myicon.png'
 import clo from '../../img/icon/x.png'
+import star from '../../img/icon/별.png'
+import { useEffect } from 'react';
 
-function Header({setPage, code}) {
+function Header({setPage, user, kakaoLogout}) {
     // 햄버거 메뉴
     let [hamClick, setHamClick] = useState(false);
     function hamAction(){
@@ -20,21 +21,15 @@ function Header({setPage, code}) {
     // 마이탭 메뉴
     let [myClick, setMyClick] = useState(false);
 
-    // 로그아웃
-    function kakaoLogout(kakaoKey){
-        Kakao.init(kakaoKey);   //초기화
-        Kakao.isInitialized();
-
-        if(!Kakao.Auth.getAccessToken()){   //토근이 있는지 확인
-            console.log('Not logged in.');
-            return;
+    useEffect(()=>{
+        if(user){
+            console.log(user)
+        }else{
+            console.log('null')
         }
+    },[user])
 
-        Kakao.Auth.logout(function(){   // 카카오 로그아웃
-            console.log(Kakao.Auth.getAccessToken());
-        })
-    }
-
+    
     return (
     <>
       <nav className='flex'>
@@ -47,10 +42,10 @@ function Header({setPage, code}) {
                 <Link to='/TeamMMs/'><li>알림나무</li></Link>
                 <Link to='/TeamMMs/'><li>학부모코너</li></Link>
             </ul>
-            {code ?
+            {user ?
                 <div className='navMy'>
                     <div className='navMyName' onClick={()=>setMyClick(true)}>
-                        <p>금주</p>
+                        <p>{user.nickname}</p>
                     </div>
                     {myClick ?
                     <div className='navMyTab'>
@@ -62,13 +57,19 @@ function Header({setPage, code}) {
                             </li>
                             <li className='navLoginInfo'>
                                 <div className='navMyImg'>
-                                    <img src={my} alt='my page'/>
+                                    <img src={user.profileImg} alt='my page'/>
                                 </div>
-                                <p>안녕하세요, 000님.</p>
+                                <p>안녕하세요, {user.nickname}님.</p>
+                            </li>
+                            <li className='navPoint'>
+                                <img src={star} alt='point'/>
+                                <div>
+                                    <p>100</p>
+                                    <p>pt</p>
+                                </div>
                             </li>
                             <li className='navMyLog'>
-                                <Link to='/TeamMMs/' onClick={()=>setMyClick(false)}><div>마이페이지</div></Link>
-                                <Link to='/TeamMMs/'><div>로그아웃</div></Link>
+                                <Link to='/TeamMMs/' onClick={kakaoLogout}><div>로그아웃</div></Link>
                             </li>
                         </ul>
                     </div>
@@ -97,7 +98,7 @@ function Header({setPage, code}) {
                     <Link to='/TeamMMs/'><li>알림나무</li></Link>
                     <Link to='/TeamMMs/mypage'><li>학부모코너</li></Link>
                 </ul>
-                {code ?
+                {user ?
                     <div>hello</div>
                 :
                     <ul className='hamLogin'>

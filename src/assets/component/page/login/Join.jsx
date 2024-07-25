@@ -2,10 +2,9 @@ import { Link } from 'react-router-dom';
 
 function Join(){
     function ale(){
-        alert('가입되었습니다');
+        alert('준비중입니다');
     }
-    
-    
+
     return(
     <section className='Login'>
         <div className='LoginWrap'>

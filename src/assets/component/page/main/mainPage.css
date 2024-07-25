@@ -491,7 +491,7 @@ main>section{
     left: 50%;
     transform: translateX(-50%);
     color: #fff;
-    -webkit-text-stroke: 4px #481B92;
+    -webkit-text-stroke: 3px #481B92;
 
 }
 .topBtn>img{

@@ -5,7 +5,7 @@ import './header.css'
 import img from '../../img/monster/로고3.png'
 import monsters from '../../img/monsters.png'
 import clo from '../../img/icon/x.png'
-import star from '../../img/icon/별.png'
+import star from '../../img/icon/star.png'
 import { useEffect } from 'react';
 
 function Header({setPage, user, kakaoLogout}) {

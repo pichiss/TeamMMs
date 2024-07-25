@@ -232,6 +232,19 @@ nav>h1 img{
 .monsters>img{
     width: 100%;
 }
+.subNavMyLog{
+    width: 345px;
+    margin: 0 auto;
+    text-align: end;
+    padding-top: 40px;
+}
+.subNavMyLog>a{
+    color: #2e2e2e;
+}
+.subNavMyLog div{
+    display: inline-block;
+    border-bottom: 1px solid #2e2e2e;
+}
 @media screen and (max-width : 1440px) {
     nav{
         padding: 8px 25px;
@@ -257,5 +270,8 @@ nav>h1 img{
     }
     .navHam{
         display: flex;
+    }
+    .navMy{
+        display: none;
     }
   }

@@ -99,7 +99,9 @@ function Header({setPage, user, kakaoLogout}) {
                     <Link to='/mypage'><li>학부모코너</li></Link>
                 </ul>
                 {user ?
-                    <div>hello</div>
+                    <div className='subNavMyLog'>
+                        <Link to='/' onClick={kakaoLogout}><div>로그아웃</div></Link>
+                    </div>
                 :
                     <ul className='hamLogin'>
                         <Link to='/login'><li onClick={close}>로그인</li></Link>

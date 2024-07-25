@@ -16,6 +16,7 @@ import NoticeList from './assets/component/page/noitce/noticeList';
 import NoticeDetail from './assets/component/page/noitce/noticeDetail';
 import NoticeWrite from './assets/component/page/noitce/noitceWrite';
 import Profile from './assets/component/page/mypage/profile'
+import Point from './assets/component/page/mypage/point.jsx';
 
 import EduMain from './assets/component/page/edu/EduMain.jsx';
 import EduToday from './assets/component/page/edu/EduToday.jsx';
@@ -108,6 +109,7 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/join" element={<Join />}/>
           <Route path="/mypage" element={<Profile />}/>
+          <Route path="/mypage/point" element={<Point />} />
           <Route path="/noticeList" element={<NoticeList />}/>
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>

@@ -21,6 +21,8 @@ import EduMain from './assets/component/page/edu/EduMain.jsx';
 import EduToday from './assets/component/page/edu/EduToday.jsx';
 import EduTodayCont from './assets/component/page/edu/EduTodayCont.jsx';
 import EduMathQ1 from './assets/component/page/edu/EduMath/EduMathQ1.jsx';
+import EduMathQ2 from './assets/component/page/edu/EduMath/EduMathQ2.jsx';
+import EduMathQ3 from './assets/component/page/edu/EduMath/EduMathQ3.jsx';
 
 import Leaning from './assets/component/page/learning/learning';
 import EduVideo from './assets/component/page/eduVideo/eduVideo';
@@ -106,10 +108,6 @@ function App() {
           <Route path="/login" element={<Login kakaoLogin={kakaoLogin}/>}/>
           <Route path="/join" element={<Join />}/>
           <Route path="/mypage" element={<Profile />}/>
-          <Route path='/education' element={<EduMain />} />
-          <Route path='/education/today' element={<EduToday />} />
-          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} />} />
-          <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
           <Route path="/noticeList" element={<NoticeList />}/>
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>
@@ -120,7 +118,14 @@ function App() {
     </>
     :
     <>
-      <div>학습하기 페이지 출력</div>
+      <Routes>
+          <Route path='/education' element={<EduMain />} />
+          <Route path='/education/today' element={<EduToday />} />
+          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} />} />
+          <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
+          <Route path='/education/today/:unitId/2' element={<EduMathQ2 />} />
+          <Route path='/education/today/:unitId/3' element={<EduMathQ3 />} />
+      </Routes>
     </>
     }
     </>

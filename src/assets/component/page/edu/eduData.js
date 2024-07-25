@@ -50,7 +50,23 @@ const qDatas = [
         question: "기초 문제 1"
     },
     {
+        id: 2,
+        question: "기초 문제 1"
+    },
+    {
+        id: 3,
+        question: "기초 문제 1"
+    },
+    {
         id: 1,
+        question: "기초 문제 2"
+    },
+    {
+        id: 2,
+        question: "기초 문제 2"
+    },
+    {
+        id: 3,
         question: "기초 문제 2"
     },
     {
@@ -58,7 +74,23 @@ const qDatas = [
         question: "기초 문제 3"
     },
     {
+        id: 2,
+        question: "기초 문제 3"
+    },
+    {
+        id: 3,
+        question: "기초 문제 3"
+    },
+    {
         id: 1,
+        question: "기초 문제 4"
+    },
+    {
+        id: 2,
+        question: "기초 문제 4"
+    },
+    {
+        id: 3,
         question: "기초 문제 4"
     },
     {
@@ -66,7 +98,23 @@ const qDatas = [
         question: "기초 문제 5"
     },
     {
+        id: 2,
+        question: "기초 문제 5"
+    },
+    {
+        id: 3,
+        question: "기초 문제 5"
+    },
+    {
         id: 1,
+        question: "기초 문제 6"
+    },
+    {
+        id: 2,
+        question: "기초 문제 6"
+    },
+    {
+        id: 3,
         question: "기초 문제 6"
     },
     {
@@ -74,7 +122,23 @@ const qDatas = [
         question: "기초 문제 7"
     },
     {
+        id: 2,
+        question: "기초 문제 7"
+    },
+    {
+        id: 3,
+        question: "기초 문제 7"
+    },
+    {
         id: 1,
+        question: "기초 문제 8"
+    },
+    {
+        id: 2,
+        question: "기초 문제 8"
+    },
+    {
+        id: 3,
         question: "기초 문제 8"
     },
     {
@@ -82,7 +146,23 @@ const qDatas = [
         question: "기초 문제 9"
     },
     {
+        id: 2,
+        question: "기초 문제 9"
+    },
+    {
+        id: 3,
+        question: "기초 문제 9"
+    },
+    {
         id: 1,
+        question: "기초 문제 10"
+    },
+    {
+        id: 2,
+        question: "기초 문제 10"
+    },
+    {
+        id: 3,
         question: "기초 문제 10"
     }
 ]

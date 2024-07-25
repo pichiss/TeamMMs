@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import pf_bg from '../../../img/profile_bg.svg';
 import pt_bg from '../../../img/point_bg.svg';
 import question from '../../../img/icon/question.png';
@@ -25,9 +26,11 @@ function EduHeader(){
                 </div>
                 <div className='eduExitWrap'>
                     <h2>나가기</h2>
-                    <div className='flex eduCircle'>
-                        <img src={door} alt="exit-button" className='exitBtn' />
-                    </div>
+                    <Link to={'/TeamMMs/'}>
+                        <div className='flex eduCircle'>
+                            <img src={door} alt="exit-button" className='exitBtn' />
+                        </div>
+                    </Link>
                 </div>
             </div>
         </article>

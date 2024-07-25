@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import EduHeader from './EduHeader.jsx';
 import EduFooter from './EduFooter.jsx';
@@ -8,19 +8,27 @@ import './EduTodayCont.css';
 
 function EduTodayCont(props){
 
+    const testRef = useRef();
+    const test2Ref = useRef();
+
     const {unitId} = useParams();
     const data = props.data;
     const qDatas = props.qDatas;
 
     const [onSelect, setSelect] = useState(false);
 
+    // function onClickSelect(){
+    //     if(testRef.current.id == test2Ref.current.id){
+    //         setSelect(true)
+            
+    //     }else{
+    //         setSelect(false)
+    //     }
+    // }
+
     function onClickSelect(){
         setSelect(true)
     }
-
-    // function onClickReady(){
-    //     alert("준비 중입니다.")
-    // }
 
     return(
         <section className='eduTodaySec'>
@@ -31,19 +39,19 @@ function EduTodayCont(props){
                         <h2>{data[unitId-1].title}</h2>
                     </div>
                     <div className='flex eduSubUnit'>
-                        <div className='flex eduSubUnitBox'>
+                        <div ref={testRef} id='sub1' className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle1}</h3>
                         </div>
-                        <div className='flex eduSubUnitBox'>
+                        <div id='sub2' className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle2}</h3>
                         </div>
-                        <div className='flex eduSubUnitBox'>
+                        <div id='sub3' className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle3}</h3>
                         </div>
-                        <div className='flex eduSubUnitBox'>
+                        <div id='sub4' className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle4}</h3>
                         </div>
@@ -61,15 +69,33 @@ function EduTodayCont(props){
                         </div>
                         <img src={bero} alt="monster_image" />
                     </div>
-                    <div className={"eduSelect " + (onSelect ? "on" : "off")}>
+                    <div ref={test2Ref} id='sub1' className={"eduSelect " + (onSelect ? "on" : "off")}>
                         {qDatas.filter((qData)=> qData.id === 1)
                         .map((qData, i) =>
                             <div key={i}>
-                                <Link to={`/education/today/${data[unitId-1].unitId}/${data[unitId-1].unitId}`}>
+                                <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`}>
                                     {qData.question}
                                 </Link>
                             </div>)}
                     </div>
+                    {/* <div id='sub2' className={"eduSelect " + (onSelect ? "on" : "off")}>
+                        {qDatas.filter((qData)=> qData.id === 2)
+                        .map((qData, i) =>
+                            <div key={i}>
+                                <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`}>
+                                    {qData.question}
+                                </Link>
+                            </div>)}
+                    </div>
+                    <div id='sub3' className={"eduSelect " + (onSelect ? "on" : "off")}>
+                        {qDatas.filter((qData)=> qData.id === 3)
+                        .map((qData, i) =>
+                            <div key={i}>
+                                <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`}>
+                                    {qData.question}
+                                </Link>
+                            </div>)}
+                    </div> */}
                 </div>
             </article>
             <EduFooter />

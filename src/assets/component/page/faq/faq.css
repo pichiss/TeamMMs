@@ -1,0 +1,30 @@
+.faqWrap{
+    width: 100%;
+}
+.faqWrap li{
+    padding: 25px 37px;
+    border-bottom: 1px solid var(--line-grey);
+}
+
+.faqWrap li::before{
+    content: 'Q';
+    display: inline-block;
+    color: var(--main-blue);
+    padding-right: 44px;
+    font-weight: bold;
+}
+.faqAns{
+    /* display: none; */
+    padding: 25px 37px;
+}
+.faqAns::before{
+    content: 'A';
+    display: inline-block;
+    color: var(--font-black);
+    padding-right: 44px;
+    font-weight: bold;
+}
+
+.plusbtn{
+    width: 20px;
+}

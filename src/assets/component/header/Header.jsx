@@ -22,10 +22,10 @@ function Header({setPage}) {
             <Link to='/TeamMMs/'><img src={img} alt='logo'/></Link>
           </h1>
           <ul className='navTab flex'>
-            <Link to='/TeamMMs/'><li>캐치! 수학몬스터즈</li></Link>
-              <Link to='/TeamMMs/'><li onClick={()=>setPage(false)}>학습하기</li></Link>
+            <Link to='/'><li>캐치! 수학몬스터즈</li></Link>
+              <Link to='/'><li onClick={()=>setPage(false)}>학습하기</li></Link>
               <Link to='/TeamMMs/'><li>알림나무</li></Link>
-              <Link to='/TeamMMs/'><li>학부모코너</li></Link>
+              <Link to='/mypage'><li>학부모코너</li></Link>
           </ul>
           <ul className='navLogin flex'>
               <Link to='/TeamMMs/login'><li>로그인</li></Link>
@@ -44,7 +44,7 @@ function Header({setPage}) {
             <Link to='/TeamMMs/'><li>캐치! 수학 몬스터즈</li></Link>
             <Link to='/TeamMMs/'><li>학습하기</li></Link>
             <Link to='/TeamMMs/'><li>알림나무</li></Link>
-            <Link to='/TeamMMs/mypage'><li>학부모코너</li></Link>
+            <Link to='/mypage'><li>학부모코너</li></Link>
           </ul>
           <ul className='hamLogin'>
             <Link to='/TeamMMs/login'><li onClick={close}>로그인</li></Link>

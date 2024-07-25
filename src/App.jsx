@@ -17,6 +17,9 @@ import EduMathQ1 from './assets/component/page/edu/EduMath/EduMathQ1.jsx';
 
 import './reset.css'
 import './App.css'
+import Ask from './assets/component/page/ask/ask.jsx';
+import AskNew from './assets/component/page/ask/askboard/askNew.jsx';
+import Faq from './assets/component/page/faq/faq.jsx';
 
 function App() {
   const [page, setPage] = useState(true);
@@ -28,21 +31,20 @@ function App() {
     {page == true ?
     <>
       <Header setPage={setPage}/>
-      {console.log(page)}
-        <Routes>
+      <Faq />
+        {/* <Routes>
           <Route path="/TeamMMs/" element={<Main />}/>
-          <Route path="/TeamMMs/login" element={<Login />}/>
-          <Route path="/TeamMMs/join" element={<Join />}/>
-          <Route path="/TeamMMs/mypage" element={<Profile />}/>
-          <Route path="/TeamMMs/" element={<Main />}/>
-          <Route path="/TeamMMs/login" element={<Login />}/>
-          <Route path="/TeamMMs/join" element={<Join />}/>
-          <Route path="/TeamMMs/mypage" element={<Profile />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/join" element={<Join />}/>
+          <Route path="/mypage" element={<Profile />}/>
+          <Route path="/mypage/ask" element={<Ask />}/>
+          <Route path="/mypage/askNew" element={<AskNew />}/>
+          <Route path="/notice/faq" element={<Faq />}/>
           <Route path='/education' element={<EduMain />} />
           <Route path='/education/today' element={<EduToday />} />
           <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} />} />
           <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
-        </Routes>
+        </Routes> */}
       <Footer />
     </>
     :

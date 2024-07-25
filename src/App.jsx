@@ -23,6 +23,8 @@ import EduTodayCont from './assets/component/page/edu/EduTodayCont.jsx';
 import EduMathQ1 from './assets/component/page/edu/EduMath/EduMathQ1.jsx';
 
 import Leaning from './assets/component/page/learning/learning';
+import EduVideo from './assets/component/page/eduVideo/eduVideo';
+
 
 function App() {
   const [page, setPage] = useState(true);
@@ -48,6 +50,7 @@ function App() {
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>
           <Route path="/learning" element={<Leaning />}/>
+          <Route path="/eduVideo" element={<EduVideo />}/>
         </Routes>
       <Footer />
     </>

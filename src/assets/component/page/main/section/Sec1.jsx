@@ -13,7 +13,7 @@ function Sec1(){
             <li className='mainMonster log'>
                 <div className='mainIntro'>
                     <p>
-                        문제를 풀어서 <br/>보보를 구해줘로그!
+                        문제를 풀어서 <br/>보보를 구해줘!
                     </p>
                 </div>
                 <img src={log} alt='로그'/>

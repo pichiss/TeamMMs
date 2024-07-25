@@ -83,18 +83,22 @@ function Main(){
         <Sec3/>
         <Sec4/>
         <div className='mainBanner'>
-            {width < 1100 ? 
-                <img src={banner2} alt='banner'/>
-            :
-                <img src={banner} alt='banner'/>
-            }
+            <Link to='/login'>
+                {width < 1100 ? 
+                    <img src={banner2} alt='banner'/>
+                :
+                    <img src={banner} alt='banner'/>
+                }
+            </Link>
         </div>
         <div className='topBtn' onClick={scrollToTop}>
             <p>TOP</p>
             <img src={top} alt='top btn'/>
         </div>
         <div className='studyBtn' onClick={scrollToTop}>
-            <p>무료<br/>체험</p>
+            <Link to='/login'>
+                <p>무료<br/>체험</p>
+            </Link>
         </div>
     </main>
     )

@@ -112,19 +112,19 @@ function App() {
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>
           <Route path="/learning" element={<Leaning />}/>
-          <Route path="/eduVideo" element={<EduVideo />}/>
         </Routes>
       <Footer />
     </>
     :
     <>
       <Routes>
-          <Route path='/education' element={<EduMain />} />
+          <Route path='/education' element={<EduMain setPage={setPage}/>} />
           <Route path='/education/today' element={<EduToday />} />
           <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} />} />
           <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
           <Route path='/education/today/:unitId/2' element={<EduMathQ2 />} />
           <Route path='/education/today/:unitId/3' element={<EduMathQ3 />} />
+          <Route path="/eduVideo" element={<EduVideo />}/>
       </Routes>
     </>
     }

@@ -20,7 +20,7 @@ footer{
     content: '';
     width: 1px;
     height: 12px;
-    margin: 0 10px;
+    margin: 0 8px;
     background-color: var(--font-black);
 }
 .footerTxt ul:first-child{

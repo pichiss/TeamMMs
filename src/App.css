@@ -5,6 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 /* font-family: "Noto Sans KR", sans-serif; */
 /* font-family: 'yg-jalnan'; */
@@ -16,6 +17,7 @@
   --bg-grey: #EAE9E9;
   --yellow: #F8CF03;
   --font-black: #222222;
+  
   @media screen and (max-width:360px) {
     --txt-font-size : calc( 100vw * (16 / 400));
     --detail-tit-font : calc( 100vw * (18 / 400));
@@ -23,6 +25,7 @@
   }
   
 }
+
 *{
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -54,12 +57,6 @@
 @media screen and (max-width : 768px) {
   .w1440{
     width: calc(100% - 30px);
-  }
-  .subtit{
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    padding: 50px 0;
   }
   
 }

@@ -6,10 +6,10 @@ import note from '../../../img/icon/note.png';
 import pointshop from '../../../img/icon/pointshop.png';
 import './EduMain.css';
 
-function EduMain(){
+function EduMain({setPage}){
     return(
         <section className='eduSec'>
-            <EduHeader />
+            <EduHeader setPage={setPage}/>
             <article className="flex eduMenu">
                 <div className="flex eduVideo">
                     <h2>학습영상</h2>

@@ -3,7 +3,7 @@
     padding: 0 90px;
     gap: 20px;
 }
-.eduUnitWrap h2, .eduUnitWrap h3, .eduSelect>div>a{
+.eduMainUnit>h2, .eduSubUnitBox>h3, .eduSelect>div>a{
     -webkit-text-stroke: 1px #fff;
     font-family: 'yg-jalnan';
 }
@@ -16,6 +16,7 @@
 }
 .eduUnitL{
     width: 1125px;
+    height: 712px;
     padding: 45px;
     border: 12px solid #BAE2FF;
     border-radius: 20px;
@@ -34,7 +35,7 @@
 }
 .eduSubUnitBox{
     width: 45%;
-    height: 230px;
+    height: 210px;
     padding: 40px;
     border-radius: 20px;
     word-break: keep-all;
@@ -49,6 +50,18 @@
     background-color: rgba(0, 0, 0, 0);
     border: 10px solid #fff;
     border-radius: 5px;
+}
+.eduSubUnitBox>div>span{
+    display: none;
+    padding: 10px;
+    border: 5px solid #fff;
+    border-top: 0;
+    border-right: 0;
+    transform: rotate(-45deg);
+    transform-origin: 25% 25%;
+}
+.eduSubUnitBox>div>span.on{
+    display: block;
 }
 .eduUnitWrap>img{
     position: absolute;

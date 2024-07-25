@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import pf_bg from '../../../img/profile_bg.svg';
 import pt_bg from '../../../img/point_bg.svg';
 import question from '../../../img/icon/question.png';
 import door from '../../../img/icon/door.png';
 import './EduHeader.css';
 
-function EduHeader(){
+function EduHeader({setPage}){
     return(
         <article className='flex eduProfile'>
             <div className='eduPfL'>
@@ -23,11 +24,13 @@ function EduHeader(){
                         <img src={question} alt="help-button" className='helpBtn' />
                     </div>
                 </div>
-                <div className='eduExitWrap'>
+                <div className='eduExitWrap' onClick={()=>setPage(true)}>
                     <h2>나가기</h2>
-                    <div className='flex eduCircle'>
-                        <img src={door} alt="exit-button" className='exitBtn' />
-                    </div>
+                    <Link to='/'>
+                        <div className='flex eduCircle'>
+                            <img src={door} alt="exit-button" className='exitBtn' />
+                        </div>
+                    </Link>
                 </div>
             </div>
         </article>

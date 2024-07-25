@@ -1,3 +1,7 @@
-import Logo from './로고2.png'
+import Logo from './logo.png'
+import StampL from './stampL.png'
+import StampP from './stampP.png'
+import StampB from './stampB.png'
+import StampV from './stampV.png'
 
-export default Logo
+export { Logo, StampL, StampP, StampB, StampV } 

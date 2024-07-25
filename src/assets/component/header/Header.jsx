@@ -34,13 +34,13 @@ function Header({setPage, user, kakaoLogout}) {
     <>
       <nav className='flex'>
             <h1>
-                <Link to='/TeamMMs/'><img src={img} alt='logo'/></Link>
+                <Link to='/'><img src={img} alt='logo'/></Link>
             </h1>
             <ul className='navTab flex'>
-                <Link to='/TeamMMs/'><li>캐치! 수학몬스터즈</li></Link>
-                <Link to='/TeamMMs/'><li onClick={()=>setPage(false)}>학습하기</li></Link>
-                <Link to='/TeamMMs/'><li>알림나무</li></Link>
-                <Link to='/TeamMMs/'><li>학부모코너</li></Link>
+                <Link to='/'><li>캐치! 수학몬스터즈</li></Link>
+                <Link to='/'><li onClick={()=>setPage(false)}>학습하기</li></Link>
+                <Link to='/'><li>알림나무</li></Link>
+                <Link to='/'><li>학부모코너</li></Link>
             </ul>
             {user ?
                 <div className='navMy'>
@@ -69,7 +69,7 @@ function Header({setPage, user, kakaoLogout}) {
                                 </div>
                             </li>
                             <li className='navMyLog'>
-                                <Link to='/TeamMMs/' onClick={kakaoLogout}><div>로그아웃</div></Link>
+                                <Link to='/' onClick={kakaoLogout}><div>로그아웃</div></Link>
                             </li>
                         </ul>
                     </div>
@@ -79,9 +79,9 @@ function Header({setPage, user, kakaoLogout}) {
                 </div>
             :
                 <ul className='navLogin flex'>
-                    <Link to='/TeamMMs/login'><li>로그인</li></Link>
+                    <Link to='/login'><li>로그인</li></Link>
                     <li>|</li>
-                    <Link to='/TeamMMs/join'><li>회원가입</li></Link>
+                    <Link to='/join'><li>회원가입</li></Link>
                 </ul>
             }
             <ul className={hamClick == false ? `navHam` : `navHam hamAction`} onClick={hamAction}>
@@ -93,18 +93,18 @@ function Header({setPage, user, kakaoLogout}) {
         {hamClick == true ? 
             <div className='hamMenu'>
                 <ul className='hamSubMenu'>
-                    <Link to='/TeamMMs/'><li>캐치! 수학 몬스터즈</li></Link>
-                    <Link to='/TeamMMs/'><li>학습하기</li></Link>
-                    <Link to='/TeamMMs/'><li>알림나무</li></Link>
-                    <Link to='/TeamMMs/mypage'><li>학부모코너</li></Link>
+                    <Link to='/'><li>캐치! 수학 몬스터즈</li></Link>
+                    <Link to='/'><li>학습하기</li></Link>
+                    <Link to='/'><li>알림나무</li></Link>
+                    <Link to='/mypage'><li>학부모코너</li></Link>
                 </ul>
                 {user ?
                     <div>hello</div>
                 :
                     <ul className='hamLogin'>
-                        <Link to='/TeamMMs/login'><li onClick={close}>로그인</li></Link>
+                        <Link to='/login'><li onClick={close}>로그인</li></Link>
                         <li>|</li>
-                        <Link to='/TeamMMs/join'><li onClick={close}>회원가입</li></Link>
+                        <Link to='/join'><li onClick={close}>회원가입</li></Link>
                     </ul>
                 }
                 <div className='monsters'>

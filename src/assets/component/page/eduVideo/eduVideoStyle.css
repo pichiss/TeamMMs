@@ -1,0 +1,13 @@
+.eduViedoWrap {
+    background-image: url(../../../img/bgpink.png);
+}
+
+.eduViedoWrap>h2{
+    
+    font-family: 'yg-jalnan';
+    text-align: center;
+    font-size: 48px;
+    color: white;
+    -webkit-text-stroke: 1px #C73395;
+    text-shadow: -1px 3px #C73395, 3px 1px #C73395, 1px 3px #C73395, 3px -1px #C73395;
+}

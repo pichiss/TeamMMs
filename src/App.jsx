@@ -112,7 +112,6 @@ function App() {
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>
           <Route path="/learning" element={<Leaning />}/>
-          <Route path="/eduVideo" element={<EduVideo />}/>
         </Routes>
       <Footer />
     </>
@@ -125,6 +124,7 @@ function App() {
           <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
           <Route path='/education/today/:unitId/2' element={<EduMathQ2 />} />
           <Route path='/education/today/:unitId/3' element={<EduMathQ3 />} />
+          <Route path="/eduVideo" element={<EduVideo />}/>
       </Routes>
     </>
     }

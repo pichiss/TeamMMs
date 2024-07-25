@@ -1,8 +1,8 @@
-.eduViedoWrap {
+.eduViedosWrap {
     background-image: url(../../../img/bgpink.png);
 }
 
-.eduViedoWrap>h2{
+.eduViedosWrap>h2{
     
     font-family: 'yg-jalnan';
     text-align: center;
@@ -10,4 +10,20 @@
     color: white;
     -webkit-text-stroke: 1px #C73395;
     text-shadow: -1px 3px #C73395, 3px 1px #C73395, 1px 3px #C73395, 3px -1px #C73395;
+}
+.eduVideos {
+    width: 60%;
+    margin: 0 auto;
+}
+.eduVideos>div{
+    width: 30%;
+}
+.eduVideos img{
+    width: 100%;
+    height: 200px;
+    border-radius: 20px 0 0 20px;
+}
+.eduVideos ul {
+    width: 70%;
+    background-color: var(--yellow);
 }

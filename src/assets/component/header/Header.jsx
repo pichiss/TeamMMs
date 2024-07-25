@@ -38,9 +38,9 @@ function Header({setPage, user, kakaoLogout}) {
             </h1>
             <ul className='navTab flex'>
                 <Link to='/'><li>캐치! 수학몬스터즈</li></Link>
-                <Link to='/'><li onClick={()=>setPage(false)}>학습하기</li></Link>
-                <Link to='/'><li>알림나무</li></Link>
-                <Link to='/'><li>학부모코너</li></Link>
+                <Link to='/education'><li onClick={()=>setPage(false)}>학습하기</li></Link>
+                <Link to='/noticeList'><li>알림나무</li></Link>
+                <Link to='/mypage'><li>학부모코너</li></Link>
             </ul>
             {user ?
                 <div className='navMy'>
@@ -94,8 +94,8 @@ function Header({setPage, user, kakaoLogout}) {
             <div className='hamMenu'>
                 <ul className='hamSubMenu'>
                     <Link to='/'><li>캐치! 수학 몬스터즈</li></Link>
-                    <Link to='/'><li>학습하기</li></Link>
-                    <Link to='/'><li>알림나무</li></Link>
+                    <Link to='/education'><li>학습하기</li></Link>
+                    <Link to='/noticeList'><li>알림나무</li></Link>
                     <Link to='/mypage'><li>학부모코너</li></Link>
                 </ul>
                 {user ?

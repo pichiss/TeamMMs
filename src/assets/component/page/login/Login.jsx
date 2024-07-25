@@ -40,7 +40,7 @@ function Login({kakaoLogin}){
                 </div>
                 <div className='LoginStart'>
                     <p onClick={find}>아이디/비밀번호를 잊으셨나요?</p>
-                    <p>처음이신가요?<Link to='/TeamMMs/join'><span>회원가입</span></Link></p>
+                    <p>처음이신가요?<Link to='/join'><span>회원가입</span></Link></p>
                 </div>
             </div>
             <div className='LoginBanner'>

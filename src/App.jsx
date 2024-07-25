@@ -103,7 +103,7 @@ function App() {
       <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout}/>
         <Routes>
           <Route path="/" element={<Main />}/>
-          <Route path="/login" element={<Login />}/>
+          <Route path="/login" element={<Login kakaoLogin={kakaoLogin}/>}/>
           <Route path="/join" element={<Join />}/>
           <Route path="/mypage" element={<Profile />}/>
           <Route path='/education' element={<EduMain />} />

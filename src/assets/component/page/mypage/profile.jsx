@@ -75,7 +75,9 @@ function expend(){
                     </> }
                 </div>
                 <div className="profilWrap"> 
-                    <img src={user.profileImg} alt="profile Photo" />
+                    <div>
+                        <img src={user.profileImg} alt='my img'/>
+                    </div>
                     <table>
                         <thead>
                         <tr>
@@ -86,7 +88,7 @@ function expend(){
                         <tbody>
                         <tr>
                             <td className="silver">이름</td>
-                            <td>파이</td>
+                            <td>{user.nickname}</td>
                         </tr>
                         <tr>
                             <td className="silver">학년</td>       

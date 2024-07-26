@@ -2,6 +2,8 @@ import Subnav from "../../common/Subnav";
 import profilePhoto from '../../../img/profile.svg'
 import './profile.css'
 import { useContext, useEffect, useState } from "react";
+import SubHead from "../../common/Subhead";
+
 
 function Profile({user}){
     let grade = '5학년'
@@ -14,8 +16,6 @@ function Profile({user}){
     const [editPass, setEditPass] = useState(passWord);
     const [editPhone, setEditPhone] = useState(phone);
     const [editEmail, setEditEmail] = useState(email);
-
-
 
 function editBtn(){
     setUpdate(!update)
@@ -59,7 +59,9 @@ function expend(){
     };
 
     return(
-        <section className="w1440 flex pa55">
+        <section>
+            <SubHead chara={'monster1'} />
+            <article className="w1440 flex pa55">
             <Subnav key={1} tit={'학부모 코너'}/>
             <div className="profileBox">
             <div>
@@ -162,6 +164,8 @@ function expend(){
                     </tbody>
                 </table>
             </div>
+            </article>
+          
         </section>
     )
 }

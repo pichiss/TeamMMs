@@ -52,7 +52,8 @@
     padding: 10px 20px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 700;
 }
 .bgBlue h3{
     font-size: 18px;

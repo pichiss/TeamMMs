@@ -45,7 +45,7 @@
   font-size: 40px;
   font-weight: bold;
   text-align: center;
-  padding: 55px 0;
+  padding-bottom: 55px;
 }
 
 @media screen and (max-width : 1440px) {

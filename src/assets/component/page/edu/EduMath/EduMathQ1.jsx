@@ -12,10 +12,11 @@ import ask from '../../../../img/icon/info.png';
 import bulb from '../../../../img/icon/bulb.png';
 import check from '../../../../img/icon/check-mark.png';
 import spring from '../../../../img/note_spring.png';
+import spin from '../../../../img/icon/spin_mark.png';
 
 import './EduMathQ.css';
 
-function EduMathQ1({setPage}){
+function EduMathQ1({setPage, user}){
 
     const [onBasic, setOnBasic] = useState(true);
     const [onDeepQ, setOnDeepQ] = useState(false);
@@ -36,16 +37,16 @@ function EduMathQ1({setPage}){
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader setPage={setPage} />
+            <EduHeader setPage={setPage} user={user} />
             <div className='flex eduQBtn'>
                 <div className={onBasic ? "active" : " "} onClick={onClickBasic}>기초문제</div>
                 <div className={onDeepQ ? "active" : " "} onClick={onClickDeep}>응용문제</div>
             </div>
             <article className='flex eduUnitWrap'>
                 <div className='eduArrowWrap'>
-                    <img src={left_arrow} alt="" className='eduLeftArrow' />
+                    <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />
                     <Link to={`/education/today/5/2`}>
-                        <img src={right_arrow} alt="" className='eduRightArrow' />
+                        <img src={right_arrow} alt="next-button" className='eduRightArrow' />
                     </Link>
                 </div>
                 <div className='eduUnitL'>
@@ -56,6 +57,7 @@ function EduMathQ1({setPage}){
                     >
                         <EduMathBlock />
                     </Canvas>
+                    <img src={spin} alt="spin-mark" className='eduSpin' />
                 </div>
                 <img src={spring} alt="note-spring" />
                 <div className='flex eduUnitR'>

@@ -34,7 +34,7 @@ const mypageList=[
     },
     {tit:'포인트 내역',
     key : '3',
-    link : '/mypage'
+    link : '/mypage/point'
     },
     {tit:'1:1 문의',
     key : '4',

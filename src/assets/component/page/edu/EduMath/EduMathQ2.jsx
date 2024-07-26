@@ -12,10 +12,11 @@ import ask from '../../../../img/icon/info.png';
 import bulb from '../../../../img/icon/bulb.png';
 import check from '../../../../img/icon/check-mark.png';
 import spring from '../../../../img/note_spring.png';
+import spin from '../../../../img/icon/spin_mark.png';
 
 import './EduMathQ.css';
 
-function EduMathQ3({setPage}){
+function EduMathQ3({setPage, user}){
 
     const [onBasic, setOnBasic] = useState(true);
     const [onDeepQ, setOnDeepQ] = useState(false);
@@ -36,7 +37,7 @@ function EduMathQ3({setPage}){
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader setPage={setPage} />
+            <EduHeader setPage={setPage} user={user} />
             <div className='flex eduQBtn'>
                 <div className={onBasic ? "active" : " "} onClick={onClickBasic}>기초문제</div>
                 <div className={onDeepQ ? "active" : " "} onClick={onClickDeep}>응용문제</div>
@@ -44,19 +45,20 @@ function EduMathQ3({setPage}){
             <article className='flex eduUnitWrap'>
                 <div className='eduArrowWrap'>
                     <Link to={'/education/today/5/1'}>
-                        <img src={left_arrow} alt="" className='eduLeftArrow' />
+                        <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />
                     </Link>
                     <Link to={'/education/today/5/3'}>
-                        <img src={right_arrow} alt="" className='eduRightArrow' />
+                        <img src={right_arrow} alt="next-button" className='eduRightArrow' />
                     </Link>
                 </div>
                 <div className='eduUnitL'>
                     <h1>02. 다음 입체도형을 보고 모서리와 꼭짓점의 개수를 각각 작성하세요.</h1>
                     <Canvas
-                        style={{width: `980px`, height: `500px`}}
+                        style={{width: `980px`, height: `440px`}}
                         camera={{fov: 75, near: 0.1, far: 100, position: [2, 2, 2]}}>
                         <EduMathBlock />
                     </Canvas>
+                    <img src={spin} alt="spin-mark" className='eduSpin' />
                 </div>
                 <img src={spring} alt="note-spring" />
                 <div className='flex eduUnitR'>

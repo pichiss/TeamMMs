@@ -3,7 +3,7 @@ import profilePhoto from '../../../img/profile.svg'
 import './profile.css'
 import { useContext, useEffect, useState } from "react";
 
-function Profile(){
+function Profile({user}){
     let grade = '5학년'
     let passWord = '*********';
     let phone = '010-1234-5678';
@@ -75,7 +75,7 @@ function expend(){
                     </> }
                 </div>
                 <div className="profilWrap"> 
-                    <img src={profilePhoto} alt="profile Photo" />
+                    <img src={user.profileImg} alt="profile Photo" />
                     <table>
                         <thead>
                         <tr>

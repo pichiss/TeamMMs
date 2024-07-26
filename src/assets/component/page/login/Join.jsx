@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 function Join(){
     function ale(){
         alert('준비중입니다');
@@ -29,7 +27,7 @@ function Join(){
                     </div>
                     <div>
                         <label>휴대폰</label>
-                        <input type='number' placeholder="' - ' 빼고 숫자만 입력" />
+                        <input type='text' placeholder="' - ' 빼고 숫자만 입력" minlength="10" maxlength="11"/>
                     </div>
                 </div>
                 <div className='JoinCheck'>

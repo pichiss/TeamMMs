@@ -6,13 +6,13 @@ import { AskIcon } from '../../../img/img';
 import EduHeader from '../edu/EduHeader';
 import EduVideoDatas from './eduVideoData';
 
-export default function EduVideoDetail({ setPage }) {
+export default function EduVideoDetail({ setPage, user }) {
 
     const { id } = useParams();
 
     return (
         <section className='eduViedosWrap innereduViedosWrap'>
-            <EduHeader setPage={setPage} />
+            <EduHeader setPage={setPage} user={user} />
             <div className='eduViedoNowWrap'>
                 <div className='flex eduViedoNow'>
                     <video src={EduVideoDatas[id].vSource} controls></video>

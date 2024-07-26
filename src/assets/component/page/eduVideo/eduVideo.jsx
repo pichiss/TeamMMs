@@ -11,8 +11,9 @@ export default function EduVideo({ setPage }) {
     return (
         <section className='eduViedosWrap'>
             <EduHeader setPage={setPage} />
+            <div className='eduViedosCover pa55'>
             <h2>학습영상</h2>
-            <div className='flex w1440 pa55 eduViedos'>
+            <div className='flex w1440 eduViedos'>
                 {EduVideoDatas.map((data) =>
                 <Link to={`/eduVideo/${data.id}`} key={data.id}>
                 <div className='flex eduViedosCont'>
@@ -24,6 +25,7 @@ export default function EduVideo({ setPage }) {
                     </div>
                 </Link>
                 )}
+            </div>
             </div>
         </section>
     );

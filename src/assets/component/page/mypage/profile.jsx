@@ -76,7 +76,7 @@ function expend(){
                 </div>
                 <div className="profilWrap"> 
                     <div>
-                        <img src={user.profileImg} alt="profile Photo" />
+                        <img src={user.profileImg} alt='my img'/>
                     </div>
                     <table>
                         <thead>

@@ -9,6 +9,7 @@ import Header from './assets/component/header/Header'
 import Main from './assets/component/page/main/Main'
 import Login from './assets/component/page/login/Login'
 import Join from './assets/component/page/login/Join'
+import Catch from './assets/component/page/catch/catch.jsx'
 import Footer from './assets/component/footer/footer';
 
 
@@ -17,7 +18,6 @@ import NoticeDetail from './assets/component/page/noitce/noticeDetail';
 import NoticeWrite from './assets/component/page/noitce/noitceWrite';
 import Profile from './assets/component/page/mypage/profile'
 import Point from './assets/component/page/mypage/point.jsx';
-import Catch from './assets/component/page/catch/catch.jsx'
 
 import EduMain from './assets/component/page/edu/EduMain.jsx';
 import EduToday from './assets/component/page/edu/EduToday.jsx';
@@ -29,6 +29,7 @@ import EduMathQ3 from './assets/component/page/edu/EduMath/EduMathQ3.jsx';
 import Leaning from './assets/component/page/learning/learning';
 import EduVideo from './assets/component/page/eduVideo/eduVideo';
 import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
+
 
 
 function App() {
@@ -49,7 +50,6 @@ function App() {
       success(res) {
         console.log(res);
         Kakao.Auth.setAccessToken(res.access_token);
-        // 엑세스토큰을 지우는 방법 찾아서 넣기
         // console.log("카카오 로그인 성공");
 
         Kakao.API.request({
@@ -78,8 +78,8 @@ function App() {
 
   const kakaoLogout = () => {
     Kakao.Auth.logout((res) => {
-      // console.log(Kakao.Auth.getAccessToken());
-      // console.log(res);
+      console.log(Kakao.Auth.getAccessToken());
+      console.log(res);
       localStorage.removeItem("profileImg");
       localStorage.removeItem("nickname");
       setUser(null);
@@ -99,27 +99,27 @@ function App() {
       });
     }
   }, [isLogin]);
-  // -------------------------------------------------------------------------
 
+  // -------------------------------------------------------------------------
 
   return (
     <>
     {page == true ?
     <>
-      <Header setPage={setPage} kakaoLogout={kakaoLogout} user={user}/>
+      <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout}/>
         <Routes>
           <Route path="/" element={<Main />}/>
           <Route path="/login" element={<Login kakaoLogin={kakaoLogin}/>}/>
           <Route path="/join" element={<Join />}/>
-          <Route path="/mypage" element={<Profile />}/>
-          <Route path="/mypage/point" element={<Point />} />
-          <Route path="/catch" element={<Catch />}/>
           <Route path="/mypage" element={<Profile user={user}/>}/>
+          <Route path="/mypage/point" element={<Point />} />
           <Route path="/noticeList" element={<NoticeList />}/>
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>
           <Route path="/mypage/learning" element={<Leaning />}/>
+          <Route path="/catch" element={<Catch />}/>
         </Routes>
+
       <Footer />
     </>
     :

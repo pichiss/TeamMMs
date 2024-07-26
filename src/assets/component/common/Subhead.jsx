@@ -1,7 +1,12 @@
 import subHeaderImg from '../../img/subheader.svg';
 import './Subhead.css';
+import monster1 from '../../img/monster/monster5_2.png';
+import monster2 from '../../img/monster/monster2.png';
+import { useState } from 'react';
 
 function SubHead(props){
+    const [monster, setMonster] = useState(false);
+
     return(
         <>
         <div className='subHeadWrap'>

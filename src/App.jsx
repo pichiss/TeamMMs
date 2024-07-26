@@ -114,7 +114,7 @@ function App() {
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/faq" element={<Faq />}/>
           <Route path="/write" element={<NoticeWrite />}/>
-          <Route path="/learning" element={<Leaning />}/>
+          <Route path="/mypage/learning" element={<Leaning />}/>
         </Routes>
       <Footer />
     </>

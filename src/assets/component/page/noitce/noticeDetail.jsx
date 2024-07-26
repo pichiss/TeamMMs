@@ -5,28 +5,45 @@ import { Contents, notiReducer } from '../noitce/noticeData';
 import Subnav from "../../common/Subnav";
 import Btn from "./btn";
 
-export default function NoticeDetail() {
+export default function NoticeDetail({ removeNoti }) {
 
   const [state, dispatch] = useReducer(notiReducer, Contents);
   const { notis } = state;
   const { id } = useParams();
 
   const [onUpdate, setOnUpdate] = useState(true)
+  const [edits, setEdits] = useState({
+    id: notis.id,
+    notiType: notis.notiType,
+    notiName: notis.notiName,
+    notiText: notis.notiText,
+  })
 
   function editBtn() {
     setOnUpdate(!onUpdate)
   }
 
-  function editChange(e){
+  function editChange(e) {
     setEditNotices(e.target.value)
-}
-
-function saveBtn(){
-  if(window.confirm(`${notiType} 을/를 수정 하시겠습니까?`)){
-    editNoti(id, notiType, notiName, notiText)
-    editBtn() //다시 리스트로 돌아가라
   }
-}
+
+  function saveBtn() {
+    if (window.confirm(`${notiType} 을/를 수정 하시겠습니까?`)) {
+      editNoti(id, notiType, notiName, notiText)
+      editBtn() //다시 리스트로 돌아가라
+    }
+  }
+
+  function deleteBtn() {
+    removeNoti(notis.id)
+    setEdits({
+      id: '',
+      notiType: '',
+      notiName: '',
+      notiText: '',
+    })
+
+  }
 
   const btns1 = {
     tit: '수정',
@@ -47,10 +64,10 @@ function saveBtn(){
 
   return (
     <section className="w1440 flex pa55 noticeDetailWrap">
-      <Subnav tit={'알림나무'}/>
+      <Subnav tit={'알림나무'} />
       <div className="noticeDetail">
         <h2 className="subtit">공지사항 & 이벤트</h2>
-        {onUpdate? <div>
+        <div>
           <h3>{notis[id].notiName}</h3>
           <ul className="flex">
             <li>등록일</li>
@@ -60,18 +77,6 @@ function saveBtn(){
           </ul>
           <p>{notis[id].notiText}</p>
         </div>
-        :
-        <div>
-           <div>
-        <select name="notiType" value={notiType} onChange={onChangeNoti}>
-            <option value={"공지사항"}>공지사항</option>
-            <option value={"이벤트"}>이벤트</option>
-        </select>
-        <input type="text" name="notiName" value={notiName} onChange={onChangeNoti}/>
-      </div>
-      <textarea name="notiText" value={notiText} onChange={onChangeNoti}></textarea>
-        </div>
-        }
         <div className="flex detailBtnWrap">
           <div className="flex">
             <Btn {...btns1} />

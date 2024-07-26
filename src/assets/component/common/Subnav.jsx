@@ -1,6 +1,6 @@
 import navNotiIcon from '../../img/icon/noticeIcon.svg';
 import mypageIcon from '../../img/icon/mypageIcon.svg';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 import './subnav.css'
 

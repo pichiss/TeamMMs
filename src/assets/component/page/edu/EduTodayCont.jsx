@@ -32,26 +32,26 @@ function EduTodayCont(props){
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader />
+            <EduHeader setPage={props.setPage} user={props.user} />
             <article className='flex eduUnitWrap'>
                 <div className='eduUnitL'>
                     <div className='eduMainUnit'>
                         <h2>{data[unitId-1].title}</h2>
                     </div>
                     <div className='flex eduSubUnit'>
-                        <div ref={testRef} id='sub1' className='flex eduSubUnitBox'>
+                        <div className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle1}</h3>
                         </div>
-                        <div id='sub2' className='flex eduSubUnitBox'>
+                        <div className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle2}</h3>
                         </div>
-                        <div id='sub3' className='flex eduSubUnitBox'>
+                        <div className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle3}</h3>
                         </div>
-                        <div id='sub4' className='flex eduSubUnitBox'>
+                        <div className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle4}</h3>
                         </div>
@@ -69,7 +69,7 @@ function EduTodayCont(props){
                         </div>
                         <img src={bero} alt="monster_image" />
                     </div>
-                    <div ref={test2Ref} id='sub1' className={"eduSelect " + (onSelect ? "on" : "off")}>
+                    <div className={"eduSelect " + (onSelect ? "on" : "off")}>
                         {qDatas.filter((qData)=> qData.id === 1)
                         .map((qData, i) =>
                             <div key={i}>
@@ -78,24 +78,6 @@ function EduTodayCont(props){
                                 </Link>
                             </div>)}
                     </div>
-                    {/* <div id='sub2' className={"eduSelect " + (onSelect ? "on" : "off")}>
-                        {qDatas.filter((qData)=> qData.id === 2)
-                        .map((qData, i) =>
-                            <div key={i}>
-                                <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`}>
-                                    {qData.question}
-                                </Link>
-                            </div>)}
-                    </div>
-                    <div id='sub3' className={"eduSelect " + (onSelect ? "on" : "off")}>
-                        {qDatas.filter((qData)=> qData.id === 3)
-                        .map((qData, i) =>
-                            <div key={i}>
-                                <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`}>
-                                    {qData.question}
-                                </Link>
-                            </div>)}
-                    </div> */}
                 </div>
             </article>
             <EduFooter />

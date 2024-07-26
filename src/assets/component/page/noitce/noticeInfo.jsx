@@ -55,7 +55,7 @@ export default function NoticeInfo() {
     return (
         <>
             <NoticeList />
-            <NoticeDetail />
+            <NoticeDetail removeNoti={removeNoti}/>
             <NoticeWrite />
         </>
     );

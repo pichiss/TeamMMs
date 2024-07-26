@@ -122,6 +122,7 @@ function App() {
           <Route path="/faq" element={<Faq />}/>
           <Route path="/write" element={<NoticeWrite />}/>
           <Route path="/mypage/learning" element={<Leaning />}/>
+          <Route path="/catch" element={<Catch />}/>
         </Routes>
 
       <Footer />

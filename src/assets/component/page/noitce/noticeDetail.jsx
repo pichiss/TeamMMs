@@ -35,7 +35,7 @@ export default function NoticeDetail({ removeNoti }) {
   }
 
   function deleteBtn() {
-    removeNoti(notis.id)
+    removeNoti(id)
     setEdits({
       id: '',
       notiType: '',
@@ -52,8 +52,9 @@ export default function NoticeDetail({ removeNoti }) {
   }
   const btns2 = {
     tit: '삭제',
-    link: '/noticeList',
+    link: '',
     Bclass: 'removeBtn',
+    func: deleteBtn,
   }
   const btns3 = {
     tit: '목록',

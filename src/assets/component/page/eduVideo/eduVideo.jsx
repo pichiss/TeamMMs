@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import EduHeader from '../edu/EduHeader';
 import EduVideoDatas from './eduVideoData';
 
-export default function EduVideo({ setPage }) {
+export default function EduVideo({ setPage, user }) {
 
 
 

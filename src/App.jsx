@@ -126,8 +126,8 @@ function App() {
           <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} />} />
           <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} />} />
           <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} />} />
-          <Route path="/eduVideo" element={<EduVideo />}/>
-          <Route path="/eduVideo/:id" element={<EduVideoDetail />}/>
+          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} />}/>
+          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} />}/>
       </Routes>
     </>
     }

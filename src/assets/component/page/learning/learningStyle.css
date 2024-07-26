@@ -4,15 +4,20 @@
 }
 
 /* 학습현황 개요 */
+.LearningChart {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
 .LearningChartWrap h3 {
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     background-color: var(--main-blue);
     padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
 }
 
 .LearningChartWrap h4 {
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     padding: 35px 0;
 }
@@ -45,7 +50,7 @@
 
 /* 점수판 */
 .scoreWrap {
-    padding-top: 20px;
+    padding-top: 30px;
     margin-bottom: 20px;
 }
 
@@ -60,9 +65,17 @@
 }
 
 .score th {
-    font-size: 20px;
+    font-size: 18px;
     background-color: var(--main-blue);
     color: white;
+}
+
+.score th:first-child {
+    border-top-left-radius: 5px;
+}
+
+.score th:last-child {
+    border-top-right-radius: 5px;
 }
 
 .score td {
@@ -84,7 +97,8 @@
 
 /* 출석체크 달력*/
 .calendarWrap {
-    padding-top: 50px;
+    margin: 55px 0;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .calendar {
@@ -92,7 +106,7 @@
 }
 
 .calendar .react-calendar {
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     border: none;
 }
@@ -158,6 +172,33 @@
     width: 90%;
 }
 
+.goodJob {
+    padding: 55px 0;
+}
+
+.goodJob ul {
+    width: 43%;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.goodJob li {
+    text-align: center;
+    padding: 5px;
+}
+
+.goodJob li:last-child {
+    font-family: 'yg-jalnan';
+    font-size: 18px;
+}
+
+.goodJob li:last-child span {
+    font-family: 'yg-jalnan';
+    font-size: 18px;
+    color: var(--yellow);
+}
 
 /* 반응형 */
 @media screen and (max-width : 1290px) {
@@ -186,16 +227,19 @@
 
 @media screen and (max-width : 768px) {
     .LearningChartWrap h3 {
-        font-size: 16px;
         text-align: center;
     }
 
     .LearningChartWrap h4 {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .barWrap .recharts-wrapper {
         width: 400px;
+    }
+
+    .barWrap .recharts-wrapper tspan {
+        font-size: 14px;
     }
 
     .score th,
@@ -244,6 +288,26 @@
     .stampWrap img {
         width: 100%;
     }
+
+    .goodJob {
+        padding: 50px 0;
+    }
+
+    .goodJob ul {
+        width: 70%;
+    }
+
+    .goodJob li:first-child {
+        font-size: 14px;
+    }
+
+    .goodJob li:last-child {
+        font-size: 14px;
+    }
+
+    .goodJob li:last-child span {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width : 500px) {
@@ -259,11 +323,11 @@
         height: 60px;
     }
 
-      .stampWrap {
+    .stampWrap {
         padding-top: 10px;
     }
 
-    .stampWrap img{
+    .stampWrap img {
         transform: scale(1.1);
     }
 }

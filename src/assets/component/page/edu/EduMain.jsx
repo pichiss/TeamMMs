@@ -11,10 +11,12 @@ function EduMain({setPage}){
         <section className='eduSec'>
             <EduHeader setPage={setPage}/>
             <article className="flex eduMenu">
-                <div className="flex eduVideo">
-                    <h2>학습영상</h2>
-                    <img src={video} alt="education-Video-image" />
-                </div>
+                <Link to='/eduVideo'>
+                    <div className="flex eduVideo">
+                        <h2>학습영상</h2>
+                        <img src={video} alt="education-Video-image" />
+                    </div>
+                </Link>
                 <Link to={'/education/today'}>
                     <div className="flex eduToday">
                         <h2>오늘의 학습</h2>

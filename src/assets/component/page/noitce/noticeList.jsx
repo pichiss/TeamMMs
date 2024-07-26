@@ -24,7 +24,7 @@ export default function NoticeList() {
 
     const btns = {
         tit : '글쓰기',
-        link :'/TeamMMs/write',
+        link :'/write',
         Bclass :'writeBtn'
     }
 
@@ -33,7 +33,7 @@ export default function NoticeList() {
          <section className="w1440 flex noticeListWrap pa55">
          <Subnav tit={'알림나무'}/>
          <div>
-         <h2>공지사항 & 이벤트</h2>
+         <h2 className='subtit'>공지사항 & 이벤트</h2>
             <table className='notiTable'>
                 <thead>
                     <tr>

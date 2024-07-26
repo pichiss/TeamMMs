@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import './subnav.css'
 
 function Subnav(props){
-    const [selectedKey, setSelectedKey] = useState(null);
 
 const navNoti = [
     {tit:'알림나무',
@@ -39,8 +38,6 @@ const mypageList=[
     {tit:'1:1 문의',
     key : '4',
     link : '/mypage/ask'}]
-
-    const [selectedKey, setSelectedKey] = useState(mypageList[0].key);
 
     const [selectedKey, setSelectedKey] = useState(mypageList[0].key);
 

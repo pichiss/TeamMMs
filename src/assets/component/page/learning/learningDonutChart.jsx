@@ -15,7 +15,6 @@ export default function LearningDonutChart() {
         return (
             <Chart placeholder={false} height={200} padding="auto" autoFit>
                 <Legend visible={false} />
-                {/* 绘制图形 */}
                 <View
                     data={data}
                     scale={{
@@ -65,7 +64,6 @@ export default function LearningDonutChart() {
         return (
             <Chart placeholder={false} height={200} padding="auto" autoFit>
                 <Legend visible={false} />
-                {/* 绘制图形 */}
                 <View
                     data={data}
                     scale={{

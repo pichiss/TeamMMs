@@ -27,6 +27,7 @@ import EduMathQ3 from './assets/component/page/edu/EduMath/EduMathQ3.jsx';
 
 import Leaning from './assets/component/page/learning/learning';
 import EduVideo from './assets/component/page/eduVideo/eduVideo';
+import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
 
 function App() {
@@ -112,7 +113,7 @@ function App() {
           <Route path="/noticeList" element={<NoticeList />}/>
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>
-          <Route path="/learning" element={<Leaning />}/>
+          <Route path="/mypage/learning" element={<Leaning />}/>
         </Routes>
       <Footer />
     </>

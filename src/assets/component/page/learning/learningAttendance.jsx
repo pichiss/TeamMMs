@@ -50,6 +50,12 @@ export default function LearningAttendance() {
           tileContent={addContent}
         />
       </div>
+      <div className="goodJob">
+      <ul>
+        <li>잘 하 고 있 어 요!</li>
+        <li>이번 달 출석 횟수는 <span>4번</span></li>
+      </ul>
+      </div>
     </div>
   );
 }

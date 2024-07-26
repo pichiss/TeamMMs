@@ -5,6 +5,7 @@ import LearningDonutChart from './learningDonutChart';
 import LearningScore from './learningScore';
 import LearningAttendance from './learningAttendance';
 import SubHead from '../../common/Subhead';
+import monster from '../../../img/monster/monster5_2.png';
 
 export default function Learning() {
 
@@ -12,7 +13,7 @@ export default function Learning() {
 
     return (
         <>
-        <SubHead/>
+        <SubHead chara={monster}/>
          <section className='w1440 pa55 flex learningWrap'>
             <Subnav tit={'학부모코너'} />
             <div className='learning'>

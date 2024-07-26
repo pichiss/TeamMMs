@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import SubHead from "../../common/Subhead";
 
 
-function Profile(){
+function Profile({user}){
     let grade = '5학년'
     let passWord = '*********';
     let phone = '010-1234-5678';
@@ -77,7 +77,9 @@ function expend(){
                     </> }
                 </div>
                 <div className="profilWrap"> 
-                    <img src={profilePhoto} alt="profile Photo" />
+                    <div>
+                        <img src={user.profileImg} alt='my img'/>
+                    </div>
                     <table>
                         <thead>
                         <tr>
@@ -88,7 +90,7 @@ function expend(){
                         <tbody>
                         <tr>
                             <td className="silver">이름</td>
-                            <td>파이</td>
+                            <td>{user.nickname}</td>
                         </tr>
                         <tr>
                             <td className="silver">학년</td>       

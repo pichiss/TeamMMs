@@ -1,13 +1,14 @@
 .writeBtn{
     justify-content: flex-end;
+    padding-right: 15px;
 }
 .writeBtn div,.listBtn div,.saveBtn {
-    background-color: var(--sub-blue);
+    background-color: var(--main-blue);
     color: white;
-    border: 1px solid var(--sub-blue);
+    border: 1px solid var(--main-blue);
 }
 .editBtn div,.removeBtn div,.cancleBtn div{
-    border: 1px solid var(--sub-blue);
+    border: 1px solid var(--main-blue);
 }
 
 /* 버튼 공통 */
@@ -20,6 +21,12 @@
 }
 
 /* 반응형 */
+@media screen and (max-width : 1440px) {
+    .writeBtn{
+        padding-right: 0px;
+    }
+}
+
 @media screen and (max-width : 768px) {
     .boardBtn{
         margin-top: 20px;

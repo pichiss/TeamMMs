@@ -1,15 +1,12 @@
 /* 게시판 리스트 */
-.noticeListWrap{
-    gap: 55px;
-}
-
 .notiTable {
     width: 100%;
     margin: 0 auto;
     table-layout: fixed;
 }
 
-.notiTable th,.notiTable td {
+.notiTable th,
+.notiTable td {
     height: 70px;
     border-bottom: 1px solid var(--line-grey);
 }
@@ -115,15 +112,11 @@
     line-height: 0;
 }
 
-
-
 /* 디테일 페이지 */
-.noticeDetailWrap{
-    gap: 55px;
-}
-.noticeDetail{
+.noticeDetail {
     width: 100%;
 }
+
 .noticeDetail h3 {
     font-size: 22px;
     text-align: center;
@@ -150,6 +143,7 @@
 .noticeDetail li:nth-child(2n) {
     padding-left: 25px;
 }
+
 .noticeDetail li:nth-child(2) {
     width: 40%;
 }
@@ -159,46 +153,48 @@
     white-space: pre-wrap;
     border-bottom: 1px solid var(--line-grey);
 }
+
 /* 디테일페이지 버튼 */
-.detailBtnWrap{
+.detailBtnWrap {
     justify-content: space-between;
 }
-.detailBtnWrap>div{
+
+.detailBtnWrap>div {
     gap: 28px;
 }
 
-
 /* 게시판 글쓰기 */
-.noticeWriteWrap{
-    gap: 55px;
-}
-.noticeWrite{
+.noticeWrite {
     width: 100%;
 }
-.noticeWriteText{
+
+.noticeWriteText {
     border-top: 2px solid var(--font-black);
 }
-.noticeWriteText>div{
+
+.noticeWriteText>div {
     margin: 10px 0;
     gap: 5px;
 }
-.noticeWriteText select{
-    width: 15%;
+
+.noticeWriteText select {
+    width: 20%;
     height: 50px;
     border-radius: 5px;
     border: 1px solid var(--line-grey);
     outline: none;
-    padding: 0 20px;
 }
-.noticeWriteText input{
-    width: 100%;
+
+.noticeWriteText input {
+    width: 80%;
     border: 1px solid var(--line-grey);
     outline: none;
     border-radius: 5px;
     padding: 0 20px;
-    
+
 }
-.noticeWriteText textarea{
+
+.noticeWriteText textarea {
     width: 100%;
     height: 630px;
     border: 1px solid var(--line-grey);
@@ -207,93 +203,98 @@
     padding: 20px;
     resize: none;
 }
-.noticeWriteBtnWrap{
+
+.noticeWriteBtnWrap {
     justify-content: space-between;
 }
 
 /* 반응형*/
 @media screen and (max-width : 768px) {
 
-    .noticeListWrap{
-        gap: 50px;
-    }
     .notiTable {
         font-size: 14px;
     }
+
     .notiTable thead th:first-child {
         display: none;
     }
+
     .notiTable thead th:nth-child(2) {
         width: 60%;
     }
-    
+
     .notiTable thead th:nth-child(3) {
         width: 25%;
     }
-    
+
     .notiTable thead th:last-child {
         width: 15%;
     }
-    .notiTable  td:first-child {
+
+    .notiTable td:first-child {
         display: none;
     }
+
     .noticeListWrap .pagination li:first-child {
         width: 38px;
         height: 38px;
         background-size: cover;
     }
+
     .noticeListWrap .pagination li:nth-child(2) {
         width: 38px;
         height: 38px;
         background-size: cover;
     }
+
     .noticeListWrap .pagination li:nth-child(5) {
         width: 38px;
         height: 38px;
         background-size: cover;
     }
-    
+
     .noticeListWrap .pagination li:nth-child(6) {
         width: 38px;
         height: 38px;
         background-size: cover;
     }
 
-    .noticeDetailWrap{
-        gap: 50px;
-    }
     .noticeDetail h3 {
         font-size: 20px;
     }
+
     .noticeDetail li {
         font-size: 14px;
     }
+
     .noticeDetail li:nth-child(2n+1) {
         width: 25%;
     }
+
     .noticeDetail li:nth-child(2n) {
         padding-left: 10px;
     }
+
     .noticeDetail p {
         font-size: 14px;
     }
-    .detailBtnWrap>div{
+
+    .detailBtnWrap>div {
         gap: 20px;
     }
-    .noticeWriteWrap{
-        gap: 0px;
-    }
-    .noticeWriteText select{
-        padding: 10px 0;
-        width: 50%;
+
+    .noticeWriteText select {
+        width: 25%;
         font-size: 14px;
     }
-    .noticeWriteText input{
-        width: 100%;
+
+    .noticeWriteText input {
+        width: 75%;
         font-size: 14px;
-        
+
     }
-    .noticeWriteText textarea{
+
+    .noticeWriteText textarea {
         height: 400px;
         font-size: 14px;
     }

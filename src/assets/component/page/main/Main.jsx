@@ -28,7 +28,7 @@ function Main(){
 
     useEffect(() => {
         window.addEventListener("resize", handleResize);
-        console.log(width)
+        // console.log(width)
     }, [width]);
 
     useEffect(() => {
@@ -43,7 +43,7 @@ function Main(){
         <Sec2/>
         <Sec3/>
         <Sec4/>
-        <div className='mainBanner'>
+        <div className='mainBanner' onClick={scrollToTop}>
             <Link to='/login'>
                 {width < 1100 ? 
                     <img src={banner2} alt='banner'/>

@@ -16,6 +16,7 @@ import NoticeList from './assets/component/page/noitce/noticeList';
 import NoticeDetail from './assets/component/page/noitce/noticeDetail';
 import NoticeWrite from './assets/component/page/noitce/noitceWrite';
 import Profile from './assets/component/page/mypage/profile'
+import Catch from './assets/component/page/catch/catch.jsx'
 
 import EduMain from './assets/component/page/edu/EduMain.jsx';
 import EduToday from './assets/component/page/edu/EduToday.jsx';
@@ -38,7 +39,7 @@ function App() {
     const jsKey = "9f5304fbac21cb4ee421113d0f2f7bab";
     if (Kakao && !Kakao.isInitialized()) {
       await Kakao.init(jsKey);
-      console.log(`kakao 초기화 ${Kakao.isInitialized()}`);
+      // console.log(`kakao 초기화 ${Kakao.isInitialized()}`);
     }
   };
   const kakaoLogin = async () => {
@@ -46,6 +47,7 @@ function App() {
       success(res) {
         console.log(res);
         Kakao.Auth.setAccessToken(res.access_token);
+        // 엑세스토큰을 지우는 방법 찾아서 넣기
         // console.log("카카오 로그인 성공");
 
         Kakao.API.request({
@@ -59,6 +61,7 @@ function App() {
               kakaoAccount.profile.profile_image_url
             );
             localStorage.setItem("nickname", kakaoAccount.profile.nickname);
+            window.location.href = "http://localhost:5173/";
           },
           fail(error) {
             console.log(error);
@@ -73,8 +76,8 @@ function App() {
 
   const kakaoLogout = () => {
     Kakao.Auth.logout((res) => {
-      console.log(Kakao.Auth.getAccessToken());
-      console.log(res);
+      // console.log(Kakao.Auth.getAccessToken());
+      // console.log(res);
       localStorage.removeItem("profileImg");
       localStorage.removeItem("nickname");
       setUser(null);
@@ -101,12 +104,13 @@ function App() {
     <>
     {page == true ?
     <>
-      <Header setPage={setPage}/>
+      <Header setPage={setPage} kakaoLogout={kakaoLogout} user={user}/>
         <Routes>
           <Route path="/" element={<Main />}/>
           <Route path="/login" element={<Login kakaoLogin={kakaoLogin}/>}/>
           <Route path="/join" element={<Join />}/>
-          <Route path="/mypage" element={<Profile />}/>
+          <Route path="/catch" element={<Catch />}/>
+          <Route path="/mypage" element={<Profile user={user}/>}/>
           <Route path="/noticeList" element={<NoticeList />}/>
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>

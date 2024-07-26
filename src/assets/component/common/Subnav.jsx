@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './subnav.css'
 
 function Subnav(props){
-    const [selectedKey, setSelectedKey] = useState(null);
+    const [selectedKey, setSelectedKey] = useState();
 
 const navNoti = [
     {tit:'알림나무',
@@ -19,7 +19,7 @@ const mypage =
 const notiList = [
     {tit:'공지사항&이벤트',
     key : '1',
-    link : '/notice'
+    link : '/noticeList'
     },
     {tit:'FAQ',key : '2',
     link : '/faq'}]
@@ -30,7 +30,7 @@ const mypageList=[
     },
     {tit:'학습현황',
     key : '2',
-    link : '/mypage'
+    link : '/mypage/learning'
     },
     {tit:'포인트 내역',
     key : '3',

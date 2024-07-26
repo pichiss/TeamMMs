@@ -134,6 +134,9 @@ nav>h1 img{
     display: inline-block;
     border-bottom: 1px solid #ccc;
 }
+.navCursor{
+    cursor: pointer;
+}
 
 /* 햄버거 메뉴 */
 .navHam{
@@ -199,13 +202,14 @@ nav>h1 img{
 }
 .hamSubMenu a{
     cursor: pointer;
-    width: 50%;
+    width: 70%;
     text-align: center;
     padding: 17px 24px;
     border-radius: 20px;
     font-size: 20px;
 }
-.hamSubMenu a>li{
+.hamSubMenu li{
+    width: 100%; height: 100%;
     font-family: 'yg-jalnan';
 }
 .hamSubMenu a:hover{

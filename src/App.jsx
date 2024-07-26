@@ -9,6 +9,7 @@ import Header from './assets/component/header/Header'
 import Main from './assets/component/page/main/Main'
 import Login from './assets/component/page/login/Login'
 import Join from './assets/component/page/login/Join'
+import Catch from './assets/component/page/catch/catch.jsx'
 import Footer from './assets/component/footer/footer';
 
 
@@ -30,6 +31,7 @@ import EduVideo from './assets/component/page/eduVideo/eduVideo';
 import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
 
+
 function App() {
   const [page, setPage] = useState(true);
   // 카카오 로그인-------------------------------------------------------------
@@ -40,7 +42,7 @@ function App() {
     const jsKey = "9f5304fbac21cb4ee421113d0f2f7bab";
     if (Kakao && !Kakao.isInitialized()) {
       await Kakao.init(jsKey);
-      console.log(`kakao 초기화 ${Kakao.isInitialized()}`);
+      // console.log(`kakao 초기화 ${Kakao.isInitialized()}`);
     }
   };
   const kakaoLogin = async () => {
@@ -61,6 +63,7 @@ function App() {
               kakaoAccount.profile.profile_image_url
             );
             localStorage.setItem("nickname", kakaoAccount.profile.nickname);
+            window.location.href = "http://localhost:5173/";
           },
           fail(error) {
             console.log(error);
@@ -96,8 +99,8 @@ function App() {
       });
     }
   }, [isLogin]);
-  // -------------------------------------------------------------------------
 
+  // -------------------------------------------------------------------------
 
   return (
     <>
@@ -108,13 +111,15 @@ function App() {
           <Route path="/" element={<Main />}/>
           <Route path="/login" element={<Login kakaoLogin={kakaoLogin}/>}/>
           <Route path="/join" element={<Join />}/>
-          <Route path="/mypage" element={<Profile />}/>
+          <Route path="/mypage" element={<Profile user={user}/>}/>
           <Route path="/mypage/point" element={<Point />} />
           <Route path="/noticeList" element={<NoticeList />}/>
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>
           <Route path="/mypage/learning" element={<Leaning />}/>
+          <Route path="/catch" element={<Catch />}/>
         </Routes>
+
       <Footer />
     </>
     :

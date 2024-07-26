@@ -17,12 +17,17 @@
     box-shadow: 0 4px 4px #bfbfbf;
     padding: 5px;
 }
-
-.profilWrap img{
-    margin: 0 auto;
-    padding: 45px 0;
+.profilWrap>div{
+    margin: 45px 0;
     display: flex;
     justify-content: center;
+}
+.profilWrap img{
+    max-width: 300px;
+    border-radius: 50%;
+    border: 15px solid var(--main-blue);
+    margin: 0 auto;
+    width: 100%;
 }
 .profilWrap table{
     width: 100%;

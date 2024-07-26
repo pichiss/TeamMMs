@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import EduHeader from '../edu/EduHeader';
 import EduVideoDatas from './eduVideoData';
+import EduFooter from '../edu/EduFooter';
 
 export default function EduVideo({ setPage, user }) {
 
@@ -11,7 +12,7 @@ export default function EduVideo({ setPage, user }) {
     return (
         <section className='eduViedosWrap'>
             <EduHeader setPage={setPage}  user={user}/>
-            <div className='eduViedosCover pa55'>
+            <div className='eduViedosCover'>
             <h2>학습영상</h2>
             <div className='flex w1440 eduViedos'>
                 {EduVideoDatas.map((data) =>
@@ -26,6 +27,9 @@ export default function EduVideo({ setPage, user }) {
                 </Link>
                 )}
             </div>
+            </div>
+            <div>
+            <EduFooter/>
             </div>
         </section>
     );

@@ -10,7 +10,7 @@ export default function EduVideo({ setPage, user }) {
 
     return (
         <section className='eduViedosWrap'>
-            <EduHeader setPage={setPage} />
+            <EduHeader setPage={setPage}  user={user}/>
             <div className='eduViedosCover pa55'>
             <h2>학습영상</h2>
             <div className='flex w1440 eduViedos'>

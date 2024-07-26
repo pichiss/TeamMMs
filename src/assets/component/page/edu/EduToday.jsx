@@ -18,12 +18,12 @@ import perfectStar from '../../../img/icon/eduStar_2.svg';
 import 'swiper/css';
 import './EduToday.css';
 
-function EduToday(){
+function EduToday({setPage, user}){
 
     return(
         <>
             <section className='eduTodaySec'>
-                <EduHeader />
+                <EduHeader setPage={setPage} user={user} />
                 <img src={logo} alt="catch-monsters-logo" />
                 <Swiper
                     slidesPerView={3}

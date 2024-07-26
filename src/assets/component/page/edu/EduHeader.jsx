@@ -5,11 +5,11 @@ import question from '../../../img/icon/question.png';
 import door from '../../../img/icon/door.png';
 import './EduHeader.css';
 
-function EduHeader({setPage}){
+function EduHeader({setPage, user}){
     return(
         <article className='flex eduProfile'>
             <div className='eduPfL'>
-                <h2>금주</h2>
+                <h2>{user.nickname}</h2>
                 <p>1레벨 1단원</p>
                 <img src={pf_bg} alt="profile-background-image" />
             </div>

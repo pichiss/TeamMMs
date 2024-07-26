@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import './subnav.css'
 
 function Subnav(props){
-
     const navNoti = [
         {tit:'알림나무',
         icon: navNotiIcon,
@@ -33,7 +32,7 @@ function Subnav(props){
         },
         {tit:'포인트 내역',
         key : '3',
-        link : '/mypage'
+        link : '/mypage/point'
         },
         {tit:'1:1 문의',
         key : '4',

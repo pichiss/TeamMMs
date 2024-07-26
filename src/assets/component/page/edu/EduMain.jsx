@@ -6,10 +6,10 @@ import note from '../../../img/icon/note.png';
 import pointshop from '../../../img/icon/pointshop.png';
 import './EduMain.css';
 
-function EduMain({setPage}){
+function EduMain({setPage, user}){
     return(
         <section className='eduSec'>
-            <EduHeader setPage={setPage}/>
+            <EduHeader setPage={setPage} user={user}/>
             <article className="flex eduMenu">
                 <Link to='/eduVideo'>
                     <div className="flex eduVideo">

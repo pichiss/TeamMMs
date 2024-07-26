@@ -16,6 +16,7 @@ import NoticeList from './assets/component/page/noitce/noticeList';
 import NoticeDetail from './assets/component/page/noitce/noticeDetail';
 import NoticeWrite from './assets/component/page/noitce/noitceWrite';
 import Profile from './assets/component/page/mypage/profile'
+import Point from './assets/component/page/mypage/point.jsx';
 
 import EduMain from './assets/component/page/edu/EduMain.jsx';
 import EduToday from './assets/component/page/edu/EduToday.jsx';
@@ -108,6 +109,7 @@ function App() {
           <Route path="/login" element={<Login kakaoLogin={kakaoLogin}/>}/>
           <Route path="/join" element={<Join />}/>
           <Route path="/mypage" element={<Profile />}/>
+          <Route path="/mypage/point" element={<Point />} />
           <Route path="/noticeList" element={<NoticeList />}/>
           <Route path="/detail/:id" element={<NoticeDetail />}/>
           <Route path="/write" element={<NoticeWrite />}/>
@@ -118,14 +120,13 @@ function App() {
     :
     <>
       <Routes>
-          <Route path='/education' element={<EduMain setPage={setPage}/>} />
-          <Route path='/education/today' element={<EduToday />} />
-          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} />} />
-          <Route path='/education/today/:unitId/1' element={<EduMathQ1 />} />
-          <Route path='/education/today/:unitId/2' element={<EduMathQ2 />} />
-          <Route path='/education/today/:unitId/3' element={<EduMathQ3 />} />
-          <Route path="/eduVideo" element={<EduVideo setPage={setPage}/>}/>
-          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage}/>}/>
+          <Route path='/education' element={<EduMain setPage={setPage} user={user}/>} />
+          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} />} />
+          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} />} />
+          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} />} />
+          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} />} />
+          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} />} />
+          <Route path="/eduVideo" element={<EduVideo />}/>
       </Routes>
     </>
     }

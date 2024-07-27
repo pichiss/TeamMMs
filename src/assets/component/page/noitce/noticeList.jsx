@@ -11,8 +11,8 @@ import Btn from './btn';
 export default function NoticeList() {
 
     const [state, dispatch] = useReducer(notiReducer, Contents);
-    const { notis } = state;
-    const noitsReverse = [...notis].reverse()
+    const { datas } = state;
+    const noitsReverse = [...datas].reverse()
 
     // 페이지네이션
     const [page, setPage] = useState(1);
@@ -44,21 +44,21 @@ export default function NoticeList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {currentPost.map((noti)=>
-                    <tr key={noti.id}>
-                       <td>{noti.id + 1}</td>
+                    {currentPost.map((data)=>
+                    <tr key={data.id}>
+                       <td>{data.id + 1}</td>
                        <td>
-                       <Link to={`/detail/${noti.id}`}>
-                        {'['}{noti.notiType}{'] '}{noti.notiName}
+                       <Link to={`/detail/${data.id}`}>
+                        {'['}{data.type}{'] '}{data.name}
                         </Link>
                         </td>
-                        <td>{noti.date}</td>
-                        <td>{noti.views}</td>
+                        <td>{data.createDate}</td>
+                        <td>{data.views}</td>
                     </tr>)}
                 </tbody>
             </table>
             <Btn {...btns}/>
-            <NoticePagination page={page} setPage={setPage} postPerPage={postPerPage} notis={notis}/>
+            <NoticePagination page={page} setPage={setPage} postPerPage={postPerPage} datas={datas}/>
          </div>
         </section>
         </>

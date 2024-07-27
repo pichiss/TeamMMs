@@ -1,48 +1,34 @@
 import "./noticeStyle.css";
-import { useParams } from "react-router-dom";
-import { useReducer, useState, useContext } from "react";
-import { Contents, notiReducer } from '../noitce/noticeData';
+import { useState, useContext } from "react";
 import Subnav from "../../common/Subnav";
 import Btn from "./btn";
+import { editContext } from "../noticeInfo";
 
-export default function NoticeDetail({ removeNoti }) {
+export default function NoticeDetail({id, type, text, createDate}) {
 
-  const [state, dispatch] = useReducer(notiReducer, Contents);
-  const { notis } = state;
-  const { id } = useParams();
-
+  const {removeNoti, editNoti} = useContext(editContext)
   const [onUpdate, setOnUpdate] = useState(true)
-  const [edits, setEdits] = useState({
-    id: notis.id,
-    notiType: notis.notiType,
-    notiName: notis.notiName,
-    notiText: notis.notiText,
-  })
+  const [editText, setEditText] = useState(text)
 
-  function editBtn() {
+  function removeBtn(){
+    removeNoti(id)
+  }
+
+  function editBtn(){
     setOnUpdate(!onUpdate)
   }
 
-  function editChange(e) {
-    setEditNotices(e.target.value)
+  function editChange(e){
+    setEditText(e.target.value)
   }
 
   function saveBtn() {
-    if (window.confirm(`${notiType} 을/를 수정 하시겠습니까?`)) {
-      editNoti(id, notiType, notiName, notiText)
-      editBtn() //다시 리스트로 돌아가라
-    }
+    editNoti(id, editText)
+    editBtn()
   }
 
-  function deleteBtn() {
-    removeNoti(id)
-    setEdits({
-      id: '',
-      notiType: '',
-      notiName: '',
-      notiText: '',
-    })
-
+  function cancleBtn(){
+    setOnUpdate(!onUpdate)
   }
 
   const btns1 = {
@@ -54,11 +40,10 @@ export default function NoticeDetail({ removeNoti }) {
     tit: '삭제',
     link: '',
     Bclass: 'removeBtn',
-    func: deleteBtn,
   }
   const btns3 = {
     tit: '목록',
-    link: '/noticeList',
+    link: '',
     Bclass: 'listBtn'
   }
 
@@ -68,23 +53,28 @@ export default function NoticeDetail({ removeNoti }) {
       <Subnav tit={'알림나무'} />
       <div className="noticeDetail">
         <h2 className="subtit">공지사항 & 이벤트</h2>
-        <div>
-          <h3>{notis[id].notiName}</h3>
+        {onUpdate?   <div>
+          <h3>{datas[id].name}</h3>
           <ul className="flex">
             <li>등록일</li>
-            <li>{notis[id].date}</li>
+            <li>{datas[id].createDate}</li>
             <li>조회수</li>
-            <li>{notis[id].views}</li>
+            <li>{datas[id].views}</li>
           </ul>
-          <p>{notis[id].notiText}</p>
-        </div>
-        <div className="flex detailBtnWrap">
+          <p>{datas[id].text}</p>
+        </div>:
+        <div>tt</div>
+        }
+        {onUpdate?  <div className="flex detailBtnWrap">
           <div className="flex">
+            <div onClick={editBtn}>
             <Btn {...btns1} />
+              </div>
             <Btn {...btns2} />
           </div>
           <Btn {...btns3} />
-        </div>
+        </div>:
+        <div>ㅎㅎ</div>}
       </div>
     </section>
   );

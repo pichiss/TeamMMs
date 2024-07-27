@@ -4,14 +4,14 @@ import { useMemo } from "react";
 
 
 
-export default function NoticePagination({page, setPage, postPerPage, notis}) {
+export default function NoticePagination({page, setPage, postPerPage, datas}) {
 
 
-    function allCounts (notis){
-        return notis.length
+    function allCounts (datas){
+        return datas.length
       }
     
-    const allCount = useMemo(()=>allCounts(notis),[notis])
+    const allCount = useMemo(()=>allCounts(datas),[datas])
 
     const handlePageChange = (page) => {
         setPage(page);

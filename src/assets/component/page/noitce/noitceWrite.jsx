@@ -1,48 +1,41 @@
 import "./noticeStyle.css";
+import NoticeInput from "./noticeInput";
 import Subnav from "../../common/Subnav";
 import './btnStyle.css'
 import Btn from "./btn";
-import { useState, useCallback } from "react";
+import { useContext } from "react";
+import { editContext } from "../noticeInfo"
 
-export default function NoticeWrite({ createNoti }) {
+export default function NoticeWrite() {
 
+  const [{type, name, text}, onChange, reset] = NoticeInput({
+    type:'',
+    name: '',
+    text:''
+  });
 
-  const [inputs, setInputs] = useState({
-    notiType: '',
-    notiName: '',
-    notiText: '',
-  })
-
-  const { notiType, notiName, notiText } = inputs;
-
-  function onChangeNoti(e) {
-    const { name, value } = e.target
-    setInputs({
-      ...inputs,
-      [name]: value
-    })
+  const { createNoti } = useContext(editContext);
+  
+  const createBtn = () => {
+    createNoti(type, name, text);
+    reset();
+    history.back();
   }
 
-  const reset = useCallback(() => setInputs(inputs), [inputs])
-
-  function createBtn() {
-    createNoti(notiType, notiName, notiText)
-    reset()
-    history.back()
+  const cancleBtn = () => {
+    history.back();
   }
 
   const btns1 = {
     tit: '취소',
-    link: '/noticeList',
+    link: '',
     Bclass: 'cancleBtn'
-  }
+  };
   const btns2 = {
     tit: '저장',
     link: '',
-    Bclass: 'saveBtn',
-  }
-
-
+    Bclass: 'saveBtn'
+  };
 
   return (
     <section className="w1440 flex pa55 noticeWriteWrap">
@@ -51,13 +44,13 @@ export default function NoticeWrite({ createNoti }) {
         <h2 className="subtit">공지사항 & 이벤트</h2>
         <div className="noticeWriteText">
           <div className="flex">
-            <select name="notiType" value={notiType} onChange={onChangeNoti}>
+            <select name="notiType" value={type} onChange={onChange}>
               <option value={"공지사항"}>공지사항</option>
               <option value={"이벤트"}>이벤트</option>
             </select>
-            <input type="text" name="notiName" value={notiName} onChange={onChangeNoti} placeholder="제목을 입력하세요." />
+            <input type="text" name="name" value={name} onChange={onChange} placeholder="제목을 입력하세요." />
           </div>
-          <textarea name="notiText" value={notiText} onChange={onChangeNoti} placeholder="내용을 입력하세요."></textarea>
+          <textarea name="text" value={text} onChange={onChange} placeholder="내용을 입력하세요."></textarea>
         </div>
         <div className="flex noticeWriteBtnWrap">
           <Btn {...btns1} />

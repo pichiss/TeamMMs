@@ -22,7 +22,7 @@ export default function NoticeList() {
     const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost)
 
 
-    const btns = {
+    const writebtns = {
         tit : '글쓰기',
         link :'/write',
         Bclass :'writeBtn'
@@ -57,7 +57,7 @@ export default function NoticeList() {
                     </tr>)}
                 </tbody>
             </table>
-            <Btn {...btns}/>
+            <Btn {...writebtns}/>
             <NoticePagination page={page} setPage={setPage} postPerPage={postPerPage} datas={datas}/>
          </div>
         </section>

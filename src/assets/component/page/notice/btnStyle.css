@@ -2,7 +2,7 @@
     justify-content: flex-end;
     padding-right: 15px;
 }
-.writeBtn div,.listBtn div,.saveBtn {
+.writeBtn div,.listBtn div,.saveBtn div{
     background-color: var(--main-blue);
     color: white;
     border: 1px solid var(--main-blue);

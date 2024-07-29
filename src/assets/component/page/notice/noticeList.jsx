@@ -2,8 +2,8 @@ import './noticeStyle.css'
 import { Link } from "react-router-dom";
 
 import { useReducer, useState } from "react";
-import { Contents, notiReducer } from '../noitce/noticeData';
-import NoticePagination from './noticePagination';
+import { Contents, notiReducer } from './noticeData';
+import CommonPagination from '../../common/Pagination';
 import Subnav from '../../common/Subnav';
 import Btn from './btn';
 
@@ -15,7 +15,7 @@ export default function NoticeList() {
     const noitsReverse = [...datas].reverse()
 
     // 페이지네이션
-    const [page, setPage] = useState(1);
+    const [page, setPages] = useState(1);
     const postPerPage = 10
     const indexOfLastPost = page * postPerPage
     const indexOfFirstPost = indexOfLastPost - postPerPage
@@ -49,7 +49,7 @@ export default function NoticeList() {
                        <td>{data.id + 1}</td>
                        <td>
                        <Link to={`/detail/${data.id}`}>
-                        {'['}{data.type}{'] '}{data.name}
+                        {'['}{data.notiType}{'] '}{data.name}
                         </Link>
                         </td>
                         <td>{data.createDate}</td>
@@ -58,7 +58,7 @@ export default function NoticeList() {
                 </tbody>
             </table>
             <Btn {...writebtns}/>
-            <NoticePagination page={page} setPage={setPage} postPerPage={postPerPage} datas={datas}/>
+            <CommonPagination page={page} setPages={setPages} postPerPage={postPerPage} datas={datas}/>
          </div>
         </section>
         </>

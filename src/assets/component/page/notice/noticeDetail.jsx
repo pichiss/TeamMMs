@@ -1,28 +1,53 @@
 import "./noticeStyle.css";
-import { useParams } from "react-router-dom";
-import { useReducer, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useContext, useReducer, useState } from "react";
 import { Contents, notiReducer } from "./noticeData";
 import Subnav from "../../common/Subnav";
 import Btn from "./btn";
+import { editNotiContext } from "../../../../App";
 
 export default function NoticeDetail() {
+  const { id } = useParams()
+  const {editNoti, removeNoti} = useContext(editNotiContext)
   const [state, dispatch] = useReducer(notiReducer, Contents);
   const { datas } = state;
-  const { id } = useParams();
-
   const [onUpdate, setOnUpdate] = useState(true);
+  const [editNotiType, setEditNotiType] = useState(notiType)
+  const [editNotiName, setEditNotiName] = useState(name)
+  const [editNotiText, setEditNotiText] = useState(text)
+  const navigate = useNavigate()
 
+  // 수정
   function editBtn() {
     setOnUpdate(!onUpdate);
   }
+  // 취소
   function cancleBtn() {
     if (window.confirm(`수정을 취소 하시겠습니까?`)) {
       setOnUpdate(!onUpdate);
     }
   }
-
-  function listBtn(){
+  // 수정취소
+  function listBtn() {
     history.back()
+  }
+
+  function editChange(e) {
+    setEditNotiType(e.target.value)
+    setEditNotiName(e.target.value)
+    setEditNotiText(e.target.value)
+    
+  }
+
+  //삭제
+  function removeDetail() {
+    removeNoti(id)
+  }
+  
+  //저장
+  function saveDetail() {
+    editNoti(id, editNotis)
+    navigate('/noticeList')
   }
 
   const editbtns = {
@@ -68,26 +93,29 @@ export default function NoticeDetail() {
             <p>{datas[id].text}</p>
           </div>
         ) : (
-          <div>하하</div>
+          <div className="noticeWriteText">
+            <div className="flex">
+              <select name="notiType" value={editNotiType.notiType} onChange={editChange}>
+                <option value={"공지사항"}>공지사항</option>
+                <option value={"이벤트"}>이벤트</option>
+              </select>
+              <input type="text" name="name" value={editNotiName.name} onChange={editChange} />
+            </div>
+            <textarea name="text" value={editNotiText.text} onChange={editChange} ></textarea>
+          </div>
         )}
         {onUpdate ? (
           <div className="flex detailBtnWrap">
             <div className="flex">
-              <div onClick={editBtn}>
-                <Btn {...editbtns} />
-              </div>
-              <Btn {...removebtns} />
+              <Btn {...editbtns} func={editBtn} />
+              <Btn {...removebtns} func={removeDetail}/>
             </div>
-            <div onClick={listBtn}>
-            <Btn {...listbtns} />
-            </div>
+            <Btn {...listbtns} func={listBtn} />
           </div>
         ) : (
           <div className="flex detailBtnWrap">
-            <div onClick={cancleBtn}>
-              <Btn {...canclebtns} />
-            </div>
-            <Btn {...savebtns} />
+            <Btn {...canclebtns} func={cancleBtn} />
+            <Btn {...savebtns} func={saveDetail}/>
           </div>
         )}
       </div>

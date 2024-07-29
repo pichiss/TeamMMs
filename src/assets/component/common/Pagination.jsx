@@ -1,10 +1,10 @@
 import Pagination from "react-js-pagination";
-import "./noticeStyle.css";
+import "../page/notice/noticeStyle.css";
 import { useMemo } from "react";
 
 
 
-export default function NoticePagination({page, setPage, postPerPage, datas}) {
+export default function CommonPagination({page, setPages, postPerPage, datas}) {
 
 
     function allCounts (datas){
@@ -14,7 +14,7 @@ export default function NoticePagination({page, setPage, postPerPage, datas}) {
     const allCount = useMemo(()=>allCounts(datas),[datas])
 
     const handlePageChange = (page) => {
-        setPage(page);
+        setPages(page);
     };
 
 

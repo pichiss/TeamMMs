@@ -25,8 +25,6 @@ import EduTodayCont from './assets/component/page/edu/EduTodayCont.jsx';
 import EduMathQ1 from './assets/component/page/edu/EduMath/EduMathQ1.jsx';
 import EduMathQ2 from './assets/component/page/edu/EduMath/EduMathQ2.jsx';
 import EduMathQ3 from './assets/component/page/edu/EduMath/EduMathQ3.jsx';
-import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
-import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
 
 import Leaning from './assets/component/page/learning/learning';
 import EduVideo from './assets/component/page/eduVideo/eduVideo';
@@ -116,7 +114,6 @@ function App() {
     setPoint(newPoints);
   }
 
-
   //게시판
   const [state, dispatch] = useReducer(notiReducer, Contents);
   const { datas } = state;
@@ -125,29 +122,33 @@ function App() {
 
   return (
     <>
-    {page == true ?
-    <>
-      <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout}/>
+      {page == true ?
+        <>
+        <notiContext.Provider value={datas}>
+          <editNotiContext.Provider value={memoNoti}>
+          <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/login" element={<Login kakaoLogin={kakaoLogin} />} />
+            <Route path="/join" element={<Join />} />
+            <Route path="/mypage" element={<Profile user={user} />} />
+            <Route path="/mypage/learning" element={<Leaning />} />
+            <Route path="/mypage/point" element={<Point />} />
+            <Route path="/mypage/ask" element={<Ask />} />
+            <Route path="/noticeList" element={<NoticeList />} />
+            <Route path="/detail/:id" element={<NoticeDetail {...datas}/>} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/write" element={<NoticeWrite />} />
+            <Route path="/mypage/learning" element={<Leaning />} />
+            <Route path="/catch" element={<Catch />} />
+          </Routes>
+          <Footer />
+          </editNotiContext.Provider>
+        </notiContext.Provider>
+        </>
+        :
+        <>
         <Routes>
-          <Route path="/" element={<Main />}/>
-          <Route path="/login" element={<Login kakaoLogin={kakaoLogin}/>}/>
-          <Route path="/join" element={<Join />}/>
-          <Route path="/mypage" element={<Profile user={user}/>}/>
-          <Route path="/mypage/learning" element={<Leaning />}/>
-          <Route path="/mypage/point" element={<Point />}/>
-          <Route path="/mypage/ask" element={<Ask />}/>
-          <Route path="/noticeList" element={<NoticeList />}/>
-          <Route path="/detail/:id" element={<NoticeDetail />}/>
-          <Route path="/faq" element={<Faq />}/>
-          <Route path="/write" element={<NoticeWrite />}/>
-          <Route path="/mypage/learning" element={<Leaning />}/>
-        </Routes>
-
-      <Footer />
-    </>
-    :
-    <>
-      <Routes>
           <Route path='/education' element={<EduMain setPage={setPage} user={user}/>} />
           <Route path='/education/today' element={<EduToday setPage={setPage} user={user} />} />
           <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} />} />
@@ -156,9 +157,9 @@ function App() {
           <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} />} />
           <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} />}/>
           <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} />}/>
-      </Routes>
-    </>
-    }
+        </Routes>
+        </>
+      }
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import EduHeader from './EduHeader.jsx';
 import EduFooter from './EduFooter.jsx';
@@ -8,23 +8,11 @@ import './EduTodayCont.css';
 
 function EduTodayCont(props){
 
-    const testRef = useRef();
-    const test2Ref = useRef();
-
     const {unitId} = useParams();
     const data = props.data;
     const qDatas = props.qDatas;
 
     const [onSelect, setSelect] = useState(false);
-
-    // function onClickSelect(){
-    //     if(testRef.current.id == test2Ref.current.id){
-    //         setSelect(true)
-            
-    //     }else{
-    //         setSelect(false)
-    //     }
-    // }
 
     function onClickSelect(){
         setSelect(true)
@@ -39,22 +27,26 @@ function EduTodayCont(props){
                         <h2>{data[unitId-1].title}</h2>
                     </div>
                     <div className='flex eduSubUnit'>
+                        {data[unitId-1].subTitle1 == undefined ? null : 
                         <div className='flex eduSubUnitBox'>
-                            <div><span></span></div>
+                            <div><span className={'' + (onSelect ? 'on' : null)}></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle1}</h3>
-                        </div>
+                        </div>}
+                        {data[unitId-1].subTitle2 == undefined ? null : 
                         <div className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle2}</h3>
-                        </div>
+                        </div>}
+                        {data[unitId-1].subTitle3 == undefined ? null : 
                         <div className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle3}</h3>
-                        </div>
+                        </div>}
+                        {data[unitId-1].subTitle4 == undefined ? null : 
                         <div className='flex eduSubUnitBox'>
                             <div><span></span></div>
                             <h3 onClick={onClickSelect}>{data[unitId-1].subTitle4}</h3>
-                        </div>
+                        </div>}
                     </div>
                 </div>
                 <img src={spring} alt="note-spring" />

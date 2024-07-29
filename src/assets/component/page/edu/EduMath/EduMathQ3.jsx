@@ -8,39 +8,53 @@ import EduFooter from '../EduFooter';
 
 import left_arrow from '../../../../img/icon/left-arrow.png';
 import right_arrow from '../../../../img/icon/right-arrow.png';
+import score_answer from '../../../../img/icon/score.png';
+import score_wrong from '../../../../img/icon/score_wrong.png';
 import ask from '../../../../img/icon/info.png';
 import bulb from '../../../../img/icon/bulb.png';
 import check from '../../../../img/icon/check-mark.png';
 import spring from '../../../../img/note_spring.png';
 import spin from '../../../../img/icon/spin_mark.png';
+import close from '../../../../img/icon/x.png';
 
 import './EduMathQ.css';
 
-function EduMathQ2({setPage, user}){
+function EduMathQ3({setPage, user}){
 
-    const [onBasic, setOnBasic] = useState(true);
-    const [onDeepQ, setOnDeepQ] = useState(false);
+    const [onPopUp, setPopUp] = useState(false);
 
-    function onClickBasic(){
-        setOnBasic(true)
-        setOnDeepQ(false)
-    }
-
-    function onClickDeep(){
-        setOnBasic(false)
-        setOnDeepQ(true)
-    }
-    
     function checkQ(){
-        confirm("채점하시겠습니까?")
+        setPopUp(true)
+    }
+
+    function closeQ(){
+        setPopUp(false)
+    }
+
+    const [onAnswer, setAnswer] = useState('');
+    const [onScore, setScore] = useState(null);
+
+    function saveAnswer(e){
+        setAnswer(e.target.value);
+    }
+
+    function answerQ(){
+        if(onAnswer === '정육면체'){
+            setScore(true)
+        }else{
+            setScore(false)
+        }
+        setPopUp(false)
     }
 
     return(
         <section className='eduTodaySec'>
             <EduHeader setPage={setPage} user={user} />
             <div className='flex eduQBtn'>
-                <div className={onBasic ? "active" : " "} onClick={onClickBasic}>기초문제</div>
-                <div className={onDeepQ ? "active" : " "} onClick={onClickDeep}>응용문제</div>
+                <div className="basicQ active">기초문제</div>
+                <Link to={'/education/today/5/11'}>
+                    <div className="deepQ">응용문제</div>
+                </Link>
             </div>
             <article className='flex eduUnitWrap'>
                 <div className='eduArrowWrap'>
@@ -52,6 +66,8 @@ function EduMathQ2({setPage, user}){
                     </Link>
                 </div>
                 <div className='eduUnitL'>
+                    <img src={score_answer} alt="" className={'scoreAnswer ' + (onScore !== null && onScore === true ? 'on' : '')} />
+                    <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>03. 다음 입체도형의 이름을 작성하세요.</h1>
                     <Canvas
                         style={{width: `980px`, height: `500px`}}
@@ -64,7 +80,7 @@ function EduMathQ2({setPage, user}){
                 <div className='flex eduUnitR'>
                     <div className='eduAnswer'>
                         <h1>정사각형 6개로 둘러싸인 도형을 무엇이라고 하나요?</h1>
-                        <input type="text" />
+                        <input type="text" onChange={saveAnswer} value={onAnswer} />
                     </div>
                     <div className='flex eduSubBtn'>
                         <div className='flex askWrap'>
@@ -81,11 +97,21 @@ function EduMathQ2({setPage, user}){
                         </div>
                     </div>
                 </div>
-                <div>{}</div>
+                <div className={'eduPopUp ' + (onPopUp ? 'on' : '')}>
+                    <div className='flex eduCloseBtn' onClick={closeQ}>
+                        <img src={close} alt="close-button" />
+                    </div>
+                    <h2>채점하시겠습니까?</h2>
+                    <div className='flex eduPopBtn'>
+                        <button className='eduCancleBtn' onClick={closeQ}>취소하기</button>
+                        <button className='eduGradeBtn' onClick={answerQ}>채점하기</button>
+                    </div>
+                </div>
+                <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
             <EduFooter />
         </section>
     )
 }
 
-export default EduMathQ2;
+export default EduMathQ3;

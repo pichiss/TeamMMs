@@ -1,4 +1,4 @@
-.eduQBtn>div{
+.eduQBtn div{
     width: 180px;
     padding: 10px;
     border: 7px solid #fff;
@@ -12,15 +12,15 @@
     cursor: pointer;
     position: absolute;
 }
-.eduQBtn>div.active{
+.eduQBtn div.active{
     color: var(--font-black);
     background-color: var(--yellow);
 }
-.eduQBtn>div:first-child{
+.basicQ{
     top: 5%;
     left: 52%;
 }
-.eduQBtn>div:first-child::after{
+.basicQ::after{
     content: "";
     width: 30px;
     height: 7px;
@@ -29,7 +29,7 @@
     top: 45%;
     right: -20%;
 }
-.eduQBtn>div:last-child{
+.deepQ{
     top: 5%;
     right: 28%;
 }
@@ -46,6 +46,24 @@
 }
 .eduRightArrow{
     right: 2%;
+}
+.scoreAnswer{
+    width: 100px;
+    left: calc(10% - 30px);
+    position: absolute;
+    display: none;
+}
+.scoreAnswer.on{
+    display: block;
+}
+.scoreWrong{
+    top: 22%;
+    left: calc(10% - 30px);
+    position: absolute;
+    display: none;
+}
+.scoreWrong.on{
+    display: block;
 }
 .eduUnitL>h1{
     font-size: 40px;
@@ -114,4 +132,71 @@
 .checkWrap>h3{
     -webkit-text-stroke: 1px #CD2D2D;
     text-shadow: -1px 2px #CD2D2D, 2px 1px #CD2D2D, 1px 2px #CD2D2D, 2px -1px #CD2D2D;
+}
+
+
+/* 채점 팝업 */
+.eduPopUp{
+    width: 325px;
+    padding: 15px 30px;
+    border-radius: 20px;
+    background-color:#fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+}
+.eduPopUp.on{
+    display: block;
+}
+.shadowBox{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+.shadowBox.shadow{
+    display: block;
+}
+.eduCloseBtn{
+    width: 35px;
+    height: 35px;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    border-radius: 55px;
+    background-color: #FF8296;
+}
+.eduCloseBtn>img{
+    width: 25px;
+    height: 25px;
+}
+.eduPopUp>h2{
+    margin: 45px 0;
+    font-size: 23px;
+    font-family: 'yg-jalnan';
+}
+.eduPopBtn{
+    gap: 10px;
+    justify-content: center;
+}
+.eduPopBtn>button{
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.eduCancleBtn{
+    background-color: #A1A1A1;
+}
+.eduGradeBtn{
+    background-color: #FF8296;
 }

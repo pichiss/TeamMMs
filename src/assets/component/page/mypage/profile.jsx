@@ -46,7 +46,7 @@ function expend(){
     window.confirm(`연장 하시겠습니까?`)
 }
 
-
+console.log(user)
     // 별표 만들기 금주랑 채민이가 함.
     const use_for = () => {
         const result = [];

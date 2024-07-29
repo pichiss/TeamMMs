@@ -4,18 +4,22 @@ import { useContext, useReducer, useState } from "react";
 import { Contents, notiReducer } from "./noticeData";
 import Subnav from "../../common/Subnav";
 import Btn from "./btn";
-import { editNotiContext } from "../../../../App";
+import { editNotiContext, noticeContext } from "../../../../App";
 
 export default function NoticeDetail() {
-  const { id } = useParams()
-  const {editNoti, removeNoti} = useContext(editNotiContext)
+  const { id } = useParams();
+  const { editNoti, removeNoti } = useContext(editNotiContext);
   const [state, dispatch] = useReducer(notiReducer, Contents);
   const { datas } = state;
   const [onUpdate, setOnUpdate] = useState(true);
-  const [editNotiType, setEditNotiType] = useState(notiType)
-  const [editNotiName, setEditNotiName] = useState(name)
-  const [editNotiText, setEditNotiText] = useState(text)
-  const navigate = useNavigate()
+  const [editNotis, setEditNotis] = useState({
+    id: id,
+    notiType: datas[id].notiType,
+    name: datas[id].name,
+    text: datas[id].text,
+  });
+
+  const navigate = useNavigate();
 
   // 수정
   function editBtn() {
@@ -29,25 +33,35 @@ export default function NoticeDetail() {
   }
   // 수정취소
   function listBtn() {
-    history.back()
+    history.back();
   }
 
   function editChange(e) {
-    setEditNotiType(e.target.value)
-    setEditNotiName(e.target.value)
-    setEditNotiText(e.target.value)
-    
+    const { name, value } = e.target;
+
+    setEditNotis({
+      ...editNotis,
+      [name]: value,
+    });
   }
 
+  console.log(id)
   //삭제
   function removeDetail() {
-    removeNoti(id)
+    removeNoti(id);
+    setEditNotis({
+      id: "",
+      notiType: "",
+      name: "",
+      text: "",
+    });
   }
-  
+
   //저장
   function saveDetail() {
-    editNoti(id, editNotis)
-    navigate('/noticeList')
+    editNoti(editNotis.id, editNotis.notiType, editNotis.name, editNotis.text);
+    console.log(editNotis);
+    navigate("/noticeList");
   }
 
   const editbtns = {
@@ -95,27 +109,40 @@ export default function NoticeDetail() {
         ) : (
           <div className="noticeWriteText">
             <div className="flex">
-              <select name="notiType" value={editNotiType.notiType} onChange={editChange}>
+              <select
+                name="notiType"
+                value={editNotis.notiType}
+                onChange={editChange}
+              >
                 <option value={"공지사항"}>공지사항</option>
                 <option value={"이벤트"}>이벤트</option>
               </select>
-              <input type="text" name="name" value={editNotiName.name} onChange={editChange} />
+              <input
+                type="text"
+                name="name"
+                value={editNotis.name}
+                onChange={editChange}
+              />
             </div>
-            <textarea name="text" value={editNotiText.text} onChange={editChange} ></textarea>
+            <textarea
+              name="text"
+              value={editNotis.text}
+              onChange={editChange}
+            ></textarea>
           </div>
         )}
         {onUpdate ? (
           <div className="flex detailBtnWrap">
             <div className="flex">
               <Btn {...editbtns} func={editBtn} />
-              <Btn {...removebtns} func={removeDetail}/>
+              <Btn {...removebtns} func={removeDetail} />
             </div>
             <Btn {...listbtns} func={listBtn} />
           </div>
         ) : (
           <div className="flex detailBtnWrap">
             <Btn {...canclebtns} func={cancleBtn} />
-            <Btn {...savebtns} func={saveDetail}/>
+            <Btn {...savebtns} func={saveDetail} />
           </div>
         )}
       </div>

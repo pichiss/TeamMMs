@@ -33,16 +33,14 @@ import Ask from './assets/component/page/ask/ask.jsx';
 import Faq from './assets/component/page/faq/faq.jsx';
 import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
-<<<<<<< HEAD
 import EduNoteMain from './assets/component/page/edu/EduNote/EduNote.jsx';
 import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
-=======
 import Notifunc from './noticeFunc.jsx';
+
 import { notiReducer, Contents } from '././assets/component/page/notice/noticeData.jsx';
 export const notiContext = createContext();
 export const editNotiContext = createContext();
 
->>>>>>> 59bb0c9cc3db9ddf11bc271f83303dd39a923361
 
 
 function App() {
@@ -169,6 +167,7 @@ function App() {
           <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} />}/>
           <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} />}/>
         </Routes>
+
         </>
       }
     </>

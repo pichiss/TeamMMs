@@ -2,8 +2,8 @@ import './noticeStyle.css'
 import { Link } from "react-router-dom";
 
 import { useReducer, useState } from "react";
-import { Contents, notiReducer } from '../noitce/noticeData';
-import NoticePagination from './noticePagination';
+import { Contents, notiReducer } from './noticeData';
+import CommonPagination from '../../common/Pagination';
 import Subnav from '../../common/Subnav';
 import Btn from './btn';
 
@@ -11,18 +11,18 @@ import Btn from './btn';
 export default function NoticeList() {
 
     const [state, dispatch] = useReducer(notiReducer, Contents);
-    const { notis } = state;
-    const noitsReverse = [...notis].reverse()
+    const { datas } = state;
+    const noitsReverse = [...datas].reverse()
 
     // 페이지네이션
-    const [page, setPage] = useState(1);
+    const [page, setPages] = useState(1);
     const postPerPage = 10
     const indexOfLastPost = page * postPerPage
     const indexOfFirstPost = indexOfLastPost - postPerPage
     const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost)
 
 
-    const btns = {
+    const writebtns = {
         tit : '글쓰기',
         link :'/write',
         Bclass :'writeBtn'
@@ -44,21 +44,21 @@ export default function NoticeList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {currentPost.map((noti)=>
-                    <tr key={noti.id}>
-                       <td>{noti.id + 1}</td>
+                    {currentPost.map((data)=>
+                    <tr key={data.id}>
+                       <td>{data.id + 1}</td>
                        <td>
-                       <Link to={`/detail/${noti.id}`}>
-                        {'['}{noti.notiType}{'] '}{noti.notiName}
+                       <Link to={`/detail/${data.id}`}>
+                        {'['}{data.notiType}{'] '}{data.name}
                         </Link>
                         </td>
-                        <td>{noti.date}</td>
-                        <td>{noti.views}</td>
+                        <td>{data.createDate}</td>
+                        <td>{data.views}</td>
                     </tr>)}
                 </tbody>
             </table>
-            <Btn {...btns}/>
-            <NoticePagination page={page} setPage={setPage} postPerPage={postPerPage} notis={notis}/>
+            <Btn {...writebtns}/>
+            <CommonPagination page={page} setPages={setPages} postPerPage={postPerPage} datas={datas}/>
          </div>
         </section>
         </>

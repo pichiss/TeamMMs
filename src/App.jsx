@@ -1,9 +1,9 @@
 import './reset.css'
 import './App.css'
 
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { eduContents, qDatas } from './assets/component/page/edu/eduData.js';
-import { useState, useEffect, createContext } from 'react'
+import { useState, useEffect, createContext, useReducer } from 'react'
 
 import Header from './assets/component/header/Header'
 import Main from './assets/component/page/main/Main'
@@ -13,9 +13,9 @@ import Catch from './assets/component/page/catch/catch.jsx'
 import Footer from './assets/component/footer/footer';
 
 
-import NoticeList from './assets/component/page/noitce/noticeList';
-import NoticeDetail from './assets/component/page/noitce/noticeDetail';
-import NoticeWrite from './assets/component/page/noitce/noitceWrite';
+import NoticeList from './assets/component/page/notice/noticeList';
+import NoticeDetail from './assets/component/page/notice/noticeDetail';
+import NoticeWrite from './assets/component/page/notice/noticeWrite';
 import Profile from './assets/component/page/mypage/profile'
 import Point from './assets/component/page/mypage/point.jsx';
 
@@ -32,11 +32,17 @@ import Leaning from './assets/component/page/learning/learning';
 import EduVideo from './assets/component/page/eduVideo/eduVideo';
 import Ask from './assets/component/page/ask/ask.jsx';
 import Faq from './assets/component/page/faq/faq.jsx';
+import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
+import Notifunc from './noticeFunc.jsx';
+import { notiReducer, Contents } from '././assets/component/page/notice/noticeData.jsx';
+export const notiContext = createContext();
+export const editNotiContext = createContext();
 
 
 
 function App() {
+
   const [page, setPage] = useState(true);
   // 카카오 로그인-------------------------------------------------------------
   const [user, setUser] = useState(null);
@@ -111,6 +117,12 @@ function App() {
   }
 
 
+  //게시판
+  const [state, dispatch] = useReducer(notiReducer, Contents);
+  const { datas } = state;
+  // const { type, name, text } = state.inputs; 
+  const [memoNoti] = Notifunc();
+
   return (
     <>
     {page == true ?
@@ -122,7 +134,7 @@ function App() {
           <Route path="/join" element={<Join />}/>
           <Route path="/mypage" element={<Profile user={user}/>}/>
           <Route path="/mypage/learning" element={<Leaning />}/>
-          <Route path="/mypage/point" element={<Point point= {point} />}/>
+          <Route path="/mypage/point" element={<Point />}/>
           <Route path="/mypage/ask" element={<Ask />}/>
           <Route path="/noticeList" element={<NoticeList />}/>
           <Route path="/detail/:id" element={<NoticeDetail />}/>
@@ -136,15 +148,14 @@ function App() {
     :
     <>
       <Routes>
-          <Route path='/education' element={<EduMain setPage={setPage} user={user} point= {point}/>} />
-          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point= {point} />} />
-          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point= {point} />} />
-          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point= {point} />} />
-          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point= {point} />} />
-          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} point= {point}/>} />
-          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user}point= {point} />}/>
-          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point= {point} />}/>
-          <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point= {point} updateUserPoints={updateUserPoints} />}/>
+          <Route path='/education' element={<EduMain setPage={setPage} user={user}/>} />
+          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} />} />
+          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} />} />
+          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} />} />
+          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} />} />
+          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} />} />
+          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} />}/>
+          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} />}/>
       </Routes>
     </>
     }

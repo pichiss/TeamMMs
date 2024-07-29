@@ -14,6 +14,7 @@
     justify-content: center;
     cursor: pointer;
     position: relative;
+    border: 7px solid #fff;
 }
 .backBtn{
     width: 70px;
@@ -28,3 +29,18 @@
     z-index: 1;
     bottom: -8%;
 }
+
+@media screen and (max-width : 1280px) {
+    .eduFooter .eduCircle{
+        width: 67px;
+        height: 67px;
+        border: 6px solid #fff
+    }
+    .backBtn{
+        width: 40px;
+        padding-bottom: 10px;
+    }
+    .eduBackWrap>h2{
+        font-size: 20px;
+    }
+  }

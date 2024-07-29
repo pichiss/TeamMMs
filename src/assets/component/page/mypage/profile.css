@@ -51,6 +51,13 @@
     text-align: center;
     padding: 15px 0;
 }
+.subscription .leftBorderRadius{
+    border-top-left-radius: 5px;
+}
+.subscription .rightBorderRadius{
+    border-top-right-radius: 5px;
+}
+
 .bgBlue{
     background-color: var(--main-blue);
     color: #fff;

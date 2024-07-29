@@ -6,7 +6,7 @@ import spring from '../../../img/note_spring.png';
 import bero from '../../../img/monster/monster5_2.png';
 import './EduTodayCont.css';
 
-function EduTodayCont(props){
+function EduTodayCont(props, point){
 
     const {unitId} = useParams();
     const data = props.data;
@@ -20,7 +20,7 @@ function EduTodayCont(props){
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader setPage={props.setPage} user={props.user} />
+            <EduHeader setPage={props.setPage} user={props.user} point={point} />
             <article className='flex eduUnitWrap'>
                 <div className='eduUnitL'>
                     <div className='eduMainUnit'>

@@ -5,17 +5,18 @@ import { AskIcon } from '../../../img/img';
 
 import EduHeader from '../edu/EduHeader';
 import EduVideoDatas from './eduVideoData';
+import EduFooter from '../edu/EduFooter';
 
 export default function EduVideoDetail({ setPage, user }) {
 
     const { id } = useParams();
 
     return (
-        <section className='eduViedosWrap innereduViedosWrap'>
+        <section className='innereduViedosWrap'>
             <EduHeader setPage={setPage} user={user} />
             <div className='eduViedoNowWrap'>
                 <div className='flex eduViedoNow'>
-                    <video src={EduVideoDatas[id].vSource} controls></video>
+                    <video src={EduVideoDatas[id].vSource} controls autoPlay></video>
                     <div className='askIconWrap'>
                         <div className='askIcon'>
                             <img src={AskIcon} alt="질문하기" />
@@ -23,6 +24,9 @@ export default function EduVideoDetail({ setPage, user }) {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className='eduViedosFooter'>
+            <EduFooter/>
             </div>
         </section>
     );

@@ -14,15 +14,20 @@
 }
 .profilWrap{
     max-width: 1135px;
-    box-shadow: 0 4px 4px #bfbfbf;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     padding: 5px;
 }
-
-.profilWrap img{
-    margin: 0 auto;
-    padding: 45px 0;
+.profilWrap>div{
+    margin: 45px 0;
     display: flex;
     justify-content: center;
+}
+.profilWrap img{
+    max-width: 300px;
+    border-radius: 50%;
+    border: 15px solid var(--main-blue);
+    margin: 0 auto;
+    width: 100%;
 }
 .profilWrap table{
     width: 100%;
@@ -40,12 +45,19 @@
 .subscription{
     margin-top: 40px;
     width: 100%;
-    box-shadow: 0 4px 4px #bfbfbf;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 .subscription td{
     text-align: center;
     padding: 15px 0;
 }
+.subscription .leftBorderRadius{
+    border-top-left-radius: 5px;
+}
+.subscription .rightBorderRadius{
+    border-top-right-radius: 5px;
+}
+
 .bgBlue{
     background-color: var(--main-blue);
     color: #fff;

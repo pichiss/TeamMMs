@@ -2,8 +2,10 @@ import Subnav from "../../common/Subnav";
 import profilePhoto from '../../../img/profile.svg'
 import './profile.css'
 import { useContext, useEffect, useState } from "react";
+import SubHead from "../../common/Subhead";
 
-function Profile(){
+
+function Profile({user}){
     let grade = '5학년'
     let passWord = '*********';
     let phone = '010-1234-5678';
@@ -14,8 +16,6 @@ function Profile(){
     const [editPass, setEditPass] = useState(passWord);
     const [editPhone, setEditPhone] = useState(phone);
     const [editEmail, setEditEmail] = useState(email);
-
-
 
 function editBtn(){
     setUpdate(!update)
@@ -45,9 +45,6 @@ setUpdate(!update)
 function expend(){
     window.confirm(`연장 하시겠습니까?`)
 }
-
-
-    // 별표 만들기 금주랑 채민이가 함.
     const use_for = () => {
         const result = [];
 
@@ -59,7 +56,9 @@ function expend(){
     };
 
     return(
-        <section className="w1440 flex pa55">
+        <section>
+            <SubHead chara={1} />
+            <article className="w1440 flex pa55">
             <Subnav key={1} tit={'학부모 코너'}/>
             <div className="profileBox">
             <div>
@@ -75,7 +74,9 @@ function expend(){
                     </> }
                 </div>
                 <div className="profilWrap"> 
-                    <img src={profilePhoto} alt="profile Photo" />
+                    <div>
+                        <img src={user.profileImg} alt='my img'/>
+                    </div>
                     <table>
                         <thead>
                         <tr>
@@ -86,7 +87,7 @@ function expend(){
                         <tbody>
                         <tr>
                             <td className="silver">이름</td>
-                            <td>파이</td>
+                            <td>{user.nickname}</td>
                         </tr>
                         <tr>
                             <td className="silver">학년</td>       
@@ -144,10 +145,10 @@ function expend(){
                 <table className="subscription">
                     <thead>
                     <tr className="bgBlue">
-                        <td>상태</td>
+                        <td className="leftBorderRadius">상태</td>
                         <td>이용권 이름</td>
                         <td>이용 기간</td>
-                        <td>연장</td>
+                        <td className="rightBorderRadius">연장</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -155,11 +156,13 @@ function expend(){
                         <td>이용중</td>
                         <td>캐치! 수학 몬스터즈 12개월 이용권</td>
                         <td>~2024.08.09</td>
-                        <td className="expend" onClick={expend}>연장하기</td>
+                        <td className="expend" onClick={expend}><span className="bluelineBtn">연장하기</span></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
+            </article>
+          
         </section>
     )
 }

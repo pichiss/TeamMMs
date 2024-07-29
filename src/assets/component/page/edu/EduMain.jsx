@@ -6,10 +6,10 @@ import note from '../../../img/icon/note.png';
 import pointshop from '../../../img/icon/pointshop.png';
 import './EduMain.css';
 
-function EduMain({setPage, user}){
+function EduMain({setPage, user, point}){
     return(
         <section className='eduSec'>
-            <EduHeader setPage={setPage} user={user}/>
+            <EduHeader setPage={setPage} user={user} point={point}/>
             <article className="flex eduMenu">
                 <Link to='/eduVideo'>
                     <div className="flex eduVideo">
@@ -30,10 +30,12 @@ function EduMain({setPage, user}){
                             <h2>오답노트</h2>
                         </div>
                     </Link>
-                    <div className='flex eduPoint'>
-                        <img src={pointshop} alt="pointshop-image" />
-                        <h2>포인트샵</h2>
-                    </div>
+                    <Link to={'/eduPoint'}>
+                        <div className='flex eduPoint'>
+                            <img src={pointshop} alt="pointshop-image" />
+                            <h2>포인트샵</h2>
+                        </div>
+                    </Link>
                 </div>
             </article>
         </section>

@@ -19,7 +19,7 @@ import close from '../../../../img/icon/x.png';
 
 import './EduMathQ.css';
 
-function EduMathQ1({setPage, user}){
+function EduMathQ1({setPage, user, point}){
 
     const [onPopUp, setPopUp] = useState(false);
 
@@ -49,7 +49,7 @@ function EduMathQ1({setPage, user}){
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader setPage={setPage} user={user} />
+            <EduHeader setPage={setPage} user={user} point={point} />
             <div className='flex eduQBtn'>
                 <div className="basicQ active">기초문제</div>
                 <Link to={'/education/today/5/11'}>

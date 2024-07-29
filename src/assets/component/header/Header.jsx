@@ -20,14 +20,23 @@ function Header({setPage, user, kakaoLogout}) {
 
     // 마이탭 메뉴
     let [myClick, setMyClick] = useState(false);
-
-    useEffect(()=>{
-        if(user){
-            console.log(user)
-        }else{
-            console.log('null')
-        }
-    },[user])
+    
+    function loginAlert(){
+        alert('로그인해주세요')
+    }
+    
+    function loginMove(){
+        alert('로그인해주세요')
+        setHamClick(false)
+    }
+    function logoutMove(){
+        alert('이용해주셔서 감사합니다.')
+        setHamClick(false)
+    }
+    function pageChange(){
+        setHamClick(false)
+        setPage(false)
+    }
 
     
     return (
@@ -37,10 +46,18 @@ function Header({setPage, user, kakaoLogout}) {
                 <Link to='/'><img src={img} alt='logo'/></Link>
             </h1>
             <ul className='navTab flex'>
-                <Link to='/'><li>캐치! 수학몬스터즈</li></Link>
-                <Link to='/education'><li onClick={()=>setPage(false)}>학습하기</li></Link>
+                <Link to='/catch'><li>캐치! 수학몬스터즈</li></Link>
+                {user?
+                    <Link to='/education' onClick={()=>setPage(false)}><li>학습하기</li></Link>
+                :
+                    <Link to='/login' onClick={loginAlert}><li>학습하기</li></Link>
+                }
                 <Link to='/noticeList'><li>알림나무</li></Link>
-                <Link to='/mypage'><li>학부모코너</li></Link>
+                {user?
+                    <Link to='/mypage'><li>학부모코너</li></Link>
+                :
+                    <Link to='/login' onClick={loginAlert}><li>학부모코너</li></Link>
+                }
             </ul>
             {user ?
                 <div className='navMy'>
@@ -69,7 +86,7 @@ function Header({setPage, user, kakaoLogout}) {
                                 </div>
                             </li>
                             <li className='navMyLog'>
-                                <Link to='/' onClick={kakaoLogout}><div>로그아웃</div></Link>
+                                <Link to='/' onClick={kakaoLogout}><div onClick={logoutMove}>로그아웃</div></Link>
                             </li>
                         </ul>
                     </div>
@@ -93,14 +110,22 @@ function Header({setPage, user, kakaoLogout}) {
         {hamClick == true ? 
             <div className='hamMenu'>
                 <ul className='hamSubMenu'>
-                    <Link to='/'><li>캐치! 수학 몬스터즈</li></Link>
-                    <Link to='/education'><li>학습하기</li></Link>
-                    <Link to='/noticeList'><li>알림나무</li></Link>
-                    <Link to='/mypage'><li>학부모코너</li></Link>
+                    <Link to='/catch' onClick={()=>setHamClick(false)}><li>캐치! 수학 몬스터즈</li></Link>
+                    {user?
+                        <Link to='/education' onClick={pageChange}><li>학습하기</li></Link>
+                    :
+                        <Link to='/login' onClick={loginMove}><li>학습하기</li></Link>
+                    }
+                    <Link to='/noticeList' onClick={()=>setHamClick(false)}><li>알림나무</li></Link>
+                    {user?
+                        <Link to='/mypage' onClick={()=>setHamClick(false)}><li>학부모코너</li></Link>
+                    :
+                        <Link to='/login' onClick={loginMove}><li className='navCursor'>학부모코너</li></Link>
+                    }
                 </ul>
                 {user ?
                     <div className='subNavMyLog'>
-                        <Link to='/' onClick={kakaoLogout}><div>로그아웃</div></Link>
+                        <Link to='/' onClick={kakaoLogout}><div onClick={logoutMove}>로그아웃</div></Link>
                     </div>
                 :
                     <ul className='hamLogin'>
@@ -121,5 +146,3 @@ function Header({setPage, user, kakaoLogout}) {
 }
 
 export default Header
-
-

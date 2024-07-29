@@ -4,13 +4,12 @@ import Subnav from "../../common/Subnav";
 import monster from '../../../img/monster/monster5_2.png';
 import './point.css';
 
-function Point(){
-
+function Point({point}){
     const pointReverse = PointDatas.reverse();
-
+    
     return(
         <>
-            <SubHead chara={monster} />
+            <SubHead chara={1} />
             <section className='w1440 flex pa55'>
                 <Subnav key={1} tit={'학부모 코너'} />
                 <article className='pointWrap'>
@@ -25,8 +24,8 @@ function Point(){
                         </thead>
                         <tbody>
                             <tr className='pointListTxt'>
-                                <td>1000 포인트</td>
-                                <td>1100 포인트</td>
+                                <td>{point}포인트</td>
+                                <td>10000 포인트</td>
                             </tr>
                         </tbody>
                     </table>

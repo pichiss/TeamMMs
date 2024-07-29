@@ -48,7 +48,7 @@ function Ask(){
 
     return(
         <section className='w1440 pa55 flex'>
-        <Subnav tit={'학부모코너'}/>
+        <Subnav tit={'학부모 코너'}/>
         <div className='askWrap'>
             <h2 className='subtit'>1:1 문의</h2>
             <table>

@@ -48,6 +48,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    border: 7px solid #fff;
 }
 .eduHelpWrap>h2, .eduExitWrap>h2{
     color: #fff;
@@ -72,3 +73,55 @@
     width: 82px;
     padding-bottom: 10px;
 }
+@media screen and (max-width : 1040px) {
+    .eduProfile{
+        height: 100px;
+        overflow: hidden;
+    }
+    .eduProfile .eduCircle{
+        width: 67px;
+        height: auto;
+    }
+    .eduProfile .eduCircle img{
+        width: 45px;
+        height: auto;
+    }
+    .eduHelpWrap>h2, .eduExitWrap>h2{
+        font-size: 20px;
+
+    }
+    .eduPfL img{
+        width: 380px;
+    }
+    .eduPtWrap img{
+        width: 150px;
+    }
+    .eduPtWrap>h2{
+        font-size: 18px;
+    }
+  }
+
+@media screen and (max-width : 768px) {
+    .eduProfile{
+        height: 100px;
+        overflow: hidden;
+    }
+    .eduProfile .eduCircle{
+        width: 67px;
+        height: auto;
+    }
+    .eduProfile .eduCircle img{
+        width: 45px;
+        height: auto;
+    }
+    .eduHelpWrap>h2, .eduExitWrap>h2{
+        font-size: 20px;
+
+    }
+    .eduPfL img{
+        width: 150px;
+    }
+    .eduPtWrap img{
+        width: 80px;
+    }
+  }

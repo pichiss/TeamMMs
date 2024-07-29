@@ -1,5 +1,7 @@
 .eduViedosWrap {
     background-image: url(../../../img/bgpink.png);
+    padding-bottom: 75px;
+    overflow-y: hidden;
 }
 
 .eduViedosCover h2 {
@@ -9,7 +11,7 @@
     color: white;
     -webkit-text-stroke: 1px #C73395;
     text-shadow: -1px 3px #C73395, 3px 1px #C73395, 1px 3px #C73395, 3px -1px #C73395;
-    padding-bottom: 50px;
+    padding-bottom: 55px;
 }
 
 .eduViedos {
@@ -44,6 +46,7 @@
 
 /* 영상 */
 .innereduViedosWrap {
+    background-image: url(../../../img/bgpink.png);
     height: 100vh;
 }
 
@@ -92,9 +95,16 @@
     text-shadow: -1px 2px #FF8296, 2px 1px #FF8296, 1px 2px #FF8296, 2px -1px #FF8296;
     padding-top: 10px;
 }
+/* 돌아가기 */
 
 
 /* 반응형 */
+/* @media screen and (max-width : 1440px) {
+    .eduViedosWrap {
+        height: 100%;
+    }
+    
+} */
 @media screen and (max-width : 768px) {
 
     .eduViedosCover h2 {
@@ -120,10 +130,6 @@
     .eduViedosCont ul li {
         font-size: 16px;
         -webkit-text-stroke: 0.5px #fff;
-    }
-
-    .innereduViedosWrap {
-        overflow-y: hidden;
     }
 
     .eduViedoNow {

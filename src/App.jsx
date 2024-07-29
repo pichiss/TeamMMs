@@ -28,6 +28,8 @@ import EduMathQ3 from './assets/component/page/edu/EduMath/EduMathQ3.jsx';
 
 import Leaning from './assets/component/page/learning/learning';
 import EduVideo from './assets/component/page/eduVideo/eduVideo';
+import Ask from './assets/component/page/ask/ask.jsx';
+import Faq from './assets/component/page/faq/faq.jsx';
 import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
 
@@ -112,12 +114,14 @@ function App() {
           <Route path="/login" element={<Login kakaoLogin={kakaoLogin}/>}/>
           <Route path="/join" element={<Join />}/>
           <Route path="/mypage" element={<Profile user={user}/>}/>
-          <Route path="/mypage/point" element={<Point />} />
+          <Route path="/mypage/learning" element={<Leaning />}/>
+          <Route path="/mypage/point" element={<Point />}/>
+          <Route path="/mypage/ask" element={<Ask />}/>
           <Route path="/noticeList" element={<NoticeList />}/>
           <Route path="/detail/:id" element={<NoticeDetail />}/>
+          <Route path="/faq" element={<Faq />}/>
           <Route path="/write" element={<NoticeWrite />}/>
           <Route path="/mypage/learning" element={<Leaning />}/>
-          <Route path="/catch" element={<Catch />}/>
         </Routes>
 
       <Footer />

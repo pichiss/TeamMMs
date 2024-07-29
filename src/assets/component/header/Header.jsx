@@ -145,5 +145,3 @@ function Header({setPage, user, kakaoLogout}) {
 }
 
 export default Header
-
-

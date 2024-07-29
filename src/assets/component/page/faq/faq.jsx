@@ -14,7 +14,7 @@ function Faq(){
     return(
         <>
         <section>
-        <SubHead chara={'monster1'} />
+        <SubHead chara={2} />
             <article className='w1440 pa55 flex'>
             <Subnav tit={'알림나무'}/>
             <div className='faqWrap'>

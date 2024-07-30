@@ -5,6 +5,7 @@ import {noticeContext} from "../../../../App";
 import CommonPagination from '../../common/Pagination';
 import Subnav from '../../common/Subnav';
 import Btn from './btn';
+import NoticeSearch from './noticeSearch';
 
 
 export default function NoticeList() {
@@ -19,7 +20,7 @@ export default function NoticeList() {
     const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost);
 
 
-    const writebtns = {
+    const writeBtns = {
         tit : '글쓰기',
         link :'/write',
         Bclass :'writeBtn'
@@ -32,6 +33,7 @@ export default function NoticeList() {
          <Subnav tit={'알림나무'}/>
          <div>
          <h2 className='subtit'>공지사항 & 이벤트</h2>
+         <NoticeSearch/>
             <table className='notiTable'>
                 <thead>
                     <tr>
@@ -55,7 +57,7 @@ export default function NoticeList() {
                     </tr>)}
                 </tbody>
             </table>
-            <Btn {...writebtns}/>
+            <Btn {...writeBtns}/>
             <CommonPagination pages={pages} setPages={setPages} postPerPage={postPerPage} datas={datas}/>
          </div>
         </section>

@@ -6,14 +6,15 @@
     background-color: var(--main-blue);
     color: white;
     border: 1px solid var(--main-blue);
+    margin-top: 30px;
 }
 .editBtn div,.removeBtn div,.cancleBtn div{
     border: 1px solid var(--main-blue);
+    margin-top: 30px;
 }
 
 /* 버튼 공통 */
 .boardBtn{
-    margin-top: 30px;
     width: 81.45px;
     line-height: 40px;
     text-align: center;

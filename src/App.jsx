@@ -37,7 +37,6 @@ import EduNoteMain from './assets/component/page/edu/EduNote/EduNote.jsx';
 import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
 
 import Notifunc from './noticeFunc.jsx';
-import { notiReducer, Contents } from '././assets/component/page/notice/noticeData.jsx';
 import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
 export const notiContext = createContext();
 export const editNotiContext = createContext();
@@ -120,16 +119,13 @@ function App() {
   }
 
   //게시판
-  const [state, dispatch] = useReducer(notiReducer, Contents);
-  const { datas } = state;
-  // const { type, name, text } = state.inputs; 
-  const [memoNoti] = Notifunc();
+  const [memoNoti, datas] = Notifunc();
 
   return (
     <>
       {page == true ?
         <>
-        <notiContext.Provider value={datas}>
+        <noticeContext.Provider value={datas}>
           <editNotiContext.Provider value={memoNoti}>
           <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} />
           <Routes>
@@ -141,7 +137,7 @@ function App() {
             <Route path="/mypage/point" element={<Point />} />
             <Route path="/mypage/ask" element={<Ask />} />
             <Route path="/noticeList" element={<NoticeList />} />
-            <Route path="/detail/:id" element={<NoticeDetail {...datas}/>} />
+            <Route path="/detail/:id" element={<NoticeDetail />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/write" element={<NoticeWrite />} />
             <Route path="/mypage/learning" element={<Leaning />} />
@@ -149,7 +145,7 @@ function App() {
           </Routes>
           <Footer />
           </editNotiContext.Provider>
-        </notiContext.Provider>
+        </noticeContext.Provider>
         </>
         :
         <>

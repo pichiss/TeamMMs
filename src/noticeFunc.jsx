@@ -23,7 +23,7 @@ const Notifunc = () => {
                 text,
                 id: notiId.current,
                 createDate,
-                views:0
+                views:1,
             }
         })
         notiId.current++;
@@ -31,6 +31,7 @@ const Notifunc = () => {
 
 
     const editNoti = (id, notiType, name, text) => {
+
         dispatch({
             type: "edit",
             id,
@@ -54,6 +55,7 @@ const Notifunc = () => {
             text,
         });
     };
+
 
     const memoNoti = useMemo(() => {
         return { createNoti, editNoti, removeNoti, searchNoti };

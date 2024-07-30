@@ -1,13 +1,14 @@
 import "./noticeStyle.css";
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useReducer, useState } from "react";
+import { Contents, notiReducer } from "./noticeData";
 import Subnav from "../../common/Subnav";
 import Btn from "./btn";
 import { editNotiContext, noticeContext } from "../../../../App";
 
 export default function NoticeDetail() {
   const { id } = useParams();
-  const datas = useContext(noticeContext)
+  const datas = useContext(noticeContext).reverse()
   const { editNoti, removeNoti } = useContext(editNotiContext);
   const [onUpdate, setOnUpdate] = useState(true);
   const [editNotis, setEditNotis] = useState({
@@ -46,19 +47,26 @@ export default function NoticeDetail() {
   console.log(id)
   //삭제
   function removeDetail() {
-    removeNoti(id);
+    removeNoti(datas[id].id);
     setEditNotis({
       id: "",
       notiType: "",
       name: "",
       text: "",
     });
+    navigate("/noticeList");
   }
 
   //저장
   function saveDetail() {
-    editNoti(editNotis.id, editNotis.notiType, editNotis.name, editNotis.text);
-    // console.log(editNotis);
+    let types
+    if (editNotis.notiType === null || editNotis.notiType === ''|| editNotis.notiType === undefined ) {
+      types = "공지사항" ;
+    } else{
+      types = editNotis.notiType;
+    }
+    editNoti(editNotis.id, types, editNotis.name, editNotis.text);
+    console.log(types);
     navigate("/noticeList");
   }
 
@@ -95,7 +103,7 @@ export default function NoticeDetail() {
         <h2 className="subtit">공지사항 & 이벤트</h2>
         {onUpdate ? (
           <div>
-            <h3>{datas[id].name}</h3>
+            <h3>[{datas[id].notiType}] {datas[id].name}</h3>
             <ul className="flex">
               <li>등록일</li>
               <li>{datas[id].createDate}</li>

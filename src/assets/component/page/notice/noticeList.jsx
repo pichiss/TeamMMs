@@ -12,9 +12,9 @@ export default function NoticeList() {
     const datas = useContext(noticeContext);
     const noitsReverse = datas.sort((a,b)=>(a.id-b.id)).reverse();
     // 페이지네이션
-    const [page, setPages] = useState(1);
+    const [pages, setPages] = useState(1);
     const postPerPage = 10;
-    const indexOfLastPost = page * postPerPage;
+    const indexOfLastPost = pages * postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
     const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost);
 
@@ -24,6 +24,7 @@ export default function NoticeList() {
         link :'/write',
         Bclass :'writeBtn'
     }
+
 
     return (
         <>
@@ -55,7 +56,7 @@ export default function NoticeList() {
                 </tbody>
             </table>
             <Btn {...writebtns}/>
-            <CommonPagination page={page} setPages={setPages} postPerPage={postPerPage} datas={datas}/>
+            <CommonPagination pages={pages} setPages={setPages} postPerPage={postPerPage} datas={datas}/>
          </div>
         </section>
         </>

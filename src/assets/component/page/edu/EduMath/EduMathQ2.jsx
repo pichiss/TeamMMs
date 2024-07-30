@@ -8,39 +8,58 @@ import EduFooter from '../EduFooter';
 
 import left_arrow from '../../../../img/icon/left-arrow.png';
 import right_arrow from '../../../../img/icon/right-arrow.png';
+import score_answer from '../../../../img/icon/score.png';
+import score_wrong from '../../../../img/icon/score_wrong.png';
 import ask from '../../../../img/icon/info.png';
 import bulb from '../../../../img/icon/bulb.png';
 import check from '../../../../img/icon/check-mark.png';
 import spring from '../../../../img/note_spring.png';
 import spin from '../../../../img/icon/spin_mark.png';
+import close from '../../../../img/icon/x.png';
 
 import './EduMathQ.css';
 
-function EduMathQ3({setPage, user}){
+function EduMathQ2({setPage, user, point}){
 
-    const [onBasic, setOnBasic] = useState(true);
-    const [onDeepQ, setOnDeepQ] = useState(false);
+    const [onPopUp, setPopUp] = useState(false);
 
-    function onClickBasic(){
-        setOnBasic(true)
-        setOnDeepQ(false)
-    }
-
-    function onClickDeep(){
-        setOnBasic(false)
-        setOnDeepQ(true)
-    }
-    
     function checkQ(){
-        confirm("채점하시겠습니까?")
+        setPopUp(true)
+    }
+
+    function closeQ(){
+        setPopUp(false)
+    }
+
+    const [onAnswer, setAnswer] = useState('');
+    const [onTwoAnswer, setTwoAnswer] = useState('');
+    const [onScore, setScore] = useState(null);
+
+    function saveAnswer(e){
+        setAnswer(e.target.value);
+    }
+
+    function saveAnswerTwo(e){
+        setTwoAnswer(e.target.value)
+    }
+
+    function answerQ(){
+        if(onAnswer == 12 && onTwoAnswer == 8){
+            setScore(true)
+        }else{
+            setScore(false)
+        }
+        setPopUp(false)
     }
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader setPage={setPage} user={user} />
+            <EduHeader setPage={setPage} user={user} point={point}/>
             <div className='flex eduQBtn'>
-                <div className={onBasic ? "active" : " "} onClick={onClickBasic}>기초문제</div>
-                <div className={onDeepQ ? "active" : " "} onClick={onClickDeep}>응용문제</div>
+                <div className="basicQ active">기초문제</div>
+                <Link to={'/education/today/5/11'}>
+                    <div className="deepQ">응용문제</div>
+                </Link>
             </div>
             <article className='flex eduUnitWrap'>
                 <div className='eduArrowWrap'>
@@ -52,6 +71,8 @@ function EduMathQ3({setPage, user}){
                     </Link>
                 </div>
                 <div className='eduUnitL'>
+                    <img src={score_answer} alt="" className={'scoreAnswer ' + (onScore !== null && onScore === true ? 'on' : '')} />
+                    <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>02. 다음 입체도형을 보고 모서리와 꼭짓점의 개수를 각각 작성하세요.</h1>
                     <Canvas
                         style={{width: `980px`, height: `440px`}}
@@ -65,17 +86,17 @@ function EduMathQ3({setPage, user}){
                     <div className='eduAnswer'>
                         <h1>모서리의 개수는?</h1>
                         <div className='flex'>
-                            <input type="text" />
+                            <input type="text" onChange={saveAnswer} value={onAnswer} />
                             <p>개</p>
                         </div>
                         <h1>꼭짓점의 개수는?</h1>
                         <div className='flex'>
-                            <input type="text" />
+                            <input type="text" onChange={saveAnswerTwo} value={onTwoAnswer} />
                             <p>개</p>
                         </div>
                     </div>
                     <div className='flex eduSubBtn'>
-                        <div className='flex askWrap'>
+                        <div className='flex eduAskWrap'>
                             <img src={ask} alt="" />
                             <h3>질문하기</h3>
                         </div>
@@ -89,11 +110,21 @@ function EduMathQ3({setPage, user}){
                         </div>
                     </div>
                 </div>
-                <div>{}</div>
+                <div className={'eduPopUp ' + (onPopUp ? 'on' : '')}>
+                    <div className='flex eduCloseBtn' onClick={closeQ}>
+                        <img src={close} alt="close-button" />
+                    </div>
+                    <h2>채점하시겠습니까?</h2>
+                    <div className='flex eduPopBtn'>
+                        <button className='eduCancleBtn' onClick={closeQ}>취소하기</button>
+                        <button className='eduGradeBtn' onClick={answerQ}>채점하기</button>
+                    </div>
+                </div>
+                <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
             <EduFooter />
         </section>
     )
 }
 
-export default EduMathQ3;
+export default EduMathQ2;

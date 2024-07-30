@@ -11,7 +11,7 @@
     text-align: center;
     font-size: 36px;
 }
-.eduUnitWrap h3{
+.eduSubUnitBox>h3{
     font-size: 30px;
 }
 .eduUnitL{
@@ -110,6 +110,9 @@
     width: 260px;
     padding-top: 40px;
 }
+.eduNoSelect.off{
+    display: none;
+}
 
 
 /* 소단원 선택 O */
@@ -143,9 +146,9 @@
     border-radius: 20px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.eduTodaySec .on{
+.eduSelect.on{
     display: block;
 }
-.eduTodaySec .off{
+.eduSelect.off{
     display: none;
 }

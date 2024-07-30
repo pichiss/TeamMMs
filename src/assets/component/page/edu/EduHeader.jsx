@@ -3,10 +3,12 @@ import pf_bg from '../../../img/profile_bg.svg';
 import pt_bg from '../../../img/point_bg.svg';
 import question from '../../../img/icon/question.png';
 import door from '../../../img/icon/door.png';
+import { useState } from 'react';
 import './EduHeader.css';
 
-function EduHeader({setPage, user}){
-    return(
+function EduHeader({ setPage, user, point }) {
+  
+    return (
         <article className='flex eduProfile'>
             <div className='eduPfL'>
                 <h2>{user.nickname}</h2>
@@ -15,7 +17,7 @@ function EduHeader({setPage, user}){
             </div>
             <div className='flex eduPfR'>
                 <div className='eduPtWrap'>
-                    <h2>1,000p</h2>
+                    <h2>{point}p</h2>
                     <img src={pt_bg} alt="point" />
                 </div>
                 <div className='eduHelpWrap'>
@@ -24,7 +26,7 @@ function EduHeader({setPage, user}){
                         <img src={question} alt="help-button" className='helpBtn' />
                     </div>
                 </div>
-                <div className='eduExitWrap' onClick={()=>setPage(true)}>
+                <div className='eduExitWrap' onClick={() => setPage(true)}>
                     <h2>나가기</h2>
                     <Link to='/'>
                         <div className='flex eduCircle'>

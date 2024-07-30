@@ -46,7 +46,6 @@ function expend(){
     window.confirm(`연장 하시겠습니까?`)
 }
 
-console.log(user)
     // 별표 만들기 금주랑 채민이가 함.
     const use_for = () => {
         const result = [];
@@ -60,7 +59,7 @@ console.log(user)
 
     return(
         <section>
-            <SubHead chara={'monster1'} />
+            <SubHead chara={1} />
             <article className="w1440 flex pa55">
             <Subnav key={1} tit={'학부모 코너'}/>
             <div className="profileBox">
@@ -148,10 +147,10 @@ console.log(user)
                 <table className="subscription">
                     <thead>
                     <tr className="bgBlue">
-                        <td>상태</td>
+                        <td className="leftBorderRadius">상태</td>
                         <td>이용권 이름</td>
                         <td>이용 기간</td>
-                        <td>연장</td>
+                        <td className="rightBorderRadius">연장</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -159,7 +158,7 @@ console.log(user)
                         <td>이용중</td>
                         <td>캐치! 수학 몬스터즈 12개월 이용권</td>
                         <td>~2024.08.09</td>
-                        <td className="expend" onClick={expend}>연장하기</td>
+                        <td className="expend" onClick={expend}><span className="bluelineBtn">연장하기</span></td>
                     </tr>
                     </tbody>
                 </table>

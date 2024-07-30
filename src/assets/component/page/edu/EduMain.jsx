@@ -24,16 +24,18 @@ function EduMain({setPage, user, point}){
                     </div>
                 </Link>
                 <div className="eduCont">
-                    <div className='flex eduNote'>
-                        <img src={note} alt="note-image" />
-                        <h2>오답노트</h2>
-                    </div>
-                <Link to={'/eduPoint'}>
-                    <div className='flex eduPoint'>
-                        <img src={pointshop} alt="pointshop-image" />
-                        <h2>포인트샵</h2>
-                    </div>
-                </Link>
+                    <Link to={'/education/note'}>
+                        <div className='flex eduNote'>
+                            <img src={note} alt="note-image" />
+                            <h2>오답노트</h2>
+                        </div>
+                    </Link>
+                    <Link to={'/eduPoint'}>
+                        <div className='flex eduPoint'>
+                            <img src={pointshop} alt="pointshop-image" />
+                            <h2>포인트샵</h2>
+                        </div>
+                    </Link>
                 </div>
             </article>
         </section>

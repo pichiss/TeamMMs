@@ -14,8 +14,8 @@
     gap: 25px;
 }
 .eduVideo{
-    width: 500px;
-    padding: 82.5px 0;
+    width: 100%;
+    padding: 82.5px 45px;
     border-radius: 20px;
     box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
     flex-direction: column;
@@ -34,8 +34,8 @@
     width: 395px;
 }
 .eduToday{
-    width: 500px;
-    padding: 70px 0;
+    width: 100%;
+    padding: 70px 55px;
     border-radius: 20px;
     box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
     flex-direction: column;
@@ -57,8 +57,8 @@
     padding: 30px 0;
 }
 .eduNote{
-    width: 500px;
-    padding: 30px;
+    width: 100%;
+    padding: 30px 125px;
     margin-bottom: 25px;
     border-radius: 20px;
     box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
@@ -79,8 +79,8 @@
     padding-left: 25px;
 }
 .eduPoint{
-    width: 500px;
-    padding: 30px;
+    width: 100%;
+    padding: 30px 125px;
     border-radius: 20px;
     box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
     flex-direction: column;
@@ -100,9 +100,47 @@
 }
 
 
-@media screen and (max-width : 1440px) {
-    .eduVideo, .eduToday, .eduNote, .eduPoint{
-      width: calc(100% - 60px);
+@media screen and (max-width : 1503px) {
+    .eduVideo{
+        width: calc(100% - 30px);
+        margin-left: 30px;
+    }
+    .eduVideo>h2{
+        padding-bottom: calc(100vw * (20 / 786));
+        font-size: calc(100vw * (25 / 786));
+    }
+    .eduVideo>img{
+        width: 100%;
+    }
+    .eduToday{
+        width: calc(100% - 30px);
+    }
+    .eduToday>h2{
+        padding-bottom: calc(100vw * (20 / 786));
+        font-size: calc(100vw * (25 / 786));
+    }
+    .eduToday>img{
+        width: 100%;
+    }
+    .eduNote{
+        width: calc(100% - 30px);
+    }
+    .eduNote>h2{
+        padding-top: calc(100vw * (20 / 786));
+        font-size: calc(100vw * (25 / 786));
+    }
+    .eduNote>img{
+        width: 100%;
+    }
+    .eduPoint{
+        width: calc(100% - 30px);
+    }
+    .eduPoint>h2{
+        padding-top: calc(100vw * (20 / 786));
+        font-size: calc(100vw * (25 / 786));
+    }
+    .eduPoint>img{
+        width: 100%;
     }
 }
 
@@ -113,8 +151,54 @@
     }
     .eduVideo{
         width: 100%;
+        margin-left: 0;
+        padding: 35px 0;
+        gap: 80px;
+        flex-direction: row;
+    }
+    .eduVideo>h2{
+        padding-bottom: 0;
+        font-size: 50px;
+    }
+    .eduVideo>img{
+        width: 220px;
+    }
+    .eduToday{
+        width: 100%;
+        padding: 35px 0;
+        gap: 80px;
+        flex-direction: row;
+    }
+    .eduToday>h2{
+        padding-bottom: 0;
+        font-size: 50px;
+    }
+    .eduToday>img{
+        width: 175px;
     }
     .eduCont{
         display: flex;
+        gap: 30px;
     }
-  }
+    .eduNote{
+        width: 100%;
+        padding: 40px 95px;
+    }
+    .eduNote>h2{
+        font-size: 36px;
+    }
+    .eduNote>img{
+        width: 143px;
+        padding-left: 0;
+    }
+    .eduPoint{
+        width: 100%;
+        padding: 40px 95px;
+    }
+    .eduPoint>h2{
+        font-size: 36px;
+    }
+    .eduPoint>img{
+        width: 145px;
+    }
+}

@@ -61,3 +61,19 @@
     bottom: 30%;
     right: 23%;
 }
+
+
+@media screen and (max-width: 1440px){
+    .eduTodaySec .swiper-wrapper>div:not(:last-child)::after{
+        display: none;
+    }
+    .eduTodaySec .swiper-wrapper{
+        gap: 90px;
+    }
+    .eduTodaySec .swiper-slide>h3{
+        font-size: calc(100vw * (30/768));
+    }
+}
+@media screen and (max-width: 768px){
+    
+}

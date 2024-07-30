@@ -1,7 +1,6 @@
 import { PointDatas, PointUseDatas } from './pointData';
 import SubHead from '../../common/Subhead';
 import Subnav from "../../common/Subnav";
-import monster from '../../../img/monster/monster5_2.png';
 import './point.css';
 
 function Point({point}){
@@ -24,7 +23,7 @@ function Point({point}){
                         </thead>
                         <tbody>
                             <tr className='pointListTxt'>
-                                <td>{point}포인트</td>
+                                <td>{point} 포인트</td>
                                 <td>10000 포인트</td>
                             </tr>
                         </tbody>

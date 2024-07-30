@@ -139,7 +139,7 @@ function App() {
             <Route path="/join" element={<Join />} />
             <Route path="/mypage" element={<Profile user={user} />} />
             <Route path="/mypage/learning" element={<Leaning />} />
-            <Route path="/mypage/point" element={<Point />} />
+            <Route path="/mypage/point" element={<Point point={point} />} />
             <Route path="/mypage/ask" element={<Ask />} />
             <Route path="/noticeList" element={<NoticeList />} />
             <Route path="/detail/:id" element={<NoticeDetail {...datas}/>} />

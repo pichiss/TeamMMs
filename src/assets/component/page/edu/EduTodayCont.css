@@ -66,8 +66,9 @@
 .eduUnitWrap>img{
     position: absolute;
     z-index: 1;
-    top: 25%;
-    left: 59.2%;
+    top: 24%;
+    /* left: 59.2%; */
+    left: calc(100% - 783px);
 }
 
 

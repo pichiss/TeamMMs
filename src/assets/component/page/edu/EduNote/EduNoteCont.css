@@ -7,7 +7,7 @@
     -webkit-text-stroke: 1px #fff;
     font-family: 'yg-jalnan';
 }
-.eduUnitWrap h2{
+.eduMainUnits>h2{
     text-align: center;
     font-size: 36px;
 }
@@ -68,12 +68,6 @@
 }
 .eduSubUnitBoxs div>span.on{
     display: block;
-}
-.eduUnitWrap>img{
-    position: absolute;
-    z-index: 1;
-    top: 25%;
-    left: 59.2%;
 }
 
 

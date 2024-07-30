@@ -165,18 +165,18 @@ function App() {
         :
         <>
         <Routes>
-          <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point} point={point}/>} />
-          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}point={point}/>} />
-          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}point={point}/>} />
-          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}point={point}/>} />
-          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point={point}point={point}/>} />
+          <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point} />} />
+          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point={point}/>} />
           <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} point={point}/>} />
           <Route path='/education/today/:unitId/11' element={<EduMathQ11 setPage={setPage} user={user} point={point}/>} />
           <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} point={point} />} />
-          <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} point={point}/>} />
-          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}point={point}/>}/>
+          <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
+          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}/>}/>
           <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}/>}/>
-          <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}point={point}/>}/>
+          <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
           <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
         </Routes>
         </>

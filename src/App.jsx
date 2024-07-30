@@ -33,7 +33,7 @@ import Faq from './assets/component/page/faq/faq.jsx';
 import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
 import Notifunc from './noticeFunc.jsx';
-import { notiReducer, Contents } from '././assets/component/page/notice/noticeData.jsx';
+
 export const noticeContext = createContext();
 export const editNotiContext = createContext();
 
@@ -115,10 +115,7 @@ function App() {
   }
 
   //게시판
-  const [state, dispatch] = useReducer(notiReducer, Contents);
-  const { datas } = state;
-  // const { type, name, text } = state.inputs; 
-  const [memoNoti] = Notifunc();
+  const [memoNoti, datas] = Notifunc();
 
   return (
     <>

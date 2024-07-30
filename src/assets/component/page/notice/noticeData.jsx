@@ -109,6 +109,7 @@ const Contents = {
 
 const notiReducer = (state, action) =>{
     console.log(action.data)
+    console.log(action.type)
     switch(action.type){
         case 'create' :
         return{            

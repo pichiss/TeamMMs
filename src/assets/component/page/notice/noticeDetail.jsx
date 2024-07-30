@@ -1,19 +1,17 @@
 import "./noticeStyle.css";
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useReducer, useState } from "react";
-import { Contents, notiReducer } from "./noticeData";
+import { useContext, useState } from "react";
 import Subnav from "../../common/Subnav";
 import Btn from "./btn";
 import { editNotiContext, noticeContext } from "../../../../App";
 
 export default function NoticeDetail() {
   const { id } = useParams();
+  const datas = useContext(noticeContext)
   const { editNoti, removeNoti } = useContext(editNotiContext);
-  const [state, dispatch] = useReducer(notiReducer, Contents);
-  const { datas } = state;
   const [onUpdate, setOnUpdate] = useState(true);
   const [editNotis, setEditNotis] = useState({
-    id: id,
+    id: datas[id].id,
     notiType: datas[id].notiType,
     name: datas[id].name,
     text: datas[id].text,
@@ -60,7 +58,7 @@ export default function NoticeDetail() {
   //저장
   function saveDetail() {
     editNoti(editNotis.id, editNotis.notiType, editNotis.name, editNotis.text);
-    console.log(editNotis);
+    // console.log(editNotis);
     navigate("/noticeList");
   }
 

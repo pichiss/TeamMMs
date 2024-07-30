@@ -1,8 +1,7 @@
 import './noticeStyle.css'
 import { Link } from "react-router-dom";
-
-import { useReducer, useState } from "react";
-import { Contents, notiReducer } from './noticeData';
+import { useContext, useState } from "react";
+import {noticeContext} from "../../../../App";
 import CommonPagination from '../../common/Pagination';
 import Subnav from '../../common/Subnav';
 import Btn from './btn';
@@ -10,16 +9,14 @@ import Btn from './btn';
 
 export default function NoticeList() {
 
-    const [state, dispatch] = useReducer(notiReducer, Contents);
-    const { datas } = state;
-    const noitsReverse = [...datas].reverse()
-
+    const datas = useContext(noticeContext);
+    const noitsReverse = datas.sort((a,b)=>(a.id-b.id)).reverse();
     // 페이지네이션
     const [page, setPages] = useState(1);
-    const postPerPage = 10
-    const indexOfLastPost = page * postPerPage
-    const indexOfFirstPost = indexOfLastPost - postPerPage
-    const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost)
+    const postPerPage = 10;
+    const indexOfLastPost = page * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost);
 
 
     const writebtns = {

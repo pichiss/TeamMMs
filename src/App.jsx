@@ -2,7 +2,7 @@ import './reset.css'
 import './App.css'
 
 import { Route, Routes } from 'react-router-dom';
-import { eduContents, qDatas } from './assets/component/page/edu/eduData.js';
+import { eduContents, qDatas } from './assets/component/page/edu/eduData.jsx';
 import { useState, useEffect, createContext, useReducer } from 'react'
 
 import Header from './assets/component/header/Header'
@@ -35,6 +35,7 @@ import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx'
 
 import EduNoteMain from './assets/component/page/edu/EduNote/EduNote.jsx';
 import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
+import EduNoteQ1 from './assets/component/page/edu/EduNote/EduNoteQ1.jsx';
 
 import Notifunc from './noticeFunc.jsx';
 import { notiReducer, Contents } from '././assets/component/page/notice/noticeData.jsx';
@@ -163,6 +164,7 @@ function App() {
           <Route path='/education/today/:unitId/11' element={<EduMathQ11 setPage={setPage} user={user} point={point}/>} />
           <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} point={point} />} />
           <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
+          <Route path="/education/note/:unitId/1" element={<EduNoteQ1 data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
           <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}/>}/>
           <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}/>}/>
           <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>

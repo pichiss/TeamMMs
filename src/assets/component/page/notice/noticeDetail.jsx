@@ -2,7 +2,7 @@ import "./noticeStyle.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import Subnav from "../../common/Subnav";
-import Btn from "./btn";
+import Btn from "../../common/button/btn";
 import { editNotiContext, noticeContext } from "../../../../App";
 
 export default function NoticeDetail() {

@@ -1,7 +1,6 @@
 import "./noticeStyle.css";
 import Subnav from "../../common/Subnav";
-import "./btnStyle.css";
-import Btn from "./btn";
+import Btn from "../../common/button/btn";
 import { useContext } from "react";
 import NoticeInput from "./noticeInput";
 import { editNotiContext } from "../../../../App";

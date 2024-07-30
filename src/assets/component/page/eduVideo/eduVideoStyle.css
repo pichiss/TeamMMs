@@ -52,6 +52,7 @@
 
 .eduViedoNowWrap {
     width: 100%;
+    padding-top: 50px;
 }
 
 .eduViedoNow {
@@ -106,7 +107,7 @@
     }
 
     .eduViedoNowWrap {
-        padding-top: 250px;
+        padding-top: 200px;
     }
 
     .eduViedoNow {

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import Btn from "./btn";
+import Btn from "../../common/button/btn";
 import './noticeSearchStyle.css'
 import { editNotiContext } from "../../../../App";
 

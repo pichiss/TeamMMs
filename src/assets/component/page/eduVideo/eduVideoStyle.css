@@ -1,6 +1,6 @@
 .eduViedosWrap {
     background-image: url(../../../img/bgpink.png);
-    height: auto;
+    height: 100vh;
     overflow-y: hidden;
 }
 
@@ -71,12 +71,15 @@
 
 
 /* 반응형 */
+@media screen and (max-width : 1440px) {
+    .eduViedosWrap {
+        height: auto;
+        padding-bottom: 100px;
+    }
+}
 
 @media screen and (max-width : 768px) {
-    .eduViedosWrap {
-        height: 110vh;
-    }
-    
+
     .eduViedosWrap .eduViedosCover h2 {
         font-size: 30px;
         -webkit-text-stroke: 1px #C73395;
@@ -89,7 +92,7 @@
     }
 
     .eduViedosCover .eduViedosCont {
-        width: 300px;
+        width: 400px;
         height: 100px;
     }
 
@@ -114,4 +117,11 @@
         gap: 30px;
     }
 
+}
+
+@media screen and (max-width : 500px) {
+
+    .eduViedosCover .eduViedosCont {
+        width: 300px;
+    }
 }

@@ -6,7 +6,6 @@ import img from '../../img/monster/로고3.png'
 import monsters from '../../img/monsters.png'
 import clo from '../../img/icon/x.png'
 import star from '../../img/icon/star.png'
-import { useEffect } from 'react';
 
 function Header({setPage, user, kakaoLogout}) {
     // 햄버거 메뉴
@@ -81,7 +80,7 @@ function Header({setPage, user, kakaoLogout}) {
                             <li className='navPoint'>
                                 <img src={star} alt='point'/>
                                 <div>
-                                    <p>100</p>
+                                    <p>1000</p>
                                     <p>pt</p>
                                 </div>
                             </li>

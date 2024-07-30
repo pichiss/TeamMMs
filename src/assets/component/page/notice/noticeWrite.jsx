@@ -20,26 +20,28 @@ export default function NoticeWrite() {
   const { createNoti } = useContext(editNotiContext)
 
   function createBtn() {
-    let types
-    if (notiType === null || notiType === ''|| notiType === undefined ) {
-      types = "공지사항" ;
-    } else{
-      types = notiType;
+    if (window.confirm(`게시글을 저장 하시겠습니까?`)) {
+      let types
+      if (notiType === null || notiType === ''|| notiType === undefined ) {
+        types = "공지사항" ;
+      } else{
+        types = notiType;
+      }
+      createNoti(types, name, text)
+      reset()
+      navigate('/noticeList')
     }
-    createNoti(types, name, text)
-    reset()
-    navigate('/noticeList')
   }
 
   const btns1 = {
     tit: "취소",
     link: "/noticeList",
-    Bclass: "cancleBtn",
+    Bclass: "whiteBtn",
   };
   const btns2 = {
     tit: "저장",
     link: "",
-    Bclass: "saveBtn",
+    Bclass: "blueBtn",
   };
 
   return (

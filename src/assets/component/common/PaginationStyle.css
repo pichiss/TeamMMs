@@ -1,0 +1,24 @@
+/* 페이지네이션 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 0;
+    gap: 28px;
+}
+
+.pagination li {
+    cursor: pointer;
+}
+
+.pagination .active a {
+    color: #FF1E1E;
+    font-weight: bold;
+}
+
+.pagination li:first-child{
+    display: none;
+}
+.pagination li:last-child{
+    display: none;
+}

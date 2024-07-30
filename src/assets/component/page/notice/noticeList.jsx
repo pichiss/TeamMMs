@@ -1,7 +1,7 @@
 import './noticeStyle.css'
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import {noticeContext} from "../../../../App";
+import { noticeContext } from '../../../../App';
 import CommonPagination from '../../common/Pagination';
 import Subnav from '../../common/Subnav';
 import Btn from './btn';
@@ -12,6 +12,7 @@ export default function NoticeList() {
 
     const datas = useContext(noticeContext);
     const noitsReverse = datas.sort((a,b)=>(a.id-b.id)).reverse();
+    const allList = noitsReverse.length
     // 페이지네이션
     const [pages, setPages] = useState(1);
     const postPerPage = 10;
@@ -25,6 +26,7 @@ export default function NoticeList() {
         link :'/write',
         Bclass :'writeBtn'
     }
+    
 
 
     return (
@@ -33,7 +35,7 @@ export default function NoticeList() {
          <Subnav tit={'알림나무'}/>
          <div>
          <h2 className='subtit'>공지사항 & 이벤트</h2>
-         <NoticeSearch/>
+         <NoticeSearch allList={allList}/>
             <table className='notiTable'>
                 <thead>
                     <tr>

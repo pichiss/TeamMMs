@@ -3,7 +3,7 @@ import './App.css'
 
 import { Route, Routes } from 'react-router-dom';
 import { eduContents, qDatas } from './assets/component/page/edu/eduData.js';
-import { useState, useEffect, createContext, useReducer } from 'react'
+import { useState, useEffect, createContext } from 'react'
 
 import Header from './assets/component/header/Header'
 import Main from './assets/component/page/main/Main'
@@ -38,7 +38,8 @@ import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
 
 import Notifunc from './noticeFunc.jsx';
 import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
-export const notiContext = createContext();
+
+export const noticeContext = createContext();
 export const editNotiContext = createContext();
 
 

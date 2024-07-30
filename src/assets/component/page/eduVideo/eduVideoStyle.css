@@ -102,6 +102,10 @@
         -webkit-text-stroke: 0.5px #fff;
     }
 
+    .eduViedoNowWrap {
+        padding-top: 250px;
+    }
+
     .eduViedoNow {
         width: 100%;
         flex-direction: column;

@@ -1,10 +1,39 @@
+/* 질문하기 */
+.askIconWrap {
+    width: 80px;
+}
+
+.askIcon {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.askIcon img {
+    position: relative;
+    top: 12px;
+    left: 10px;
+}
+
+.askIcon h3 {
+    font-family: 'yg-jalnan';
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    -webkit-text-stroke: 1px #FF8296;
+    text-shadow: -1px 2px #FF8296, 2px 1px #FF8296, 1px 2px #FF8296, 2px -1px #FF8296;
+    padding-top: 10px;
+}
+
+/* 반응형 */
 .eduViedosWrap {
     background-image: url(../../../img/bgpink.png);
-    height: auto;
+    padding-bottom: 75px;
     overflow-y: hidden;
 }
 
-.eduViedosWrap .eduViedosCover h2 {
+.eduViedosCover h2 {
     font-family: 'yg-jalnan';
     text-align: center;
     font-size: 48px;
@@ -14,30 +43,30 @@
     padding-bottom: 55px;
 }
 
-.eduViedosCover .eduViedos {
+.eduViedos {
     justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
 }
 
-.eduViedosCover .eduViedosCont {
+.eduViedosCont {
     width: 600px;
 }
 
-.eduViedosCover .eduViedosCont img {
+.eduViedosCont img {
     width: 40%;
     height: 150px;
     border-radius: 20px 0 0 20px;
 }
 
-.eduViedosCover .eduViedosCont ul {
+.eduViedosCont ul {
     width: 60%;
     background-color: var(--yellow);
     border-radius: 0 20px 20px 0;
     padding-top: 25px;
 }
 
-.eduViedosCover .eduViedosCont ul li {
+.eduViedosCont ul li {
     font-family: 'yg-jalnan';
     text-align: center;
     font-size: 30px;
@@ -73,41 +102,26 @@
 /* 반응형 */
 
 @media screen and (max-width : 768px) {
-    .eduViedosWrap {
-        height: 110vh;
-    }
-    
-    .eduViedosWrap .eduViedosCover h2 {
-        font-size: 30px;
-        -webkit-text-stroke: 1px #C73395;
-        text-shadow: -1px 3px #C73395, 3px 1px #C73395, 1px 3px #C73395, 3px -1px #C73395;
-        padding-bottom: 40px;
+
+    .askIconWrap {
+        width: 65px;
     }
 
-    .eduViedosCover .eduViedos {
-        gap: 40px;
+    .askIcon {
+        width: 65px;
+        height: 65px;
     }
 
-    .eduViedosCover .eduViedosCont {
-        width: 300px;
-        height: 100px;
+    .askIcon img {
+        width: 50px;
+        height: 50px;
+        top: 7px;
+        left: 7px;
     }
 
-    .eduViedosCover .eduViedosCont img {
-        height: 100px;
-    }
-
-    .eduViedosCover .eduViedosCont ul li {
-        font-size: 16px;
-        -webkit-text-stroke: 0.5px #fff;
-    }
-
-    .eduViedoNow {
+    .askIcon h3 {
         width: 100%;
-        flex-direction: column;
-        align-items: center;
-        width: calc(100% - 30px);
-        gap: 30px;
+        padding: 0;
+        font-size: 16px;
     }
-
 }

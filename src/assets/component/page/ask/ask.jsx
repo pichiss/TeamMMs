@@ -2,12 +2,12 @@ import { useContext} from 'react';
 import { Link } from 'react-router-dom';
 import Subnav from '../../common/Subnav';
 import {itemContext} from '../../../../App'
-import {editAskContext} from '../../../../App'
+// import {editAskContext} from '../../../../App'
 import './ask.css'
 
 function Ask(){
-  const Items = useContext(itemContext);
-  console.log(Items)
+  const item = useContext(itemContext);
+  console.log(item)
 
     return(
         <section className='w1440 pa55 flex'>
@@ -24,7 +24,7 @@ function Ask(){
                 </tr>
                 </thead>
                 <tbody>
-                {Items.map((item)=>
+                {item.map((item)=>
                 <tr key={item.id}>
                     <td>{item.id}</td>
                     {item.ansur === false? <td><span className='ansYet'>답변대기</span></td> : <td><span className='ansEnd'>답변완료</span></td>}

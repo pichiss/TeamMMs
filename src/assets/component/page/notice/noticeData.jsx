@@ -109,6 +109,7 @@ const Contents = {
 
 const notiReducer = (state, action) =>{
     console.log(action.data)
+    console.log(action.type)
     switch(action.type){
         case 'create' :
         return{            
@@ -118,7 +119,7 @@ const notiReducer = (state, action) =>{
         case 'edit' :
         return{
             ...state,
-            datas: state.datas.map((item)=>item.id === action.id?{...item, notiType:action.type, name:action.name, text:action.text}:item)
+            datas: state.datas.map((item)=>item.id === action.id?{...item, notiType:action.notiType, name:action.name, text:action.text}:item)
         }
         case 'remove' :
         return{

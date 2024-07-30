@@ -3,7 +3,7 @@ import './App.css'
 
 import { Route, Routes } from 'react-router-dom';
 import { eduContents, qDatas } from './assets/component/page/edu/eduData.js';
-import { useState, useEffect, createContext, useReducer } from 'react'
+import { useState, useEffect, createContext } from 'react'
 
 import Header from './assets/component/header/Header'
 import Main from './assets/component/page/main/Main'
@@ -30,7 +30,6 @@ import EduMathQ11 from './assets/component/page/edu/EduMath/EduMathQ11.jsx';
 import Leaning from './assets/component/page/learning/learning';
 import EduVideo from './assets/component/page/eduVideo/eduVideo';
 import Ask from './assets/component/page/ask/ask.jsx';
-import AskNew from './assets/component/page/ask/askboard/askNew.jsx';
 import Faq from './assets/component/page/faq/faq.jsx';
 import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
@@ -38,14 +37,13 @@ import EduNoteMain from './assets/component/page/edu/EduNote/EduNote.jsx';
 import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
 
 import Notifunc from './noticeFunc.jsx';
-import { notiReducer, Contents } from '././assets/component/page/notice/noticeData.jsx';
 import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
 import AskFunc from './askFunc.jsx';
 
 //게시판용
 export const itemContext = createContext();
 export const editAskContext = createContext();
-export const notiContext = createContext();
+export const noticeContext = createContext();
 export const editNotiContext = createContext();
 
 
@@ -129,15 +127,15 @@ function App() {
   const [memoNoti, datas] = Notifunc();
 
   // 1:1 게시판
-
   const [memoAsk, item] = AskFunc();
+
   return (
     <>
       {page == true ?
         <>
-        <notiContext.Provider value={datas}>
+        <noticeContext.Provider value={datas}>
           <editNotiContext.Provider value={memoNoti}>
-            <itemContext.Provider value={item}>
+          <itemContext.Provider value={item}>
             <editAskContext.Provider value={memoAsk}>
           <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} />
           <Routes>
@@ -148,24 +146,23 @@ function App() {
             <Route path="/mypage/learning" element={<Leaning />} />
             <Route path="/mypage/point" element={<Point />} />
             <Route path="/mypage/ask" element={<Ask />} />
-            <Route path="/mypage/askNew" element={<AskNew />} />
             <Route path="/noticeList" element={<NoticeList />} />
-            <Route path="/detail/:id" element={<NoticeDetail {...datas}/>} />
+            <Route path="/detail/:id" element={<NoticeDetail />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/write" element={<NoticeWrite />} />
             <Route path="/mypage/learning" element={<Leaning />} />
             <Route path="/catch" element={<Catch />} />
           </Routes>
           <Footer />
-            </editAskContext.Provider>
+          </editAskContext.Provider>
             </itemContext.Provider>
           </editNotiContext.Provider>
-        </notiContext.Provider>
+        </noticeContext.Provider>
         </>
         :
         <>
         <Routes>
-          <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point} />} />
+          <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point}/>} />
           <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}/>} />
           <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}/>} />
           <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}/>} />
@@ -176,7 +173,6 @@ function App() {
           <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
           <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}/>}/>
           <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}/>}/>
-          <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
           <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
         </Routes>
         </>

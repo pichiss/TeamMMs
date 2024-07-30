@@ -20,7 +20,7 @@ function EduNoteCont(props){
 
     return(
         <section className='eduNoteSec'>
-            <EduHeader setPage={props.setPage} user={props.user} />
+            <EduHeader setPage={props.setPage} user={props.user} point={props.point} />
             <article className='flex eduUnitWrap'>
                 <div className='eduUnitLs'>
                     <div className='eduMainUnits'>

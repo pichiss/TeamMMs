@@ -20,7 +20,7 @@ function EduTodayCont(props, point){
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader setPage={props.setPage} user={props.user} point={point} />
+            <EduHeader setPage={props.setPage} user={props.user} point={props.point} />
             <article className='flex eduUnitWrap'>
                 <div className='eduUnitL'>
                     <div className='eduMainUnit'>

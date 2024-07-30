@@ -19,7 +19,7 @@ import close from '../../../../img/icon/x.png';
 
 import './EduMathQ.css';
 
-function EduMathQ11({setPage, user}){
+function EduMathQ11({setPage, user, point}){
 
     const [onPopUp, setPopUp] = useState(false);
 
@@ -54,7 +54,7 @@ function EduMathQ11({setPage, user}){
 
     return(
         <section className='eduTodaySec'>
-            <EduHeader setPage={setPage} user={user} />
+            <EduHeader setPage={setPage} user={user} point={point} />
             <div className='flex eduQBtn'>
                 <Link to={'/education/today/5/1'}>
                     <div className="basicQ">기초문제</div>
@@ -96,7 +96,7 @@ function EduMathQ11({setPage, user}){
                         </div>
                     </div>
                     <div className='flex eduSubBtn'>
-                        <div className='flex askWrap'>
+                        <div className='flex eduAskWrap'>
                             <img src={ask} alt="" />
                             <h3>질문하기</h3>
                         </div>

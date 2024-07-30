@@ -110,7 +110,7 @@
     justify-content: space-between;
     cursor: pointer;
 }
-.askWrap>img{
+.eduAskWrap>img{
     width: 50px;
 }
 .checkWrap>img{
@@ -121,7 +121,7 @@
     font-size: 20px;
     color: #fff;
 }
-.askWrap>h3{
+.eduAskWrap>h3{
     -webkit-text-stroke: 1px #FF8296;
     text-shadow: -1px 2px #FF8296, 2px 1px #FF8296, 1px 2px #FF8296, 2px -1px #FF8296;
 }

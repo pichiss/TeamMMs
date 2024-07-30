@@ -83,7 +83,7 @@ function EduMathQ3({setPage, user,point}){
                         <input type="text" onChange={saveAnswer} value={onAnswer} />
                     </div>
                     <div className='flex eduSubBtn'>
-                        <div className='flex askWrap'>
+                        <div className='flex eduAskWrap'>
                             <img src={ask} alt="" />
                             <h3>질문하기</h3>
                         </div>

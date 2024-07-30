@@ -35,9 +35,10 @@ import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx'
 
 import EduNoteMain from './assets/component/page/edu/EduNote/EduNote.jsx';
 import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
-import Notifunc from './noticeFunc.jsx';
 
+import Notifunc from './noticeFunc.jsx';
 import { notiReducer, Contents } from '././assets/component/page/notice/noticeData.jsx';
+import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
 export const notiContext = createContext();
 export const editNotiContext = createContext();
 
@@ -150,24 +151,22 @@ function App() {
           </editNotiContext.Provider>
         </notiContext.Provider>
         </>
-    :
-    <>
-      <Routes>
-          <Route path='/education' element={<EduMain setPage={setPage} user={user}/>} />
-          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} />} />
-          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} />} />
-          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} />} />
-          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} />} />
-          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} />} />
-          <Route path="/education/today/:unitId/11" element={<EduMathQ11 setPage={setPage} user={user} />} />
-          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} />}/>
-          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} />}/>
-          <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} />} />
-          <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} />} />
-          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} />}/>
-          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} />}/>
+        :
+        <>
+        <Routes>
+          <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/11' element={<EduMathQ11 setPage={setPage} user={user} point={point}/>} />
+          <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} point={point} />} />
+          <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
+          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}/>}/>
+          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}/>}/>
+          <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
         </Routes>
-
         </>
       }
     </>

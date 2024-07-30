@@ -23,7 +23,8 @@ const Notifunc = () => {
                 text,
                 id: notiId.current,
                 createDate,
-            },
+                views:0
+            }
         })
         notiId.current++;
     },[notiType, name, text])
@@ -57,6 +58,6 @@ const Notifunc = () => {
     const memoNoti = useMemo(() => {
         return { createNoti, editNoti, removeNoti, searchNoti };
     }, []);
-    return [memoNoti]
+    return [memoNoti, datas]
 }
 export default Notifunc

@@ -1,15 +1,18 @@
 import { useContext } from "react";
 import ItemInput from "../hook/askhook";
-import { editContext } from "../ask";
+import { editAskContext } from '../../../../../App';
+import { useNavigate } from "react-router-dom";
 
 const AskNew = ()=>{
+    const navigate = useNavigate();
+    
     const [{tit,content,category},onchange, reset]=ItemInput({
         tit : '',
         content :'',
         category : '' 
     });
 
-    const {CreateItem}=useContext(editContext);
+    const {CreateItem}=useContext(editAskContext);
     const createBtn = ()=>{
         let cate
         if(category === undefined || category=== ''){
@@ -19,7 +22,7 @@ const AskNew = ()=>{
         }
         if(window.confirm(`${tit}을/를 등록 하시겠습니까?`)){
             CreateItem(tit,content,cate)
-            reset()
+            navigate('/mypage/ask/')
          }
 
 

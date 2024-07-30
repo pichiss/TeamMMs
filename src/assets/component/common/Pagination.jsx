@@ -4,7 +4,7 @@ import { useMemo } from "react";
 
 
 
-export default function CommonPagination({page, setPages, postPerPage, datas}) {
+export default function CommonPagination({pages, setPages, postPerPage, datas}) {
 
 
     function allCounts (datas){
@@ -13,15 +13,15 @@ export default function CommonPagination({page, setPages, postPerPage, datas}) {
     
     const allCount = useMemo(()=>allCounts(datas),[datas])
 
-    const handlePageChange = (page) => {
-        setPages(page);
+    const handlePageChange = (pages) => {
+        setPages(pages);
     };
 
 
 
     return (
         <Pagination
-        activePage={page}
+        activePage={pages}
         itemsCountPerPage={postPerPage}
         totalItemsCount={allCount}
         pageRangeDisplayed={5}

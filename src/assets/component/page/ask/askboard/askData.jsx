@@ -49,6 +49,8 @@ const Contents= {
   }]
 }
 const reducer = (state, action)=>{
+console.log(action.item)
+console.log(action.type)
 
       switch(action.type){
           case 'create' :

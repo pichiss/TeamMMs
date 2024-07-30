@@ -15,8 +15,6 @@ function Ask(){
       const indexOfLastPost = pages * postPerPage;
       const indexOfFirstPost = indexOfLastPost - postPerPage;
       const currentPost = askReverse.slice(indexOfFirstPost, indexOfLastPost);
-  
-  
 
     return(
         <section className='w1440 pa55 flex'>

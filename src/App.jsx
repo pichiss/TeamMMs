@@ -39,7 +39,8 @@ import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
 
 import Notifunc from './noticeFunc.jsx';
 import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
-export const notiContext = createContext();
+
+export const noticeContext = createContext();
 export const editNotiContext = createContext();
 
 

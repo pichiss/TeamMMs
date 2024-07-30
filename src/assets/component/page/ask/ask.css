@@ -9,6 +9,8 @@
 .askWrap td{
     padding: 20px 10px;
     text-align: center;
+}
+.askWrap tr{
     border-bottom: 1px solid var(--line-grey);
 }
 
@@ -26,4 +28,5 @@
     background-color:var(--main-blue);
     padding: 5px 20px;
     border-radius: 5px;
+    color: #fff;
 }

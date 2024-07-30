@@ -30,6 +30,8 @@ import EduMathQ11 from './assets/component/page/edu/EduMath/EduMathQ11.jsx';
 import Leaning from './assets/component/page/learning/learning';
 import EduVideo from './assets/component/page/eduVideo/eduVideo';
 import Ask from './assets/component/page/ask/ask.jsx';
+import AskNew from './assets/component/page/ask/askboard/askNew.jsx';
+import AskFunc from './askFunc.jsx';
 import Faq from './assets/component/page/faq/faq.jsx';
 import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
@@ -38,7 +40,7 @@ import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
 
 import Notifunc from './noticeFunc.jsx';
 import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
-import AskFunc from './askFunc.jsx';
+import AskDetail from './assets/component/page/ask/askboard/askDetail.jsx';
 
 //게시판용
 export const itemContext = createContext();
@@ -127,7 +129,7 @@ function App() {
   const [memoNoti, datas] = Notifunc();
 
   // 1:1 게시판
-  const [memoAsk, item] = AskFunc();
+  const [memoAsk, items] = AskFunc();
 
   return (
     <>
@@ -135,7 +137,7 @@ function App() {
         <>
         <noticeContext.Provider value={datas}>
           <editNotiContext.Provider value={memoNoti}>
-          <itemContext.Provider value={item}>
+          <itemContext.Provider value={items}>
             <editAskContext.Provider value={memoAsk}>
           <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} />
           <Routes>
@@ -146,6 +148,8 @@ function App() {
             <Route path="/mypage/learning" element={<Leaning />} />
             <Route path="/mypage/point" element={<Point />} />
             <Route path="/mypage/ask" element={<Ask />} />
+            <Route path="/mypage//mypage/ask/detail:id" element={<AskDetail />} />
+            <Route path="/mypage/askNew" element={<AskNew />} />
             <Route path="/noticeList" element={<NoticeList />} />
             <Route path="/detail/:id" element={<NoticeDetail />} />
             <Route path="/faq" element={<Faq />} />

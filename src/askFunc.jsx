@@ -3,7 +3,7 @@ import {Contents, reducer} from './assets/component/page/ask/askboard/askData';
 
 const AskFunc = () => {
     const [state,dispatch] = useReducer(reducer, Contents);
-    const {item} = state;
+    const {items} = state;
     const {tit,content, category} = state.inputs;
     const userId = useRef(7);
 
@@ -13,6 +13,7 @@ const AskFunc = () => {
         type : 'create',
         item : {
             tit,content, category, 
+            ansur : false,
           id:userId.current,
           createDate
         }
@@ -43,6 +44,6 @@ const AskFunc = () => {
       },[])
       
 
-    return [memoAsk, item]
+    return [memoAsk, items]
 }
 export default AskFunc

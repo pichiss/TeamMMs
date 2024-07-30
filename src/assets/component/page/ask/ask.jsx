@@ -1,13 +1,22 @@
-import { useContext} from 'react';
+import { useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Subnav from '../../common/Subnav';
+import CommonPagination from '../../common/Pagination';
 import {itemContext} from '../../../../App'
-// import {editAskContext} from '../../../../App'
 import './ask.css'
 
 function Ask(){
-  const item = useContext(itemContext);
-  console.log(item)
+  const items = useContext(itemContext);
+  const askReverse = items.sort((a,b)=>(a.id-b.id)).reverse();
+
+      // 페이지네이션
+      const [pages, setPages] = useState(1);
+      const postPerPage = 10;
+      const indexOfLastPost = pages * postPerPage;
+      const indexOfFirstPost = indexOfLastPost - postPerPage;
+      const currentPost = askReverse.slice(indexOfFirstPost, indexOfLastPost);
+  
+  
 
     return(
         <section className='w1440 pa55 flex'>
@@ -24,17 +33,17 @@ function Ask(){
                 </tr>
                 </thead>
                 <tbody>
-                {item.map((item)=>
+                {currentPost.map((item)=>
                 <tr key={item.id}>
                     <td>{item.id}</td>
                     {item.ansur === false? <td><span className='ansYet'>답변대기</span></td> : <td><span className='ansEnd'>답변완료</span></td>}
-                    <td className='askTit'> <span>[{item.category}]</span> {item.tit}</td>
+                    <Link to={`/mypage/ask/detail${item.id}`}><td className='askTit'> <span>[{item.category}]</span> {item.tit}</td></Link>
                     <td>{item.createDate}</td>
                 </tr>
                 )}
                 </tbody>
-
             </table>
+            <CommonPagination pages={pages} setPages={setPages} postPerPage={postPerPage} datas={items}/>
                 <Link to='/mypage/askNew'><button>문의</button></Link>
         </div>
         </section>

@@ -4,6 +4,7 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom';
 import { eduContents, qDatas } from './assets/component/page/edu/eduData.js';
 import { useState, useEffect, createContext, useReducer } from 'react'
+import { kakaos } from './loginData/kakao.jsx'
 
 import Header from './assets/component/header/Header'
 import Main from './assets/component/page/main/Main'
@@ -38,7 +39,8 @@ import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
 
 import Notifunc from './noticeFunc.jsx';
 import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
-export const notiContext = createContext();
+
+export const noticeContext = createContext();
 export const editNotiContext = createContext();
 
 
@@ -47,71 +49,7 @@ function App() {
 
   const [page, setPage] = useState(true);
   // 카카오 로그인-------------------------------------------------------------
-  const [user, setUser] = useState(null);
-  const [isLogin, setIsLogin] = useState(false);
-  const { Kakao } = window;
-  const initKakao = async () => {
-    const jsKey = "9f5304fbac21cb4ee421113d0f2f7bab";
-    if (Kakao && !Kakao.isInitialized()) {
-      await Kakao.init(jsKey);
-      // console.log(`kakao 초기화 ${Kakao.isInitialized()}`);
-    }
-  };
-  const kakaoLogin = async () => {
-    await Kakao.Auth.login({
-      success(res) {
-        console.log(res);
-        Kakao.Auth.setAccessToken(res.access_token);
-        // console.log("카카오 로그인 성공");
-
-        Kakao.API.request({
-          url: "/v2/user/me",
-          success(res) {
-            // console.log("카카오 인가 요청 성공");
-            setIsLogin(true);
-            const kakaoAccount = res.kakao_account;
-            localStorage.setItem(
-              "profileImg",
-              kakaoAccount.profile.profile_image_url
-            );
-            localStorage.setItem("nickname", kakaoAccount.profile.nickname);
-            window.location.href = "http://localhost:5173/";
-          },
-          fail(error) {
-            console.log(error);
-          },
-        });
-      },
-      fail(error) {
-        console.log(error);
-      },
-    });
-  };
-
-  const kakaoLogout = () => {
-    Kakao.Auth.logout((res) => {
-      console.log(Kakao.Auth.getAccessToken());
-      console.log(res);
-      localStorage.removeItem("profileImg");
-      localStorage.removeItem("nickname");
-      setUser(null);
-    });
-  };
-
-  useEffect(() => {
-    initKakao();
-    Kakao.Auth.getAccessToken() ? setIsLogin(true) : setIsLogin(false);
-  }, []);
-
-  useEffect(() => {
-    if (isLogin) {
-      setUser({
-        profileImg: localStorage.getItem("profileImg"),
-        nickname: localStorage.getItem("nickname"),
-      });
-    }
-  }, [isLogin]);
-
+  const { user, initKakao, kakaoLogin, kakaoLogout } = kakaos()
   // -------------------------------------------------------------------------
   const [point, setPoint] = useState(10000);
   function updateUserPoints(newPoints) {
@@ -123,7 +61,7 @@ function App() {
 
   return (
     <>
-      {page == true ?
+    {page == true ?
         <>
         <noticeContext.Provider value={datas}>
           <editNotiContext.Provider value={memoNoti}>
@@ -147,24 +85,24 @@ function App() {
           </editNotiContext.Provider>
         </noticeContext.Provider>
         </>
-        :
-        <>
+    :
+      <>
         <Routes>
-          <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId/11' element={<EduMathQ11 setPage={setPage} user={user} point={point}/>} />
-          <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} point={point} />} />
-          <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
-          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}/>}/>
-          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}/>}/>
-          <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
+            <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point}/>} />
+            <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}/>} />
+            <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}/>} />
+            <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}/>} />
+            <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point={point}/>} />
+            <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} point={point}/>} />
+            <Route path='/education/today/:unitId/11' element={<EduMathQ11 setPage={setPage} user={user} point={point}/>} />
+            <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} point={point} />} />
+            <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
+            <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}/>}/>
+            <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}/>}/>
+            <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
         </Routes>
-        </>
-      }
+      </>
+    }
     </>
   )
 }

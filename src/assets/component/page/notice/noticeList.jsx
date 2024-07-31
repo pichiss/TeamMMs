@@ -1,39 +1,43 @@
 import './noticeStyle.css'
 import { Link } from "react-router-dom";
-
-import { useReducer, useState } from "react";
-import { Contents, notiReducer } from './noticeData';
+import { useContext, useState } from "react";
+import { noticeContext } from '../../../../App';
 import CommonPagination from '../../common/Pagination';
 import Subnav from '../../common/Subnav';
-import Btn from './btn';
+import Btn from "../../common/button/btn";
+import NoticeSearch from './noticeSearch';
+import SubHead from '../../common/Subhead';
 
 
 export default function NoticeList() {
 
-    const [state, dispatch] = useReducer(notiReducer, Contents);
-    const { datas } = state;
-    const noitsReverse = [...datas].reverse()
-
+    const datas = useContext(noticeContext);
+    const noitsReverse = datas.sort((a,b)=>(a.id-b.id)).reverse();
+    const allList = noitsReverse.length
     // 페이지네이션
-    const [page, setPages] = useState(1);
-    const postPerPage = 10
-    const indexOfLastPost = page * postPerPage
-    const indexOfFirstPost = indexOfLastPost - postPerPage
-    const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost)
+    const [pages, setPages] = useState(1);
+    const postPerPage = 10;
+    const indexOfLastPost = pages * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    const currentPost = noitsReverse.slice(indexOfFirstPost, indexOfLastPost);
 
 
-    const writebtns = {
+    const writeBtns = {
         tit : '글쓰기',
         link :'/write',
         Bclass :'writeBtn'
     }
+    
+
 
     return (
         <>
+        <SubHead/>
          <section className="w1440 flex noticeListWrap pa55">
          <Subnav tit={'알림나무'}/>
          <div>
          <h2 className='subtit'>공지사항 & 이벤트</h2>
+         <NoticeSearch allList={allList}/>
             <table className='notiTable'>
                 <thead>
                     <tr>
@@ -57,8 +61,8 @@ export default function NoticeList() {
                     </tr>)}
                 </tbody>
             </table>
-            <Btn {...writebtns}/>
-            <CommonPagination page={page} setPages={setPages} postPerPage={postPerPage} datas={datas}/>
+            <Btn {...writeBtns}/>
+            <CommonPagination pages={pages} setPages={setPages} postPerPage={postPerPage} datas={datas}/>
          </div>
         </section>
         </>

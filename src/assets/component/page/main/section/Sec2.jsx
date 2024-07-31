@@ -1,23 +1,22 @@
 import service from '../../../../img/icon/고객센터.png'
 
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { noticeContext } from '../../../../../App';
+
 function Sec2(){
-    let datas = [
-        '[공지사항] 공지사항입니다, 공지사항공지사항입니다, 공지사항.공지사항입니다, 공지사항.공지사항입니다, 공지사항.',
-        '[이벤트] 이벤트입니다, 이벤트입니다..',
-        '[공지사항] 공지사항입니다, 공지사항..',
-        '[이벤트] 이벤트입니다, 이벤트입니다..'
-    ]
+    const datas = useContext(noticeContext).reverse().slice(0,4)
 
     return(
         <section className='mainSec2 w1440 flex'>
             <ul className='mainEvent'>
                 <li className='sec2Tit flex'>
                     <h2>공지사항&이벤트</h2>
-                    <p>더보기 <span>+</span></p>
+                    <Link to='/noticeList'><p>더보기 <span>+</span></p></Link>
                 </li>
                 <li className='sec2Info'>
-                    {datas.map((data, index) => (
-                        <div key={`event-${index}`}>{data}</div>
+                    {datas.map((data) => (
+                        <Link to={`/detail/${data.id}`}><div key={data.id}>{'['}{data.notiType}{'] '}{data.name}</div></Link>
                     ))}
                 </li>
             </ul>
@@ -27,9 +26,9 @@ function Sec2(){
                     <p>더보기 <span>+</span></p>
                 </li>
                 <li className='sec2Info'>
-                    {datas.map((data, index) => (
+                    {/* {datas.map((data, index) => (
                         <div key={`faq-${index}`}>{data}</div>
-                    ))}
+                    ))} */}
                 </li>
             </ul>
             <ul className='mainService'>

@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { noticeContext } from '../../../../../App';
 
 function Sec2(){
-    const datas = useContext(noticeContext).reverse().slice(0,4)
+    const datas = useContext(noticeContext).reverse().slice(0,5)
 
     return(
         <section className='mainSec2 w1440 flex'>

@@ -123,4 +123,7 @@
     .profilWrap td.silver{
         width: 30%;
     }
+    .profileblock{
+        display: block;
+    }
   }

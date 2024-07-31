@@ -6,6 +6,7 @@ import CommonPagination from '../../common/Pagination';
 import Subnav from '../../common/Subnav';
 import Btn from "../../common/button/btn";
 import NoticeSearch from './noticeSearch';
+import SubHead from '../../common/Subhead';
 
 
 export default function NoticeList() {
@@ -31,6 +32,7 @@ export default function NoticeList() {
 
     return (
         <>
+        <SubHead/>
          <section className="w1440 flex noticeListWrap pa55">
          <Subnav tit={'알림나무'}/>
          <div>

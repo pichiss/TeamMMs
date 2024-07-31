@@ -5,6 +5,7 @@ import { useContext } from "react";
 import NoticeInput from "./noticeInput";
 import { editNotiContext } from "../../../../App";
 import { useNavigate } from "react-router-dom";
+import SubHead from "../../common/Subhead";
 
 
 export default function NoticeWrite() {
@@ -44,6 +45,8 @@ export default function NoticeWrite() {
   };
 
   return (
+    <>
+    <SubHead/>
     <section className="w1440 flex pa55 noticeWriteWrap">
       <Subnav tit={"알림나무"} />
       <div className="noticeWrite">
@@ -64,5 +67,6 @@ export default function NoticeWrite() {
         </div>
       </div>
     </section>
+    </>
   );
 }

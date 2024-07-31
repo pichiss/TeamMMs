@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import Subnav from "../../common/Subnav";
 import Btn from "../../common/button/btn";
 import { editNotiContext, noticeContext } from "../../../../App";
+import SubHead from "../../common/Subhead";
 
 export default function NoticeDetail() {
   const { id } = useParams();
@@ -108,7 +109,9 @@ export default function NoticeDetail() {
   };
 
   return (
-    <section className="w1440 flex pa55 noticeDetailWrap">
+    <>
+    <SubHead/>
+     <section className="w1440 flex pa55 noticeDetailWrap">
       <Subnav tit={"알림나무"} />
       <div className="noticeDetail">
         <h2 className="subtit">공지사항 & 이벤트</h2>
@@ -164,5 +167,6 @@ export default function NoticeDetail() {
         )}
       </div>
     </section>
+    </>
   );
 }

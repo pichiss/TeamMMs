@@ -60,7 +60,7 @@
     font-family: 'yg-jalnan';
     text-align: center;
     font-size: 24px;
-    padding: 30px;
+    padding-bottom: 30px;
 }
 
 .askIconPopupText {
@@ -125,7 +125,7 @@
 
     .askIconPopup h5{
         font-size: 16px;
-        padding: 0 0 20px;
+        padding-bottom: 20px;
     }
 
     .askIconPopupText textarea {

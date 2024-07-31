@@ -17,6 +17,12 @@ export default function NoticeSearch({ allList }) {
         searchNoti(searchNotis)
     }
 
+    const activeEnter = (e) => {
+        if(e.key === "Enter") {
+          searchBtn();
+        }
+      }
+
 
     // 버튼
     const searchBtns = {
@@ -29,7 +35,7 @@ export default function NoticeSearch({ allList }) {
         <div className="flex searchWrap">
             <p>총 <span>{allList}</span> 건</p>
             <div className="flex search">
-                <input type="text" name="name" value={searchNotis} onChange={changeSearchNoti}/>
+                <input type="text" name="name" value={searchNotis} onChange={changeSearchNoti} onKeyDown={activeEnter}/>
                 <Btn {...searchBtns} func={searchBtn}/>
             </div>
         </div>

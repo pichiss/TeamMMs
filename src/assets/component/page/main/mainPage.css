@@ -333,9 +333,12 @@ main>section{
     border-radius: 50px;
     position: relative;
     padding: 23px 65px;
-    color: #fff;
     text-align: center;
     font-size: var(--main-number-font);
+}
+.mainBubble>h1{
+    color: #fff;
+
 }
 .mainBubble:after {
     content: '';
@@ -508,10 +511,10 @@ main>section{
     border-radius: 50%;
     background-color: #481B92;
     border: 3px solid #fff;
-    color: #fff;
     box-shadow: 3px 3px 2px var(--yellow);
 }
 .studyBtn>a>p{
+    color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;

@@ -116,6 +116,9 @@
 .checkWrap>img{
     width: 50px;
 }
+.commenWrap>img{
+    width: 50px;
+}
 .eduSubBtn h3{
     font-family: 'yg-jalnan';
     font-size: 20px;
@@ -132,6 +135,10 @@
 .checkWrap>h3{
     -webkit-text-stroke: 1px #CD2D2D;
     text-shadow: -1px 2px #CD2D2D, 2px 1px #CD2D2D, 1px 2px #CD2D2D, 2px -1px #CD2D2D;
+}
+.commenWrap>h3{
+    -webkit-text-stroke: 1px #1A75D8;
+    text-shadow: -1px 2px #1A75D8, 2px 1px #1A75D8, 1px 2px #1A75D8, 2px -1px #1A75D8;
 }
 
 
@@ -172,6 +179,7 @@
     justify-content: center;
     border-radius: 55px;
     background-color: #FF8296;
+    cursor: pointer;
 }
 .eduCloseBtn>img{
     width: 25px;
@@ -193,6 +201,7 @@
     border-radius: 5px;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
 }
 .eduCancleBtn{
     background-color: #A1A1A1;

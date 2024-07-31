@@ -44,7 +44,7 @@ const Notifunc = () => {
     const removeNoti = (id) => {
         dispatch({
             type: "remove",
-            id,
+            id
         });
     };
 

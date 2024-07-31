@@ -47,7 +47,7 @@ const eduContents = [
             unitId: 5,
             title: "5. 직육면체와 정육면체",
             subTitle1: "1. 직육면체, 정육면체",
-            wrongQ1: "틀린 문제: 4개",
+            wrongQ1: "틀린 문제: 1개",
             subTitle2: "2. 직육면체의 성질",
             wrongQ2: "틀린 문제: 0개",
             subTitle3: "3. 겨냥도와 전개도",
@@ -71,13 +71,11 @@ const qDatas = [
     },
     {
         id: 1,
-        question: "기초 문제 2",
-        answer: false
+        question: "기초 문제 2"
     },
     {
         id: 1,
-        question: "기초 문제 3",
-        answer: false
+        question: "기초 문제 3"
     },
     {
         id: 1,
@@ -109,8 +107,7 @@ const qDatas = [
     },
     {
         id: 1,
-        question: "응용 문제 1",
-        answer: false
+        question: "응용 문제 1"
     },
     {
         id: 1,

@@ -83,15 +83,15 @@ function EduMathQ1({setPage, user, point}){
                     </div>
                     <div className='flex eduSubBtn'>
                         <div className='flex eduAskWrap'>
-                            <img src={ask} alt="" />
+                            <img src={ask} alt="ask-button" />
                             <h3>질문하기</h3>
                         </div>
                         <div className='flex hintWrap'>
-                            <img src={bulb} alt="" />
+                            <img src={bulb} alt="hint-button" />
                             <h3>힌트보기</h3>
                         </div>
                         <div className='flex checkWrap' onClick={checkQ}>
-                            <img src={check} alt="" />
+                            <img src={check} alt="check-button" />
                             <h3>채점하기</h3>
                         </div>
                     </div>

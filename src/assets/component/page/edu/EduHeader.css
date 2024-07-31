@@ -73,14 +73,16 @@
     width: 82px;
     padding-bottom: 10px;
 }
-@media screen and (max-width : 1040px) {
-    .eduProfile{
-        height: 100px;
-        overflow: hidden;
-    }
+@media screen and (max-width : 1040px){
     .eduProfile .eduCircle{
         width: 67px;
         height: auto;
+    }
+    .eduPfL>h2{
+        font-size: 20px;
+    }
+    .eduPfL>p{
+        bottom: calc(40% - 5px);
     }
     .eduProfile .eduCircle img{
         width: 45px;
@@ -88,7 +90,14 @@
     }
     .eduHelpWrap>h2, .eduExitWrap>h2{
         font-size: 20px;
-
+    }
+    .eduHelpWrap>h2{
+        top: 75px;
+        right: 130px;
+    }
+    .eduExitWrap>h2{
+        top: 75px;
+        right: 43px;
     }
     .eduPfL img{
         width: 380px;
@@ -99,13 +108,9 @@
     .eduPtWrap>h2{
         font-size: 18px;
     }
-  }
+}
 
-@media screen and (max-width : 768px) {
-    .eduProfile{
-        height: 100px;
-        overflow: hidden;
-    }
+@media screen and (max-width : 768px){
     .eduProfile .eduCircle{
         width: 67px;
         height: auto;
@@ -116,12 +121,27 @@
     }
     .eduHelpWrap>h2, .eduExitWrap>h2{
         font-size: 20px;
-
+    }
+    .eduHelpWrap>h2{
+        top: 65px;
+    }
+    .eduExitWrap>h2{
+        top: 65px;
+    }
+    .eduPfL>h2{
+        font-size: max(1rem, 1vw);
     }
     .eduPfL img{
-        width: 150px;
+        width: 100%;
     }
-    .eduPtWrap img{
-        width: 80px;
+    .eduPfL>p{
+        font-size: max(1rem, 1vw);
     }
-  }
+}
+
+
+@media screen and (max-width : 530px){
+    .eduCont{
+        flex-direction: column;
+    }
+}

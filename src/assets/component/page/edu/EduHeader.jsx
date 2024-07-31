@@ -24,7 +24,7 @@ function EduHeader({ setPage, user, point, setHelpPop }) {
                     <h2>도움말</h2>
                     <div className='flex eduCircle'>
                         <img src={question} alt="help-button" className='helpBtn' />
-                    </div>k
+                    </div>
                 </div>
                 <div className='eduExitWrap' onClick={() => setPage(true)}>
                     <h2>나가기</h2>

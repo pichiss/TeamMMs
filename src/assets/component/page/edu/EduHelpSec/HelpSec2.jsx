@@ -1,6 +1,6 @@
 function HelpSec2(){
     return(
-        <>
+        <>2
         </>
     )
 }

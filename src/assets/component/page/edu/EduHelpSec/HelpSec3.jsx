@@ -1,6 +1,6 @@
 function HelpSec3(){
     return(
-        <>
+        <>3
         </>
     )
 }

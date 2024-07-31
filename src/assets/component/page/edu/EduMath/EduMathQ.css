@@ -211,10 +211,7 @@
 }
 
 /* 질문하기 */
-.EduQWrap {
- position: relative;
- bottom: 13px;
-}
+
 /* 힌트보기 */
 .hintBubble {
     width: 300px;

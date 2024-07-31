@@ -47,7 +47,7 @@ export default function EduQuestion({ Qclass }) {
             <h3>질문하기</h3>
           </div>
         </div>
-        <div className="askIconPopupWrap">
+         <div className="askIconPopupWrap">
           <div className="askIconPopup">
             <div className="flex askIconPopupImg">
               <img src={CloseAsk} alt="닫기" onClick={openAsk} />

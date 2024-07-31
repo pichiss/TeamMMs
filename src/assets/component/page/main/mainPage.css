@@ -269,16 +269,16 @@ main>section{
     font-size: var(--main-tit-font);
     font-family: 'yg-jalnan';
 }
-.sec2Tit>p{
+.sec2Tit p{
     font-size: var(--main-more-font);
 }
-.sec2Tit>p>span{
+.sec2Tit p>span{
     margin-left: 10px;
 }
 .sec2Info{
     border-top: 1px solid #ddd;
 }
-.sec2Info>div{
+.sec2Info div{
     border-bottom: 1px solid #ddd;
     padding: 15px 0;
     white-space: nowrap;

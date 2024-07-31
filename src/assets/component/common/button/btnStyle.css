@@ -2,15 +2,27 @@
     justify-content: flex-end;
     padding-right: 15px;
 }
-.writeBtn div,.listBtn div,.saveBtn div{
+.writeBtn div,.blueBtn div{
     background-color: var(--main-blue);
     color: white;
     border: 1px solid var(--main-blue);
     margin-top: 30px;
 }
-.editBtn div,.removeBtn div,.cancleBtn div{
+.whiteBtn div{
     border: 1px solid var(--main-blue);
     margin-top: 30px;
+}
+.searchBtn div{
+    background-color: var(--main-blue);
+    color: white;
+    border: 1px solid var(--main-blue);
+    width: 65px;
+    margin: 0;
+}
+.asksBtn div{
+    background-color: #FF8296;
+    color: white;
+    margin: 0;
 }
 
 /* 버튼 공통 */

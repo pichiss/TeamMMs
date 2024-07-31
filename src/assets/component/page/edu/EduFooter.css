@@ -23,12 +23,14 @@
 .eduBackWrap>h2{
     font-family: 'yg-jalnan';
     color: #fff;
-    text-shadow: -1px 3px #50834F, 3px 1px #50834F, 1px 3px #50834F, 3px -1px #50834F;
+    -webkit-text-stroke: 1px #50834F;
+    text-shadow: -1px 1px #50834F, 1px 1px #50834F, 1px 1px #50834F, 1px -1px #50834F;
     font-size: 24px;
     position: absolute;
     z-index: 1;
     bottom: -8%;
 }
+
 
 @media screen and (max-width : 1280px) {
     .eduFooter .eduCircle{
@@ -42,5 +44,6 @@
     }
     .eduBackWrap>h2{
         font-size: 20px;
+        left: -5px;
     }
   }

@@ -2,7 +2,7 @@ import './reset.css'
 import './App.css'
 
 import { Route, Routes } from 'react-router-dom';
-import { eduContents, qDatas } from './assets/component/page/edu/eduData.js';
+import { eduContents, qDatas } from './assets/component/page/edu/eduData.jsx';
 import { useState, useEffect, createContext, useReducer } from 'react'
 import { kakaos } from './loginData/kakao.jsx'
 
@@ -38,6 +38,7 @@ import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx'
 
 import EduNoteMain from './assets/component/page/edu/EduNote/EduNote.jsx';
 import EduNoteCont from './assets/component/page/edu/EduNote/EduNoteCont.jsx';
+import EduNoteQ1 from './assets/component/page/edu/EduNote/EduNoteQ1.jsx';
 
 import Notifunc from './noticeFunc.jsx';
 import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
@@ -103,18 +104,19 @@ function App() {
     :
       <>
         <Routes>
-            <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point}/>} />
-            <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}/>} />
-            <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}/>} />
-            <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}/>} />
-            <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point={point}/>} />
-            <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} point={point}/>} />
-            <Route path='/education/today/:unitId/11' element={<EduMathQ11 setPage={setPage} user={user} point={point}/>} />
-            <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} point={point} />} />
-            <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
-            <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}/>}/>
-            <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}/>}/>
-            <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
+          <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} point={point}/>} />
+          <Route path='/education/today/:unitId/11' element={<EduMathQ11 setPage={setPage} user={user} point={point}/>} />
+          <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} point={point} />} />
+          <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
+          <Route path="/education/note/:unitId/1" element={<EduNoteQ1 data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
+          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}/>}/>
+          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}/>}/>
+          <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
         </Routes>
       </>
     }

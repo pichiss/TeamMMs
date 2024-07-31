@@ -50,6 +50,9 @@
     position: relative;
     border: 7px solid #fff;
 }
+.eduHelpWrap{
+    cursor: pointer;
+}
 .eduHelpWrap>h2, .eduExitWrap>h2{
     color: #fff;
     -webkit-text-stroke: 1px #50834F;
@@ -73,22 +76,36 @@
     width: 82px;
     padding-bottom: 10px;
 }
-@media screen and (max-width : 1040px) {
-    .eduProfile{
-        height: 100px;
-        overflow: hidden;
-    }
+@media screen and (max-width : 1040px){
     .eduProfile .eduCircle{
         width: 67px;
         height: auto;
     }
-    .eduProfile .eduCircle img{
-        width: 45px;
-        height: auto;
+    .eduPfL>h2{
+        font-size: 20px;
+        top: 5%;
+    }
+    .eduPfL>p{
+        bottom: calc(50% - 5px);
+    }
+    .helpBtn{
+        width: 55px;
+        padding-bottom: 0;
+    }
+    .exitBtn{
+        width: 55px;
+        padding-bottom: 0;
     }
     .eduHelpWrap>h2, .eduExitWrap>h2{
         font-size: 20px;
-
+    }
+    .eduHelpWrap>h2{
+        top: 82px;
+        right: 130px;
+    }
+    .eduExitWrap>h2{
+        top: 82px;
+        right: 43px;
     }
     .eduPfL img{
         width: 380px;
@@ -99,13 +116,9 @@
     .eduPtWrap>h2{
         font-size: 18px;
     }
-  }
+}
 
-@media screen and (max-width : 768px) {
-    .eduProfile{
-        height: 100px;
-        overflow: hidden;
-    }
+@media screen and (max-width : 768px){
     .eduProfile .eduCircle{
         width: 67px;
         height: auto;
@@ -116,12 +129,43 @@
     }
     .eduHelpWrap>h2, .eduExitWrap>h2{
         font-size: 20px;
-
+    }
+    .eduHelpWrap>h2{
+        top: 75px;
+    }
+    .eduExitWrap>h2{
+        top: 75px;
+    }
+    .eduPfL>h2{
+        font-size: min(2rem, 2vw);
+        top: 15%;
+    }
+    .eduPfL>p{
+        font-size: min(2rem, 2vw);
+        bottom: calc(40% - 3px);
     }
     .eduPfL img{
-        width: 150px;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width : 530px){
+    .eduCont{ 
+        flex-direction: column;
     }
     .eduPtWrap img{
-        width: 80px;
+        width: 100%;
     }
-  }
+    .eduPtWrap>h2{
+        font-size: min(2rem, 3vw);
+        top: 19%;
+        right: 10%;
+    }
+    .eduHelpWrap>h2{
+        top: 55px;
+    }
+    .eduExitWrap>h2{
+        top: 55px;
+    }
+}

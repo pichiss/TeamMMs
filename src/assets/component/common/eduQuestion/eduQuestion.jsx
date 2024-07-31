@@ -40,6 +40,13 @@ export default function EduQuestion({ Qclass }) {
           </div>
         </div>
       ) : (
+        <>
+          <div className={`askIconWrap ${Qclass}`} onClick={openAsk}>
+          <div className="askIcon">
+            <img src={AskIcon} alt="질문하기" />
+            <h3>질문하기</h3>
+          </div>
+        </div>
         <div className="askIconPopupWrap">
           <div className="askIconPopup">
             <div className="flex askIconPopupImg">
@@ -57,6 +64,7 @@ export default function EduQuestion({ Qclass }) {
             </div>
           </div>
         </div>
+        </>
       )}
     </>
   );

@@ -76,7 +76,7 @@ function EduNoteCont(props){
                         {qDatas.filter((qData)=> qData.id === 1 && qData.answer == false)
                         .map((qData, i) =>
                             <div key={i}>
-                                <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`}>
+                                <Link to={`/education/note/${data[unitId-1].unitId}/${i+1}`}>
                                     {qData.question}
                                 </Link>
                             </div>)}

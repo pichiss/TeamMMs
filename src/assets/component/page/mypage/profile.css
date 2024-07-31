@@ -69,6 +69,7 @@
 }
 .bgBlue h3{
     font-size: 18px;
+    color: #fff;
 }
 .bgBlue td{
     font-size: 18px;
@@ -122,5 +123,8 @@
     }
     .profilWrap td.silver{
         width: 30%;
+    }
+    .profileblock{
+        display: block;
     }
   }

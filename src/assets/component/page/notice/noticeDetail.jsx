@@ -79,7 +79,7 @@ export default function NoticeDetail() {
       }
       editNoti(editNotis.id, types, editNotis.name, editNotis.text);
       console.log(types);
-      navigate("/noticeList");
+      // navigate("/noticeList");
     }
   }
 

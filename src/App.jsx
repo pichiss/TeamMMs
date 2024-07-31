@@ -44,6 +44,7 @@ import Notifunc from './noticeFunc.jsx';
 import EduPoint from './assets/component/page/Edupoint/Edupoint.jsx';
 import AskDetail from './assets/component/page/ask/askboard/askDetail.jsx';
 
+
 //게시판용
 export const itemContext = createContext();
 export const editAskContext = createContext();
@@ -78,6 +79,7 @@ function App() {
           <itemContext.Provider value={items}>
             <editAskContext.Provider value={memoAsk}>
           <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} point={point} />
+
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/login" element={<Login kakaoLogin={kakaoLogin} />} />
@@ -95,6 +97,7 @@ function App() {
             <Route path="/mypage/learning" element={<Leaning />} />
             <Route path="/catch" element={<Catch />} />
           </Routes>
+
           <Footer />
           </editAskContext.Provider>
             </itemContext.Provider>

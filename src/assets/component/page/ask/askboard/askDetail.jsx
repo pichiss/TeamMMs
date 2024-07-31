@@ -1,6 +1,6 @@
 import { itemContext, editAskContext } from '../../../../../App'
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useCallback, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import Subnav from '../../../common/Subnav';
 import SubHead from '../../../common/Subhead';
 import '../../../common/button/btnStyle.css'
@@ -60,7 +60,31 @@ function AskDetail(){
     navigate("/mypage/ask");
   }
 
+  // 답변
+  const [ansure, setAnsure] = useState('');
+  const [ansureList, setAnsureList]=useState( {
+    id:1,
+    ans:'답변입니다.'
+  });
+  const ansurchange= (e)=>{
+    setAnsure(e.target.value)
+  };
 
+  let addId = useRef(2)
+
+  function addAnsur(){
+    let list = {
+      id : addId.current,
+      ans
+    }
+    setAnsureList([...ansureList,list])
+    setAnsure('')
+    addId.current++;
+  }
+  const deleteBtn = (targetId)=>{
+  setLists(
+    ansurList.filter((list)=>list.id !== targetId))
+  }
     return(
       <>
       <SubHead chara={1} />
@@ -73,6 +97,12 @@ function AskDetail(){
                 <h3>[{items[id].category}] {items[id].tit}</h3>
                 <p><b>등록일</b><span>{items[id].createDate}</span></p>
                 <pre>{items[id].content}</pre>
+                <div className='ansur'>
+                  <h4>답변</h4>
+                  <input className='todoPlus' type='text' value={ansure} onChange={ansurchange} placeholder='답변을 달아주세요.'></input>
+                  <button onClick={addAnsur}>추가</button>
+                </div>
+
                 <div className='flex threeBtn'>
                   <ul className='flex '>
                     <li><button className='bluelineBtn' onClick={editBtn}>수정</button></li>

@@ -95,7 +95,9 @@ function EduMathQ1({ setPage, user, point }) {
                             <img src={ask} alt="ask-button" />
                             <h3>질문하기</h3>
                         </div> */}
+                        <div className='EduQWrap'>
                         <EduQuestion />
+                        </div>
                         {openHint ?
                             <div className='flex hintWrap' onClick={clickHint}>
                                 <img src={bulb} alt="hint-button" />

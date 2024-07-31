@@ -33,9 +33,9 @@ function Ask(){
                 <tbody>
                 {currentPost.map((item)=>
                 <tr key={item.id}>
-                    <td>{item.id}</td>
+                    <td>{item.id + 1}</td>
                     {item.ansur === false? <td><span className='ansYet'>답변대기</span></td> : <td><span className='ansEnd'>답변완료</span></td>}
-                    <Link to={`/mypage/ask/detail${item.id}`}><td className='askTit'> <span>[{item.category}]</span> {item.tit}</td></Link>
+                    <Link to={`/mypage/ask/detail/${item.id}`}><td className='askTit'> <span>[{item.category}]</span> {item.tit}</td></Link>
                     <td>{item.createDate}</td>
                 </tr>
                 )}

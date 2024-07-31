@@ -1,12 +1,13 @@
 import { itemContext, editAskContext } from '../../../../../App'
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useReducer, useState } from "react";
+import { useContext, useCallback, useState } from "react";
+import Subnav from '../../../common/Subnav';
 
-function AskDetail({id,category,tit,content,createDate}){
+function AskDetail(){
     const navigate = useNavigate();
     const { id } = useParams();
-    const items = useContext(itemContext).reverse()
-    const { editAsk, removeAsk } = useContext(editAskContext);
+    const items = useContext(itemContext).reverse();
+    const { editItem, removeItem } = useContext(editAskContext);
     const [askUpdate, setaskUpdate] = useState(true);
     const [editAskItem, setEditAskItem] = useState({
       id: items[id].id,
@@ -25,25 +26,24 @@ function AskDetail({id,category,tit,content,createDate}){
         setaskUpdate(!askUpdate);
     }
   }
-  // 수정취소
+  // 목록으로
   function listBtn() {
     history.back();
   }
 
   function editChange(e) {
-    const { tit, value } = e.target;
+    const { name, value } = e.target;
 
     setEditAskItem({
       ...editAskItem,
-      [tit]: value,
+      [name]: value,
     });
+    console.log(editAskItem)
   }
-
-  console.log(id)
   //삭제
   function removeDetail() {
-    removeNoti(items[id].id);
-    setEditNotis({
+    removeItem(items[id].id);
+    setEditAskItem({
       id: "",
       category: "",
       tit: "",
@@ -54,15 +54,15 @@ function AskDetail({id,category,tit,content,createDate}){
 
   //저장
   function saveDetail() {
-    let types
-    if (editNotis.notiType === null || editNotis.notiType === ''|| editNotis.notiType === undefined ) {
-      types = "일반문의" ;
-    } else{
-      types = editNotis.notiType;
-    }
-    editAsk(editNotis.id, types, editNotis.tit, editNotis.text);
-    console.log(types);
-    navigate("/noticeList");
+    // let category
+    // if (editAskItem.category === null || editAskItem.category === ''|| editAskItem.category === undefined ) {
+    //   category = "일반문의" ;
+    // } else{
+    //   category = editAskItem.category;
+    // }
+    editItem(editAskItem.id, editAskItem.tit, editAskItem.content);
+    // console.log(category)
+    navigate("/mypage/ask");
   }
 
 
@@ -71,18 +71,38 @@ function AskDetail({id,category,tit,content,createDate}){
         <Subnav tit={'학부모 코너'}/>
         <div className='askWrap'>
             <h2 className='subtit'>1:1 문의</h2>
-            <div>
-              <h3>tit</h3>
-              <p><span>등록일</span>date</p>
-              <pre>cont</pre>
-              <div className='flex'>
-                <ul className='flex'>
-                  <li><button>수정</button></li>
-                  <li><button>삭제</button></li>
-                </ul>
-                <button onClick={listBtn}>목록</button>
+            {askUpdate ? 
+              <div>
+                <h3>[{items[id].category}] {items[id].tit}</h3>
+                <p><span>등록일</span>{items[id].createDate}</p>
+                <pre>{items[id].content}</pre>
+                <div className='flex'>
+                  <ul className='flex'>
+                    <li><button onClick={editBtn}>수정</button></li>
+                    <li><button onClick={removeDetail}>삭제</button></li>
+                  </ul>
+                  <button onClick={listBtn}>목록</button>
+                </div>
               </div>
-            </div>
+              :
+              <div>
+                <div>
+                    <select name="category" value={editAskItem.category} onChange={editChange}>
+                        <option value={'일반문의'}>일반문의</option>
+                        <option value={'오답신고'}>오답신고</option>
+                        <option value={'학습질문'}>학습질문</option>
+                    </select>        
+                </div>
+                <div>
+                    <input type="text"name="tit" value={editAskItem.tit} onChange={editChange} placeholder="제목을 입력하세요."></input>
+                </div>
+                <div>
+                    <textarea name="content" value={editAskItem.content} onChange={editChange} placeholder="내용을 입력하세요."></textarea>            
+                </div>
+                <button className="btn" onClick={cancleBtn}>취소</button>
+                <button className="btn" onClick={saveDetail}>저장</button>
+              </div>
+            }
         </div>
         </section>
     )

@@ -5,7 +5,7 @@ const AskFunc = () => {
     const [state,dispatch] = useReducer(reducer, Contents);
     const {items} = state;
     const {tit,content, category} = state.inputs;
-    const userId = useRef(7);
+    const userId = useRef(6);
 
     const CreateItem = useCallback((tit, content, category)=>{
         const createDate = new Date().toLocaleDateString();
@@ -21,10 +21,10 @@ const AskFunc = () => {
       userId.current += 1
       },[tit,content, category])
     
-      const editItem = (id,content)=>{
+      const editItem = (id,tit,content)=>{
         dispatch({
           type : 'edit',
-          id,content
+          id,tit,content
         })
       }
       const removeItem = (id)=>{

@@ -5,42 +5,42 @@ const Contents= {
     category:'',
   },
   items : [{
-    id:1,
+    id: 0,
     tit:'이메일을 바꾸고싶어요',
     content:'이메일은 어디서 바꾸나요?',
     category : '일반문의',
     createDate : '2024. 05. 07',
     ansur : true
   },{
-    id:2,
+    id:1,
     tit:'기초문제3',
     content:'5학년 2학기 2. 직육면체의 성질에 기초문제 3번이 답이 맞는데 틀리다고 나옵니다.',
     category : '오답신고',
     createDate : '2024. 06. 08',
     ansur : false
   },{
-    id:3,
+    id:2,
     tit:'기초문제1',
     content:'5학년 2학기 2. 직육면체의 성질에 기초문제 1번 모르겠어요',
     category : '학습질문',
     createDate : '2024. 07. 09',
     ansur : false
   },{
-    id:4,
+    id:3,
     tit:'기초문제2',
     content:'5학년 2학기 2. 직육면체의 성질에 기초문제 2번 모르겠어요',
     category : '학습질문',
     createDate : '2024. 07. 07',
     ansur : false
   },{
-    id:5,
+    id:4,
     tit:'로그인 할 때 오류가 뜹니다',
     content:'로그인하면 오류창이 뜨네요',
     category : '일반문의',
     createDate : '2024. 07. 21',
     ansur : false
   },{
-    id:6,
+    id:5,
     tit:'기초문제3',
     content:'5학년 2학기 2. 직육면체의 성질에 기초문제 3번 모르겠어요',
     category : '학습질문',
@@ -49,8 +49,6 @@ const Contents= {
   }]
 }
 const reducer = (state, action)=>{
-console.log(action.item)
-console.log(action.type)
 
       switch(action.type){
           case 'create' :
@@ -69,6 +67,7 @@ console.log(action.type)
                   items: state.items.map((item)=>item.id===action.id?
                       {...item,
                         content : action.content,
+                        tit : action.tit
                       } :item)
               }
                case "search" : 

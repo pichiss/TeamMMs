@@ -148,7 +148,7 @@ function App() {
             <Route path="/mypage/learning" element={<Leaning />} />
             <Route path="/mypage/point" element={<Point />} />
             <Route path="/mypage/ask" element={<Ask />} />
-            <Route path="/mypage//mypage/ask/detail:id" element={<AskDetail />} />
+            <Route path="/mypage/ask/detail/:id" element={<AskDetail />} />
             <Route path="/mypage/askNew" element={<AskNew />} />
             <Route path="/noticeList" element={<NoticeList />} />
             <Route path="/detail/:id" element={<NoticeDetail />} />

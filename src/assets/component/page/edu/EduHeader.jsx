@@ -6,7 +6,7 @@ import door from '../../../img/icon/door.png';
 import { useState } from 'react';
 import './EduHeader.css';
 
-function EduHeader({ setPage, user, point }) {
+function EduHeader({ setPage, user, point, setHelpPop }) {
   
     return (
         <article className='flex eduProfile'>
@@ -20,11 +20,11 @@ function EduHeader({ setPage, user, point }) {
                     <h2>{point}p</h2>
                     <img src={pt_bg} alt="point" />
                 </div>
-                <div className='eduHelpWrap'>
+                <div className='eduHelpWrap' onClick={()=>setHelpPop(true)}>
                     <h2>도움말</h2>
                     <div className='flex eduCircle'>
                         <img src={question} alt="help-button" className='helpBtn' />
-                    </div>
+                    </div>k
                 </div>
                 <div className='eduExitWrap' onClick={() => setPage(true)}>
                     <h2>나가기</h2>

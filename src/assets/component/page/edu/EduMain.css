@@ -2,6 +2,7 @@
     width: 100%;
     height: 100vh;
     background-image: url(../../../img/bggreen.png);
+    position: relative;
 }
 .eduSec h2, .eduSec p{
     font-family: 'yg-jalnan';

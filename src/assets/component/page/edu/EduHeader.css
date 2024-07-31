@@ -50,6 +50,9 @@
     position: relative;
     border: 7px solid #fff;
 }
+.eduHelpWrap{
+    cursor: pointer;
+}
 .eduHelpWrap>h2, .eduExitWrap>h2{
     color: #fff;
     -webkit-text-stroke: 1px #50834F;

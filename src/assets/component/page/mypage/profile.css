@@ -77,8 +77,8 @@
     padding: 10px;
     cursor: pointer;
 }
-
-/* 변경 버튼 */
+/* 
+변경 버튼
 .bluelineBtn{
     padding: 7px 25px;
     border: 1px solid var(--main-blue);
@@ -86,7 +86,7 @@
     margin-left: 20px;
     background-color: #fff;
     cursor: pointer;
-}
+} */
 
 @media screen and (max-width : 1280px) {
     .bgBlue{

@@ -76,14 +76,14 @@ function App() {
           <editNotiContext.Provider value={memoNoti}>
           <itemContext.Provider value={items}>
             <editAskContext.Provider value={memoAsk}>
-          <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} />
+          <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} point={point} />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/login" element={<Login kakaoLogin={kakaoLogin} />} />
             <Route path="/join" element={<Join />} />
             <Route path="/mypage" element={<Profile user={user} />} />
             <Route path="/mypage/learning" element={<Leaning />} />
-            <Route path="/mypage/point" element={<Point />} />
+            <Route path="/mypage/point" element={<Point  point={point} />} />
             <Route path="/mypage/ask" element={<Ask />} />
             <Route path="/mypage/ask/detail/:id" element={<AskDetail />} />
             <Route path="/mypage/askNew" element={<AskNew />} />

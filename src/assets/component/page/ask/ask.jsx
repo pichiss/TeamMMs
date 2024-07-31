@@ -2,12 +2,15 @@ import { useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Subnav from '../../common/Subnav';
 import CommonPagination from '../../common/Pagination';
+import SubHead from '../../common/Subhead';
+import AskSearch from './askboard/askSearch';
 import {itemContext} from '../../../../App'
 import './ask.css'
 
 function Ask(){
   const items = useContext(itemContext);
   const askReverse = items.sort((a,b)=>(a.id-b.id)).reverse();
+  const asklist = askReverse.length;
 
       // 페이지네이션
       const [pages, setPages] = useState(1);
@@ -17,10 +20,13 @@ function Ask(){
       const currentPost = askReverse.slice(indexOfFirstPost, indexOfLastPost);
 
     return(
+        <>
+        <SubHead chara={1}/>
         <section className='w1440 pa55 flex'>
         <Subnav tit={'학부모 코너'}/>
         <div className='askWrap'>
             <h2 className='subtit'>1:1 문의</h2>
+        <AskSearch allList={asklist}/>
             <table>
                 <thead>
                 <tr>
@@ -41,10 +47,12 @@ function Ask(){
                 )}
                 </tbody>
             </table>
+            <Link to='/mypage/askNew'><button className='bgblueBtn'>문의</button></Link>
             <CommonPagination pages={pages} setPages={setPages} postPerPage={postPerPage} datas={items}/>
-                <Link to='/mypage/askNew'><button>문의</button></Link>
+                
         </div>
         </section>
+        </>
     )
 }
 

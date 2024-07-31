@@ -4,6 +4,7 @@ import { editAskContext } from '../../../../../App';
 import { useNavigate } from "react-router-dom";
 import Subnav from "../../../common/Subnav";
 import './askboard.css';
+import SubHead from "../../../common/Subhead";
 
 const AskNew = ()=>{
 
@@ -35,29 +36,32 @@ const AskNew = ()=>{
         return(navigate('/mypage/ask/'))}
 
     return(
+        <>
+        <SubHead chara={1} />
         <section className='w1440 pa55 flex'>
             <Subnav tit={'학부모 코너'}/>
             <div className="writeWrap">
                 <h2 className='subtit'>1:1 문의</h2>
-                <div>
-                    <div>
-                        <select name="category" value={category} onChange={onchange}>
+                <div className="editWrap">
+                    <div className="TitWrap">
+                        <select className='Titbox' name="category" value={category} onChange={onchange}>
                             <option value={'일반문의'}>일반문의</option>
                             <option value={'오답신고'}>오답신고</option>
                             <option value={'학습질문'}>학습질문</option>
                         </select>        
+                        <input className='Titbox' type="text"name="tit" value={tit} onChange={onchange} placeholder="제목을 입력하세요."></input>
                     </div>
-                    <div>
-                        <input type="text"name="tit" value={tit} onChange={onchange} placeholder="제목을 입력하세요."></input>
+                    <div className="TitWrap">
+                        <textarea className='Titbox' name="content" value={content} onChange={onchange} placeholder="내용을 입력하세요."></textarea>            
                     </div>
-                    <div>
-                        <textarea name="content" value={content} onChange={onchange} placeholder="내용을 입력하세요."></textarea>            
+                    <div className='flex editTwoBtn'>
+                    <button className="bluelineBtn" onClick={cancleFunc}>취소</button>
+                    <button className="bgblueBtn" onClick={createBtn}>저장</button>
                     </div>
-                    <button className="btn" onClick={cancleFunc}>취소</button>
-                    <button className="btn" onClick={createBtn}>저장</button>
                 </div>
             </div>
         </section>
+        </>
     )
 }
 

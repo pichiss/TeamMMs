@@ -60,8 +60,8 @@ function expend(){
     return(
         <section>
             <SubHead chara={1} />
-            <article className="w1440 flex pa55">
-            <Subnav key={1} tit={'학부모 코너'}/>
+            <article className="w1440 flex pa55 profileblock">
+            <Subnav key={1} tit='학부모 코너' id='1'/>
             <div className="profileBox">
             <div>
             <h2>내 정보</h2>

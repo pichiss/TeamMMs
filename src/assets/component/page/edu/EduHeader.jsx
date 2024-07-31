@@ -7,7 +7,7 @@ import question from '../../../img/icon/question.png';
 import door from '../../../img/icon/door.png';
 import './EduHeader.css';
 
-function EduHeader({ setPage, user, point }) {
+function EduHeader({ setPage, user, point, setHelpPop  }) {
 
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -36,7 +36,7 @@ function EduHeader({ setPage, user, point }) {
                     <h2>{point}p</h2>
                     <img src={pt_bg} alt="point" />
                 </div>
-                <div className='eduHelpWrap'>
+                <div className='eduHelpWrap' onClick={()=>setHelpPop(true)}>
                     <h2>도움말</h2>
                     <div className='flex eduCircle'>
                         <img src={question} alt="help-button" className='helpBtn' />

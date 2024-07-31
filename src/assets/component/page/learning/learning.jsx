@@ -13,7 +13,7 @@ export default function Learning() {
 
     return (
         <>
-        <SubHead chara={monster}/>
+        <SubHead chara={1}/>
          <section className='w1440 pa55 flex learningWrap'>
             <Subnav tit={'학부모코너'} />
             <div className='learning'>

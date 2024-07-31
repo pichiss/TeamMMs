@@ -32,7 +32,7 @@ export default function NoticeList() {
 
     return (
         <>
-        <SubHead/>
+        <SubHead chara={2}/>
          <section className="w1440 flex noticeListWrap pa55">
          <Subnav tit={'알림나무'}/>
          <div>

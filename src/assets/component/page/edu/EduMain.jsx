@@ -7,6 +7,7 @@ import pointshop from '../../../img/icon/pointshop.png';
 import './EduMain.css';
 
 function EduMain({setPage, user, point}){
+
     return(
         <section className='eduSec'>
             <EduHeader setPage={setPage} user={user} point={point}/>

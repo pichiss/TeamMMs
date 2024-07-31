@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { eduContents } from '../eduData.js';
+import { eduContents } from '../eduData.jsx';
 import EduHeader from '../EduHeader.jsx';
 import EduFooter from '../EduFooter.jsx';
 
@@ -59,7 +59,7 @@ function EduNote({setPage, user, point}){
                         <Link to={`/education/note/${eduContents[4].unitId}`}>
                             <img src={fifthUnit} alt="fifth-unit" className='eduUnit' />
                         </Link>
-                        <p>틀린 문제: 4개</p>
+                        <p>틀린 문제: 1개</p>
                         <h3>{eduContents[4].title}</h3>
                     </SwiperSlide>
                     <SwiperSlide>

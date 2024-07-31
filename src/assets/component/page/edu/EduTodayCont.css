@@ -69,6 +69,9 @@
     top: 24%;
     /* left: 59.2%; */
     left: calc(100% - 783px);
+    /* right: calc(805px - 10%); */
+    /* right: 610px; */
+    /* right: 530px; */
 }
 
 
@@ -108,7 +111,7 @@
     line-height: 50px;
 }
 .eduNoSelect>img{
-    width: 260px;
+    width: 55%;
     padding-top: 40px;
 }
 .eduNoSelect.off{

@@ -22,6 +22,12 @@ export default function NoticeDetail() {
   // 수정
   function editBtn() {
     setOnUpdate(!onUpdate);
+    setEditNotis({
+      id: datas[id].id,
+      notiType: datas[id].notiType,
+      name: datas[id].name,
+      text: datas[id].text,
+    })
   }
   // 수정취소
   function cancleBtn() {

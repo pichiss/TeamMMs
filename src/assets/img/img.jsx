@@ -10,5 +10,6 @@ import Thum4 from './thumbnail4.png';
 import Thum5 from './thumbnail5.png';
 import Thum6 from './thumbnail6.png';
 import AskIcon from './icon/info.png';
+import CloseAsk from './icon/closeIcon.png'
 
-export { Logo, StampL, StampP, StampB, StampV, Thum1, Thum2, Thum3, Thum4, Thum5, Thum6, AskIcon} 
+export { Logo, StampL, StampP, StampB, StampV, Thum1, Thum2, Thum3, Thum4, Thum5, Thum6, AskIcon, CloseAsk} 

@@ -1,0 +1,60 @@
+.searchWrap {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 55px;
+    border: 1px solid var(--line-grey);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* 게시물 총개수 */
+.searchWrap p{
+    padding: 0 15px;
+    line-height: 42px;
+    background-color: var(--bg-grey);
+    text-align: center;
+    border-radius: 5px;
+}
+.searchWrap p span {
+    color: #FF1E1E;
+    font-weight: bold;
+}
+
+/* 검색창 */
+.search {
+    gap: 3px;
+    height: 42px;
+}
+.search input {
+    padding: 0 5px;
+    border: 1px solid var(--line-grey);
+    border-radius: 5px;
+    outline: none;
+}
+
+
+/* 반응형 */
+@media screen and (max-width : 768px) {
+    .searchWrap {
+       margin-bottom: 50px;
+    }
+    .searchWrap p{
+       font-size: 14px;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .searchWrap {
+      gap: 3px;
+    }    
+    .searchWrap p{
+        padding: 0px;
+        width: 68px;
+     }
+    .search input {
+       width: 70%;
+    }
+    
+}

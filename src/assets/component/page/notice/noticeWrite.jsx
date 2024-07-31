@@ -1,11 +1,11 @@
 import "./noticeStyle.css";
 import Subnav from "../../common/Subnav";
-import "./btnStyle.css";
-import Btn from "./btn";
+import Btn from "../../common/button/btn";
 import { useContext } from "react";
 import NoticeInput from "./noticeInput";
 import { editNotiContext } from "../../../../App";
 import { useNavigate } from "react-router-dom";
+import SubHead from "../../common/Subhead";
 
 
 export default function NoticeWrite() {
@@ -20,29 +20,33 @@ export default function NoticeWrite() {
   const { createNoti } = useContext(editNotiContext)
 
   function createBtn() {
-    let types
-    if (notiType === null || notiType === ''|| notiType === undefined ) {
-      types = "공지사항" ;
-    } else{
-      types = notiType;
+    if (window.confirm(`게시글을 저장 하시겠습니까?`)) {
+      let types
+      if (notiType === null || notiType === ''|| notiType === undefined ) {
+        types = "공지사항" ;
+      } else{
+        types = notiType;
+      }
+      createNoti(types, name, text)
+      reset()
+      navigate('/noticeList')
     }
-    createNoti(types, name, text)
-    reset()
-    navigate('/noticeList')
   }
 
   const btns1 = {
     tit: "취소",
     link: "/noticeList",
-    Bclass: "cancleBtn",
+    Bclass: "whiteBtn",
   };
   const btns2 = {
     tit: "저장",
     link: "",
-    Bclass: "saveBtn",
+    Bclass: "blueBtn",
   };
 
   return (
+    <>
+    <SubHead/>
     <section className="w1440 flex pa55 noticeWriteWrap">
       <Subnav tit={"알림나무"} />
       <div className="noticeWrite">
@@ -63,5 +67,6 @@ export default function NoticeWrite() {
         </div>
       </div>
     </section>
+    </>
   );
 }

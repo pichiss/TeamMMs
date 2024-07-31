@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import EduHeader from '../edu/EduHeader';
 import EduVideoDatas from './eduVideoData';
 import EduFooter from '../edu/EduFooter';
-import EduQuestion from '../eduQuestion/eduQuestion';
+import EduQuestion from '../../common/eduQuestion/eduQuestion';
 
 export default function EduVideoDetail({ setPage, user, point }) {
 

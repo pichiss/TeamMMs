@@ -1,10 +1,10 @@
 import "./noticeStyle.css";
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useReducer, useState } from "react";
-import { Contents, notiReducer } from "./noticeData";
+import { useContext, useState } from "react";
 import Subnav from "../../common/Subnav";
-import Btn from "./btn";
+import Btn from "../../common/button/btn";
 import { editNotiContext, noticeContext } from "../../../../App";
+import SubHead from "../../common/Subhead";
 
 export default function NoticeDetail() {
   const { id } = useParams();
@@ -23,15 +23,21 @@ export default function NoticeDetail() {
   // 수정
   function editBtn() {
     setOnUpdate(!onUpdate);
+    setEditNotis({
+      id: datas[id].id,
+      notiType: datas[id].notiType,
+      name: datas[id].name,
+      text: datas[id].text,
+    })
   }
-  // 취소
+  // 수정취소
   function cancleBtn() {
     if (window.confirm(`수정을 취소 하시겠습니까?`)) {
       setOnUpdate(!onUpdate);
       navigate(`/detail/${editNotis[id].id}`)
     }
   }
-  // 수정취소
+  // 목록으로
   function listBtn() {
     history.back();
   }
@@ -45,60 +51,68 @@ export default function NoticeDetail() {
     });
   }
 
+
+
   console.log(id)
   //삭제
   function removeDetail() {
-    removeNoti(datas[id].id);
-    setEditNotis({
-      id: "",
-      notiType: "",
-      name: "",
-      text: "",
-    });
-    navigate("/noticeList");
+    if (window.confirm(`게시물을 삭제 하시겠습니까?`)) {
+      removeNoti(datas[id].id);
+      setEditNotis({
+        id: "",
+        notiType: "",
+        name: "",
+        text: "",
+      });
+      navigate("/noticeList");
+    }
   }
 
   //저장
   function saveDetail() {
-    let types
-    if (editNotis.notiType === null || editNotis.notiType === ''|| editNotis.notiType === undefined ) {
-      types = "공지사항" ;
-    } else{
-      types = editNotis.notiType;
+    if (window.confirm(`수정사항을 저장 하시겠습니까?`)) {
+      let types
+      if (editNotis.notiType === null || editNotis.notiType === '' || editNotis.notiType === undefined) {
+        types = "공지사항";
+      } else {
+        types = editNotis.notiType;
+      }
+      editNoti(editNotis.id, types, editNotis.name, editNotis.text);
+      console.log(types);
+      navigate("/noticeList");
     }
-    editNoti(editNotis.id, types, editNotis.name, editNotis.text);
-    console.log(types);
-    navigate("/noticeList");
   }
 
   const editbtns = {
     tit: "수정",
     link: "",
-    Bclass: "editBtn",
+    Bclass: "whiteBtn",
   };
   const removebtns = {
     tit: "삭제",
     link: "",
-    Bclass: "removeBtn",
+    Bclass: "whiteBtn",
   };
   const listbtns = {
     tit: "목록",
     link: "",
-    Bclass: "listBtn",
+    Bclass: "blueBtn",
   };
   const canclebtns = {
     tit: "취소",
     link: "",
-    Bclass: "removeBtn",
+    Bclass: "whiteBtn",
   };
   const savebtns = {
     tit: "저장",
     link: "",
-    Bclass: "listBtn",
+    Bclass: "blueBtn",
   };
 
   return (
-    <section className="w1440 flex pa55 noticeDetailWrap">
+    <>
+    <SubHead/>
+     <section className="w1440 flex pa55 noticeDetailWrap">
       <Subnav tit={"알림나무"} />
       <div className="noticeDetail">
         <h2 className="subtit">공지사항 & 이벤트</h2>
@@ -154,5 +168,6 @@ export default function NoticeDetail() {
         )}
       </div>
     </section>
+    </>
   );
 }

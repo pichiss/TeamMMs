@@ -1,21 +1,42 @@
-import {useState, useContext} from 'react';
-import { editContext } from '../App';
-import findIcon from '../assets/icons8-find-50.png'
+import { useContext, useState } from "react";
+import Btn from "../../../common/button/btn";
+import '../../notice/noticeSearchStyle.css'
+import { editAskContext } from "../../../../../App";
 
-const Dicsearch =()=>{
-    const {searchWord} = useContext(editContext);
-    const [searchDic, setSearchDic] = useState('');
-    function searchChange(e){
-        setSearchDic(e.target.value)
+export default function AskSearch({ allList }) {
+
+    const {searchItem} = useContext(editAskContext)
+
+    const [searchAsks, setSearchAsks] = useState('')
+
+    function changeSearchAsk(e){
+        setSearchAsks(e.target.value)
     }
+
     function searchBtn(){
-        searchWord(searchDic)
+            searchItem(searchAsks)
     }
-    return(
-        <div className='flex searchWrap'>
-        <input type="text" value={searchDic} onChange={searchChange}></input>
-        <div className='findIcon' onClick={searchBtn}><img src={findIcon} alt="find icon" /></div>
+    function EnterSearch(e){
+        if (e.key === "Enter"){
+            searchBtn()
+        }
+    }
+
+
+    // 버튼
+    const searchBtns = {
+        tit: '검색',
+        link: '',
+        Bclass: 'searchBtn'
+    }
+
+    return (
+        <div className="flex searchWrap">
+            <p>총 <span>{allList}</span> 건</p>
+            <div className="flex search">
+                <input type="text" name="name" value={searchAsks} onChange={changeSearchAsk}onKeyDown={EnterSearch} />
+                <Btn {...searchBtns} func={searchBtn}/>
+            </div>
         </div>
     )
 }
-export default Dicsearch;

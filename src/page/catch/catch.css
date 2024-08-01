@@ -1,0 +1,210 @@
+.catchWrap img{
+    width: 100%;
+}
+.catchSec1{
+    position: relative;
+}
+.catchSec1>ul{
+    position: absolute;
+    top: 5%; left: 8%;
+    text-align: center;
+}
+.aboutTit1{
+    font-size: max(0.3rem, 2vw);
+    font-weight: bold;
+    color: #fff;
+}
+.aboutTit2{
+    font-size: max(0.5rem, 3.2vw);
+    font-weight: bold;
+}
+.aboutTit3>span{
+    font-family: 'yg-jalnan';
+    font-size: max(1rem, 6vw);
+    -webkit-text-stroke: 3px #ffffff;
+}
+.aboutTit3>span:nth-child(1){
+    color: #9E79FF;
+}
+.aboutTit3>span:nth-child(2){
+    color: #ED65C9;
+}
+.aboutTit3>span:nth-child(3){
+    color: #2BE188;
+}
+
+@media screen and (max-width : 600px) {
+    .catchSec1>ul{
+        left: 5%;
+    }
+    .aboutTit3>span{
+        -webkit-text-stroke: 1px #ffffff;
+    }
+}
+.catchSec2{
+    position: relative;
+}
+.catchSec2>ul>li:nth-child(1){
+    font-size: max(0.5rem, 3.2vw);
+    font-weight: bold;
+}
+.catchSec2>ul>li:nth-child(2){
+    font-size: max(0.3rem, 2vw);
+    font-weight: bold;
+    margin-top: 1vw;
+}
+.about2Tit1{
+    position: absolute;
+    top: 4%; left: 7%;
+}
+.about2Tit2{
+    position: absolute;
+    top: 41%; right: 7%;
+    text-align: center;
+}
+.about2Tit3{
+    position: absolute;
+    top: 75%; left: 7%;
+    text-align: center;
+}
+.catchSec3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vw;
+}
+.catchSec3>ul{
+    text-align: center;
+}
+.catchSec3>ul>li:nth-child(1){
+    font-size: max(0.5rem, 3.2vw);
+    font-weight: bold;
+    text-align: center;
+}
+.catchSec3>ul>li:nth-child(2){
+    font-size: max(0.3rem, 2vw);
+    font-weight: bold;
+    margin: 2vw 0 3vw;
+}
+.catchSec3>div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #CCF7FF;
+    padding: 2vw 0;
+}
+.catchSec3 img{
+    width: 65%;
+}
+.catchSec4{
+    margin-top: 10vw;
+    padding: 40px 60px 20px;
+    gap: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.catchSec5{
+    padding: 40px 60px;
+    gap: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.catchSec6{
+    margin-top: 10vw;
+    padding: 72px 170px;
+    gap: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #CCF7FF;
+}
+.about6tit1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+.about6tit1>ul{
+    width: 100%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 4vw 4vw;
+}
+.about6tit1>ul>li:nth-child(2){
+    text-align: end;
+}
+.about6tit1>ul>li:nth-child(1){
+    font-size: max(0.5rem, 2.4vw);
+    font-weight: bold;
+}
+.about6tit1>ul>li>p:nth-child(1){
+    font-size: max(0.3rem, 1.5vw);
+    color: #676767;
+}
+.about6tit1>ul>li>p:nth-child(2){
+    font-size: max(0.5rem, 2vw);
+    font-weight: bold;
+}
+.about6tit1>ul>li>p>span{
+    color: #0094FF;
+}
+.about6tit2>a{
+    display: flex;
+    align-items: center;
+    font-family: 'yg-jalnan';
+    font-size: max(0.5rem, 2.4vw);
+    background-color: #0094FF;
+    border-radius: 100px;
+    padding: 20px 40px;
+    color: #fff;
+}
+.about6tit2 img{
+    width: 3vw;
+    height: 3vw;
+    margin-left: 1vw;
+}
+
+
+.aboutTop{
+    width: 80px;
+    position: fixed;
+    bottom: 5%; right: 1vw;
+    cursor: pointer;
+    z-index: 4;
+}
+.aboutTop>p{
+    font-family: 'yg-jalnan';
+    font-size: 32px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    -webkit-text-stroke: 3px #481B92;
+
+}
+.aboutTop>img{
+    width: 100%;
+}
+
+@media screen and (max-width : 1097px) {
+    .catchSec6{
+        padding: 30px 20px 60px;
+    }
+}
+@media screen and (max-width : 768px) {
+    .catchSec6{
+        padding: 30px 20px 20px;
+    }
+}
+.about6Line{
+    text-decoration-line: line-through;
+}

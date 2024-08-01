@@ -1,0 +1,109 @@
+.eduTodaySec{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../assets/img/bgsky.png);
+}
+.eduTodaySec>img{
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+
+/* 슬라이드 */
+.eduTodaySec .mySwiper{
+    margin-top: 30px;
+    padding: 100px 0 50px 0;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.eduTodaySec .swiper-wrapper{
+    position: relative;
+}
+.eduTodaySec .swiper-wrapper>div:not(:last-child)::after{
+    content: "";
+    width: 80px;
+    height: 7px;
+    background-color: #53B8FF;
+    position: absolute;
+    top: 40%;
+    right: -10%;
+    transform: translateY(-40%);
+}
+.eduTodaySec .swiper-slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.eduTodaySec .swiper-slide>h3{
+    padding-top: 75px;
+    font-family: 'yg-jalnan';
+    font-size: max(1rem, 2.4vw);
+    -webkit-text-stroke: 1px #fff;
+}
+.eduUnit{
+    width: 100%;
+    position: relative;
+}
+.eduStarWrap>img{
+    width: 20%;
+    position: absolute;
+}
+.firstStar{
+    bottom: 30%;
+    left: 23%;
+}
+.secondStar{
+    bottom: 23%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.thirdStar{
+    bottom: 30%;
+    right: 23%;
+}
+
+
+@media screen and (max-width: 1440px){
+    .eduTodaySec .swiper-wrapper>div:not(:last-child)::after{
+        display: none;
+    }
+    .eduTodaySec>img{
+        width: 25%;
+        top: 6%;
+    }
+    .eduStarWrap>img{
+        width: 25%;
+    }
+    .firstStar{
+        left: 16%;
+    }
+    .thirdStar{
+        right: 16%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .eduStarWrap>img{
+        width: 35%;
+    }
+    .firstStar{
+        left: 2%;
+        bottom: 27%;
+    }
+    .secondStar{
+        bottom: 20%;
+    }
+    .thirdStar{
+        right: 2%;
+        bottom: 27%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .eduTodaySec>img{
+        width: 30%;
+        top: 9%;
+    }
+}

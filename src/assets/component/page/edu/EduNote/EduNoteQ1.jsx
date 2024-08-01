@@ -18,8 +18,6 @@ import spin from '../../../../img/icon/spin_mark.png';
 import commen from '../../../../img/icon/book.png';
 import close from '../../../../img/icon/x.png';
 
-import EduQuestion from '../../../common/eduQuestion/eduQuestion';
-
 import '../EduMath/EduMathQ.css'
 
 function EduNoteQ1({setPage, user, point}){
@@ -77,11 +75,10 @@ function EduNoteQ1({setPage, user, point}){
                         <input type="text" onChange={saveAnswer} value={onAnswer} />
                     </div>
                     <div className='flex eduSubBtn'>
-                        {/* <div className='flex eduAskWrap'>
+                        <div className='flex eduAskWrap'>
                             <img src={ask} alt="ask-button" />
                             <h3>질문하기</h3>
-                        </div> */}
-                        <EduQuestion/>
+                        </div>
                         <div className='flex hintWrap'>
                             <img src={bulb} alt="hint-button" />
                             <h3>힌트보기</h3>

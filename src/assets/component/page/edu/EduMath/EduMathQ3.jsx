@@ -17,7 +17,6 @@ import spring from '../../../../img/note_spring.png';
 import spin from '../../../../img/icon/spin_mark.png';
 import close from '../../../../img/icon/x.png';
 
-import EduQuestion from '../../../common/eduQuestion/eduQuestion';
 import { HintMon } from '../../../../img/img';
 
 
@@ -93,12 +92,9 @@ function EduMathQ3({ setPage, user, point }) {
                         <input type="text" onChange={saveAnswer} value={onAnswer} />
                     </div>
                     <div className='flex eduSubBtn'>
-                        {/* <div className='flex eduAskWrap'>
+                        <div className='flex eduAskWrap'>
                             <img src={ask} alt="ask-button" />
                             <h3>질문하기</h3>
-                        </div> */}
-                      <div className='EduQWrap'>
-                        <EduQuestion />
                         </div>
                         {openHint ?
                             <div className='flex hintWrap' onClick={clickHint}>

@@ -31,7 +31,7 @@ export default function LearningDonutChart() {
                         adjust="stack"
                         // color="type"
                         // color={["type", ["rgba(100, 100, 255, 0.6)", "#eee"]]}
-                        color={["type", ["#60BBAC", "#EFEFEF"]]}
+                        color={["type", ["#EFEFEF", "#60BBAC"]]}
                         size={34} //그래프 굵기
                         // style={{ fillOpacity: 0.6 }}
                         // label={['type', {offset: 40}]}
@@ -53,8 +53,8 @@ export default function LearningDonutChart() {
     }
 
     const myData = [
-        { type: "진도율1", percent: 0.5 },
-        { type: "진도율2", percent: 0.5 },
+        { type: "미진도율", percent: 0.5 },
+        { type: "진도율", percent: 0.5 },
     ];
     const myContent = {
         percent: "50%",
@@ -80,7 +80,7 @@ export default function LearningDonutChart() {
                         adjust="stack"
                         // color="type"
                         // color={["type", ["rgba(100, 100, 255, 0.6)", "#eee"]]}
-                        color={["type", ["#DEE47E", "#EFEFEF"]]}
+                        color={["type", ["#EFEFEF", "#DEE47E"]]}
                         size={34} //그래프 굵기
                         // style={{ fillOpacity: 0.6 }}
                         // label={['type', {offset: 40}]}
@@ -101,11 +101,11 @@ export default function LearningDonutChart() {
         );
     }
     const myData2 = [
-        { type: "출석률1", percent: 0.5 },
-        { type: "출석률2", percent: 0.5 },
+        { type: "결석", percent: 0.3 },
+        { type: "출석", percent: 0.7 },
     ];
     const myContent2 = {
-        percent: "50%",
+        percent: "70%",
     };
 
 

@@ -1,7 +1,7 @@
 
 
 import { useReducer, useRef, useMemo, useCallback } from 'react'
-import { Contents, notiReducer } from "./assets/component/page/notice/noticeData";
+import { Contents, notiReducer } from "./assets/page/notice/noticeData";
 const Notifunc = () => {
     const [state, dispatch] = useReducer(notiReducer, Contents);
     const { datas } = state;

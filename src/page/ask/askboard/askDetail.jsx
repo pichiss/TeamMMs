@@ -38,7 +38,10 @@ function AskDetail(){
   // 목록으로
   function listBtn() {
     history.back();
-    navigate("/mypage/ask");
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+  })
   }
 
   function editChange(e) {

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 import './subnav.css'
-import { useLocation } from 'react-router-dom';
 
 
 function Subnav(props){

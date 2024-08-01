@@ -1,9 +1,9 @@
 import './EduMathQ.css'
 import { useState, useRef } from 'react';
-import Btn from '../../../common/button/btn';
-import { CloseAsk } from '../../../../img/img';
+import Btn from '../../../component/common/button/btn';
+import { CloseAsk } from '../../../img/img';
 import '../../eduVideo/eduQuestionStyle.css'
-import ask from '../../../../img/icon/info.png';
+import ask from '../../../img/icon/info.png';
 
 export default function EduQna(){
 

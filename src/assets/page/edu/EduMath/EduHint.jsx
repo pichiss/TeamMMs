@@ -1,7 +1,7 @@
 import './EduMathQ.css'
 import { useState } from 'react';
-import { HintMon } from '../../../../img/img';
-import bulb from '../../../../img/icon/bulb.png';
+import { HintMon } from '../../../img/img';
+import bulb from '../../../img/icon/bulb.png';
 
 
 export default function EduHint({ hintText }) {

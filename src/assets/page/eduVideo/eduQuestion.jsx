@@ -1,8 +1,9 @@
 import "./eduQuestionStyle.css";
 import { useRef, useState } from "react";
-import Btn from "../../common/button/btn";
-import { AskIcon } from "../../../img/img";
-import { CloseAsk } from "../../../img/img";
+import Btn from "../../component/common/button/btn";
+import { AskIcon } from "../../img/img";
+import { CloseAsk } from "../../img/img";
+
 
 export default function EduQuestion({ Qclass }) {
   const askTextRef = useRef();

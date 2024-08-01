@@ -10,17 +10,14 @@ import left_arrow from '../../../img/icon/left-arrow2.png';
 import right_arrow from '../../../img/icon/right-arrow.png';
 import score_answer from '../../../img/icon/score.png';
 import score_wrong from '../../../img/icon/score_wrong.png';
-import ask from '../../../img/icon/info.png';
-import bulb from '../../../img/icon/bulb.png';
 import check from '../../../img/icon/check-mark.png';
 import spring from '../../../img/note_spring.png';
 import spin from '../../../img/icon/spin_mark.png';
 import close from '../../../img/icon/x.png';
 
-import EduQuestion from '../../../component/common/eduQuestion/eduQuestion';
-import { HintMon } from '../../../img/img';
-
 import './EduMathQ.css';
+import EduQna from './EduQna';
+import EduHint from './EduHint';
 
 function EduMathQ1({ setPage, user, point }) {
 
@@ -51,10 +48,7 @@ function EduMathQ1({ setPage, user, point }) {
     }
 
     // 힌트보기
-    const [openHint, setOpenHint] = useState(true)
-    function clickHint() {
-        setOpenHint(!openHint)
-    }
+   const hintText = "이 도형은 우리가 사는 집이나 학교, 혹은 상자처럼 보일 수 있어."
 
     return (
         <section className='eduTodaySec'>
@@ -91,28 +85,8 @@ function EduMathQ1({ setPage, user, point }) {
                         <input type="text" onChange={saveAnswer} value={onAnswer} />
                     </div>
                     <div className='flex eduSubBtn'>
-                        {/* <div className='flex eduAskWrap'>
-                            <img src={ask} alt="ask-button" />
-                            <h3>질문하기</h3>
-                        </div> */}
-                        <div className='EduQWrap'>
-                        <EduQuestion />
-                        </div>
-                        {openHint ?
-                            <div className='flex hintWrap' onClick={clickHint}>
-                                <img src={bulb} alt="hint-button" />
-                                <h3>힌트보기</h3>
-                            </div> :
-                            <>
-                                <div className={'hintBubble'}  onClick={clickHint}>
-                                    <p>이 도형은 우리가 사는 집이나 학교, 혹은 상자처럼 보일 수 있어.</p>
-                                    <img src={HintMon} alt="힌트몬스터" />
-                                </div>
-                                <div className='flex hintWrap' onClick={clickHint}>
-                                    <img src={bulb} alt="hint-button" />
-                                    <h3>힌트보기</h3>
-                                </div></>
-                        }
+                        <EduQna/>
+                        <EduHint hintText={hintText}/>
                         <div className='flex checkWrap' onClick={checkQ}>
                             <img src={check} alt="check-button" />
                             <h3>채점하기</h3>

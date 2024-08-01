@@ -3,6 +3,8 @@ import mypageIcon from '../../assets/img/icon/mypageIcon.svg';
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import './subnav.css'
+import { useLocation } from 'react-router-dom';
+
 
 function Subnav(props){
     const navNoti = ['알림나무', navNotiIcon]
@@ -30,29 +32,34 @@ function Subnav(props){
         {
             id : '2',
             tit:'학습현황',
-            link : '/mypage/learning'
+            link : '/learning'
         },
         {
             id : '3',
             tit:'포인트 내역',
-            link : '/mypage/point'
+            link : '/point'
         },
         {
             id : '4',
             tit:'1:1 문의',
-            link : '/mypage/ask'
+            link : '/ask'
         }
     ]
 
 
-    let urlName = window.location.href.split('TeamMMs');
+    // let urlName = window.location.href.split('TeamMMs');
     
+    
+    const {pathname} = useLocation();
+    let url = pathname.split('/');
+    // console.log(url);
     
     let [activeColor, setActiveColor] = useState(0);
     function urls(link, id){
+        let splitLink = link.split('/',2)
+        // console.log(splitLink)
         useEffect(()=>{       
-            if(urlName[1] === link){
-                console.log(id)
+            if(url[1] === splitLink[1]){
                 setActiveColor(id)
                 window.scrollTo({
                     top: 0,

@@ -10,8 +10,6 @@ import left_arrow from '../../../../img/icon/left-arrow2.png';
 import right_arrow from '../../../../img/icon/right-arrow2.png';
 import score_answer from '../../../../img/icon/score.png';
 import score_wrong from '../../../../img/icon/score_wrong.png';
-import ask from '../../../../img/icon/info.png';
-import bulb from '../../../../img/icon/bulb.png';
 import check from '../../../../img/icon/check-mark.png';
 import spring from '../../../../img/note_spring.png';
 import spin from '../../../../img/icon/spin_mark.png';
@@ -19,6 +17,8 @@ import commen from '../../../../img/icon/book.png';
 import close from '../../../../img/icon/x.png';
 
 import '../EduMath/EduMathQ.css'
+import EduQna from '../EduMath/EduQna';
+import EduHint from '../EduMath/EduHint';
 
 function EduNoteQ1({setPage, user, point}){
 
@@ -48,6 +48,10 @@ function EduNoteQ1({setPage, user, point}){
         setPopUp(false)
     }
 
+    
+    // 힌트보기
+    const hintText='이 도형은 우리가 사는 집이나 학교, 혹은 상자처럼 보일 수 있어.';
+
     return(
         <section className='eduNoteSec'>
             <EduHeader setPage={setPage} user={user} point={point} />
@@ -75,14 +79,8 @@ function EduNoteQ1({setPage, user, point}){
                         <input type="text" onChange={saveAnswer} value={onAnswer} />
                     </div>
                     <div className='flex eduSubBtn'>
-                        <div className='flex eduAskWrap'>
-                            <img src={ask} alt="ask-button" />
-                            <h3>질문하기</h3>
-                        </div>
-                        <div className='flex hintWrap'>
-                            <img src={bulb} alt="hint-button" />
-                            <h3>힌트보기</h3>
-                        </div>
+                       <EduQna/>
+                       <EduHint hintText={hintText}/>
                         {onScore == true || onScore == false ? 
                         <div className='flex commenWrap'>
                             <img src={commen} alt="commentary-button" />

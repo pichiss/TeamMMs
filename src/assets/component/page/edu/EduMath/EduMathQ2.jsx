@@ -10,17 +10,14 @@ import left_arrow from '../../../../img/icon/left-arrow.png';
 import right_arrow from '../../../../img/icon/right-arrow.png';
 import score_answer from '../../../../img/icon/score.png';
 import score_wrong from '../../../../img/icon/score_wrong.png';
-import ask from '../../../../img/icon/info.png';
-import bulb from '../../../../img/icon/bulb.png';
 import check from '../../../../img/icon/check-mark.png';
 import spring from '../../../../img/note_spring.png';
 import spin from '../../../../img/icon/spin_mark.png';
 import close from '../../../../img/icon/x.png';
 
-import { HintMon } from '../../../../img/img';
-
-
 import './EduMathQ.css';
+import EduQna from './EduQna';
+import EduHint from './EduHint';
 
 function EduMathQ2({ setPage, user, point }) {
 
@@ -56,10 +53,7 @@ function EduMathQ2({ setPage, user, point }) {
     }
 
     // 힌트보기
-    const [openHint, setOpenHint] = useState(true)
-    function clickHint() {
-        setOpenHint(!openHint)
-    }
+   const hintText = '도형을 돌려서 모서리와 꼭짓점의 개수를 하나씩 세어봐!';
 
     return (
         <section className='eduTodaySec'>
@@ -105,25 +99,8 @@ function EduMathQ2({ setPage, user, point }) {
                         </div>
                     </div>
                     <div className='flex eduSubBtn'>
-                        <div className='flex eduAskWrap'>
-                            <img src={ask} alt="ask-button" />
-                            <h3>질문하기</h3>
-                        </div>
-                        {openHint ?
-                            <div className='flex hintWrap' onClick={clickHint}>
-                                <img src={bulb} alt="hint-button" />
-                                <h3>힌트보기</h3>
-                            </div> :
-                            <>
-                                <div className='hintBubble'  onClick={clickHint}>
-                                    <p>도형을 돌려서 모서리와 꼭짓점의 개수를 하나씩 세어봐!</p>
-                                    <img src={HintMon} alt="힌트몬스터" />
-                                </div>
-                                <div className='flex hintWrap' onClick={clickHint}>
-                                    <img src={bulb} alt="hint-button" />
-                                    <h3>힌트보기</h3>
-                                </div></>
-                        }
+                        <EduQna/>
+                        <EduHint hintText={hintText}/>
                         <div className='flex checkWrap' onClick={checkQ}>
                             <img src={check} alt="check-button" />
                             <h3>채점하기</h3>

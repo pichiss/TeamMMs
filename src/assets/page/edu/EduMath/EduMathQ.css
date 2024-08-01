@@ -210,20 +210,20 @@
     background-color: #FF8296;
 }
 
-/* 질문하기 */
-.EduQWrap {
- position: relative;
- bottom: 13px;
-}
 /* 힌트보기 */
 .hintBubble {
     width: 300px;
     height: 150px;
-    background-image: url(../../../../img/bubble.png);
+    background-image: url(../../../img/bubble.png);
     background-repeat: no-repeat;
     position: absolute;
-    bottom: 190px;
+    bottom: 180px;
     padding: 30px 10px 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.hintBubble.active {
+    opacity: 1;
 }
 
 .hintBubble p {

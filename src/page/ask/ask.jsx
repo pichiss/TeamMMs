@@ -1,6 +1,5 @@
 import { useState,useContext } from 'react';
 import Subnav from '../../component/common/Subnav';
-import {Contents, reducer} from './askboard/askData';
 import { Link } from 'react-router-dom';
 import CommonPagination from '../../component/common/Pagination';
 import SubHead from '../../component/common/Subhead';
@@ -42,13 +41,13 @@ function Ask(){
                 <tr key={item.id}>
                     <td>{item.id + 1}</td>
                     {item.ansur === false? <td><span className='ansYet'>답변대기</span></td> : <td><span className='ansEnd'>답변완료</span></td>}
-                    <Link to={`/mypage/ask/detail/${item.id}`}><td className='askTit'> <span>[{item.category}]</span> {item.tit}</td></Link>
+                    <Link to={`/ask/detail/${item.id}`}><td className='askTit'> <span>[{item.category}]</span> {item.tit}</td></Link>
                     <td>{item.createDate}</td>
                 </tr>
                 )}
                 </tbody>
             </table>
-            <Link to='/mypage/askNew'><button className='bgblueBtn'>문의</button></Link>
+            <Link to='/askNew'><button className='bgblueBtn'>문의</button></Link>
             <CommonPagination pages={pages} setPages={setPages} postPerPage={postPerPage} datas={items}/>
                 
         </div>

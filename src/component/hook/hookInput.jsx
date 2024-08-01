@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react"
 
 
-export default function NoticeInput(inputData) {
+export default function HookInput(inputData) {
 
     const [data, setData] = useState(inputData)
     

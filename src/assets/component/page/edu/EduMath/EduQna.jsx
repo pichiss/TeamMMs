@@ -2,7 +2,7 @@ import './EduMathQ.css'
 import { useState, useRef } from 'react';
 import Btn from '../../../common/button/btn';
 import { CloseAsk } from '../../../../img/img';
-import '../../../common/eduQuestion/eduQuestionStyle.css'
+import '../../eduVideo/eduQuestionStyle.css'
 import ask from '../../../../img/icon/info.png';
 
 export default function EduQna(){

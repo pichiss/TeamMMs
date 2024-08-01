@@ -1,7 +1,7 @@
 import "./eduQuestionStyle.css";
-import { AskIcon } from "../../../img/img";
 import { useRef, useState } from "react";
-import Btn from "../button/btn";
+import Btn from "../../common/button/btn";
+import { AskIcon } from "../../../img/img";
 import { CloseAsk } from "../../../img/img";
 
 export default function EduQuestion({ Qclass }) {

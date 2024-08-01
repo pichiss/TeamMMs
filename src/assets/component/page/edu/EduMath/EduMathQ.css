@@ -219,6 +219,11 @@
     position: absolute;
     bottom: 180px;
     padding: 30px 10px 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.hintBubble.active {
+    opacity: 1;
 }
 
 .hintBubble p {

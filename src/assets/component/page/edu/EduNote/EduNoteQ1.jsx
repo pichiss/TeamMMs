@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 
-import EduHeader from '../EduHeader';
+import EduHeader from '../../../header/EduHeader.jsx';
 import EduMathBlock from '../EduMath/EduMathBlock1';
-import EduFooter from '../EduFooter';
+import EduFooter from '../../../footer/EduFooter.jsx';
 
 import left_arrow from '../../../../img/icon/left-arrow2.png';
 import right_arrow from '../../../../img/icon/right-arrow2.png';
@@ -70,7 +70,6 @@ function EduNoteQ1({setPage, user, point}){
                     </Canvas>
                     <img src={spin} alt="spin-mark" className='eduSpin' />
                 </div>
-                <img src={spring} alt="note-spring" />
                 <div className='flex eduUnitR'>
                     <div className='eduAnswer'>
                         <h1>직사각형 6개로 둘러싸인 도형을 무엇이라고 하나요?</h1>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import pf_bg from '../../../img/profile_bg.svg';
-import pf_bg_M from '../../../img/profile_bg2.svg';
-import pt_bg from '../../../img/point_bg.svg';
-import question from '../../../img/icon/question.png';
-import door from '../../../img/icon/door.png';
+import pf_bg from '../../img/profile_bg.svg';
+import pf_bg_M from '../../img/profile_bg2.svg';
+import pt_bg from '../../img/point_bg.svg';
+import question from '../../img/icon/question.png';
+import door from '../../img/icon/door.png';
 import './EduHeader.css';
 
 function EduHeader({ setPage, user, point, setHelpPop  }) {

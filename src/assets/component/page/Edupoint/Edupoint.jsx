@@ -1,6 +1,6 @@
 import './edupoint.css';
-import EduHeader from '../edu/EduHeader';
-import EduFooter from '../edu/EduFooter';
+import EduHeader from '../../header/EduHeader';
+import EduFooter from '../../footer/EduFooter';
 import eduPointData from './eduPointData';
 
 import star from '../../../img/icon/star.png';

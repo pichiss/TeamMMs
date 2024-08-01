@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
-import EduHeader from './EduHeader.jsx';
+import EduHeader from '../../header/EduHeader.jsx';
 import video from '../../../img/icon/video.png';
 import today from '../../../img/monster/monster2.png';
 import note from '../../../img/icon/note.png';

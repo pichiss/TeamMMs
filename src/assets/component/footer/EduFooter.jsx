@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import back from '../../../img/icon/back.png';
+import back from '../../img/icon/back.png';
 import './EduFooter.css'
 
 function EduFooter(){

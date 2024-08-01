@@ -1,8 +1,4 @@
 /* 노트 왼쪽 */
-.eduUnitWrap{
-    padding: 0 90px;
-    gap: 20px;
-}
 .eduMainUnits>h2, .eduSubUnitBoxs h3, .eduSelects>div>a{
     -webkit-text-stroke: 1px #fff;
     font-family: 'yg-jalnan';
@@ -24,11 +20,6 @@
     padding: 30px 0;
     border-radius: 20px;
     background-color: #85D3FF;
-}
-.eduSubUnit{
-    margin-top: 35px;
-    flex-wrap: wrap;
-    gap: 25px 35px;
 }
 .eduSubUnitBoxs{
     width: 45%;

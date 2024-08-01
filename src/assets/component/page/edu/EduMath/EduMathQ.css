@@ -74,7 +74,7 @@
     justify-content: space-between;
 }
 .eduAnswer{
-    padding-left: 80px;
+    word-break: keep-all;
 }
 .eduAnswer>h1{
     padding-bottom: 15px;

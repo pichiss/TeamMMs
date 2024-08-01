@@ -2,9 +2,9 @@ import './eduVideoStyle.css';
 import '../edu/EduMath/EduMathQ.css';
 import { useParams } from 'react-router-dom';
 
-import EduHeader from '../edu/EduHeader';
+import EduHeader from '../../header/EduHeader';
 import EduVideoDatas from './eduVideoData';
-import EduFooter from '../edu/EduFooter';
+import EduFooter from '../../footer/EduFooter';
 import EduQuestion from '../../common/eduQuestion/eduQuestion';
 
 export default function EduVideoDetail({ setPage, user }) {

@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 
-import EduHeader from '../EduHeader';
+import EduHeader from '../../../header/EduHeader';
 import EduMathBlock from './EduMathBlock1';
-import EduFooter from '../EduFooter';
+import EduFooter from '../../../footer/EduFooter';
 
 import left_arrow from '../../../../img/icon/left-arrow.png';
 import right_arrow from '../../../../img/icon/right-arrow.png';
@@ -91,7 +91,6 @@ function EduMathQ2({ setPage, user, point }) {
                     </Canvas>
                     <img src={spin} alt="spin-mark" className='eduSpin' />
                 </div>
-                <img src={spring} alt="note-spring" />
                 <div className='flex eduUnitR'>
                     <div className='eduAnswer'>
                         <h1>모서리의 개수는?</h1>

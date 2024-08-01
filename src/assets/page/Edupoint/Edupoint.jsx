@@ -2,7 +2,7 @@ import './edupoint.css';
 import EduHeader from '../edu/EduHeader';
 import EduFooter from '../edu/EduFooter';
 import eduPointData from './eduPointData';
-import CommonPagination from '../../common/Pagination';
+import CommonPagination from '../../component/common/Pagination';
 
 import star from '../../img/icon/star.png';
 import { useState } from 'react';

@@ -28,17 +28,12 @@ import EduMathQ1 from './assets/page/edu/EduMath/EduMathQ1.jsx';
 import EduMathQ2 from './assets/page/edu/EduMath/EduMathQ2.jsx';
 import EduMathQ3 from './assets/page/edu/EduMath/EduMathQ3.jsx';
 import EduMathQ11 from './assets/page/edu/EduMath/EduMathQ11.jsx';
-import Leaning from './assets/component/page/learning/learning';
-import EduVideo from './assets/component/page/eduVideo/eduVideo';
-import Ask from './assets/component/page/ask/ask.jsx';
-import AskNew from './assets/component/page/ask/askboard/askNew.jsx';
 import AskFunc from './askFunc.jsx';
-import Faq from './assets/component/page/faq/faq.jsx';
-import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
-import Leaning from './assets/page/learning/learning';
+import Leaning from './assets/page/learning/learning.jsx';
 import EduVideo from './assets/page/eduVideo/eduVideo';
 import Ask from './assets/page/ask/ask.jsx';
+import AskNew from './assets/page/ask/askboard/askNew.jsx';
 import Faq from './assets/page/faq/faq.jsx';
 import EduVideoDetail from './assets/page/eduVideo/eduVideoDetail.jsx';
 
@@ -48,7 +43,7 @@ import EduNoteQ1 from './assets/page/edu/EduNote/EduNoteQ1.jsx';
 
 import Notifunc from './noticeFunc.jsx';
 import EduPoint from './assets/page/Edupoint/Edupoint.jsx';
-import AskDetail from './assets/component/page/ask/askboard/askDetail.jsx';
+import AskDetail from './assets/page/ask/askboard/askDetail.jsx';
 
 //게시판용
 export const itemContext = createContext();
@@ -98,7 +93,6 @@ function App() {
             <Route path="/detail/:id" element={<NoticeDetail />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/write" element={<NoticeWrite />} />
-            <Route path="/mypage/learning" element={<Leaning />} />
             <Route path="/catch" element={<Catch />} />
           </Routes>
           <Footer />

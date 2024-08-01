@@ -18,7 +18,7 @@ import spin from '../../../img/icon/spin_mark.png';
 import commen from '../../../img/icon/book.png';
 import close from '../../../img/icon/x.png';
 
-import EduQuestion from '../../../common/eduQuestion/eduQuestion';
+import EduQuestion from '../../../component/common/eduQuestion/eduQuestion';
 
 import '../EduMath/EduMathQ.css'
 

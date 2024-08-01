@@ -17,8 +17,8 @@ import spring from '../../../img/note_spring.png';
 import spin from '../../../img/icon/spin_mark.png';
 import close from '../../../img/icon/x.png';
 
-import EduQuestion from '../../../common/eduQuestion/eduQuestion';
-import { HintMon } from '../../../../img/img';
+import EduQuestion from '../../../component/common/eduQuestion/eduQuestion';
+import { HintMon } from '../../../img/img';
 
 
 import './EduMathQ.css';

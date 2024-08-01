@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import ItemInput from "../hook/askhook";
-import { editAskContext } from '../../../../../App';
+import { editAskContext } from '../../../../App';
 import { useNavigate } from "react-router-dom";
-import Subnav from "../../../common/Subnav";
+import Subnav from "../../../component/common/Subnav";
 import './askboard.css';
-import SubHead from "../../../common/Subhead";
+import SubHead from "../../../component/common/Subhead";
 
 const AskNew = ()=>{
 

@@ -1,4 +1,4 @@
-import { itemContext, editAskContext } from '../../../../../App'
+import { itemContext, editAskContext } from '../../../../App'
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useCallback, useState } from "react";
 import Subnav from '../../../component/common/Subnav';

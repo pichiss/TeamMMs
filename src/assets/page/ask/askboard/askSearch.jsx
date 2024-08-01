@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import Btn from "../../../common/button/btn";
+import Btn from "../../../component/common/button/btn";
 import '../../notice/noticeSearchStyle.css'
-import { editAskContext } from "../../../../../App";
+import { editAskContext } from "../../../../App";
 
 export default function AskSearch({ allList }) {
 

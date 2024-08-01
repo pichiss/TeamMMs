@@ -2,8 +2,8 @@ import navNotiIcon from '../../assets/img/icon/noticeIcon.svg';
 import mypageIcon from '../../assets/img/icon/mypageIcon.svg';
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import './subnav.css'
-import { useLocation } from 'react-router-dom';
 
 
 function Subnav(props){
@@ -70,9 +70,6 @@ function Subnav(props){
             }
         },[link])
     }
-
-
-
     return(
         <>
 
@@ -111,45 +108,6 @@ function Subnav(props){
         </div>
         }
 
-
-
-        {/* {props.tit==='알림나무'?  
-            <div>
-                <div className='subnav'>
-                    <p>{props.tit}</p>
-                    {navNoti.map((list)=>
-                        <img src={list.icon} alt={list.icon} key={list.key}/>
-                    )}
-                </div>
-                <div className='subnavList'>
-                    <ul className='subnavitem'>
-                        {notiList.map((item)=>
-                            <li className={selectedKey === item.key ? 'changeblue' : null} onClick={() => changeblue(item.key)} key={item.key}>
-                                <Link to={item.link}>{item.tit}</Link>
-                            </li>
-                        )}
-                    </ul>
-                </div>
-            </div>
-        : 
-            <div>
-                <div className='subnav'>
-                    <p>{props.tit}</p>
-                    {mypage.map((list)=>
-                        <img src={list.icon} alt={list.icon} key={list.key}/>
-                    )}
-                </div>
-                <div className='subnavList'>
-                    <ul className='subnavitem'>
-                    {mypageList.map((item)=>
-                        <li className={selectedKey === item.key ? 'changeblue' : null}  key={item.key}>
-                            <Link to={item.link} onClick={() => changeblue(item.key)}>{item.tit}</Link>
-                        </li>
-                    )}
-                    </ul>
-                </div>
-            </div>
-        } */}
         </>
     )
 }

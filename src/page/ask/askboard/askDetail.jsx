@@ -22,7 +22,7 @@ function AskDetail(){
     // 수정
   function editBtn() {
     setaskUpdate(!askUpdate);
-    setaskUpdate({
+    setEditAskItem({
       id: items[id].id,
       category: items[id].category,
       tit: items[id].tit,
@@ -38,6 +38,7 @@ function AskDetail(){
   // 목록으로
   function listBtn() {
     history.back();
+    navigate("/mypage/ask");
   }
 
   function editChange(e) {

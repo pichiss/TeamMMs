@@ -80,7 +80,6 @@ function App() {
           <itemContext.Provider value={items}>
             <editAskContext.Provider value={memoAsk}>
           <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} point={point} />
-
           <Routes>
             <Route path="/" element={<Main user={user} setPage={setPage}/>} />
             <Route path="/login" element={<Login kakaoLogin={kakaoLogin} />} />
@@ -97,7 +96,6 @@ function App() {
             <Route path="/write" element={<NoticeWrite />} />
             <Route path="/catch" element={<Catch />} />
           </Routes>
-
           <Footer />
           </editAskContext.Provider>
             </itemContext.Provider>

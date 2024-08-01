@@ -157,7 +157,7 @@
 
 /* 해설보기 */
 .exPart{
-    width: 90%; height: 100%;
+    width: 85%; height: 100%;
     position: absolute;
     z-index: 5;
     border-radius: 20px;

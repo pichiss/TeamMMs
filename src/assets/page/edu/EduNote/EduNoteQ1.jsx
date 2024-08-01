@@ -16,7 +16,11 @@ import spin from '../../../img/icon/spin_mark.png';
 import commen from '../../../img/icon/book.png';
 import close from '../../../img/icon/x.png';
 
-import EduQuestion from '../../../component/common/eduQuestion/eduQuestion';
+import ex2 from '../../../img/ex2.png';
+import ex1 from '../../../img/ex1.png';
+import closeY from '../../../img/icon/x_yellow.png';
+
+// import EduQuestion from '../../../component/common/eduQuestion/eduQuestion';
 
 import '../EduMath/EduMathQ.css'
 import EduQna from '../EduMath/EduQna';
@@ -49,6 +53,30 @@ function EduNoteQ1({setPage, user, point}){
         }
         setPopUp(false)
     }
+
+    let [exPop, setExPop] = useState(false);
+
+    function exFunc(){
+        setExPop((exPop)=>!exPop)
+    }
+
+    
+    const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+      
+    const resizeListener = () => {
+        setInnerWidth(window.innerWidth);
+    };
+      
+    useEffect(() => {
+        window.addEventListener("resize", resizeListener);
+    
+        return () => {
+        window.removeEventListener("resize", resizeListener);
+        };
+    }, []);
+
+    //힌트보기
+    const hintText = "이 도형은 우리가 사는 집이나 학교, 혹은 상자처럼 보일 수 있어.";
 
     return(
         <section className='eduNoteSec'>
@@ -98,7 +126,7 @@ function EduNoteQ1({setPage, user, point}){
                             <img src={closeY} alt='닫기' onClick={()=>setExPop(false)}/>
                         </div>
                         <div className='exImg'>
-                            {innerWidth <= 660 ?
+                            {innerWidth <= 750 ?
                             <img src={ex1} alt='해설 보기'/>
                             :
                             <img src={ex2} alt='해설 보기'/>

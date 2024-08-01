@@ -2,16 +2,15 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 
-import EduHeader from '../EduHeader';
+import EduHeader from '../EduHeader.jsx';
 import EduMathBlock from '../EduMath/EduMathBlock1';
-import EduFooter from '../EduFooter';
+import EduFooter from '../EduFooter.jsx';
 
 import left_arrow from '../../../assets/img/icon/left-arrow2.png';
 import right_arrow from '../../../assets/img/icon/right-arrow2.png';
 import score_answer from '../../../assets/img/icon/score.png';
 import score_wrong from '../../../assets/img/icon/score_wrong.png';
 import check from '../../../assets/img/icon/check-mark.png';
-import spring from '../../../assets/img/note_spring.png';
 import spin from '../../../assets/img/icon/spin_mark.png';
 import commen from '../../../assets/img/icon/book.png';
 import close from '../../../assets/img/icon/x.png';
@@ -96,7 +95,6 @@ function EduNoteQ1({setPage, user, point}){
                     </Canvas>
                     <img src={spin} alt="spin-mark" className='eduSpin' />
                 </div>
-                <img src={spring} alt="note-spring" />
                 <div className='flex eduUnitR'>
                     <div className='eduAnswer'>
                         <h1>직사각형 6개로 둘러싸인 도형을 무엇이라고 하나요?</h1>

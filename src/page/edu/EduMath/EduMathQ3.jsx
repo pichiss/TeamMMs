@@ -64,22 +64,19 @@ function EduMathQ3({ setPage, user, point }) {
                     <Link to={'/education/today/5/2'}>
                         <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />
                     </Link>
-                    <Link to={'/education/today/5/4'}>
-                        <img src={right_arrow} alt="next-button" className='eduRightArrow' />
-                    </Link>
+                    <img src={right_arrow} alt="next-button" className='eduRightArrow' />
                 </div>
                 <div className='eduUnitL'>
                     <img src={score_answer} alt="" className={'scoreAnswer ' + (onScore !== null && onScore === true ? 'on' : '')} />
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>03. 다음 입체도형의 이름을 작성하세요.</h1>
                     <Canvas
-                        style={{ width: `980px`, height: `500px` }}
+                        style={{ width: `100%`, height: `500px` }}
                         camera={{ fov: 75, near: 0.1, far: 100, position: [1, 1, 1] }}>
                         <EduMathBlock />
                     </Canvas>
                     <img src={spin} alt="spin-mark" className='eduSpin' />
                 </div>
-                <img src={spring} alt="note-spring" />
                 <div className='flex eduUnitR'>
                     <div className='eduAnswer'>
                         <h1>정사각형 6개로 둘러싸인 도형을 무엇이라고 하나요?</h1>

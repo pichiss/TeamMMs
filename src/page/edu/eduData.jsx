@@ -55,7 +55,7 @@ const eduContents = [
         },
         {
             unitId: 6,
-            title: "6. 평균과 가능성",
+            title: "6.평균과 가능성",
             subTitle1: "1. 평균의 의미와 활용",
             wrongQ1: "틀린 문제: 2개",
             subTitle2: "2. 가능성을 말이나 수로 나타내기",

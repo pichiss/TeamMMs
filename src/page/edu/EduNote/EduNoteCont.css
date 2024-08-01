@@ -26,11 +26,6 @@
     border-radius: 20px;
     background-color: #85D3FF;
 }
-.eduSubUnit{
-    margin-top: 35px;
-    flex-wrap: wrap;
-    gap: 25px 35px;
-}
 .eduSubUnitBoxs{
     width: 45%;
     height: 210px;

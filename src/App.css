@@ -52,6 +52,25 @@ h1, h2, h3, h4, h5, h6, p{
   padding-bottom: 55px;
 }
 
+/* 흰배경 줄버튼 */
+.bluelineBtn{
+  padding: 7px 25px;
+  border: 1px solid var(--main-blue);
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* 색배경 흰글씨 버튼 */
+.bgblueBtn{
+  padding: 7px 25px;
+  border: 1px solid var(--main-blue);
+  border-radius: 10px;
+  background-color: var(--main-blue);
+  cursor: pointer;
+  color: #fff;
+}
+
 @media screen and (max-width : 1440px) {
   .w1440{
     width: calc(100% - 60px);
@@ -65,6 +84,9 @@ h1, h2, h3, h4, h5, h6, p{
   .subtit{
     font-size: 30px;
     padding: 50px 0;
+  }
+  .pa55{
+    padding: 30px 0;
   }
   
 }

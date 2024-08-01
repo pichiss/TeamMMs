@@ -7,7 +7,7 @@ import monsters from '../../img/monsters.png'
 import clo from '../../img/icon/x.png'
 import star from '../../img/icon/star.png'
 
-function Header({setPage, user, kakaoLogout}) {
+function Header({setPage, user, kakaoLogout,point}) {
     // 햄버거 메뉴
     let [hamClick, setHamClick] = useState(false);
     function hamAction(){
@@ -80,7 +80,7 @@ function Header({setPage, user, kakaoLogout}) {
                             <li className='navPoint'>
                                 <img src={star} alt='point'/>
                                 <div>
-                                    <p>1000</p>
+                                    <p>{point}</p>
                                     <p>pt</p>
                                 </div>
                             </li>

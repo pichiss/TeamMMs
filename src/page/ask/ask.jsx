@@ -1,6 +1,5 @@
 import { useState,useContext } from 'react';
 import Subnav from '../../component/common/Subnav';
-import {Contents, reducer} from './askboard/askData';
 import { Link } from 'react-router-dom';
 import CommonPagination from '../../component/common/Pagination';
 import SubHead from '../../component/common/Subhead';

@@ -8,7 +8,7 @@
     padding: 23px 0;
     font-weight: 400;
 }
-.writeWrap p{
+.writeWrap>div>p{
     border-top: 1px solid var(--line-grey);
     border-bottom: 1px solid var(--line-grey);
     padding: 23px 0;
@@ -24,6 +24,7 @@
     width: 100%;
     padding: 43px 20px;
     border-bottom: 1px solid var(--line-grey);
+    white-space: pre-wrap;
 }
 .writeWrap .threeBtn{
     justify-content: space-between;
@@ -64,9 +65,44 @@
     justify-content: space-between;
 }
 
+/* 답변 css */
+.ansurItemBox{
+    margin: 10px 0;
+}
+.ansurItem{
+    width:85%;
+    margin-left: 10px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 20px;
+}
+.ansur h4{
+    padding-top: 30px;
+}
+.ansurAddBox{
+    justify-content: center;
+    gap: 10px;
+}
+.ansPlus{
+    width:85%;
+    margin-left: 10px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--line-grey);
+    padding: 0 20px;
+}
+
 @media screen and (max-width : 768px) {
     .TitWrap textarea{
         height: 400px;
+    }
+    .writeWrap b{
+        padding: 23px 30px;
+    }
+    .ansurItem, .ansPlus{
+        width:80%;
     }
 
 }

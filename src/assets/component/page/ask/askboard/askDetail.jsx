@@ -4,6 +4,7 @@ import { useContext, useRef, useState } from "react";
 import Subnav from '../../../common/Subnav';
 import SubHead from '../../../common/Subhead';
 import '../../../common/button/btnStyle.css'
+import AskAnsure from './askAnsure';
 
 function AskDetail(){
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ function AskDetail(){
       id: items[id].id,
       category: items[id].category,
       tit: items[id].tit,
-      content: items[id].content,
+      content: items[id].content
     });
 
     // 수정
@@ -62,10 +63,7 @@ function AskDetail(){
 
   // 답변
   const [ansure, setAnsure] = useState('');
-  const [ansureList, setAnsureList]=useState( {
-    id:1,
-    ans:'답변입니다.'
-  });
+  const [ansureList, setAnsureList]=useState( []);
   const ansurchange= (e)=>{
     setAnsure(e.target.value)
   };
@@ -73,18 +71,19 @@ function AskDetail(){
   let addId = useRef(2)
 
   function addAnsur(){
-    let list = {
+    let anslist = {
       id : addId.current,
-      ans
+      ansure
     }
-    setAnsureList([...ansureList,list])
+    setAnsureList([...ansureList,anslist])
     setAnsure('')
     addId.current++;
   }
   const deleteBtn = (targetId)=>{
-  setLists(
-    ansurList.filter((list)=>list.id !== targetId))
+  setAnsureList(
+    ansureList.filter((list)=>list.id !== targetId))
   }
+
     return(
       <>
       <SubHead chara={1} />
@@ -99,8 +98,11 @@ function AskDetail(){
                 <pre>{items[id].content}</pre>
                 <div className='ansur'>
                   <h4>답변</h4>
-                  <input className='todoPlus' type='text' value={ansure} onChange={ansurchange} placeholder='답변을 달아주세요.'></input>
-                  <button onClick={addAnsur}>추가</button>
+                  <AskAnsure addAnsur={addAnsur} ansureList={ansureList} deleteBtn={deleteBtn} />
+                  <div className='flex ansurAddBox'>
+                    <input className='ansPlus' type='text' name={ansure} value={ansure} onChange={ansurchange} placeholder='답변을 달아주세요.'></input>
+                    <button className='askEditBtn' onClick={addAnsur}>추가</button>
+                  </div>
                 </div>
 
                 <div className='flex threeBtn'>

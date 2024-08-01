@@ -38,7 +38,7 @@ export default function NoticeDetail() {
   }
   // 목록으로
   function listBtn() {
-    history.back();
+    navigate("/noticeList");
   }
 
   function editChange(e) {

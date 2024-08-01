@@ -93,7 +93,7 @@ function App() {
             <Route path="/noticeList" element={<NoticeList />} />
             <Route path="/noticeList/detail/:id" element={<NoticeDetail />} />
             <Route path="/faq" element={<Faq />} />
-            <Route path="/write" element={<NoticeWrite />} />
+            <Route path="/noticeList/write" element={<NoticeWrite />} />
             <Route path="/catch" element={<Catch />} />
           </Routes>
           <Footer />

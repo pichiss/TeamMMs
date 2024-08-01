@@ -24,7 +24,7 @@ export default function NoticeList() {
 
     const writeBtns = {
         tit : '글쓰기',
-        link :'/write',
+        link :'/noticeList/write',
         Bclass :'writeBtn'
     }
     

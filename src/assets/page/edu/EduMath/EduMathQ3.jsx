@@ -17,39 +17,49 @@ import spring from '../../../img/note_spring.png';
 import spin from '../../../img/icon/spin_mark.png';
 import close from '../../../img/icon/x.png';
 
+import EduQuestion from '../../../common/eduQuestion/eduQuestion';
+import { HintMon } from '../../../../img/img';
+
+
 import './EduMathQ.css';
 
-function EduMathQ3({setPage, user,point}){
+function EduMathQ3({ setPage, user, point }) {
 
     const [onPopUp, setPopUp] = useState(false);
 
-    function checkQ(){
+    function checkQ() {
         setPopUp(true)
     }
 
-    function closeQ(){
+    function closeQ() {
         setPopUp(false)
     }
 
     const [onAnswer, setAnswer] = useState('');
     const [onScore, setScore] = useState(null);
 
-    function saveAnswer(e){
+    function saveAnswer(e) {
         setAnswer(e.target.value);
     }
 
-    function answerQ(){
-        if(onAnswer === '정육면체'){
+    function answerQ() {
+        if (onAnswer === '정육면체') {
             setScore(true)
-        }else{
+        } else {
             setScore(false)
         }
         setPopUp(false)
     }
 
-    return(
+    // 힌트보기
+    const [openHint, setOpenHint] = useState(true)
+    function clickHint() {
+        setOpenHint(!openHint)
+    }
+
+    return (
         <section className='eduTodaySec'>
-            <EduHeader setPage={setPage} user={user}point={point} />
+            <EduHeader setPage={setPage} user={user} point={point} />
             <div className='flex eduQBtn'>
                 <div className="basicQ active">기초문제</div>
                 <Link to={'/education/today/5/11'}>
@@ -70,8 +80,8 @@ function EduMathQ3({setPage, user,point}){
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>03. 다음 입체도형의 이름을 작성하세요.</h1>
                     <Canvas
-                        style={{width: `980px`, height: `500px`}}
-                        camera={{fov: 75, near: 0.1, far: 100, position: [1, 1, 1]}}>
+                        style={{ width: `980px`, height: `500px` }}
+                        camera={{ fov: 75, near: 0.1, far: 100, position: [1, 1, 1] }}>
                         <EduMathBlock />
                     </Canvas>
                     <img src={spin} alt="spin-mark" className='eduSpin' />
@@ -83,14 +93,28 @@ function EduMathQ3({setPage, user,point}){
                         <input type="text" onChange={saveAnswer} value={onAnswer} />
                     </div>
                     <div className='flex eduSubBtn'>
-                        <div className='flex eduAskWrap'>
+                        {/* <div className='flex eduAskWrap'>
                             <img src={ask} alt="ask-button" />
                             <h3>질문하기</h3>
+                        </div> */}
+                      <div className='EduQWrap'>
+                        <EduQuestion />
                         </div>
-                        <div className='flex hintWrap'>
-                            <img src={bulb} alt="hint-button" />
-                            <h3>힌트보기</h3>
-                        </div>
+                        {openHint ?
+                            <div className='flex hintWrap' onClick={clickHint}>
+                                <img src={bulb} alt="hint-button" />
+                                <h3>힌트보기</h3>
+                            </div> :
+                            <>
+                                <div className='hintBubble'  onClick={clickHint}>
+                                    <p>이 도형은 6개의 면을 가지고 있고, 주사위처럼 생겼어.</p>
+                                    <img src={HintMon} alt="힌트몬스터" />
+                                </div>
+                                <div className='flex hintWrap' onClick={clickHint}>
+                                    <img src={bulb} alt="hint-button" />
+                                    <h3>힌트보기</h3>
+                                </div></>
+                        }
                         <div className='flex checkWrap' onClick={checkQ}>
                             <img src={check} alt="check-button" />
                             <h3>채점하기</h3>

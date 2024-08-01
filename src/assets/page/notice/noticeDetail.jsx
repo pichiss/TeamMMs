@@ -34,6 +34,7 @@ export default function NoticeDetail() {
   function cancleBtn() {
     if (window.confirm(`수정을 취소 하시겠습니까?`)) {
       setOnUpdate(!onUpdate);
+      navigate(`/detail/${editNotis[id].id}`)
     }
   }
   // 목록으로
@@ -78,7 +79,7 @@ export default function NoticeDetail() {
       }
       editNoti(editNotis.id, types, editNotis.name, editNotis.text);
       console.log(types);
-      navigate("/noticeList");
+      // navigate("/noticeList");
     }
   }
 

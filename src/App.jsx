@@ -28,6 +28,13 @@ import EduMathQ1 from './assets/page/edu/EduMath/EduMathQ1.jsx';
 import EduMathQ2 from './assets/page/edu/EduMath/EduMathQ2.jsx';
 import EduMathQ3 from './assets/page/edu/EduMath/EduMathQ3.jsx';
 import EduMathQ11 from './assets/page/edu/EduMath/EduMathQ11.jsx';
+import Leaning from './assets/component/page/learning/learning';
+import EduVideo from './assets/component/page/eduVideo/eduVideo';
+import Ask from './assets/component/page/ask/ask.jsx';
+import AskNew from './assets/component/page/ask/askboard/askNew.jsx';
+import AskFunc from './askFunc.jsx';
+import Faq from './assets/component/page/faq/faq.jsx';
+import EduVideoDetail from './assets/component/page/eduVideo/eduVideoDetail.jsx';
 
 import Leaning from './assets/page/learning/learning';
 import EduVideo from './assets/page/eduVideo/eduVideo';
@@ -41,7 +48,11 @@ import EduNoteQ1 from './assets/page/edu/EduNote/EduNoteQ1.jsx';
 
 import Notifunc from './noticeFunc.jsx';
 import EduPoint from './assets/page/Edupoint/Edupoint.jsx';
+import AskDetail from './assets/component/page/ask/askboard/askDetail.jsx';
 
+//게시판용
+export const itemContext = createContext();
+export const editAskContext = createContext();
 export const noticeContext = createContext();
 export const editNotiContext = createContext();
 
@@ -61,21 +72,28 @@ function App() {
   //게시판
   const [memoNoti, datas] = Notifunc();
 
+  // 1:1 게시판
+  const [memoAsk, items] = AskFunc();
+
   return (
     <>
     {page == true ?
         <>
         <noticeContext.Provider value={datas}>
           <editNotiContext.Provider value={memoNoti}>
-          <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} />
+          <itemContext.Provider value={items}>
+            <editAskContext.Provider value={memoAsk}>
+          <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} point={point} />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/login" element={<Login kakaoLogin={kakaoLogin} />} />
             <Route path="/join" element={<Join />} />
             <Route path="/mypage" element={<Profile user={user} />} />
             <Route path="/mypage/learning" element={<Leaning />} />
-            <Route path="/mypage/point" element={<Point point={point} />} />
+            <Route path="/mypage/point" element={<Point  point={point} />} />
             <Route path="/mypage/ask" element={<Ask />} />
+            <Route path="/mypage/ask/detail/:id" element={<AskDetail />} />
+            <Route path="/mypage/askNew" element={<AskNew />} />
             <Route path="/noticeList" element={<NoticeList />} />
             <Route path="/detail/:id" element={<NoticeDetail />} />
             <Route path="/faq" element={<Faq />} />
@@ -84,6 +102,8 @@ function App() {
             <Route path="/catch" element={<Catch />} />
           </Routes>
           <Footer />
+          </editAskContext.Provider>
+            </itemContext.Provider>
           </editNotiContext.Provider>
         </noticeContext.Provider>
         </>

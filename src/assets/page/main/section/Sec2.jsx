@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { noticeContext } from '../../../../App';
 
 function Sec2(){
-    const datas = useContext(noticeContext).reverse().slice(0,4)
+    const datas = useContext(noticeContext).reverse().slice(0,5)
 
     return(
         <section className='mainSec2 w1440 flex'>
@@ -16,7 +16,7 @@ function Sec2(){
                 </li>
                 <li className='sec2Info'>
                     {datas.map((data) => (
-                        <Link to={`/detail/${data.id}`}><div key={data.id}>{'['}{data.notiType}{'] '}{data.name}</div></Link>
+                        <Link to={`/detail/${data.id}`} key={data.id}><div>{'['}{data.notiType}{'] '}{data.name}</div></Link>
                     ))}
                 </li>
             </ul>

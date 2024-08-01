@@ -17,17 +17,21 @@ import spring from '../../../img/note_spring.png';
 import spin from '../../../img/icon/spin_mark.png';
 import close from '../../../img/icon/x.png';
 
+import EduQuestion from '../../../common/eduQuestion/eduQuestion';
+import { HintMon } from '../../../../img/img';
+
+
 import './EduMathQ.css';
 
-function EduMathQ11({setPage, user, point}){
+function EduMathQ11({ setPage, user, point }) {
 
     const [onPopUp, setPopUp] = useState(false);
 
-    function checkQ(){
+    function checkQ() {
         setPopUp(true)
     }
 
-    function closeQ(){
+    function closeQ() {
         setPopUp(false)
     }
 
@@ -35,24 +39,30 @@ function EduMathQ11({setPage, user, point}){
     const [onTwoAnswer, setTwoAnswer] = useState('');
     const [onScore, setScore] = useState(null);
 
-    function saveAnswer(e){
+    function saveAnswer(e) {
         setAnswer(e.target.value);
     }
 
-    function saveAnswerTwo(e){
+    function saveAnswerTwo(e) {
         setTwoAnswer(e.target.value)
     }
 
-    function answerQ(){
-        if(onAnswer == 12 && onTwoAnswer == 60){
+    function answerQ() {
+        if (onAnswer == 12 && onTwoAnswer == 60) {
             setScore(true)
-        }else{
+        } else {
             setScore(false)
         }
         setPopUp(false)
     }
 
-    return(
+    // 힌트보기
+    const [openHint, setOpenHint] = useState(true)
+    function clickHint() {
+        setOpenHint(!openHint)
+    }
+
+    return (
         <section className='eduTodaySec'>
             <EduHeader setPage={setPage} user={user} point={point} />
             <div className='flex eduQBtn'>
@@ -75,8 +85,8 @@ function EduMathQ11({setPage, user, point}){
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>11. 한 변의 길이가 5cm인 정육면체를 보고 모서리의<br />개수와 길이의 합을 작성하세요.</h1>
                     <Canvas
-                        style={{width: `980px`, height: `440px`}}
-                        camera={{fov: 75, near: 0.1, far: 100, position: [1, 1, 1]}}>
+                        style={{ width: `980px`, height: `440px` }}
+                        camera={{ fov: 75, near: 0.1, far: 100, position: [1, 1, 1] }}>
                         <EduMathBlock />
                     </Canvas>
                     <img src={spin} alt="spin-mark" className='eduSpin' />
@@ -96,14 +106,28 @@ function EduMathQ11({setPage, user, point}){
                         </div>
                     </div>
                     <div className='flex eduSubBtn'>
-                        <div className='flex eduAskWrap'>
+                        {/* <div className='flex eduAskWrap'>
                             <img src={ask} alt="ask-button" />
                             <h3>질문하기</h3>
+                        </div> */}
+                        <div className='EduQWrap'>
+                        <EduQuestion />
                         </div>
-                        <div className='flex hintWrap'>
-                            <img src={bulb} alt="hint-button" />
-                            <h3>힌트보기</h3>
-                        </div>
+                        {openHint ?
+                            <div className='flex hintWrap' onClick={clickHint}>
+                                <img src={bulb} alt="hint-button" />
+                                <h3>힌트보기</h3>
+                            </div> :
+                            <>
+                                <div className='hintBubble'  onClick={clickHint}>
+                                    <p>정육면체의 모서리는 모두 같은 길이야.</p>
+                                    <img src={HintMon} alt="힌트몬스터" />
+                                </div>
+                                <div className='flex hintWrap' onClick={clickHint}>
+                                    <img src={bulb} alt="hint-button" />
+                                    <h3>힌트보기</h3>
+                                </div></>
+                        }
                         <div className='flex checkWrap' onClick={checkQ}>
                             <img src={check} alt="check-button" />
                             <h3>채점하기</h3>

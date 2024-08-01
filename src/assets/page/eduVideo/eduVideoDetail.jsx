@@ -7,13 +7,13 @@ import EduVideoDatas from './eduVideoData';
 import EduFooter from '../edu/EduFooter';
 import EduQuestion from '../../component/common/eduQuestion/eduQuestion';
 
-export default function EduVideoDetail({ setPage, user }) {
+export default function EduVideoDetail({ setPage, user, point }) {
 
     const { id } = useParams();
 
     return (
         <section className='innereduViedosWrap'>
-            <EduHeader setPage={setPage} user={user} />
+            <EduHeader setPage={setPage} user={user} point={point} />
             <div className='eduViedoNowWrap'>
                 <div className='flex eduViedoNow'>
                     <video src={EduVideoDatas[id].vSource} controls autoPlay></video>

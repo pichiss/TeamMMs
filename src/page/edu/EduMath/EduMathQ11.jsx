@@ -11,7 +11,6 @@ import right_arrow from '../../../assets/img/icon/right-arrow.png';
 import score_answer from '../../../assets/img/icon/score.png';
 import score_wrong from '../../../assets/img/icon/score_wrong.png';
 import check from '../../../assets/img/icon/check-mark.png';
-import spring from '../../../assets/img/note_spring.png';
 import spin from '../../../assets/img/icon/spin_mark.png';
 import close from '../../../assets/img/icon/x.png';
 
@@ -79,13 +78,12 @@ function EduMathQ11({ setPage, user, point }) {
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>11. 한 변의 길이가 5cm인 정육면체를 보고 모서리의<br />개수와 길이의 합을 작성하세요.</h1>
                     <Canvas
-                        style={{ width: `980px`, height: `440px` }}
+                        style={{ width: `100%`, height: `440px` }}
                         camera={{ fov: 75, near: 0.1, far: 100, position: [1, 1, 1] }}>
                         <EduMathBlock />
                     </Canvas>
                     <img src={spin} alt="spin-mark" className='eduSpin' />
                 </div>
-                <img src={spring} alt="note-spring" />
                 <div className='flex eduUnitR'>
                     <div className='eduAnswer'>
                         <h1>모서리의 개수는?</h1>

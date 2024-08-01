@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import EduHeader from '../EduHeader.jsx';
 import EduFooter from '../EduFooter.jsx';
-import spring from '../../../assets/img/note_spring.png'
 import pie from '../../../assets/img/monster/monster2.png';
 import './EduNoteCont.css';
 
@@ -61,7 +60,6 @@ function EduNoteCont(props){
                             </div>}
                     </div>
                 </div>
-                <img src={spring} alt="note-spring" />
                 <div className='eduUnitRs'>
                     <div className={"flex eduNoSelects " + (onSelect ? "off" : " ")}>
                         <div className='eduSpeechBlns'>

@@ -2,16 +2,15 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 
-import EduHeader from '../../../header/EduHeader.jsx';
+import EduHeader from '../EduHeader.jsx';
 import EduMathBlock from '../EduMath/EduMathBlock1';
-import EduFooter from '../../../footer/EduFooter.jsx';
+import EduFooter from '../EduFooter.jsx';
 
 import left_arrow from '../../../img/icon/left-arrow2.png';
 import right_arrow from '../../../img/icon/right-arrow2.png';
 import score_answer from '../../../img/icon/score.png';
 import score_wrong from '../../../img/icon/score_wrong.png';
 import check from '../../../img/icon/check-mark.png';
-import spring from '../../../img/note_spring.png';
 import spin from '../../../img/icon/spin_mark.png';
 import commen from '../../../img/icon/book.png';
 import close from '../../../img/icon/x.png';

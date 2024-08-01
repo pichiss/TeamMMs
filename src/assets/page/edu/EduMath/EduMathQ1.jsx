@@ -2,16 +2,15 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 
-import EduHeader from '../../../header/EduHeader';
+import EduHeader from '../EduHeader';
 import EduMathBlock from './EduMathBlock1';
-import EduFooter from '../../../footer/EduFooter';
+import EduFooter from '../EduFooter';
 
 import left_arrow from '../../../img/icon/left-arrow2.png';
 import right_arrow from '../../../img/icon/right-arrow.png';
 import score_answer from '../../../img/icon/score.png';
 import score_wrong from '../../../img/icon/score_wrong.png';
 import check from '../../../img/icon/check-mark.png';
-import spring from '../../../img/note_spring.png';
 import spin from '../../../img/icon/spin_mark.png';
 import close from '../../../img/icon/x.png';
 
@@ -71,7 +70,7 @@ function EduMathQ1({ setPage, user, point }) {
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>01. 다음 입체도형의 이름을 작성하세요.</h1>
                     <Canvas
-                        style={{ width: `980px`, height: `500px` }}
+                        style={{ width: `100%`, height: `auto` }}
                         camera={{ fov: 75, near: 0.1, far: 100, position: [2, 2, 2] }}
                     >
                         <EduMathBlock />

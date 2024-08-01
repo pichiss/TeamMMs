@@ -1,9 +1,9 @@
 import './eduVideoStyle.css'
 import { Link } from 'react-router-dom';
 
-import EduHeader from '../../header/EduHeader';
+import EduHeader from '../edu/EduHeader';
 import EduVideoDatas from './eduVideoData';
-import EduFooter from '../../footer/EduFooter';
+import EduFooter from '../edu/EduFooter';
 
 export default function EduVideo({ setPage, user, point }) {
 

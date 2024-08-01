@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 
-import EduHeader from '../../../header/EduHeader';
+import EduHeader from '../EduHeader';
 import EduMathBlock from './EduMathBlock2';
-import EduFooter from '../../../footer/EduFooter';
+import EduFooter from '../EduFooter';
 
 import left_arrow from '../../../img/icon/left-arrow.png';
 import right_arrow from '../../../img/icon/right-arrow.png';
@@ -73,7 +73,7 @@ function EduMathQ3({ setPage, user, point }) {
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>03. 다음 입체도형의 이름을 작성하세요.</h1>
                     <Canvas
-                        style={{ width: `980px`, height: `500px` }}
+                        style={{ width: `100%`, height: `500px` }}
                         camera={{ fov: 75, near: 0.1, far: 100, position: [1, 1, 1] }}>
                         <EduMathBlock />
                     </Canvas>

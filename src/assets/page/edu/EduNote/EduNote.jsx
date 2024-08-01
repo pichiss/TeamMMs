@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { eduContents } from '../eduData.jsx';
-import EduHeader from '../../../header/EduHeader.jsx';
-import EduFooter from '../../../footer/EduFooter.jsx';
+import EduHeader from '../EduHeader.jsx';
+import EduFooter from '../EduFooter.jsx';
 
 import firstUnit from '../../../img/monster/monster5_Ellipse2.png';
 import secondUnit from '../../../img/monster/monster2_Ellipse2.png';

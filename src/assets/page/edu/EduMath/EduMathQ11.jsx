@@ -2,16 +2,15 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 
-import EduHeader from '../../../header/EduHeader';
+import EduHeader from '../EduHeader';
 import EduMathBlock from './EduMathBlock2';
-import EduFooter from '../../../footer/EduFooter';
+import EduFooter from '../EduFooter';
 
 import left_arrow from '../../../img/icon/left-arrow.png';
 import right_arrow from '../../../img/icon/right-arrow.png';
 import score_answer from '../../../img/icon/score.png';
 import score_wrong from '../../../img/icon/score_wrong.png';
 import check from '../../../img/icon/check-mark.png';
-import spring from '../../../img/note_spring.png';
 import spin from '../../../img/icon/spin_mark.png';
 import close from '../../../img/icon/x.png';
 
@@ -79,7 +78,7 @@ function EduMathQ11({ setPage, user, point }) {
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>11. 한 변의 길이가 5cm인 정육면체를 보고 모서리의<br />개수와 길이의 합을 작성하세요.</h1>
                     <Canvas
-                        style={{ width: `980px`, height: `440px` }}
+                        style={{ width: `100%`, height: `440px` }}
                         camera={{ fov: 75, near: 0.1, far: 100, position: [1, 1, 1] }}>
                         <EduMathBlock />
                     </Canvas>

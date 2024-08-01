@@ -2,7 +2,7 @@ import './eduVideoStyle.css';
 import '../edu/EduMath/EduMathQ.css';
 import { useParams } from 'react-router-dom';
 
-import EduHeader from '../../header/EduHeader';
+import EduHeader from '../edu/EduHeader';
 import EduVideoDatas from './eduVideoData';
 import EduFooter from '../edu/EduFooter';
 import EduQuestion from './eduQuestion';

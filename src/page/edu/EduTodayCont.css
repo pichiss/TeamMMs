@@ -1,0 +1,227 @@
+/* 노트 왼쪽 */
+.eduUnitWrap{
+    padding: 0 90px;
+    gap: 20px;
+}
+.eduMainUnit>h2, .eduSubUnitBox>h3, .eduSelect>div>a{
+    -webkit-text-stroke: 1px #fff;
+    font-family: 'yg-jalnan';
+}
+.eduUnitWrap h2{
+    text-align: center;
+    font-size: min(2.1vw);
+}
+.eduSubUnitBox>h3{
+    font-size: min(1.8vw);
+}
+.eduUnitL{
+    width: 1125px;
+    height: 712px;
+    padding: 45px;
+    border: 12px solid #BAE2FF;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.eduMainUnit{
+    width: 93.5%;
+    padding: 30px 0;
+    border-radius: 20px;
+    background-color: #FFA9BE;
+}
+.eduSubUnit{
+    margin-top: 35px;
+    flex-wrap: wrap;
+    gap: 25px 35px;
+}
+.eduSubUnitBox{
+    width: 45%;
+    height: 210px;
+    padding: 40px;
+    border-radius: 20px;
+    word-break: keep-all;
+    background-color: #FFDDE5;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+.eduSubUnitBox>div{
+    width: 53px;
+    height: 53px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 10px solid #fff;
+    border-radius: 5px;
+}
+.eduSubUnitBox>div>span{
+    display: none;
+    padding: 10px;
+    border: 5px solid #fff;
+    border-top: 0;
+    border-right: 0;
+    transform: rotate(-45deg);
+    transform-origin: 25% 25%;
+}
+.eduSubUnitBox>div>span.on{
+    display: block;
+}
+
+
+/* 노트 오른쪽 */
+.eduUnitR{
+    width: 595px;
+    padding: 45px;
+    border: 12px solid #BAE2FF;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+
+/* 소단원 선택 X */
+.eduNoSelect{
+    flex-direction: column;
+    align-items: center;
+}
+.eduSpeechBln{
+    padding: 35px;
+    border-radius: 20px;
+    background-color: #FFDDE5;
+    position: relative;
+}
+.eduSpeechBln::after{
+    content: "";
+    border-top: 60px solid #FFDDE5;
+    border-right: 80px solid transparent;
+    position: absolute;
+    left: 50%;
+    bottom: -20%;
+}
+.eduSpeechBln>p{
+    font-size: 1.3vw;
+    font-weight: 700;
+    line-height: 50px;
+}
+.eduNoSelect>img{
+    width: 55%;
+    padding-top: 40px;
+}
+.eduNoSelect.off{
+    display: none;
+}
+
+
+/* 소단원 선택 O */
+.eduSelect{
+    height: 600px;
+    padding: 0 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.eduSelect>div{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #FFA9BE;
+    font-size: min(1.8vw);
+    text-align: center;
+    cursor: pointer;
+}
+.eduSelect>div:not(:last-child){
+    margin-bottom: 25px;
+}
+.eduSelect::-webkit-scrollbar{
+    width: 10px;
+}
+.eduSelect::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background-color: var(--yellow);
+}
+.eduSelect::-webkit-scrollbar-track{
+    border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.eduSelect.on{
+    display: block;
+}
+.eduSelect.off{
+    display: none;
+}
+
+
+@media (max-width: 1440px){
+    .eduUnitWrap{
+        padding: 0 30px;
+    }
+    .eduUnitL{
+        width: 100%;
+        height: auto;
+        padding: 30px;
+        border-width: 8px;
+    }
+    .eduUnitR{
+        width: 100%;
+    }
+    .eduMainUnit{
+        width: 100%;
+        padding: 20px 0;
+    }
+    .eduSubUnit{
+        margin-top: 20px;
+        gap: 15px;
+    }
+    .eduSubUnitBox{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-radius: 15px;
+    }
+    .eduUnitWrap>img{
+        right: 20px;
+        top: 10px
+    }
+    .eduSelect{
+        height: 500px;
+    }
+}
+ 
+
+@media screen and (max-width: 1350px){
+    .eduTodaySec{
+        height: auto;
+    }
+    .eduUnitWrap{
+        flex-direction: column;
+    }
+    .eduNoSelect{
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+    .eduNoSelect>img{
+        width: 30%;
+        padding-top: 0;
+        order: 1;
+    }
+    .eduSpeechBln{
+        order: 2;
+    }
+}
+
+
+@media screen and (max-width: 1024px){
+    .eduSelect{
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .eduUnitWrap h2{
+        font-size: 3vw;
+    }
+    .eduSubUnitBox>h3{
+        font-size: 2.7vw;
+    }
+    .eduSelect>div{
+        font-size: 2.7vw;
+    }
+}

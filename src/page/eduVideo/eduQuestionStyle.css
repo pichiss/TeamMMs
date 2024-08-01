@@ -1,0 +1,153 @@
+/* 질문하기 아이콘 */
+.askIconWrap {
+    width: 80px;
+    cursor: pointer;
+}
+
+.askIcon {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.askIcon img {
+    position: relative;
+    top: 12px;
+    left: 10px;
+}
+
+.askIcon h3 {
+    font-family: 'yg-jalnan';
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    -webkit-text-stroke: 1px #FF8296;
+    text-shadow: -1px 2px #FF8296, 2px 1px #FF8296, 1px 2px #FF8296, 2px -1px #FF8296;
+    padding-top: 10px;
+}
+
+/* 질문하기 팝업창*/
+.askIconPopupWrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+}
+
+.askIconPopup {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    background-color: white;
+    z-index: 6;
+    padding: 10px 10px 0;
+    border-radius: 20px;
+}
+.askIconPopupImg {
+    justify-content: flex-end;
+}
+.askIconPopupImg img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.askIconPopup h5{
+    font-family: 'yg-jalnan';
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 30px;
+}
+
+.askIconPopupText {
+    justify-content: center;
+}
+
+.askIconPopupText textarea {
+    width: 85%;
+    height: 200px;
+    background-color: var(--bg-grey);
+    border: 0;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    
+}
+
+.askIconPopupBtn {
+    padding: 30px;
+    justify-content: center;
+}
+
+
+
+/* 반응형 */
+
+@media screen and (max-width : 768px) {
+
+    .askIconWrap {
+        width: 65px;
+    }
+
+    .askIcon {
+        width: 65px;
+        height: 65px;
+    }
+
+    .askIcon img {
+        width: 50px;
+        height: 50px;
+        top: 7px;
+        left: 7px;
+    }
+
+    .askIcon h3 {
+        width: 100%;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .askIconPopup {
+        top: 30%;
+        left: 5%;
+        width: 90%;
+    }
+
+    .askIconPopupImg img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .askIconPopup h5{
+        font-size: 16px;
+        padding-bottom: 20px;
+    }
+
+    .askIconPopupText textarea {
+        height: 150px;
+        font-size: 14px;
+        
+    }
+    
+    .askIconPopupBtn {
+        padding: 20px;
+    }
+    
+}
+
+@media screen and (max-width : 500px) {
+
+    .askIconPopup {
+        top: 25%;
+    }
+
+    .askIconPopupText textarea {
+        width: 90%;
+        
+    }
+}

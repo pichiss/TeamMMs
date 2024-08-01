@@ -1,0 +1,130 @@
+.profileBox{
+    padding-left: 5%;
+    width: 100%;
+}
+.profileBox h2{
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 65px;
+}
+.proFirst{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.profilWrap{
+    max-width: 1135px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 5px;
+}
+.profilWrap>div{
+    margin: 45px 0;
+    display: flex;
+    justify-content: center;
+}
+.profilWrap img{
+    max-width: 300px;
+    border-radius: 50%;
+    border: 15px solid var(--main-blue);
+    margin: 0 auto;
+    width: 100%;
+}
+.profilWrap table{
+    width: 100%;
+}
+.profilWrap td{
+    width: 80%;
+    padding: 15px 28px;
+    border: 1px solid var(--line-grey);
+}
+.profilWrap td.silver{
+    width: 20%;
+    background-color: var(--bg-grey);
+    font-weight: bold;
+}
+.subscription{
+    margin-top: 40px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.subscription td{
+    text-align: center;
+    padding: 15px 0;
+}
+.subscription .leftBorderRadius{
+    border-top-left-radius: 5px;
+}
+.subscription .rightBorderRadius{
+    border-top-right-radius: 5px;
+}
+
+.bgBlue{
+    background-color: var(--main-blue);
+    color: #fff;
+    padding: 10px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.bgBlue h3{
+    font-size: 18px;
+    color: #fff;
+}
+.bgBlue td{
+    font-size: 18px;
+}
+.expend{
+    padding: 10px;
+    cursor: pointer;
+}
+/* 
+변경 버튼
+.bluelineBtn{
+    padding: 7px 25px;
+    border: 1px solid var(--main-blue);
+    border-radius: 10px;
+    margin-left: 20px;
+    background-color: #fff;
+    cursor: pointer;
+} */
+
+@media screen and (max-width : 1280px) {
+    .bgBlue{
+        font-size: 16px
+    }
+    .profilWrap td{
+        padding: 10px 15px;
+    }
+  }
+
+  @media screen and (max-width : 950px) {
+    .profileBox td{
+        font-size: 14px;
+    }
+    .bgBlue{
+        font-size: 16px
+    }
+  }
+@media screen and (max-width : 768px) {
+    section{
+      flex-direction: column;
+    }
+    .profileBox h2{
+        font-size: 30px;
+        padding: 50px 0;
+        margin-bottom: 0px
+    }
+    .bluelineBtn{
+        text-align: center;
+    }
+    .profileBox{
+        padding: 0px;
+    }
+    .profilWrap td.silver{
+        width: 30%;
+    }
+    .profileblock{
+        display: block;
+    }
+  }

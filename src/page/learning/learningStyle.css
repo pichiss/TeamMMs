@@ -1,0 +1,333 @@
+.learning {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 학습현황 개요 */
+.LearningChart {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.LearningChartWrap h3 {
+    color: #fff;
+    font-size: 18px;
+    background-color: var(--main-blue);
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.LearningChartWrap h4 {
+    font-size: 18px;
+    text-align: center;
+    padding: 35px 0;
+}
+
+.donutWrap {
+    width: 50%;
+    justify-content: center;
+}
+
+.progress {
+    width: 50%;
+}
+
+.attendanceRate {
+    width: 50%;
+}
+
+.barWrap {
+    width: 50%;
+}
+
+.barWrap .recharts-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.barWrap .recharts-cartesian-axis-tick line {
+    display: none;
+}
+
+/* 점수판 */
+.scoreWrap {
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+
+.score {
+    width: 100%;
+}
+
+.score th,
+.score td {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.score th {
+    font-size: 18px;
+    background-color: var(--main-blue);
+    color: white;
+}
+
+.score th:first-child {
+    border-top-left-radius: 5px;
+}
+
+.score th:last-child {
+    border-top-right-radius: 5px;
+}
+
+.score td {
+    border: 1px solid var(--line-grey);
+}
+
+.score th:first-child {
+    width: 20%;
+}
+
+.score th:nth-child(2) {
+    width: 60%;
+}
+
+.score th:nth-child(3) {
+    width: 20%;
+}
+
+
+/* 출석체크 달력*/
+.calendarWrap {
+    margin: 55px 0;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.calendar {
+    padding-top: 50px;
+}
+
+.calendar .react-calendar {
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+}
+
+.react-calendar .react-calendar__navigation {
+    margin-bottom: 5px;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.react-calendar .react-calendar__month-view__weekdays {
+    background-color: var(--main-blue);
+    color: white;
+    padding: 10px 0;
+}
+
+.react-calendar .react-calendar__month-view__weekdays__weekday {
+    padding: 0;
+    text-align: center;
+}
+
+.react-calendar abbr {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.react-calendar .react-calendar__month-view__days__day--weekend {
+    color: var(--font-black);
+}
+
+.react-calendar .react-calendar__tile {
+    height: 150px;
+    border: 1px solid var(--line-grey);
+    position: relative;
+}
+
+.react-calendar .react-calendar__tile abbr {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.react-calendar .react-calendar__tile--active {
+    background: white;
+}
+
+.react-calendar .react-calendar__tile--now {
+    color: white;
+    background: var(--main-blue);
+}
+
+.react-calendar .react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+    background: white;
+    color: var(--font-black);
+}
+
+.stampWrap {
+    justify-content: center;
+}
+
+.stampWrap img {
+    width: 90%;
+}
+
+.goodJob {
+    padding: 55px 0;
+}
+
+.goodJob ul {
+    width: 43%;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.goodJob li {
+    text-align: center;
+    padding: 5px;
+}
+
+.goodJob li:last-child {
+    font-family: 'yg-jalnan';
+    font-size: 18px;
+}
+
+.goodJob li:last-child span {
+    font-family: 'yg-jalnan';
+    font-size: 18px;
+    color: var(--yellow);
+}
+
+/* 반응형 */
+@media screen and (max-width : 1290px) {
+    .LearningChart {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .donutWrap {
+        width: 100%;
+    }
+
+    .barWrap {
+        width: 100%;
+    }
+
+    .LearningChartWrap h4 {
+        padding: 15px 0;
+    }
+
+    .react-calendar .react-calendar__tile {
+        height: 130px;
+    }
+
+}
+
+@media screen and (max-width : 768px) {
+    .LearningChartWrap h3 {
+        text-align: center;
+    }
+
+    .LearningChartWrap h4 {
+        font-size: 14px;
+    }
+
+    .barWrap .recharts-wrapper {
+        width: 400px;
+    }
+
+    .barWrap .recharts-wrapper tspan {
+        font-size: 14px;
+    }
+
+    .score th,
+    .score td {
+        font-size: 14px;
+    }
+
+    .score th:first-child {
+        width: 25%;
+    }
+
+    .score th:nth-child(2) {
+        width: 50%;
+    }
+
+    .score th:nth-child(3) {
+        width: 25%;
+    }
+
+    .calendarWrap {
+        padding-top: 30px;
+    }
+
+    .calendar {
+        padding-top: 15px;
+    }
+
+    .react-calendar .react-calendar__navigation {
+        font-size: 16px;
+    }
+
+    .react-calendar abbr {
+        font-size: 14px;
+    }
+
+    .react-calendar .react-calendar__tile abbr {
+        top: 5px;
+        left: 5px;
+        font-size: 12px;
+    }
+
+    .react-calendar .react-calendar__tile {
+        height: 100px;
+    }
+
+    .stampWrap img {
+        width: 100%;
+    }
+
+    .goodJob {
+        padding: 50px 0;
+    }
+
+    .goodJob ul {
+        width: 70%;
+    }
+
+    .goodJob li:first-child {
+        font-size: 14px;
+    }
+
+    .goodJob li:last-child {
+        font-size: 14px;
+    }
+
+    .goodJob li:last-child span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .donutWrap {
+        gap: 4px;
+    }
+
+}
+
+@media screen and (max-width : 440px) {
+
+    .react-calendar .react-calendar__tile {
+        height: 60px;
+    }
+
+    .stampWrap {
+        padding-top: 10px;
+    }
+
+    .stampWrap img {
+        transform: scale(1.1);
+    }
+}

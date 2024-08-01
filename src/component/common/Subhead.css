@@ -1,0 +1,23 @@
+.subHeadWrap{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.subHeadBg{
+    width: 100%;
+}
+.subHeadChara{
+    width: 7%;
+    position: absolute;
+    top: 15%;
+    right: 35%;
+}
+
+
+@media screen and (max-width: 768px){
+    .subHeadChara{
+        width: 8%;
+        top: 53%;
+        right: 45%;
+    }
+}

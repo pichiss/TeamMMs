@@ -1,0 +1,49 @@
+.writeBtn{
+    justify-content: flex-end;
+    padding-right: 15px;
+}
+.writeBtn div,.blueBtn div{
+    background-color: var(--main-blue);
+    color: white;
+    border: 1px solid var(--main-blue);
+    margin-top: 30px;
+}
+.whiteBtn div{
+    border: 1px solid var(--main-blue);
+    margin-top: 30px;
+}
+.searchBtn div{
+    background-color: var(--main-blue);
+    color: white;
+    border: 1px solid var(--main-blue);
+    width: 65px;
+    margin: 0;
+}
+.asksBtn div{
+    background-color: #FF8296;
+    color: white;
+    margin: 0;
+}
+
+/* 버튼 공통 */
+.boardBtn{
+    width: 81.45px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* 반응형 */
+@media screen and (max-width : 1440px) {
+    .writeBtn{
+        padding-right: 0px;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .boardBtn{
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    
+}

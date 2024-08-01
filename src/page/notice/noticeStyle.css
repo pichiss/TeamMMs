@@ -1,0 +1,213 @@
+/* 게시판 리스트 */
+.notiTable {
+    width: 100%;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+
+.notiTable th,
+.notiTable td {
+    height: 70px;
+    border-bottom: 1px solid var(--line-grey);
+}
+
+.notiTable thead {
+    border-top: 2px solid var(--font-black);
+    border-bottom: 1px solid var(--line-grey);
+}
+
+.notiTable thead th {
+    font-weight: 400;
+    text-align: center;
+}
+
+.notiTable thead th:first-child {
+    width: 10%;
+}
+
+.notiTable thead th:nth-child(2) {
+    width: 65%;
+}
+
+.notiTable thead th:nth-child(3) {
+    width: 15%;
+}
+
+.notiTable thead th:last-child {
+    width: 10%;
+}
+
+.notiTable td:nth-child(2) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.notiTable td:not(:nth-child(2)) {
+    text-align: center;
+}
+
+/* 디테일 페이지 */
+.noticeDetail {
+    width: 100%;
+}
+
+.noticeDetail h3 {
+    font-size: 22px;
+    text-align: center;
+    padding: 23px 0;
+    border-top: 2px solid var(--font-black);
+    border-bottom: 1px solid var(--line-grey);
+}
+
+.noticeDetail ul {
+    border-bottom: 1px solid var(--line-grey);
+}
+
+.noticeDetail li {
+    width: 25%;
+    padding: 23px 0;
+}
+
+.noticeDetail li:nth-child(2n+1) {
+    width: 15%;
+    background-color: var(--bg-grey);
+    text-align: center;
+}
+
+.noticeDetail li:nth-child(2n) {
+    padding-left: 25px;
+}
+
+.noticeDetail li:nth-child(2) {
+    width: 40%;
+}
+
+.noticeDetail p {
+    padding: 40px 20px 40px;
+    white-space: pre-wrap;
+    border-bottom: 1px solid var(--line-grey);
+}
+
+/* 디테일페이지 버튼 */
+.detailBtnWrap {
+    justify-content: space-between;
+}
+
+.detailBtnWrap>div {
+    gap: 28px;
+}
+
+/* 게시판 글쓰기 */
+.noticeWrite {
+    width: 100%;
+}
+
+.noticeWriteText {
+    border-top: 2px solid var(--font-black);
+}
+
+.noticeWriteText>div {
+    margin: 10px 0;
+    gap: 5px;
+}
+
+.noticeWriteText select {
+    width: 20%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid var(--line-grey);
+    outline: none;
+}
+
+.noticeWriteText input {
+    width: 80%;
+    border: 1px solid var(--line-grey);
+    outline: none;
+    border-radius: 5px;
+    padding: 0 20px;
+
+}
+
+.noticeWriteText textarea {
+    width: 100%;
+    height: 630px;
+    border: 1px solid var(--line-grey);
+    outline: none;
+    border-radius: 5px;
+    padding: 20px;
+    resize: none;
+}
+
+.noticeWriteBtnWrap {
+    justify-content: space-between;
+}
+
+/* 반응형*/
+@media screen and (max-width : 768px) {
+
+    .notiTable {
+        font-size: 14px;
+    }
+
+    .notiTable thead th:first-child {
+        display: none;
+    }
+
+    .notiTable thead th:nth-child(2) {
+        width: 60%;
+    }
+
+    .notiTable thead th:nth-child(3) {
+        width: 25%;
+    }
+
+    .notiTable thead th:last-child {
+        width: 15%;
+    }
+
+    .notiTable td:first-child {
+        display: none;
+    }
+
+    .noticeDetail h3 {
+        font-size: 20px;
+    }
+
+    .noticeDetail li {
+        font-size: 14px;
+    }
+
+    .noticeDetail li:nth-child(2n+1) {
+        width: 25%;
+    }
+
+    .noticeDetail li:nth-child(2n) {
+        padding-left: 10px;
+    }
+
+    .noticeDetail p {
+        font-size: 14px;
+    }
+
+    .detailBtnWrap>div {
+        gap: 20px;
+    }
+
+    .noticeWriteText select {
+        width: 25%;
+        font-size: 14px;
+    }
+
+    .noticeWriteText input {
+        width: 75%;
+        font-size: 14px;
+
+    }
+
+    .noticeWriteText textarea {
+        height: 400px;
+        font-size: 14px;
+    }
+}

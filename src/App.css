@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 @font-face {
   font-family: 'yg-jalnan';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
@@ -16,6 +17,7 @@
   --bg-grey: #EAE9E9;
   --yellow: #F8CF03;
   --font-black: #222222;
+  
   @media screen and (max-width:360px) {
     --txt-font-size : calc( 100vw * (16 / 400));
     --detail-tit-font : calc( 100vw * (18 / 400));
@@ -23,8 +25,13 @@
   }
   
 }
+
 *{
   font-family: "Noto Sans KR", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  color: var(--font-black);
 }
 
 .w1440{
@@ -35,8 +42,40 @@
 .flex{
   display: flex;
 }
-.pa60{
-  padding: 60px 0;
+.pa55{
+  padding: 55px 0;
+}
+.subtit{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 55px;
+}
+
+/* 흰배경 줄버튼 */
+.bluelineBtn{
+  padding: 7px 25px;
+  border: 1px solid var(--main-blue);
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* 색배경 흰글씨 버튼 */
+.bgblueBtn{
+  padding: 7px 25px;
+  border: 1px solid var(--main-blue);
+  border-radius: 10px;
+  background-color: var(--main-blue);
+  cursor: pointer;
+  color: #fff;
+}
+/* 게시판 추가삭제버튼 */
+.askEditBtn{
+  background-color: var(--bg-grey);
+  border: 1px solid #fff;
+  padding: 3px 10px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width : 1440px) {
@@ -49,5 +88,40 @@
   .w1440{
     width: calc(100% - 30px);
   }
+  .subtit{
+    font-size: 30px;
+    padding: 50px 0;
+  }
+  .pa55{
+    padding: 30px 0;
+  }
+  /* 흰배경 줄버튼 */
+.bluelineBtn{
+  padding: 7px 15px;
+  border: 1px solid var(--main-blue);
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* 색배경 흰글씨 버튼 */
+.bgblueBtn{
+  padding: 7px 15px;
+  border: 1px solid var(--main-blue);
+  border-radius: 10px;
+  background-color: var(--main-blue);
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+}
+/* 게시판 추가삭제버튼 */
+.askEditBtn{
+  background-color: var(--bg-grey);
+  border: 1px solid #fff;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
   
 }

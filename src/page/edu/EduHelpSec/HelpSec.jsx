@@ -44,8 +44,8 @@ function HelpSec1({swiperImg1, swiperImg2}){
             </>
             :
             <>
-            {swiperImg1.map((img)=>
-                <SwiperSlide>
+            {swiperImg1.map((img, id)=>
+                <SwiperSlide key={id}>
                     <img src={img} alt='img'/>
                 </SwiperSlide>
             )}

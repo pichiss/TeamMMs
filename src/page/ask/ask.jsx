@@ -49,7 +49,7 @@ function Ask(){
                 )}
                 </tbody>
             </table>
-            <Link to='/mypage/askNew'><button className='bgblueBtn'>문의</button></Link>
+            <Link to='/askNew'><button className='bgblueBtn'>문의</button></Link>
             <CommonPagination pages={pages} setPages={setPages} postPerPage={postPerPage} datas={items}/>
                 
         </div>

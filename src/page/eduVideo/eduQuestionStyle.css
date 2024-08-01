@@ -29,7 +29,7 @@
 
 /* 질문하기 팝업창*/
 .askIconPopupWrap {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

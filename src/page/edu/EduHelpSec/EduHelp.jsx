@@ -83,6 +83,20 @@ function EduHelp({setHelpPop}){
     const point2 = [point12, point22, point32]
 
     let [click, setClick] = useState(0);
+    let liRef = useRef({});
+
+    console.log(liRef.current[1])
+
+    useEffect(()=>{
+        if(click === 0 && page === '캐치홈'){
+            liRef.current[1].style.background = '#F8CF03';            
+        }else if(click === 1){
+            liRef.current[1].style.background = '#F8CF03';    
+        }else{
+            liRef.current[1].style.background = '#fff';            
+        }
+    },[click])
+    
     
     return(
         <section className='eduHelpPopWrap'>
@@ -91,7 +105,7 @@ function EduHelp({setHelpPop}){
                     <ul>
                         {helpNav.map((nav)=>
                             <li key={nav.id} onClick={()=>setClick(nav.id)} >
-                                <p onClick={()=>setPage(nav.tit)} className={click === nav.id ? 'eHNavColor' : ''}>{nav.tit}</p>
+                                <p ref={ref => (liRef.current[nav.id] = ref)} onClick={()=>setPage(nav.tit)} className={click === nav.id ? 'eHNavColor' : ''}>{nav.tit}</p>
                             </li>
                         )}
                     </ul>

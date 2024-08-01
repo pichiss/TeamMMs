@@ -6,6 +6,7 @@ import SubHead from '../../../common/Subhead';
 import '../../../common/button/btnStyle.css'
 import AskAnsure from './askAnsure';
 
+
 function AskDetail(){
     const navigate = useNavigate();
     const { id } = useParams();
@@ -22,6 +23,12 @@ function AskDetail(){
     // 수정
   function editBtn() {
     setaskUpdate(!askUpdate);
+    setaskUpdate({
+      id: items[id].id,
+      category: items[id].category,
+      tit: items[id].tit,
+      content: items[id].content
+    });
   }
   // 취소
   function cancleBtn() {
@@ -41,7 +48,6 @@ function AskDetail(){
       ...editAskItem,
       [name]: value,
     });
-    console.log(editAskItem)
   }
   //삭제
   function removeDetail() {
@@ -62,28 +68,7 @@ function AskDetail(){
   }
 
   // 답변
-  const [ansure, setAnsure] = useState('');
-  const [ansureList, setAnsureList]=useState( []);
-  const ansurchange= (e)=>{
-    setAnsure(e.target.value)
-  };
-
-  let addId = useRef(2)
-
-  function addAnsur(){
-    let anslist = {
-      id : addId.current,
-      ansure
-    }
-    setAnsureList([...ansureList,anslist])
-    setAnsure('')
-    addId.current++;
-  }
-  const deleteBtn = (targetId)=>{
-  setAnsureList(
-    ansureList.filter((list)=>list.id !== targetId))
-  }
-
+  
     return(
       <>
       <SubHead chara={1} />
@@ -96,15 +81,7 @@ function AskDetail(){
                 <h3>[{items[id].category}] {items[id].tit}</h3>
                 <p><b>등록일</b><span>{items[id].createDate}</span></p>
                 <pre>{items[id].content}</pre>
-                <div className='ansur'>
-                  <h4>답변</h4>
-                  <AskAnsure addAnsur={addAnsur} ansureList={ansureList} deleteBtn={deleteBtn} />
-                  <div className='flex ansurAddBox'>
-                    <input className='ansPlus' type='text' name={ansure} value={ansure} onChange={ansurchange} placeholder='답변을 달아주세요.'></input>
-                    <button className='askEditBtn' onClick={addAnsur}>추가</button>
-                  </div>
-                </div>
-
+                <AskAnsure />
                 <div className='flex threeBtn'>
                   <ul className='flex '>
                     <li><button className='bluelineBtn' onClick={editBtn}>수정</button></li>

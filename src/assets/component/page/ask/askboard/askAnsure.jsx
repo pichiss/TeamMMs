@@ -1,25 +1,44 @@
+import { useState, useRef } from 'react';
+import AskAnsureList from './askAnsureList';
 
-const EventList =({list,deleteBtn})=>{
-    function onDeleteBtn(){
-        let id= list.id
-        deleteBtn(id)
-    };
-    return(
-        <li className="ansurItemBox flex">
-            <p className="ansurItem"><div key={list.id} id={list.id}>{list.ansure}</div></p>
-            <button className="askEditBtn" onClick={onDeleteBtn}>삭제</button>            
-        </li>
-    )
-}
-const AskAnsure = ({ansureList,deleteBtn})=>{
+function AskAnsure(){
+    const [ansure, setAnsure] = useState('');
+  const [ansureList, setAnsureList]=useState( []);
+  const ansurchange= (e)=>{
+    setAnsure(e.target.value)
+  };
+
+  let addId = useRef(2)
+
+  function addAnsur(){
+    let anslist = {
+      id : addId.current,
+      ansure
+    }
+    setAnsureList([...ansureList,anslist])
+    setAnsure('')
+    addId.current++;
+  }
+  const deleteBtn = (targetId)=>{
+  setAnsureList(
+    ansureList.filter((list)=>list.id !== targetId))
+  }
 
     return(
         <>
-            <ul> 
-                {ansureList.map((list)=> <EventList key={list.id} list={list} deleteBtn={deleteBtn}/>)}
-            </ul>
+        <div className='ansur'>
+            <h4>답변</h4>
+            <AskAnsureList addAnsur={addAnsur} ansureList={ansureList} deleteBtn={deleteBtn} />
+            <div className='flex ansurAddBox'>
+                <input className='ansPlus' type='text' name={ansure} value={ansure} onChange={ansurchange} placeholder='답변을 달아주세요.'></input>
+                <button className='askEditBtn' onClick={addAnsur}>추가</button>
+            </div>
+        </div>
         </>
     )
 }
 
 export default AskAnsure;
+
+
+  

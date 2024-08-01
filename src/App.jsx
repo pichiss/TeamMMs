@@ -84,11 +84,11 @@ function App() {
             <Route path="/login" element={<Login kakaoLogin={kakaoLogin} />} />
             <Route path="/join" element={<Join />} />
             <Route path="/mypage" element={<Profile user={user} />} />
-            <Route path="/mypage/learning" element={<Leaning />} />
-            <Route path="/mypage/point" element={<Point  point={point} />} />
-            <Route path="/mypage/ask" element={<Ask />} />
-            <Route path="/mypage/ask/detail/:id" element={<AskDetail />} />
-            <Route path="/mypage/askNew" element={<AskNew />} />
+            <Route path="/learning" element={<Leaning />} />
+            <Route path="/point" element={<Point  point={point} />} />
+            <Route path="/ask" element={<Ask />} />
+            <Route path="/ask/detail/:id" element={<AskDetail />} />
+            <Route path="/askNew" element={<AskNew />} />
             <Route path="/noticeList" element={<NoticeList />} />
             <Route path="/noticeList/detail/:id" element={<NoticeDetail />} />
             <Route path="/faq" element={<Faq />} />

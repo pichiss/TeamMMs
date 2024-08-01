@@ -43,6 +43,7 @@
     -webkit-text-stroke: 1px #fff;
 }
 .eduUnit{
+    width: 100%;
     position: relative;
 }
 .eduStarWrap>img{
@@ -84,9 +85,6 @@
 }
 
 @media screen and (max-width: 1024px){
-    /* .eduTodaySec .swiper-wrapper{
-        gap: 90px;
-    } */
     .eduStarWrap>img{
         width: 35%;
     }
@@ -108,10 +106,4 @@
         width: 30%;
         top: 9%;
     }
-    /* .swiper-slide-prev>a>img{
-        width: 90%;
-    }
-    .swiper-slide-next>a>img{
-        width: 90%;
-    } */
 }

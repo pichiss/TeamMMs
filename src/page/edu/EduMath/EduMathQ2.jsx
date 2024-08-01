@@ -78,13 +78,12 @@ function EduMathQ2({ setPage, user, point }) {
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>02. 다음 입체도형을 보고 모서리와 꼭짓점의 개수를 각각 작성하세요.</h1>
                     <Canvas
-                        style={{ width: `980px`, height: `440px` }}
+                        style={{ width: `100%`, height: `440px` }}
                         camera={{ fov: 75, near: 0.1, far: 100, position: [2, 2, 2] }}>
                         <EduMathBlock />
                     </Canvas>
                     <img src={spin} alt="spin-mark" className='eduSpin' />
                 </div>
-                <img src={spring} alt="note-spring" />
                 <div className='flex eduUnitR'>
                     <div className='eduAnswer'>
                         <h1>모서리의 개수는?</h1>

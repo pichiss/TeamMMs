@@ -2,11 +2,10 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import EduHeader from './EduHeader.jsx';
 import EduFooter from './EduFooter.jsx';
-import spring from '../../assets/img/note_spring.png';
 import bero from '../../assets/img/monster/monster5_2.png';
 import './EduTodayCont.css';
 
-function EduTodayCont(props, point){
+function EduTodayCont(props){
 
     const {unitId} = useParams();
     const data = props.data;
@@ -49,7 +48,6 @@ function EduTodayCont(props, point){
                         </div>}
                     </div>
                 </div>
-                <img src={spring} alt="note-spring" />
                 <div className='eduUnitR'>
                     <div className={"flex eduNoSelect " + (onSelect ? "off" : " ")}>
                         <div className='eduSpeechBln'>

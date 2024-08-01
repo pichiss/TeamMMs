@@ -156,15 +156,9 @@
     .eduNote{
         margin-bottom: 0;
     }
-    .eduNote>img{
-        width: 16vw;
-    }
     .eduNote>h2{
         padding-top: 20px;
         font-size: max(1rem, 4.2vw);
-    }
-    .eduPoint>img{
-        width: 14vw;
     }
     .eduPoint>h2{
         padding-top: 20px;

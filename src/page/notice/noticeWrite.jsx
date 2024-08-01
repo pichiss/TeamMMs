@@ -2,7 +2,7 @@ import "./noticeStyle.css";
 import Subnav from "../../component/common/Subnav";
 import Btn from "../../component/common/button/btn";
 import { useContext } from "react";
-import NoticeInput from "./noticeInput";
+import HookInput from "../../component/hook/hookInput";
 import { editNotiContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import SubHead from "../../component/common/Subhead";
@@ -11,7 +11,7 @@ import SubHead from "../../component/common/Subhead";
 export default function NoticeWrite() {
   const navigate = useNavigate()
 
-  const [{ notiType, name, text }, onChange, reset] = NoticeInput({
+  const [{ notiType, name, text }, onChange, reset] = HookInput({
     notiType: '',
     name: '',
     text: ''

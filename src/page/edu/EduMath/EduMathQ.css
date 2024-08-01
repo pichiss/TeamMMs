@@ -1,5 +1,6 @@
 .eduQBtn div{
-    width: 180px;
+    /* width: 180px; */
+    width: 10%;
     padding: 10px;
     border: 7px solid #fff;
     border-radius: 50px;
@@ -8,7 +9,7 @@
     color: #898989;
     background-color: #BAE2FF;
     font-family: 'yg-jalnan';
-    font-size: 24px;
+    font-size: 1.4vw;
     cursor: pointer;
     position: absolute;
 }
@@ -18,7 +19,7 @@
 }
 .basicQ{
     top: 5%;
-    left: 52%;
+    right: 760px;
 }
 .basicQ::after{
     content: "";
@@ -31,7 +32,7 @@
 }
 .deepQ{
     top: 5%;
-    right: 28%;
+    right: 540px;
 }
 
 
@@ -40,16 +41,18 @@
     width: 129px;
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
 }
 .eduLeftArrow{
     left: 3%;
 }
 .eduRightArrow{
+    cursor: pointer;
     right: 2%;
 }
 .scoreAnswer{
     width: 100px;
-    left: calc(10% - 30px);
+    left: calc(10% - 50px);
     position: absolute;
     display: none;
 }
@@ -57,8 +60,7 @@
     display: block;
 }
 .scoreWrong{
-    top: 22%;
-    left: calc(10% - 30px);
+    left: calc(10% - 50px);
     position: absolute;
     display: none;
 }
@@ -149,9 +151,9 @@
     border-radius: 20px;
     background-color:#fff;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 2;
     display: none;
 }
@@ -234,4 +236,11 @@
     position: absolute;
     bottom: 5px;
     right: 0;
+}
+
+
+@media screen and (max-width: 1440px){
+    .eduAnswer{
+        padding-bottom: 50px;
+    }
 }

@@ -64,9 +64,7 @@ function EduMathQ3({ setPage, user, point }) {
                     <Link to={'/education/today/5/2'}>
                         <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />
                     </Link>
-                    <Link to={'/education/today/5/4'}>
-                        <img src={right_arrow} alt="next-button" className='eduRightArrow' />
-                    </Link>
+                    <img src={right_arrow} alt="next-button" className='eduRightArrow' />
                 </div>
                 <div className='eduUnitL'>
                     <img src={score_answer} alt="" className={'scoreAnswer ' + (onScore !== null && onScore === true ? 'on' : '')} />

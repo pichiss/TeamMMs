@@ -70,7 +70,7 @@ function EduMathQ1({ setPage, user, point }) {
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>01. 다음 입체도형의 이름을 작성하세요.</h1>
                     <Canvas
-                        style={{ width: `100%`, height: `auto` }}
+                        style={{ width: `100%`, height: `500px` }}
                         camera={{ fov: 75, near: 0.1, far: 100, position: [2, 2, 2] }}
                     >
                         <EduMathBlock />

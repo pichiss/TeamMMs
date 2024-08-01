@@ -24,7 +24,6 @@
     border: 12px solid #7ED07C;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 .eHHeader{

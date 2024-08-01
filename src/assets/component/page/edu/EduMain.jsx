@@ -5,7 +5,7 @@ import video from '../../../img/icon/video.png';
 import today from '../../../img/monster/monster2.png';
 import note from '../../../img/icon/note.png';
 import pointshop from '../../../img/icon/pointshop.png';
-import EduHelp from './EduHelp.jsx';
+import EduHelp from './EduHelpSec/EduHelp.jsx';
 import './EduMain.css';
 
 function EduMain({setPage, user, point}){

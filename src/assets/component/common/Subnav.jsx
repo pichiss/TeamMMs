@@ -54,6 +54,10 @@ function Subnav(props){
             if(urlName[1] === link){
                 console.log(id)
                 setActiveColor(id)
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
             }else{
                 null
             }

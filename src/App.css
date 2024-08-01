@@ -70,6 +70,13 @@ h1, h2, h3, h4, h5, h6, p{
   cursor: pointer;
   color: #fff;
 }
+/* 게시판 추가삭제버튼 */
+.askEditBtn{
+  background-color: var(--bg-grey);
+  border: 1px solid #fff;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
 
 @media screen and (max-width : 1440px) {
   .w1440{
@@ -88,5 +95,33 @@ h1, h2, h3, h4, h5, h6, p{
   .pa55{
     padding: 30px 0;
   }
+  /* 흰배경 줄버튼 */
+.bluelineBtn{
+  padding: 7px 15px;
+  border: 1px solid var(--main-blue);
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* 색배경 흰글씨 버튼 */
+.bgblueBtn{
+  padding: 7px 15px;
+  border: 1px solid var(--main-blue);
+  border-radius: 10px;
+  background-color: var(--main-blue);
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+}
+/* 게시판 추가삭제버튼 */
+.askEditBtn{
+  background-color: var(--bg-grey);
+  border: 1px solid #fff;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
   
 }

@@ -45,6 +45,7 @@ import Notifunc from './noticeFunc.jsx';
 import EduPoint from './page/Edupoint/Edupoint.jsx';
 import AskDetail from './page/ask/askboard/askDetail.jsx';
 
+
 //게시판용
 export const itemContext = createContext();
 export const editAskContext = createContext();

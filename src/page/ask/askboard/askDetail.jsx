@@ -1,9 +1,10 @@
 import { itemContext, editAskContext } from '../../../App'
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useCallback, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import Subnav from '../../../component/common/Subnav';
 import SubHead from '../../../component/common/Subhead';
-import '../../../component/common/button/btnStyle.css'
+import AskAnsure from './askAnsure';
+
 
 function AskDetail(){
     const navigate = useNavigate();
@@ -15,12 +16,18 @@ function AskDetail(){
       id: items[id].id,
       category: items[id].category,
       tit: items[id].tit,
-      content: items[id].content,
+      content: items[id].content
     });
 
     // 수정
   function editBtn() {
     setaskUpdate(!askUpdate);
+    setEditAskItem({
+      id: items[id].id,
+      category: items[id].category,
+      tit: items[id].tit,
+      content: items[id].content
+    });
   }
   // 취소
   function cancleBtn() {
@@ -31,6 +38,10 @@ function AskDetail(){
   // 목록으로
   function listBtn() {
     history.back();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+  })
   }
 
   function editChange(e) {
@@ -40,7 +51,6 @@ function AskDetail(){
       ...editAskItem,
       [name]: value,
     });
-    console.log(editAskItem)
   }
   //삭제
   function removeDetail() {
@@ -60,7 +70,8 @@ function AskDetail(){
     navigate("/mypage/ask");
   }
 
-
+  // 답변
+  
     return(
       <>
       <SubHead chara={1} />
@@ -73,6 +84,7 @@ function AskDetail(){
                 <h3>[{items[id].category}] {items[id].tit}</h3>
                 <p><b>등록일</b><span>{items[id].createDate}</span></p>
                 <pre>{items[id].content}</pre>
+                <AskAnsure />
                 <div className='flex threeBtn'>
                   <ul className='flex '>
                     <li><button className='bluelineBtn' onClick={editBtn}>수정</button></li>

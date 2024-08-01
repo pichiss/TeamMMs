@@ -30,19 +30,21 @@ function Ask(){
             <table>
                 <thead>
                 <tr>
-                    <td>번호</td>
-                    <td>답변내역</td>
-                    <td>제목</td>
-                    <td>등록일</td>
+                    <th className='asknumber'>번호</th>
+                    <th>답변내역</th>
+                    <th>제목</th>
+                    <th className='asknumber'>등록일</th>
                 </tr>
                 </thead>
                 <tbody>
                 {currentPost.map((item)=>
                 <tr key={item.id}>
-                    <td>{item.id + 1}</td>
+                    <td className='asknumber'>{item.id + 1}</td>
                     {item.ansur === false? <td><span className='ansYet'>답변대기</span></td> : <td><span className='ansEnd'>답변완료</span></td>}
-                    <Link to={`/ask/detail/${item.id}`}><td className='askTit'> <span>[{item.category}]</span> {item.tit}</td></Link>
-                    <td>{item.createDate}</td>
+                    <Link to={`/ask/detail/${item.id}`}>
+                        <td className='askTit'> [{item.category}]{item.tit}</td>
+                    </Link>
+                    <td className='asknumber'>{item.createDate}</td>
                 </tr>
                 )}
                 </tbody>

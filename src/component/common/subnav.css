@@ -60,7 +60,6 @@
     .subnavList ul{
         width: 100%;
         display: flex;
-        gap: 20px;
     }
     .subnavList li{
         flex: 1;

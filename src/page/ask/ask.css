@@ -4,11 +4,25 @@
 .askWrap table{
     width: 100%;
     border-top: 2px solid var(--font-black);
+    table-layout: fixed;
 }
 
-.askWrap td{
+.askWrap th,.askWrap td{
     padding: 20px 10px;
     text-align: center;
+    font-weight: 400;
+}
+.askWrap th:first-child{
+    width: 10%;
+}
+.askWrap th:nth-child(2){
+    width: 20%;
+}
+.askWrap th:nth-child(3){
+    width: 60%;
+}
+.askWrap th:nth-child(4){
+    width: 10%;
 }
 .askWrap tr{
     border-bottom: 1px solid var(--line-grey);
@@ -16,8 +30,13 @@
 
 .askWrap .askTit{
     text-align: left;
-    width: 68%;
+    width: 100%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
+
 .askWrap button{
     float: right;
     margin: 20px 15px 20px 0;
@@ -32,4 +51,20 @@
     padding: 5px 20px;
     border-radius: 5px;
     color: #fff;
+}
+
+@media screen and (max-width : 1280px) {
+    .ansYet, .ansEnd{
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .asknumber{
+        display: none;
+    }
+    .askWrap td{
+        padding: 15px 0px;
+    }
 }

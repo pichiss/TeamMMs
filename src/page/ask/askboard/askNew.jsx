@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ItemInput from "../hook/askhook";
+import HookInput from "../../../component/hook/hookInput";
 import { editAskContext } from '../../../App';
 import { useNavigate } from "react-router-dom";
 import Subnav from "../../../component/common/Subnav";
@@ -10,7 +10,7 @@ const AskNew = ()=>{
 
     const navigate = useNavigate();
     
-    const [{tit,content,category},onchange, reset]=ItemInput({
+    const [{tit,content,category},onchange, reset]=HookInput({
         tit : '',
         content :'',
         category : '' ,

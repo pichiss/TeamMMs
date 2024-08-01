@@ -1,0 +1,173 @@
+.eduSec{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../assets/img/bggreen.png);
+    position: relative;
+}
+.eduSec h2, .eduSec p{
+    font-family: 'yg-jalnan';
+}
+
+
+/* 메뉴 */
+.eduMenu{
+    justify-content: center;
+    gap: 25px;
+}
+.eduVideo{
+    width: 100%;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/img/edu_video_bg.png);
+}
+.eduVideo>h2{
+    padding-bottom: 80px;
+    font-size: max(1rem, 4.2vw);
+    color: #fff;
+    -webkit-text-stroke: 1px #C73395;
+    text-shadow: -1px 3px #C73395, 3px 1px #C73395, 1px 3px #C73395, 3px -1px #C73395;
+}
+.eduVideo>img{
+    width: 20.6vw;
+}
+.eduToday{
+    width: 100%;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/img/edu_today_bg.png);
+}
+.eduToday>h2{
+    padding-bottom: 80px;
+    font-size: max(1rem, 4.2vw);
+    color: #fff;
+    -webkit-text-stroke: 1px #15539B;
+    text-shadow: -1px 3px #15539B, 3px 1px #15539B, 1px 3px #15539B, 3px -1px #15539B;
+}
+.eduToday>img{
+    width: 16.1vw;
+}
+.eduCont>div{
+    padding: 30px 0;
+}
+.eduNote{
+    width: 100%;
+    padding: 30px 110px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/img/edu_note_bg.png);
+}
+.eduNote>h2{
+    padding-top: 40px;
+    font-size: max(1rem, 2.9vw);
+    color: #fff;
+    -webkit-text-stroke: 1px #4D1A8E;
+    text-shadow: -1px 3px #4D1A8E, 3px 1px #4D1A8E, 1px 3px #4D1A8E, 3px -1px #4D1A8E;
+}
+.eduNote>img{
+    width: 10.1vw;
+    padding-left: 25px;
+}
+.eduPoint{
+    width: 100%;
+    padding: 30px 110px;
+    border-radius: 20px;
+    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/img/edu_point_bg.png);
+}
+.eduPoint>h2{
+    padding-top: 40px;
+    font-size: max(1rem, 2.9vw);
+    color: #fff;
+    -webkit-text-stroke: 1px #882121;
+    text-shadow: -1px 3px #882121, 3px 1px #882121, 1px 3px #882121, 3px -1px #882121;
+}
+.eduPoint>img{
+    width: 8.4vw;
+}
+
+@media screen and (max-width: 1440px){
+    .eduNote>img{
+        padding-left: 10px;
+    }
+    .eduNote>h2{
+        padding-top: 33px;
+    }
+    .eduPoint>h2{
+        padding-top: 33px;
+    }
+}
+
+@media screen and (max-width: 948px){
+    .eduVideo{
+        padding: 50px 30px;
+    }
+    .eduToday{
+        padding: 50px 30px;
+    }
+    .eduNote{
+        padding: 25px 90px;
+    }
+    .eduPoint{
+        padding: 25px 90px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .eduMenu{
+        padding: 0 30px;
+        flex-direction: column;
+    }
+    .eduVideo{
+        gap: 50px;
+        flex-direction: row;
+    }
+    .eduVideo>h2{
+        padding-bottom: 0;
+    }
+    .eduToday{
+        gap: 50px;
+        flex-direction: row;
+    }
+    .eduToday>h2{
+        padding-bottom: 0;
+    }
+    .eduCont{
+        display: flex;
+        gap: 30px;
+    }
+    .eduCont>a{
+        flex: 1;
+    }
+    .eduNote{
+        margin-bottom: 0;
+    }
+    .eduNote>img{
+        width: 16vw;
+    }
+    .eduNote>h2{
+        padding-top: 20px;
+        font-size: max(1rem, 4.2vw);
+    }
+    .eduPoint>img{
+        width: 14vw;
+    }
+    .eduPoint>h2{
+        padding-top: 20px;
+        font-size: max(1rem, 4.2vw);
+    }
+}

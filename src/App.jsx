@@ -2,48 +2,48 @@ import './reset.css'
 import './App.css'
 
 import { Route, Routes } from 'react-router-dom';
-import { eduContents, qDatas } from './assets/page/edu/eduData.jsx';
-import { useState, useEffect, createContext, useReducer } from 'react'
+import { eduContents, qDatas } from './page/edu/eduData.jsx';
+import { useState, createContext } from 'react'
 import { kakaos } from './loginData/kakao.jsx'
 
-import Header from './assets/component/header/Header'
-import Footer from './assets/component/footer/footer';
+import Header from './component/header/Header'
+import Footer from './component/footer/footer';
 
-import Main from './assets/page/main/Main'
-import Login from './assets/page/login/Login'
-import Join from './assets/page/login/Join'
-import Catch from './assets/page/catch/catch.jsx'
+import Main from './page/main/Main.jsx'
+import Login from './page/login/Login'
+import Join from './page/login/Join'
+import Catch from './page/catch/catch.jsx'
 
 
-import NoticeList from './assets/page/notice/noticeList';
-import NoticeDetail from './assets/page/notice/noticeDetail';
-import NoticeWrite from './assets/page/notice/noticeWrite';
-import Profile from './assets/page/mypage/profile'
-import Point from './assets/page/mypage/point.jsx';
+import NoticeList from './page/notice/noticeList';
+import NoticeDetail from './page/notice/noticeDetail';
+import NoticeWrite from './page/notice/noticeWrite';
+import Profile from './page/mypage/profile'
+import Point from './page/mypage/point.jsx';
 
-import EduMain from './assets/page/edu/EduMain.jsx';
-import EduToday from './assets/page/edu/EduToday.jsx';
-import EduTodayCont from './assets/page/edu/EduTodayCont.jsx';
-import EduMathQ1 from './assets/page/edu/EduMath/EduMathQ1.jsx';
-import EduMathQ2 from './assets/page/edu/EduMath/EduMathQ2.jsx';
-import EduMathQ3 from './assets/page/edu/EduMath/EduMathQ3.jsx';
-import EduMathQ11 from './assets/page/edu/EduMath/EduMathQ11.jsx';
+import EduMain from './page/edu/EduMain.jsx';
+import EduToday from './page/edu/EduToday.jsx';
+import EduTodayCont from './page/edu/EduTodayCont.jsx';
+import EduMathQ1 from './page/edu/EduMath/EduMathQ1.jsx';
+import EduMathQ2 from './page/edu/EduMath/EduMathQ2.jsx';
+import EduMathQ3 from './page/edu/EduMath/EduMathQ3.jsx';
+import EduMathQ11 from './page/edu/EduMath/EduMathQ11.jsx';
 import AskFunc from './askFunc.jsx';
 
-import Leaning from './assets/page/learning/learning.jsx';
-import EduVideo from './assets/page/eduVideo/eduVideo';
-import Ask from './assets/page/ask/ask.jsx';
-import AskNew from './assets/page/ask/askboard/askNew.jsx';
-import Faq from './assets/page/faq/faq.jsx';
-import EduVideoDetail from './assets/page/eduVideo/eduVideoDetail.jsx';
+import Leaning from './page/learning/learning.jsx';
+import EduVideo from './page/eduVideo/eduVideo';
+import Ask from './page/ask/ask.jsx';
+import AskNew from './page/ask/askboard/askNew.jsx';
+import Faq from './page/faq/faq.jsx';
+import EduVideoDetail from './page/eduVideo/eduVideoDetail.jsx';
 
-import EduNoteMain from './assets/page/edu/EduNote/EduNote.jsx';
-import EduNoteCont from './assets/page/edu/EduNote/EduNoteCont.jsx';
-import EduNoteQ1 from './assets/page/edu/EduNote/EduNoteQ1.jsx';
+import EduNoteMain from './page/edu/EduNote/EduNote.jsx';
+import EduNoteCont from './page/edu/EduNote/EduNoteCont.jsx';
+import EduNoteQ1 from './page/edu/EduNote/EduNoteQ1.jsx';
 
 import Notifunc from './noticeFunc.jsx';
-import EduPoint from './assets/page/Edupoint/Edupoint.jsx';
-import AskDetail from './assets/page/ask/askboard/askDetail.jsx';
+import EduPoint from './page/Edupoint/Edupoint.jsx';
+import AskDetail from './page/ask/askboard/askDetail.jsx';
 
 
 //게시판용
@@ -82,7 +82,7 @@ function App() {
           <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} point={point} />
 
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Main user={user} setPage={setPage}/>} />
             <Route path="/login" element={<Login kakaoLogin={kakaoLogin} />} />
             <Route path="/join" element={<Join />} />
             <Route path="/mypage" element={<Profile user={user} />} />

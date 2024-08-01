@@ -1,0 +1,131 @@
+.eduViedosWrap {
+    background-image: url(../../assets/img/bgpink.png);
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.eduViedosWrap .eduViedosCover h2 {
+    font-family: 'yg-jalnan';
+    text-align: center;
+    font-size: 48px;
+    color: white;
+    -webkit-text-stroke: 1px #C73395;
+    text-shadow: -1px 3px #C73395, 3px 1px #C73395, 1px 3px #C73395, 3px -1px #C73395;
+    padding-bottom: 55px;
+}
+
+.eduViedosCover .eduViedos {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.eduViedosCover .eduViedosCont {
+    width: 600px;
+}
+
+.eduViedosCover .eduViedosCont img {
+    width: 40%;
+    height: 150px;
+    border-radius: 20px 0 0 20px;
+}
+
+.eduViedosCover .eduViedosCont ul {
+    width: 60%;
+    background-color: var(--yellow);
+    border-radius: 0 20px 20px 0;
+    padding-top: 25px;
+}
+
+.eduViedosCover .eduViedosCont ul li {
+    font-family: 'yg-jalnan';
+    text-align: center;
+    font-size: 30px;
+    -webkit-text-stroke: 1px #fff;
+}
+
+/* 영상 */
+.innereduViedosWrap {
+    background-image: url(../../assets/img/bgpink.png);
+    height: 100vh;
+}
+
+.eduViedoNowWrap {
+    width: 100%;
+}
+
+.eduViedoNow {
+    width: 65%;
+    margin: 0 auto;
+    gap: 50px;
+    align-items: flex-end;
+}
+
+.eduViedoNow video {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 10px solid white;
+}
+
+
+
+/* 반응형 */
+@media screen and (max-width : 1440px) {
+    .eduViedosWrap {
+        height: auto;
+        padding-bottom: 100px;
+    }
+
+    .eduViedoNowWrap {
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width : 768px) {
+
+    .eduViedosWrap .eduViedosCover h2 {
+        font-size: 30px;
+        -webkit-text-stroke: 1px #C73395;
+        text-shadow: -1px 3px #C73395, 3px 1px #C73395, 1px 3px #C73395, 3px -1px #C73395;
+        padding-bottom: 40px;
+    }
+
+    .eduViedosCover .eduViedos {
+        gap: 40px;
+    }
+
+    .eduViedosCover .eduViedosCont {
+        width: 400px;
+        height: 100px;
+    }
+
+    .eduViedosCover .eduViedosCont img {
+        height: 100px;
+    }
+
+    .eduViedosCover .eduViedosCont ul li {
+        font-size: 16px;
+        -webkit-text-stroke: 0.5px #fff;
+    }
+
+    .eduViedoNowWrap {
+        padding-top: 150px;
+    }
+
+    .eduViedoNow {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 30px);
+        gap: 30px;
+    }
+
+}
+
+@media screen and (max-width : 500px) {
+
+    .eduViedosCover .eduViedosCont {
+        width: 300px;
+    }
+}

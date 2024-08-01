@@ -90,9 +90,9 @@ function App() {
             <Route path="/mypage/ask/detail/:id" element={<AskDetail />} />
             <Route path="/mypage/askNew" element={<AskNew />} />
             <Route path="/noticeList" element={<NoticeList />} />
-            <Route path="/detail/:id" element={<NoticeDetail />} />
+            <Route path="/noticeList/detail/:id" element={<NoticeDetail />} />
             <Route path="/faq" element={<Faq />} />
-            <Route path="/write" element={<NoticeWrite />} />
+            <Route path="/noticeList/write" element={<NoticeWrite />} />
             <Route path="/catch" element={<Catch />} />
           </Routes>
           <Footer />

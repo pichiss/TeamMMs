@@ -24,7 +24,7 @@ export default function NoticeList() {
 
     const writeBtns = {
         tit : '글쓰기',
-        link :'/write',
+        link :'/noticeList/write',
         Bclass :'writeBtn'
     }
     
@@ -52,7 +52,7 @@ export default function NoticeList() {
                     <tr key={data.id}>
                        <td>{data.id + 1}</td>
                        <td>
-                       <Link to={`/detail/${data.id}`}>
+                       <Link to={`/noticeList/detail/${data.id}`}>
                         {'['}{data.notiType}{'] '}{data.name}
                         </Link>
                         </td>

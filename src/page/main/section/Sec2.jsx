@@ -16,7 +16,7 @@ function Sec2(){
                 </li>
                 <li className='sec2Info'>
                     {datas.map((data) => (
-                        <Link to={`/detail/${data.id}`} key={data.id}><div>{'['}{data.notiType}{'] '}{data.name}</div></Link>
+                        <Link to={`/noticeList/detail/${data.id}`} key={data.id}><div>{'['}{data.notiType}{'] '}{data.name}</div></Link>
                     ))}
                 </li>
             </ul>

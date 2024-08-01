@@ -52,7 +52,7 @@ export default function NoticeDetail() {
 
 
 
-  console.log(id)
+  // console.log(id)
   //삭제
   function removeDetail() {
     if (window.confirm(`게시물을 삭제 하시겠습니까?`)) {

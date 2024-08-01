@@ -1,5 +1,5 @@
 import { useReducer, useRef, useMemo, useCallback } from 'react'
-import {Contents, reducer} from './assets/page/ask/askboard/askData';
+import {Contents, reducer} from './page/ask/askboard/askData';
 
 const AskFunc = () => {
     const [state,dispatch] = useReducer(reducer, Contents);

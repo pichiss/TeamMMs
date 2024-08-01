@@ -2,6 +2,7 @@
 .eduUnitWrap{
     padding: 0 90px;
     gap: 20px;
+    position: relative;
 }
 .eduMainUnits>h2, .eduSubUnitBoxs h3, .eduSelects>div>a{
     -webkit-text-stroke: 1px #fff;
@@ -151,4 +152,39 @@
 }
 .eduSelects.off{
     display: none;
+}
+
+
+/* 해설보기 */
+.exPart{
+    width: 85%; height: 100%;
+    position: absolute;
+    z-index: 5;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.9);
+    padding: 10px;
+}
+.exPartWrap{
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.exClose{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.exClose>img{
+    cursor: pointer;
+}
+.exImg{
+    width: 100%; height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.exImg>img{
+    width: 80%;
 }

@@ -80,7 +80,7 @@ function App() {
             <editAskContext.Provider value={memoAsk}>
           <Header setPage={setPage} user={user} kakaoLogout={kakaoLogout} point={point} />
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Main user={user} setPage={setPage}/>} />
             <Route path="/login" element={<Login kakaoLogin={kakaoLogin} />} />
             <Route path="/join" element={<Join />} />
             <Route path="/mypage" element={<Profile user={user} />} />

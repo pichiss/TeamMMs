@@ -205,3 +205,6 @@
         padding: 30px 20px 20px;
     }
 }
+.about6Line{
+    text-decoration-line: line-through;
+}

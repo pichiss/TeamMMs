@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 
@@ -15,6 +15,12 @@ import spring from '../../../img/note_spring.png';
 import spin from '../../../img/icon/spin_mark.png';
 import commen from '../../../img/icon/book.png';
 import close from '../../../img/icon/x.png';
+
+import ex2 from '../../../img/ex2.png';
+import ex1 from '../../../img/ex1.png';
+import closeY from '../../../img/icon/x_yellow.png';
+
+// import EduQuestion from '../../../component/common/eduQuestion/eduQuestion';
 
 import '../EduMath/EduMathQ.css'
 import EduQna from '../EduMath/EduQna';
@@ -47,6 +53,27 @@ function EduNoteQ1({setPage, user, point}){
         }
         setPopUp(false)
     }
+
+    let [exPop, setExPop] = useState(false);
+
+    function exFunc(){
+        setExPop((exPop)=>!exPop)
+    }
+
+    
+    const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+      
+    const resizeListener = () => {
+        setInnerWidth(window.innerWidth);
+    };
+      
+    useEffect(() => {
+        window.addEventListener("resize", resizeListener);
+    
+        return () => {
+        window.removeEventListener("resize", resizeListener);
+        };
+    }, []);
 
     //힌트보기
     const hintText = "이 도형은 우리가 사는 집이나 학교, 혹은 상자처럼 보일 수 있어.";
@@ -81,7 +108,7 @@ function EduNoteQ1({setPage, user, point}){
                         <EduQna/>
                         <EduHint hintText={hintText}/>
                         {onScore == true || onScore == false ? 
-                        <div className='flex commenWrap'>
+                        <div className='flex commenWrap' onClick={exFunc}>
                             <img src={commen} alt="commentary-button" />
                             <h3>해설보기</h3>
                         </div>
@@ -92,6 +119,24 @@ function EduNoteQ1({setPage, user, point}){
                         </div>}
                     </div>
                 </div>
+                {exPop ?
+                <div className='exPart'>
+                    <div className='exPartWrap'>
+                        <div className='exClose'>
+                            <img src={closeY} alt='닫기' onClick={()=>setExPop(false)}/>
+                        </div>
+                        <div className='exImg'>
+                            {innerWidth <= 750 ?
+                            <img src={ex1} alt='해설 보기'/>
+                            :
+                            <img src={ex2} alt='해설 보기'/>
+                            }
+                        </div>
+                    </div>
+                </div>
+                :
+                null
+                }
                 <div className={'eduPopUp ' + (onPopUp ? 'on' : '')}>
                     <div className='flex eduCloseBtn' onClick={closeQ}>
                         <img src={close} alt="close-button" />

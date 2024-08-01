@@ -1,8 +1,9 @@
 import "./eduQuestionStyle.css";
-import { AskIcon } from "../../../img/img";
 import { useRef, useState } from "react";
-import Btn from "../button/btn";
-import { CloseAsk } from "../../../img/img";
+import Btn from "../../component/common/button/btn";
+import { AskIcon } from "../../img/img";
+import { CloseAsk } from "../../img/img";
+
 
 export default function EduQuestion({ Qclass }) {
   const askTextRef = useRef();
@@ -47,7 +48,7 @@ export default function EduQuestion({ Qclass }) {
             <h3>질문하기</h3>
           </div>
         </div>
-        <div className="askIconPopupWrap">
+         <div className="askIconPopupWrap">
           <div className="askIconPopup">
             <div className="flex askIconPopupImg">
               <img src={CloseAsk} alt="닫기" onClick={openAsk} />

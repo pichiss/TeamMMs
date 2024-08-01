@@ -10,10 +10,10 @@ export default function LearningAttendance() {
   const [value, onChange] = useState(new Date());
 
   const dayList = [
-    '2024-07-02',
-    '2024-07-03',
-    '2024-07-04',
-    '2024-07-05',
+    '2024-08-06',
+    '2024-08-07',
+    '2024-08-08',
+    '2024-08-09',
   ];
 
 
@@ -53,7 +53,7 @@ export default function LearningAttendance() {
       <div className="goodJob">
       <ul>
         <li>잘 하 고 있 어 요!</li>
-        <li>이번 달 출석 횟수는 <span>4번</span></li>
+        <li>이번 달 출석 횟수는 <span>{dayList.length}</span> 번</li>
       </ul>
       </div>
     </div>

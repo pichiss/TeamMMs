@@ -10,21 +10,17 @@ import left_arrow from '../../../img/icon/left-arrow2.png';
 import right_arrow from '../../../img/icon/right-arrow2.png';
 import score_answer from '../../../img/icon/score.png';
 import score_wrong from '../../../img/icon/score_wrong.png';
-import ask from '../../../img/icon/info.png';
-import bulb from '../../../img/icon/bulb.png';
 import check from '../../../img/icon/check-mark.png';
 import spring from '../../../img/note_spring.png';
 import spin from '../../../img/icon/spin_mark.png';
 import commen from '../../../img/icon/book.png';
 import close from '../../../img/icon/x.png';
 
-import ex2 from '../../../img/ex2.png';
-import ex1 from '../../../img/ex1.png';
-import closeY from '../../../img/icon/x_yellow.png';
-
 import EduQuestion from '../../../component/common/eduQuestion/eduQuestion';
 
 import '../EduMath/EduMathQ.css'
+import EduQna from '../EduMath/EduQna';
+import EduHint from '../EduMath/EduHint';
 
 function EduNoteQ1({setPage, user, point}){
 
@@ -54,27 +50,6 @@ function EduNoteQ1({setPage, user, point}){
         setPopUp(false)
     }
 
-    let [exPop, setExPop] = useState(false);
-
-    function exFunc(){
-        setExPop((exPop)=>!exPop)
-    }
-
-    
-    const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-      
-    const resizeListener = () => {
-        setInnerWidth(window.innerWidth);
-    };
-      
-    useEffect(() => {
-        window.addEventListener("resize", resizeListener);
-    
-        return () => {
-        window.removeEventListener("resize", resizeListener);
-        };
-    }, []);
-
     return(
         <section className='eduNoteSec'>
             <EduHeader setPage={setPage} user={user} point={point} />
@@ -102,15 +77,8 @@ function EduNoteQ1({setPage, user, point}){
                         <input type="text" onChange={saveAnswer} value={onAnswer} />
                     </div>
                     <div className='flex eduSubBtn'>
-                        {/* <div className='flex eduAskWrap'>
-                            <img src={ask} alt="ask-button" />
-                            <h3>질문하기</h3>
-                        </div> */}
-                        <EduQuestion/>
-                        <div className='flex hintWrap'>
-                            <img src={bulb} alt="hint-button" />
-                            <h3>힌트보기</h3>
-                        </div>
+                        <EduQna/>
+                        <EduHint hintText={hintText}/>
                         {onScore == true || onScore == false ? 
                         <div className='flex commenWrap' onClick={exFunc}>
                             <img src={commen} alt="commentary-button" />

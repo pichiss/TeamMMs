@@ -158,9 +158,6 @@
 }
 
 @media screen and (max-width : 530px){
-    .eduCont{ 
-        flex-direction: column;
-    }
     .eduPtWrap img{
         width: 100%;
     }

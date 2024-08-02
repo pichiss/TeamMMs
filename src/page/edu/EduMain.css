@@ -165,3 +165,57 @@
         font-size: max(1rem, 4.2vw);
     }
 }
+
+@media screen and (max-width: 530px){
+    .eduCont{ 
+        flex-direction: column;
+    }
+    .eduVideo>img{
+        width: 18vw;
+    }
+    .eduToday>img{
+        width: 15vw;
+    }
+    .eduNote{
+        padding: 50px 30px;
+        gap: 50px;
+        flex-direction: row;
+    }
+    .eduNote>img{
+        width: 17vw;
+        order: 2;
+        padding-left: 0;
+    }
+    .eduNote>h2{
+        padding-top: 0;
+        order: 1;
+    }
+    .eduPoint{
+        padding: 50px 30px;
+        gap: 50px;
+        flex-direction: row;
+    }
+    .eduPoint>img{
+        width: 15vw;
+        order: 2;
+    }
+    .eduPoint>h2{
+        padding-top: 0;
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .eduVideo>h2{
+        font-size: 5vw;
+    }
+    .eduToday>h2{
+        font-size: 5vw;
+    }
+    .eduNote>h2{
+        font-size: 5vw;
+    }
+    .eduPoint>h2{
+        font-size: 5vw;
+    }
+}

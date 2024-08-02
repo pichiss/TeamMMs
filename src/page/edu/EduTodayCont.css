@@ -188,6 +188,7 @@
 @media screen and (max-width: 1350px){
     .eduTodaySec.todayCont{
         height: 100%;
+        padding-bottom: 125px;
     }
     .eduUnitWrap{
         flex-direction: column;

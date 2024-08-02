@@ -57,7 +57,7 @@ function EduMathQ11({ setPage, user, point, setHelpPop }) {
     const hintText="정육면체의 모서리는 모두 같은 길이야.";
 
     return (
-        <section className='eduTodaySec'>
+        <section className='eduTodaySec mathQ'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <article className='flex eduUnitWrap'>
             <EduQBtn />
@@ -114,6 +114,7 @@ function EduMathQ11({ setPage, user, point, setHelpPop }) {
                 </div>
                 <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
+            <div className='eduPagenation'>1 / 10</div>
             <EduFooter />
         </section>
     )

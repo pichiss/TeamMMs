@@ -52,7 +52,7 @@ function EduMathQ3({ setPage, user, point, setHelpPop }) {
     const hintText = "이 도형은 6개의 면을 가지고 있고, 주사위처럼 생겼어.";
 
     return (
-        <section className='eduTodaySec'>
+        <section className='eduTodaySec mathQ'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <article className='flex eduUnitWrap'>
             <EduQBtn />
@@ -99,6 +99,7 @@ function EduMathQ3({ setPage, user, point, setHelpPop }) {
                 </div>
                 <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
+            <div className='eduPagenation'>3 / 10</div>
             <EduFooter />
         </section>
     )

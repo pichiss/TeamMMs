@@ -68,6 +68,7 @@
         width: 100%;
         font-size: 12px;
         text-align: center;
+        padding: 15px 5px;
     }
     .subnavList a::after{
         display: none;

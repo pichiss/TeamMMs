@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 
 import EduHeader from '../EduHeader.jsx';
@@ -19,7 +18,7 @@ import ex2 from '../../../assets/img/ex2.png';
 import ex1 from '../../../assets/img/ex1.png';
 import closeY from '../../../assets/img/icon/x_yellow.png';
 
-import '../EduMath/EduMathQ.css'
+import './EduNoteQ.css'
 import EduQna from '../EduMath/EduQna';
 import EduHint from '../EduMath/EduHint';
 
@@ -76,26 +75,26 @@ function EduNoteQ1({setPage, user, point, setHelpPop}){
     const hintText = "이 도형은 우리가 사는 집이나 학교, 혹은 상자처럼 보일 수 있어.";
 
     return(
-        <section className='eduNoteSec'>
+        <section className='eduNoteSec mathQ'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop} />
             <article className='flex eduUnitWrap'>
                 <div className='eduArrowWrap'>
                     <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />
                     <img src={right_arrow} alt="next-button" className='eduRightArrow' />
                 </div>
-                <div className='eduUnitL'>
+                <div className='eduUnitLs'>
                     <img src={score_answer} alt="" className={'scoreAnswer ' + (onScore !== null && onScore === true ? 'on' : '')} />
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>01. 다음 입체도형의 이름을 작성하세요.</h1>
                     <Canvas
-                        style={{width: `980px`, height: `500px`}}
+                        style={{width: `100%`, height: `500px`}}
                         camera={{fov: 75, near: 0.1, far: 100, position: [2, 2, 2]}}
                     >
                         <EduMathBlock />
                     </Canvas>
                     <img src={spin} alt="spin-mark" className='eduSpin' />
                 </div>
-                <div className='flex eduUnitR'>
+                <div className='flex eduUnitRs'>
                     <div className='eduAnswer'>
                         <h1>직사각형 6개로 둘러싸인 도형을 무엇이라고 하나요?</h1>
                         <input type="text" onChange={saveAnswer} value={onAnswer} />
@@ -145,6 +144,7 @@ function EduNoteQ1({setPage, user, point, setHelpPop}){
                 </div>
                 <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
+            <div className='eduPagenation'>1 / 1</div>
             <EduFooter />
         </section>
     )

@@ -1,0 +1,136 @@
+/* 문제 */
+.eduUnitLs>h1{
+    font-size: 2.1vw;
+    word-break: keep-all;
+}
+.eduUnitRs{
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* 채점 팝업 */
+.eduPopUp{
+    width: 325px;
+    padding: 15px 30px;
+    border-radius: 20px;
+    background-color:#fff;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: none;
+}
+.eduPopUp.on{
+    display: block;
+}
+.shadowBox{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+.shadowBox.shadow{
+    display: block;
+}
+.eduCloseBtn{
+    width: 35px;
+    height: 35px;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    border-radius: 55px;
+    background-color: #FF8296;
+    cursor: pointer;
+}
+.eduCloseBtn>img{
+    width: 25px;
+    height: 25px;
+}
+.eduPopUp>h2{
+    margin: 45px 0;
+    font-size: 23px;
+    font-family: 'yg-jalnan';
+}
+.eduPopBtn{
+    gap: 10px;
+    justify-content: center;
+}
+.eduPopBtn>button{
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.eduCancleBtn{
+    background-color: #A1A1A1;
+}
+.eduGradeBtn{
+    background-color: #FF8296;
+}
+
+/* 힌트보기 */
+.hintBubble {
+    width: 300px;
+    height: 150px;
+    background-image: url(../../../assets/img/bubble.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 180px;
+    padding: 30px 10px 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.hintBubble.active {
+    opacity: 1;
+}
+.hintBubble p {
+    width: 220px;
+}
+.hintBubble img{
+    transform: scale(0.6);
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+.eduNoteSec .eduPagenation{
+    width: 140px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 7px solid #fff;
+    border-radius: 50px;
+    background-color: #DFC7FF;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'yg-jalnan';
+}
+
+
+@media screen and (max-width: 1350px){
+    .eduNoteSec.mathQ{
+        height: 100%;
+        padding-bottom: 10px;
+    }
+    .eduNoteSec .eduPagenation{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .eduUnitLs>h1{
+        font-size: 4vw;
+    }
+    .eduNoteSec .eduPagenation{
+        width: 100px;
+        font-size: 3vw;
+    }
+}

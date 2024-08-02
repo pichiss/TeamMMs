@@ -48,11 +48,10 @@ const Notifunc = () => {
         });
     };
 
-    const searchNoti = (name, text) => {
+    const searchNoti = (name) => {
         dispatch({
             type: "search",
             name,
-            text,
         });
     };
 

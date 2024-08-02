@@ -39,12 +39,36 @@
 }
 .eduNoteSec .swiper-slide>p{
     font-family: 'yg-jalnan';
-    font-size: 30px;
+    font-size: max(1rem, 1.8vw);
     -webkit-text-stroke: 1px #fff;
 }
 .eduNoteSec .swiper-slide>h3{
     padding-top: 30px;
     font-family: 'yg-jalnan';
-    font-size: 40px;
+    font-size: max(1rem, 2.4vw);
     -webkit-text-stroke: 1px #fff;
+}
+
+
+@media screen and (max-width: 1440px){
+    .eduNoteSec .swiper-wrapper>div:not(:last-child)::after{
+        display: none;
+    }
+    .eduNoteSec>img{
+        width: 25%;
+        top: 6%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+}
+
+@media screen and (max-width: 768px){
+    .eduTodaySec>img{
+        width: 30%;
+        top: 9%;
+    }
+}
+
+@media screen and (max-width: 530px){
 }

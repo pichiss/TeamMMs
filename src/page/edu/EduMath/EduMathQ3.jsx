@@ -24,28 +24,32 @@ function EduMathQ3({ setPage, user, point, setHelpPop }) {
 
     const [onPopUp, setPopUp] = useState(false);
 
-    function checkQ() {
+    function checkQ(){
         setPopUp(true)
     }
 
-    function closeQ() {
+    function closeQ(){
         setPopUp(false)
     }
 
     const [onAnswer, setAnswer] = useState('');
     const [onScore, setScore] = useState(null);
 
-    function saveAnswer(e) {
+    function saveAnswer(e){
         setAnswer(e.target.value);
     }
 
-    function answerQ() {
-        if (onAnswer === '정육면체') {
+    function answerQ(){
+        if (onAnswer === '정육면체'){
             setScore(true)
         } else {
             setScore(false)
         }
         setPopUp(false)
+    }
+
+    function eduAlert(){
+        alert("준비 중입니다.")
     }
 
     // 힌트보기
@@ -60,11 +64,11 @@ function EduMathQ3({ setPage, user, point, setHelpPop }) {
                     <Link to={'/education/today/5/2'}>
                         <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />
                     </Link>
-                    <img src={right_arrow} alt="next-button" className='eduRightArrow' />
+                    <img src={right_arrow} alt="next-button" className='eduRightArrow' onClick={eduAlert} />
                 </div>
                 <div className='eduUnitL'>
-                    <img src={score_answer} alt="" className={'scoreAnswer ' + (onScore !== null && onScore === true ? 'on' : '')} />
-                    <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
+                    <img src={score_answer} alt="circle-mark" className={'scoreAnswer ' + (onScore !== null && onScore === true ? 'on' : '')} />
+                    <img src={score_wrong} alt="slash-mark" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
                     <h1>03. 다음 입체도형의 이름을 작성하세요.</h1>
                     <Canvas
                         style={{ width: `100%`, height: `500px` }}

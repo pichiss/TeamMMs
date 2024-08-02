@@ -219,15 +219,14 @@
     background-repeat: no-repeat;
     position: absolute;
     bottom: 180px;
-    padding: 30px 10px 0;
-    opacity: 0;
-    transition: all 0.5s;
+    padding: 30px 15px 0;
+    display: none;
 }
 .hintBubble.active {
-    opacity: 1;
+    display: block;
 }
 .hintBubble p {
-    width: 220px;
+    width: 200px;
 }
 .hintBubble img{
     transform: scale(0.6);
@@ -258,11 +257,28 @@
     }
     
 }
+@media screen and (max-width: 1919px){
+    .hintBubble {
+        transform: scale(0.9);
+        bottom: 200px;
+    }
+}
 
 @media screen and (max-width: 1440px){
+    .scoreAnswer{
+        top: 190px;
+        left: calc(10% - 90px);
+    }
+    .scoreWrong{
+        top: 190px;
+        left: calc(10% - 90px);
+    }
     .eduAnswer{
         padding-bottom: 50px;
     }    
+    .hintBubble {
+        bottom: 220px;
+    }
 }
 
 
@@ -285,6 +301,13 @@
     .eduRightArrow{
         right: 30%;
     }
+    .scoreAnswer{
+        top: 40px;
+    }
+    .scoreWrong{
+        top: 30px;
+        left: 30px;
+    }
     .eduAnswer{
         margin: 0 auto;
     }
@@ -297,6 +320,26 @@
     }
     .eduPagenation{
         margin-top: 0;
+    }
+
+    .hintBubble {
+        bottom: 140px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .scoreAnswer{
+        width: 10%;
+    }
+    .scoreWrong{
+        width: 8%;
+        top: 40px;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .scoreAnswer{
+        left: 30px
     }
     .eduQBtn div{
         width: auto;
@@ -339,22 +382,6 @@
     .eduSubBtn h3{
         font-size: 3vw;
     }
-    .eduQBtn div{
-        border: 5px solid #fff;
-    }
-    .basicQ{
-        top: -1%;
-        right: 52%;
-    }
-    .deepQ{
-        top: -1%;
-        right: 37%;
-    }
-    .basicQ::after{
-        width: 80%;
-        top: 45%;
-        right: -80%;
-    }
 }
 
 @media screen and (max-width: 600px){
@@ -373,5 +400,31 @@
     .eduPagenation{
         width: 100px;
         font-size: 3vw;
+    }
+    .scoreAnswer{
+        top: 50px;
+    }
+    .scoreWrong{
+        width: 10%;
+        top: 50px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .hintBubble {
+        bottom: 120px;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .scoreAnswer{
+        top: 55px;
+        left: 40px;
+    }
+    .scoreWrong{
+        left: 40px;
+    }
+    .hintBubble {
+        bottom: 130px;
     }
 }

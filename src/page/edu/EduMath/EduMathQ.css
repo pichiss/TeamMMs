@@ -18,12 +18,12 @@
     background-color: var(--yellow);
 }
 .basicQ{
-    top: 5%;
-    right: 760px;
+    top: -17%;
+    right: 40%;
 }
 .basicQ::after{
     content: "";
-    width: 30px;
+    width: 20%;
     height: 7px;
     background-color: #fff;
     position: absolute;
@@ -31,8 +31,8 @@
     right: -20%;
 }
 .deepQ{
-    top: 5%;
-    right: 540px;
+    top: -17%;
+    right: 29%;
 }
 
 
@@ -243,4 +243,13 @@
     .eduAnswer{
         padding-bottom: 50px;
     }
+    .basicQ{
+        top: -9%;
+        right: 40%;
+    }
+    .deepQ{
+        top: -9%;
+        right: 29%;
+    }
+    
 }

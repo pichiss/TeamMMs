@@ -17,6 +17,7 @@ import close from '../../../assets/img/icon/x.png';
 import './EduMathQ.css';
 import EduQna from './EduQna';
 import EduHint from './EduHint';
+import EduQBtn from './EduQBtn';
 
 function EduMathQ1({ setPage, user, point, setHelpPop }) {
 
@@ -52,13 +53,8 @@ function EduMathQ1({ setPage, user, point, setHelpPop }) {
     return (
         <section className='eduTodaySec'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
-            <div className='flex eduQBtn'>
-                <div className="basicQ active">기초문제</div>
-                <Link to={'/education/today/5/11'}>
-                    <div className="deepQ">응용문제</div>
-                </Link>
-            </div>
             <article className='flex eduUnitWrap'>
+            <EduQBtn />
                 <div className='eduArrowWrap'>
                     <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />
                     <Link to={`/education/today/5/2`}>

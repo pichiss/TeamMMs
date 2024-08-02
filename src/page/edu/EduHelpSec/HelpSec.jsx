@@ -36,8 +36,8 @@ function HelpSec1({swiperImg1, swiperImg2}){
             
         {innerWidth <= 750 ?
             <>
-            {swiperImg2.map((img)=>
-                <SwiperSlide>
+            {swiperImg2.map((img, id)=>
+                <SwiperSlide key={id}>
                     <img src={img} alt='img'/>
                 </SwiperSlide>
             )}

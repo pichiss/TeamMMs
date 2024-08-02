@@ -17,12 +17,12 @@ import nomalStar from '../../assets/img/icon/eduStar_1.svg';
 import 'swiper/css';
 import './EduToday.css';
 
-function EduToday({setPage, user, point}){
+function EduToday({setPage, user, point, setHelpPop}){
 
     return(
         <>
             <section className='eduTodaySec'>
-                <EduHeader setPage={setPage} user={user} point={point} />
+                <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
                 <img src={logo} alt="catch-monsters-logo" />
                 <Swiper
                     slidesPerView={3}

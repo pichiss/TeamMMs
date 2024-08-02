@@ -29,7 +29,8 @@ export const kakaos = ()=>{
                 kakaoAccount.profile.profile_image_url
             );
             localStorage.setItem("nickname", kakaoAccount.profile.nickname);
-            window.location.href = "http://localhost:5173/";
+            // window.location.href = "http://localhost:5173/";
+            window.location.href = "https://pichiss.github.io";
         },
           fail(error) {
               console.log(error);

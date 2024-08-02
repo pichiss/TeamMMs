@@ -30,7 +30,7 @@ function Sec2(){
                 </li>
                 <li className='sec2Info'>
                     {Fdatas.map((faq) => (
-                        <Link to='/faq'><div key={faq.id}>{faq.question}</div></Link>
+                        <Link to='/faq'key={faq.id}><div >{faq.question}</div></Link>
                     ))}
                 </li>
             </ul>

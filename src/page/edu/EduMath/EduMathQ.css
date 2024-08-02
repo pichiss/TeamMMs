@@ -220,15 +220,14 @@
     background-repeat: no-repeat;
     position: absolute;
     bottom: 180px;
-    padding: 30px 10px 0;
-    opacity: 0;
-    transition: all 0.5s;
+    padding: 30px 15px 0;
+    display: none;
 }
 .hintBubble.active {
-    opacity: 1;
+    display: block;
 }
 .hintBubble p {
-    width: 220px;
+    width: 200px;
 }
 .hintBubble img{
     transform: scale(0.6);
@@ -249,10 +248,19 @@
     font-family: 'yg-jalnan';
 }
 
+@media screen and (max-width: 1919px){
+    .hintBubble {
+        transform: scale(0.9);
+        bottom: 200px;
+    }
+}
 
 @media screen and (max-width: 1440px){
     .eduAnswer{
         padding-bottom: 50px;
+    }
+    .hintBubble {
+        bottom: 220px;
     }
 }
 
@@ -289,6 +297,10 @@
     .eduPagenation{
         margin-top: 0;
     }
+
+    .hintBubble {
+        bottom: 140px;
+    }
 }
 
 @media screen and (max-width: 780px){
@@ -304,6 +316,14 @@
     }
     .eduSubBtn h3{
         font-size: 3vw;
+    }
+    .hintBubble {
+        transform: scale(0.8);
+        padding-top: 40px;
+        bottom: 140px;
+    }
+    .hintBubble p{
+        font-size: 14px;
     }
 }
 
@@ -323,5 +343,14 @@
     .eduPagenation{
         width: 100px;
         font-size: 3vw;
+    }
+    .hintBubble {
+        bottom: 130px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .hintBubble {
+        bottom: 120px;
     }
 }

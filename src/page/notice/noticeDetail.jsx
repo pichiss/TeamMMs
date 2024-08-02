@@ -78,8 +78,8 @@ export default function NoticeDetail() {
       }
       editNoti(editNotis.id, types, editNotis.name, editNotis.text);
       console.log(types);
-      history.back()
     }
+    setOnUpdate(!onUpdate);
   }
 
   const editbtns = {

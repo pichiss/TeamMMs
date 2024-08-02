@@ -246,6 +246,13 @@
     font-size: 20px;
     font-family: 'yg-jalnan';
 }
+
+@media screen and (max-width: 1919px){
+    .hintBubble {
+        transform: scale(0.9);
+        bottom: 200px;
+    }
+}
 @media screen and (max-width: 1616px){
     .basicQ{
         top: 5%;
@@ -254,16 +261,8 @@
     .deepQ{
         top: 5%;
         right: 41%;
-    }
-    
+    }   
 }
-@media screen and (max-width: 1919px){
-    .hintBubble {
-        transform: scale(0.9);
-        bottom: 200px;
-    }
-}
-
 @media screen and (max-width: 1440px){
     .scoreAnswer{
         top: 190px;
@@ -280,8 +279,6 @@
         bottom: 220px;
     }
 }
-
-
 @media screen and (max-width: 1350px){
     .eduTodaySec.mathQ{
         height: 100%;
@@ -325,8 +322,18 @@
     .hintBubble {
         bottom: 140px;
     }
+    .eduQBtn div{
+        width: auto;
+    }
+    .basicQ{
+        top: -4%;
+        right: 53%;
+    }
+    .deepQ{
+        top: -4%;
+        right: 44%;
+    }
 }
-
 @media screen and (max-width: 1024px){
     .scoreAnswer{
         width: 10%;
@@ -335,8 +342,20 @@
         width: 8%;
         top: 40px;
     }
+    .basicQ{
+        top: -2%;
+        right: 52%;
+    }
+    .deepQ{
+        top: -2%;
+        right: 40%;
+    }
+    .basicQ::after{
+        width: 50%;
+        top: 45%;
+        right: -55%;
+    }
 }
-
 @media screen and (max-width: 960px){
     .scoreAnswer{
         left: 30px
@@ -353,21 +372,7 @@
         right: 44%;
     }
 }
-@media screen and (max-width: 1024px){
-    .basicQ{
-        top: -2%;
-        right: 52%;
-    }
-    .deepQ{
-        top: -2%;
-        right: 40%;
-    }
-    .basicQ::after{
-        width: 50%;
-        top: 45%;
-        right: -55%;
-    }
-}
+
 @media screen and (max-width: 780px){
     .eduArrowWrap img{
         width: 50px;
@@ -381,6 +386,22 @@
     }
     .eduSubBtn h3{
         font-size: 3vw;
+    }
+    .eduQBtn div{
+        border: 5px solid #fff;
+    }
+    .basicQ{
+        top: -1%;
+        right: 52%;
+    }
+    .deepQ{
+        top: -1%;
+        right: 37%;
+    }
+    .basicQ::after{
+        width: 80%;
+        top: 45%;
+        right: -80%;
     }
 }
 

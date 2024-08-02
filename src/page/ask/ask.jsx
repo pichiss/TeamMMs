@@ -41,9 +41,9 @@ function Ask(){
                 <tr key={item.id}>
                     <td className='asknumber'>{item.id + 1}</td>
                     {item.ansur === false? <td><span className='ansYet'>답변대기</span></td> : <td><span className='ansEnd'>답변완료</span></td>}
-                    <Link to={`/ask/detail/${item.id}`}>
-                        <td className='askTit'> [{item.category}]{item.tit}</td>
-                    </Link>
+                    
+                        <td className='askTit'><Link to={`/ask/detail/${item.id}`}> [{item.category}]{item.tit}</Link></td>
+                    
                     <td className='asknumber'>{item.createDate}</td>
                 </tr>
                 )}

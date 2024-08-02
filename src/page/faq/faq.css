@@ -6,6 +6,10 @@
     border-bottom: 1px solid var(--line-grey);
 }
 
+.faqWrap li:first-child{
+    border-top:  2px solid var(--font-black);
+}
+
 .faqWrap li::before{
     content: 'Q';
     display: inline-block;

@@ -19,15 +19,6 @@ export default function EduPoint({ setPage, user,point, updateUserPoints }) {
         }
     }
 
-        // 페이지네이션
-        const [pages, setPages] = useState(1);
-        const postPerPage = 5
-        const indexOfLastPost = pages * postPerPage
-        const indexOfFirstPost = indexOfLastPost - postPerPage
-        const currentPost = eduPointData.slice(indexOfFirstPost, indexOfLastPost)
-    
-    
-
     return (
          <section className='eduPointsWrap'>
             <EduHeader setPage={setPage} user={user} point={point}/>
@@ -48,7 +39,7 @@ export default function EduPoint({ setPage, user,point, updateUserPoints }) {
                     ))}
                 </ul>
             </div>
-            <CommonPagination pages={pages} setPages={setPages} postPerPage={postPerPage} datas={eduPointData}/>
+            
             <div>
                 <EduFooter />
             </div>

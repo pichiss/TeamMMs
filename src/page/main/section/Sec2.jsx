@@ -1,11 +1,14 @@
 import service from '../../../assets/img/icon/고객센터.png'
 
+import FaqData from '../../faq/faqdata';
+
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { noticeContext } from '../../../App';
 
 function Sec2(){
     const datas = useContext(noticeContext).reverse().slice(0,5)
+    const Fdatas = FaqData.slice(0,5)
 
     return(
         <section className='mainSec2 w1440 flex'>
@@ -23,12 +26,12 @@ function Sec2(){
             <ul className='mainFaq'>
                 <li className='sec2Tit flex'>
                     <h2>FAQ</h2>
-                    <p>더보기 <span>+</span></p>
+                    <Link to='/faq'><p>더보기 <span>+</span></p></Link>
                 </li>
                 <li className='sec2Info'>
-                    {/* {datas.map((data, index) => (
-                        <div key={`faq-${index}`}>{data}</div>
-                    ))} */}
+                    {Fdatas.map((faq) => (
+                        <Link to='/faq'><div key={faq.id}>{faq.question}</div></Link>
+                    ))}
                 </li>
             </ul>
             <ul className='mainService'>

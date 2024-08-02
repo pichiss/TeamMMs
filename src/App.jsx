@@ -45,6 +45,7 @@ import Notifunc from './noticeFunc.jsx';
 import EduPoint from './page/Edupoint/Edupoint.jsx';
 import AskDetail from './page/ask/askboard/askDetail.jsx';
 
+
 //게시판용
 export const itemContext = createContext();
 export const editAskContext = createContext();
@@ -92,7 +93,7 @@ function App() {
             <Route path="/noticeList" element={<NoticeList />} />
             <Route path="/noticeList/detail/:id" element={<NoticeDetail />} />
             <Route path="/faq" element={<Faq />} />
-            <Route path="/write" element={<NoticeWrite />} />
+            <Route path="/noticeList/write" element={<NoticeWrite />} />
             <Route path="/catch" element={<Catch />} />
           </Routes>
           <Footer />

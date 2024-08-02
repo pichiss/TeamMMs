@@ -7,7 +7,7 @@ import CommonPagination from '../../component/common/Pagination';
 import star from '../../assets/img/icon/star.png';
 import { useState } from 'react';
 
-export default function EduPoint({ setPage, user,point, updateUserPoints }) {
+export default function EduPoint({ setPage, user,point, updateUserPoints, setHelpPop }) {
 
     function buyItem(pointCost) {
         if (point >= pointCost) {
@@ -21,7 +21,7 @@ export default function EduPoint({ setPage, user,point, updateUserPoints }) {
 
     return (
          <section className='eduPointsWrap'>
-            <EduHeader setPage={setPage} user={user} point={point}/>
+            <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <div className='eduPoints'>
                 <h2>포인트샵</h2>
                 <ul className='flex eduPointsBox'>

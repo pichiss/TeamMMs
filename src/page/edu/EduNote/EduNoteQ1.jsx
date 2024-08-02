@@ -23,7 +23,7 @@ import '../EduMath/EduMathQ.css'
 import EduQna from '../EduMath/EduQna';
 import EduHint from '../EduMath/EduHint';
 
-function EduNoteQ1({setPage, user, point}){
+function EduNoteQ1({setPage, user, point, setHelpPop}){
 
     const [onPopUp, setPopUp] = useState(false);
 
@@ -77,7 +77,7 @@ function EduNoteQ1({setPage, user, point}){
 
     return(
         <section className='eduNoteSec'>
-            <EduHeader setPage={setPage} user={user} point={point} />
+            <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop} />
             <article className='flex eduUnitWrap'>
                 <div className='eduArrowWrap'>
                     <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />

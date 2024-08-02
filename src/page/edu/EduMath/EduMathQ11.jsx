@@ -19,7 +19,7 @@ import './EduMathQ.css';
 import EduQna from './EduQna';
 import EduHint from './EduHint';
 
-function EduMathQ11({ setPage, user, point }) {
+function EduMathQ11({ setPage, user, point, setHelpPop }) {
 
     const [onPopUp, setPopUp] = useState(false);
 
@@ -57,7 +57,7 @@ function EduMathQ11({ setPage, user, point }) {
 
     return (
         <section className='eduTodaySec'>
-            <EduHeader setPage={setPage} user={user} point={point} />
+            <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <div className='flex eduQBtn'>
                 <Link to={'/education/today/5/1'}>
                     <div className="basicQ">기초문제</div>

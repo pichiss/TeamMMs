@@ -1,9 +1,4 @@
 /* 노트 왼쪽 */
-.eduUnitWrap{
-    padding: 0 90px;
-    gap: 20px;
-    position: relative;
-}
 .eduMainUnits>h2, .eduSubUnitBoxs h3, .eduSelects>div>a{
     -webkit-text-stroke: 1px #fff;
     font-family: 'yg-jalnan';

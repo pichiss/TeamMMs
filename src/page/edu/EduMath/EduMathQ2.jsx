@@ -56,7 +56,7 @@ function EduMathQ2({ setPage, user, point, setHelpPop }) {
      const hintText = "도형을 돌려서 모서리와 꼭짓점의 개수를 하나씩 세어봐!"
 
     return (
-        <section className='eduTodaySec'>
+        <section className='eduTodaySec mathQ'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <div className='flex eduQBtn'>
                 <div className="basicQ active">기초문제</div>

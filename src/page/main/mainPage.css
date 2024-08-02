@@ -338,7 +338,6 @@ main>section{
 }
 .mainBubble>h1{
     color: #fff;
-
 }
 .mainBubble:after {
     content: '';

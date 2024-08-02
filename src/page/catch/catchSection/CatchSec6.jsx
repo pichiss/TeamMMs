@@ -4,7 +4,7 @@ import arrow from '../../../assets/img/icon/arrow-white.png'
 function CatchSec6(){
     return(
         <div className='catchSec6'>
-            <div className="mainBubble">
+            <div className="catchBubble">
                 <h1>캐치! 수학 몬스터즈 이용권</h1>
             </div>
             <div className='about6tit1'>

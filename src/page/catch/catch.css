@@ -97,13 +97,22 @@
     width: 65%;
 }
 .catchSec4{
-    margin-top: 10vw;
-    padding: 40px 60px 20px;
+    padding: 40px 60px;
     gap: 5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
+}
+.catchReason{
+    display: flex;
+    margin-bottom: 35px;
+    align-items: center;
+    gap: 30px;
+}
+.catchText{
+    font-size: max(0.8rem, 3vw);
+    font-weight: bold;
 }
 .catchSec5{
     padding: 40px 60px;
@@ -113,6 +122,92 @@
     align-items: center;
     margin-bottom: 40px;
 }
+.catchBubble{
+    width: 100%;
+    background-color: #37D0FF;
+    border-radius: 50px;
+    position: relative;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: max(0.5rem, 3.2vw);
+}
+.catchBubble>h1{
+    color: #fff;
+}
+.catchBubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border: 20px solid transparent;
+    border-top-color: #37D0FF;
+    border-bottom: 0;
+    margin-left: -10px;
+    margin-bottom: -20px;
+}
+
+.catchNumberCircle{
+    background-color: #00A9F6;
+    border-radius: 50%;
+    width: 60px; height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: var(--main-number-font);
+    font-weight: bold;
+}
+
+@media screen and (max-width : 1097px) {
+    .mainBubble{
+        width: 100%;
+    }
+}
+@media screen and (max-width : 768px) {
+    .catchSec4{
+        padding: 20px 20px;
+    }
+    .catchSec5{
+        padding: 20px 20px;
+    }
+    .mainBubble{
+        padding: 23px 20px;
+    }
+    .catchBubble:after {
+        bottom: 10px;
+        border: 15px solid transparent;
+        border-top-color: #37D0FF;
+        border-bottom: 0;
+    }
+    .catchNumberCircle{
+        width: 40px; height: 40px;
+        line-height: 40px;
+    }
+    .catchPoint>p{
+        display: block !important;
+        text-align: center;
+    }
+    .catchPoint>p>span{
+        display: block;
+    }
+    .catchReason{
+        display: flex;
+        margin-bottom: 20px;
+        gap: 15px;
+    }
+    .catchPro{
+        gap: 20px;
+    }
+    .catchPro>div:nth-child(3)>p:nth-child(1){
+        font-size: max(0.5rem, 3.2vw)
+    }
+    .catchPro>div:nth-child(3)>p:nth-child(2){
+        font-size: max(0.5rem, 3.2vw)
+    }
+    .catchPro>div:nth-child(3) span{
+        font-size: max(1rem, 5vw);
+    }
+}
+
 .catchSec6{
     margin-top: 10vw;
     padding: 72px 170px;

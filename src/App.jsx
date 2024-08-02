@@ -45,6 +45,8 @@ import Notifunc from './noticeFunc.jsx';
 import EduPoint from './page/Edupoint/Edupoint.jsx';
 import AskDetail from './page/ask/askboard/askDetail.jsx';
 
+import EduHelp from './page/edu/EduHelpSec/EduHelp.jsx';
+
 
 //게시판용
 export const itemContext = createContext();
@@ -60,6 +62,9 @@ function App() {
   // 카카오 로그인-------------------------------------------------------------
   const { user, initKakao, kakaoLogin, kakaoLogout } = kakaos()
   // -------------------------------------------------------------------------
+  let [helpPop, setHelpPop] = useState(false);
+  // -------------------------------------------------------------------------
+
   const [point, setPoint] = useState(10000);
   function updateUserPoints(newPoints) {
     setPoint(newPoints);
@@ -105,20 +110,25 @@ function App() {
     :
       <>
         <Routes>
-          <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} point={point}/>} />
-          <Route path='/education/today/:unitId/11' element={<EduMathQ11 setPage={setPage} user={user} point={point}/>} />
-          <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} point={point} />} />
-          <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
-          <Route path="/education/note/:unitId/1" element={<EduNoteQ1 data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} />} />
-          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}/>}/>
-          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}/>}/>
-          <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}/>}/>
+          <Route path='/education' element={<EduMain setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>} />
+          <Route path='/education/today' element={<EduToday setPage={setPage} user={user} point={point}  setHelpPop={setHelpPop}/>} />
+          <Route path='/education/today/:unitId' element={<EduTodayCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>} />
+          <Route path='/education/today/:unitId/1' element={<EduMathQ1 setPage={setPage} user={user} point={point}setHelpPop={setHelpPop}/>}  />
+          <Route path='/education/today/:unitId/2' element={<EduMathQ2 setPage={setPage} user={user} point={point}setHelpPop={setHelpPop}/>}  />
+          <Route path='/education/today/:unitId/3' element={<EduMathQ3 setPage={setPage} user={user} point={point}setHelpPop={setHelpPop}/>}  />
+          <Route path='/education/today/:unitId/11' element={<EduMathQ11 setPage={setPage} user={user} point={point}setHelpPop={setHelpPop}/>}  />
+          <Route path="/education/note" element={<EduNoteMain setPage={setPage} user={user} point={point}  setHelpPop={setHelpPop}/>} />
+          <Route path="/education/note/:unitId" element={<EduNoteCont data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}  setHelpPop={setHelpPop}/>} />
+          <Route path="/education/note/:unitId/1" element={<EduNoteQ1 data={eduContents} qDatas={qDatas} setPage={setPage} user={user} point={point}  setHelpPop={setHelpPop}/>} />
+          <Route path="/eduVideo" element={<EduVideo setPage={setPage} user={user} point={point}  setHelpPop={setHelpPop}/>}/>
+          <Route path="/eduVideo/:id" element={<EduVideoDetail setPage={setPage} user={user} point={point}  setHelpPop={setHelpPop}/>}/>
+          <Route path="/eduPoint" element={<EduPoint setPage={setPage} user={user} point={point} updateUserPoints={updateUserPoints}  setHelpPop={setHelpPop}/>}/>
         </Routes>
+          {helpPop ?
+            <EduHelp setHelpPop={setHelpPop}/>
+          :
+            null
+          }
       </>
     }
     </>

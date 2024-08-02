@@ -85,7 +85,7 @@ function EduHelp({setHelpPop}){
     let [click, setClick] = useState(0);
     let liRef = useRef({});
 
-    console.log(liRef.current[1])
+    // console.log(liRef.current[1])
 
     useEffect(()=>{
         if(click === 0 && page === '캐치홈'){

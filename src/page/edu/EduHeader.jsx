@@ -7,7 +7,7 @@ import question from '../../assets/img/icon/question.png';
 import door from '../../assets/img/icon/door.png';
 import './EduHeader.css';
 
-function EduHeader({ setPage, user, point, setHelpPop  }) {
+function EduHeader({ setPage, user, point, setHelpPop }) {
 
     const [width, setWidth] = useState(window.innerWidth);
 

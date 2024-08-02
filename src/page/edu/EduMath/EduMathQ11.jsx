@@ -19,7 +19,7 @@ import './EduMathQ.css';
 import EduQna from './EduQna';
 import EduHint from './EduHint';
 
-function EduMathQ11({ setPage, user, point }) {
+function EduMathQ11({ setPage, user, point, setHelpPop }) {
 
     const [onPopUp, setPopUp] = useState(false);
 
@@ -56,8 +56,8 @@ function EduMathQ11({ setPage, user, point }) {
     const hintText="정육면체의 모서리는 모두 같은 길이야.";
 
     return (
-        <section className='eduTodaySec mathQ'>
-            <EduHeader setPage={setPage} user={user} point={point} />
+        <section className='eduTodaySec'>
+            <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <div className='flex eduQBtn'>
                 <Link to={'/education/today/5/1'}>
                     <div className="basicQ">기초문제</div>

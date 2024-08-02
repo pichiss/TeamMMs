@@ -1,8 +1,6 @@
 .eduPointsWrap {
     background-image: url(../../assets/img/bglime.png);
-    /* padding-bottom: 75px; */
-    /* overflow-y: hidden; */
-    height: 100vh;
+    height: 100%;
 }
 .eduPoints{
     width: 100%;
@@ -18,9 +16,9 @@
 }
 .eduPointsBox{
     width: 100%;
-    padding: 0px 10%;
+    padding: 0 10% 20px 10%;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
 }
 .eduPointItems{
@@ -30,6 +28,7 @@
     position: relative;
     border-radius: 20px;
 }
+
 .pointStar{
     align-items: center;
     position: absolute;
@@ -64,17 +63,31 @@
 
 @media screen and (max-width : 1280px) {
     .eduPointsBox{
-        padding: 0px 7%;
+        padding: 0 7% 20px 7%;
     }
   }
 
-
+@media screen and (max-width : 1440px) {
+    .eduPointItems{
+        min-width: 320px;
+        height: 270px;
+    }
+    .eduPointItems pre{
+        font-size: 18px;
+    }
+  }
 @media screen and (max-width : 768px) {
-    /* .eduPointsBox{
-        width: 100%;
-        margin: 0 auto;
-        padding: 0px 60px;
-        flex-wrap: wrap;
-        gap: 20px;
-    } */
+    .eduPoints h2 {
+        font-size: 30px;
+    }
+    .eduPoints h2 {
+        font-size: 30px;
+    }
+    .eduPointItems{
+        min-width: 300px;
+        height: 250px;
+    }
+    .eduPointItems pre{
+        font-size: 16px;
+    }
   }

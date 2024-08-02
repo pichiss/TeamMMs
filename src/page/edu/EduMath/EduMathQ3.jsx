@@ -19,7 +19,7 @@ import './EduMathQ.css';
 import EduQna from './EduQna';
 import EduHint from './EduHint';
 
-function EduMathQ3({ setPage, user, point }) {
+function EduMathQ3({ setPage, user, point, setHelpPop }) {
 
     const [onPopUp, setPopUp] = useState(false);
 
@@ -51,8 +51,8 @@ function EduMathQ3({ setPage, user, point }) {
     const hintText = "이 도형은 6개의 면을 가지고 있고, 주사위처럼 생겼어.";
 
     return (
-        <section className='eduTodaySec mathQ'>
-            <EduHeader setPage={setPage} user={user} point={point} />
+        <section className='eduTodaySec'>
+            <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <div className='flex eduQBtn'>
                 <div className="basicQ active">기초문제</div>
                 <Link to={'/education/today/5/11'}>

@@ -19,7 +19,7 @@ import './EduMathQ.css';
 import EduQna from './EduQna';
 import EduHint from './EduHint';
 
-function EduMathQ2({ setPage, user, point }) {
+function EduMathQ2({ setPage, user, point, setHelpPop }) {
 
     const [onPopUp, setPopUp] = useState(false);
 
@@ -56,8 +56,8 @@ function EduMathQ2({ setPage, user, point }) {
      const hintText = "도형을 돌려서 모서리와 꼭짓점의 개수를 하나씩 세어봐!"
 
     return (
-        <section className='eduTodaySec mathQ'>
-            <EduHeader setPage={setPage} user={user} point={point} />
+        <section className='eduTodaySec'>
+            <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <div className='flex eduQBtn'>
                 <div className="basicQ active">기초문제</div>
                 <Link to={'/education/today/5/11'}>

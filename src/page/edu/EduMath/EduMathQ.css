@@ -1,5 +1,4 @@
 .eduQBtn div{
-    /* width: 180px; */
     width: 10%;
     padding: 10px;
     border: 7px solid #fff;
@@ -251,6 +250,14 @@
 
 
 @media screen and (max-width: 1440px){
+    .scoreAnswer{
+        top: 190px;
+        left: calc(10% - 90px);
+    }
+    .scoreWrong{
+        top: 190px;
+        left: calc(10% - 90px);
+    }
     .eduAnswer{
         padding-bottom: 50px;
     }
@@ -276,6 +283,13 @@
     .eduRightArrow{
         right: 30%;
     }
+    .scoreAnswer{
+        top: 40px;
+    }
+    .scoreWrong{
+        top: 30px;
+        left: 30px;
+    }
     .eduAnswer{
         margin: 0 auto;
     }
@@ -288,6 +302,22 @@
     }
     .eduPagenation{
         margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .scoreAnswer{
+        width: 10%;
+    }
+    .scoreWrong{
+        width: 8%;
+        top: 40px;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .scoreAnswer{
+        left: 30px
     }
 }
 
@@ -323,5 +353,22 @@
     .eduPagenation{
         width: 100px;
         font-size: 3vw;
+    }
+    .scoreAnswer{
+        top: 50px;
+    }
+    .scoreWrong{
+        width: 10%;
+        top: 50px;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .scoreAnswer{
+        top: 55px;
+        left: 40px;
+    }
+    .scoreWrong{
+        left: 40px;
     }
 }

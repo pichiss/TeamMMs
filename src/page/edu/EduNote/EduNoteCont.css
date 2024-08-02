@@ -5,7 +5,7 @@
 }
 .eduMainUnits>h2{
     text-align: center;
-    font-size: 36px;
+    font-size: min(2.1vw);
 }
 .eduUnitLs{
     width: 1125px;
@@ -33,11 +33,11 @@
     align-items: center;
 }
 .eduSubUnitBoxs h3{
-    font-size: 30px;
+    font-size: min(1.8vw);
 }
 .eduSubUnitBoxs p{
     padding-top: 10px;
-    font-size: 18px;
+    font-size: min(1vw);
     font-family: 'yg-jalnan';
     text-shadow: -1px 3px #fff, 3px 1px #fff, 1px 3px #fff, 3px -1px #fff;
 }
@@ -78,7 +78,6 @@
     align-items: center;
 }
 .eduSpeechBlns{
-    width: 400px;
     padding: 35px;
     border-radius: 20px;
     background-color: #DDF9FF;
@@ -93,12 +92,12 @@
     bottom: -20%;
 }
 .eduSpeechBlns>p{
-    font-size: 24px;
+    font-size: 1.3vw;
     font-weight: 700;
     line-height: 50px;
 }
 .eduNoSelects>img{
-    width: 300px;
+    width: 60%;
     padding-top: 40px;
 }
 .eduNoSelects.off{
@@ -109,17 +108,18 @@
 /* 소단원 선택 O */
 .eduSelects{
     height: 600px;
+    padding: 0 10px;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 .eduSelects>div{
-    width: 400px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #85D3FF;
-    font-size: 30px;
+    font-size: min(1.8vw);
     text-align: center;
     cursor: pointer;
 }
@@ -177,4 +177,130 @@
 }
 .exImg>img{
     width: 80%;
+}
+
+
+@media (max-width: 1440px){
+    .eduUnitLs{
+        width: 100%;
+        height: auto;
+        padding: 30px;
+        border-width: 8px;
+    }
+    .eduUnitRs{
+        width: 100%;
+    }
+    .eduMainUnits{
+        width: 100%;
+        padding: 20px 0;
+    }
+    .eduSubUnitBoxs{
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-radius: 15px;
+    }
+    .eduSelects{
+        height: 500px;
+    }
+}
+ 
+
+@media screen and (max-width: 1350px){
+    .eduNoteSec.todayCont{
+        height: 100%;
+    }
+    .eduUnitRs{
+        margin-bottom: 10px;
+    }
+    .eduNoSelects{
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+    .eduNoSelects>img{
+        width: 30%;
+        padding-top: 0;
+        order: 1;
+    }
+    .eduSpeechBlns{
+        padding: 20px 35px;
+        border-radius: 20px;
+        order: 2;
+    }
+    .eduSpeechBlns::after{
+        border-right: 80px solid transparent;
+        left: 50%;
+        bottom: -30%;
+    }
+    .eduSpeechBlns>p{
+        line-height: 30px;
+    }
+}
+
+
+@media screen and (max-width: 1024px){
+    .eduSelects{
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .eduMainUnits>h2{
+        font-size: 3vw;
+    }
+    .eduSubUnitBoxs h3{
+        font-size: 2.7vw;
+    }
+    .eduSubUnitBoxs p{
+        font-size: 1.7vw;
+    }
+    .eduSpeechBlns{
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+    .eduSpeechBlns::after{
+        border-top: 20px solid #DDF9FF;
+        border-right: 30px solid transparent;
+        bottom: -20%;
+    }
+    .eduSpeechBlns>p{
+        line-height: 30px;
+    }
+    .eduSelects>div{
+        font-size: 2.7vw;
+    }
+}
+
+@media screen and (max-width: 668px){
+    .eduSelects{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .eduMainUnits>h2{
+        font-size: 3.5vw;
+    }
+    .eduSubUnitBoxs h3{
+        font-size: 3vw;
+    }
+    .eduSubUnitBoxs p{
+        font-size: 2.2vw;
+    }
+    .eduSpeechBlns{
+        padding: 10px 10px;
+    }
+    .eduSpeechBlns>p{
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .eduSubUnitBoxs>h3{
+        font-size: 4vw;
+    }
+    .eduSelects>div{
+        font-size: 4vw;
+    }
 }

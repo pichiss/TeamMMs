@@ -18,7 +18,7 @@ function EduNoteCont(props){
     }
 
     return(
-        <section className='eduNoteSec'>
+        <section className='eduNoteSec todayCont'>
             <EduHeader setPage={props.setPage} user={props.user} point={props.point} setHelpPop={props.setHelpPop}/>
             <article className='flex eduUnitWrap'>
                 <div className='eduUnitLs'>

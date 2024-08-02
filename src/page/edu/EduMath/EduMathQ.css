@@ -18,11 +18,11 @@
 }
 .basicQ{
     top: 5%;
-    right: 760px;
+    right: 42%;
 }
 .basicQ::after{
     content: "";
-    width: 30px;
+    width: 20%;
     height: 7px;
     background-color: #fff;
     position: absolute;
@@ -31,7 +31,7 @@
 }
 .deepQ{
     top: 5%;
-    right: 540px;
+    right: 31%;
 }
 
 
@@ -253,7 +253,16 @@
         bottom: 200px;
     }
 }
-
+@media screen and (max-width: 1616px){
+    .basicQ{
+        top: 5%;
+        right: 52%;
+    }
+    .deepQ{
+        top: 5%;
+        right: 41%;
+    }   
+}
 @media screen and (max-width: 1440px){
     .scoreAnswer{
         top: 190px;
@@ -265,13 +274,11 @@
     }
     .eduAnswer{
         padding-bottom: 50px;
-    }
+    }    
     .hintBubble {
         bottom: 220px;
     }
 }
-
-
 @media screen and (max-width: 1350px){
     .eduTodaySec.mathQ{
         height: 100%;
@@ -315,8 +322,18 @@
     .hintBubble {
         bottom: 140px;
     }
+    .eduQBtn div{
+        width: auto;
+    }
+    .basicQ{
+        top: -4%;
+        right: 53%;
+    }
+    .deepQ{
+        top: -4%;
+        right: 44%;
+    }
 }
-
 @media screen and (max-width: 1024px){
     .scoreAnswer{
         width: 10%;
@@ -325,11 +342,34 @@
         width: 8%;
         top: 40px;
     }
+    .basicQ{
+        top: -2%;
+        right: 52%;
+    }
+    .deepQ{
+        top: -2%;
+        right: 40%;
+    }
+    .basicQ::after{
+        width: 50%;
+        top: 45%;
+        right: -55%;
+    }
 }
-
 @media screen and (max-width: 960px){
     .scoreAnswer{
         left: 30px
+    }
+    .eduQBtn div{
+        width: auto;
+    }
+    .basicQ{
+        top: -4%;
+        right: 53%;
+    }
+    .deepQ{
+        top: -4%;
+        right: 44%;
     }
 }
 
@@ -347,13 +387,21 @@
     .eduSubBtn h3{
         font-size: 3vw;
     }
-    .hintBubble {
-        transform: scale(0.8);
-        padding-top: 40px;
-        bottom: 140px;
+    .eduQBtn div{
+        border: 5px solid #fff;
     }
-    .hintBubble p{
-        font-size: 14px;
+    .basicQ{
+        top: -1%;
+        right: 52%;
+    }
+    .deepQ{
+        top: -1%;
+        right: 37%;
+    }
+    .basicQ::after{
+        width: 80%;
+        top: 45%;
+        right: -80%;
     }
 }
 

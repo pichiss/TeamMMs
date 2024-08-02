@@ -61,13 +61,13 @@ function AskDetail(){
       tit: "",
       content: "",
     });
-    navigate("/mypage/ask");
+    navigate("/ask");
   }
 
   //저장
   function saveDetail() {
     editItem(editAskItem.id, editAskItem.tit, editAskItem.content);
-    navigate("/mypage/ask");
+    navigate("/ask");
   }
 
   // 답변

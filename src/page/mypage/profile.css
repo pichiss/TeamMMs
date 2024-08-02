@@ -78,16 +78,6 @@
     padding: 10px;
     cursor: pointer;
 }
-/* 
-변경 버튼
-.bluelineBtn{
-    padding: 7px 25px;
-    border: 1px solid var(--main-blue);
-    border-radius: 10px;
-    margin-left: 20px;
-    background-color: #fff;
-    cursor: pointer;
-} */
 
 @media screen and (max-width : 1280px) {
     .bgBlue{
@@ -96,14 +86,15 @@
     .profilWrap td{
         padding: 10px 15px;
     }
+    
+    .expend{
+        font-size: 14px;
+    }
   }
 
   @media screen and (max-width : 950px) {
     .profileBox td{
         font-size: 14px;
-    }
-    .bgBlue{
-        font-size: 16px
     }
   }
 @media screen and (max-width : 768px) {
@@ -126,5 +117,8 @@
     }
     .profileblock{
         display: block;
+    }
+    .subNone{
+        display: none;
     }
   }

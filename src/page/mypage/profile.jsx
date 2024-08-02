@@ -146,7 +146,7 @@ function expend(){
                 <table className="subscription">
                     <thead>
                     <tr className="bgBlue">
-                        <td className="leftBorderRadius">상태</td>
+                        <td className="leftBorderRadius subNone">상태</td>
                         <td>이용권 이름</td>
                         <td>이용 기간</td>
                         <td className="rightBorderRadius">연장</td>
@@ -154,10 +154,10 @@ function expend(){
                     </thead>
                     <tbody>
                     <tr>
-                        <td>이용중</td>
-                        <td>캐치! 수학 몬스터즈 12개월 이용권</td>
+                        <td className="subNone">이용중</td>
+                        <td>12개월 이용권</td>
                         <td>~2024.08.09</td>
-                        <td className="expend" onClick={expend}><span className="bluelineBtn">연장하기</span></td>
+                        <td className="expend" onClick={expend}><span className="bluelineBtn">연장</span></td>
                     </tr>
                     </tbody>
                 </table>

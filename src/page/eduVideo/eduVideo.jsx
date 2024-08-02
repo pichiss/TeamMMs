@@ -5,13 +5,13 @@ import EduHeader from '../edu/EduHeader';
 import EduVideoDatas from './eduVideoData';
 import EduFooter from '../edu/EduFooter';
 
-export default function EduVideo({ setPage, user, point }) {
+export default function EduVideo({ setPage, user, point, setHelpPop }) {
 
 
 
     return (
         <section className='eduViedosWrap'>
-            <EduHeader setPage={setPage} user={user} point={point} />
+            <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop} />
             <div className='eduViedosCover'>
                 <h2>학습영상</h2>
                 <div className='flex w1440 eduViedos'>

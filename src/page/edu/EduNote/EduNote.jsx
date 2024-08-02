@@ -15,11 +15,11 @@ import sixthUnit from '../../../assets/img/monster/kindBoss_Ellipse2.png';
 import 'swiper/css';
 import './EduNote.css';
 
-function EduNote({setPage, user, point}){
+function EduNote({setPage, user, point, setHelpPop}){
     return(
         <>
             <section className='eduNoteSec'>
-                <EduHeader setPage={setPage} user={user} point={point} />
+                <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
                 <h2>오답노트</h2>
                 <Swiper
                     slidesPerView={3}

@@ -8,9 +8,8 @@ import pointshop from '../../assets/img/icon/pointshop.png';
 import EduHelp from './EduHelpSec/EduHelp.jsx';
 import './EduMain.css';
 
-function EduMain({setPage, user, point}){
+function EduMain({setPage, user, point, setHelpPop}){
 
-    let [helpPop, setHelpPop] = useState(false);
 
     return(
         <section className='eduSec'>
@@ -43,11 +42,11 @@ function EduMain({setPage, user, point}){
                     </Link>
                 </div>
             </article>
-            {helpPop ?
+            {/* {helpPop ?
                 <EduHelp setHelpPop={setHelpPop}/>
             :
                 null
-            }
+            } */}
         </section>
     )
 }

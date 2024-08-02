@@ -38,7 +38,7 @@
 }
 .pointListTxt>td{
     display: block;
-    padding: 15px 20px;
+    padding: 15px 15px;
     font-size: 18px;
     font-weight: 700;
 }
@@ -70,7 +70,7 @@
     padding: 20px;
 }
 .point>span{
-    padding: 10px 50px;
+    padding: 10px 30px;
     border: 1px solid #62C3CA;
     border-radius: 10px;
 }
@@ -87,7 +87,7 @@
 
 @media screen and (max-width: 950px){
     .pointListTit>th{
-        padding: 15px 10px;
+        padding: 15px 5px;
         font-size: 14px;
     }
     .pointListTxt>td{
@@ -95,5 +95,11 @@
     }
     .pointDetail td{
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 385px){
+    .pointDetail>tbody>tr>td{
+        padding: 20px 15px;
     }
 }

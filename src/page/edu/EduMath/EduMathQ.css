@@ -40,8 +40,8 @@
 .eduArrowWrap img{
     width: 129px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 50%;
+    transform: translateY(50%);
 }
 .eduLeftArrow{
     left: 3%;
@@ -227,7 +227,6 @@
 .hintBubble.active {
     opacity: 1;
 }
-
 .hintBubble p {
     width: 220px;
 }
@@ -237,10 +236,92 @@
     bottom: 5px;
     right: 0;
 }
+.eduPagenation{
+    width: 140px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 7px solid #fff;
+    border-radius: 50px;
+    background-color: #BAE2FF;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'yg-jalnan';
+}
 
 
 @media screen and (max-width: 1440px){
     .eduAnswer{
         padding-bottom: 50px;
+    }
+}
+
+
+@media screen and (max-width: 1350px){
+    .eduTodaySec.mathQ{
+        height: 100%;
+        padding-bottom: 10px;
+    }
+    .eduUnitWrap{
+        position: relative;
+    }
+    .eduArrowWrap img{
+        width: 70px;
+        bottom: -5%;
+        transform: translateY(0);
+    }
+    .eduLeftArrow{
+        left: 30%;
+    }
+    .eduRightArrow{
+        right: 30%;
+    }
+    .eduAnswer{
+        margin: 0 auto;
+    }
+    .eduAnswer>h1{
+        text-align: center;
+    }
+    .eduAnswer input{
+        width: 100%;
+        font-size: 2.1vw;
+    }
+    .eduPagenation{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 780px){
+    .eduArrowWrap img{
+        width: 50px;
+        bottom: -4%;
+    }
+    .eduLeftArrow{
+        left: 20%;
+    }
+    .eduRightArrow{
+        right: 20%;
+    }
+    .eduSubBtn h3{
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .eduUnitL>h1{
+        font-size: 4vw;
+    }
+    .eduAnswer>h1{
+        font-size: 4vw;
+    }
+    .eduAnswer>div p{
+        font-size: 4vw;
+    }
+    .eduAnswer input{
+        font-size: 4vw;
+    }
+    .eduPagenation{
+        width: 100px;
+        font-size: 3vw;
     }
 }

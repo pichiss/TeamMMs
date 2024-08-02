@@ -1,5 +1,4 @@
 .eduQBtn div{
-    /* width: 180px; */
     width: 10%;
     padding: 10px;
     border: 7px solid #fff;
@@ -18,8 +17,8 @@
     background-color: var(--yellow);
 }
 .basicQ{
-    top: -17%;
-    right: 40%;
+    top: 5%;
+    right: 42%;
 }
 .basicQ::after{
     content: "";
@@ -31,8 +30,8 @@
     right: -20%;
 }
 .deepQ{
-    top: -17%;
-    right: 29%;
+    top: 5%;
+    right: 31%;
 }
 
 
@@ -248,91 +247,22 @@
     font-size: 20px;
     font-family: 'yg-jalnan';
 }
-
-
-@media screen and (max-width: 1440px){
-    .eduAnswer{
-        padding-bottom: 50px;
-    }
+@media screen and (max-width: 1616px){
     .basicQ{
-        top: -9%;
-        right: 40%;
+        top: 5%;
+        right: 52%;
     }
     .deepQ{
-        top: -9%;
-        right: 29%;
+        top: 5%;
+        right: 41%;
     }
     
 }
 
-
-@media screen and (max-width: 1350px){
-    .eduTodaySec.mathQ{
-        height: 100%;
-        padding-bottom: 10px;
-    }
-    .eduUnitWrap{
-        position: relative;
-    }
-    .eduArrowWrap img{
-        width: 70px;
-        bottom: -5%;
-        transform: translateY(0);
-    }
-    .eduLeftArrow{
-        left: 30%;
-    }
-    .eduRightArrow{
-        right: 30%;
-    }
+@media screen and (max-width: 1440px){
     .eduAnswer{
-        margin: 0 auto;
-    }
-    .eduAnswer>h1{
-        text-align: center;
-    }
-    .eduAnswer input{
-        width: 100%;
-        font-size: 2.1vw;
-    }
-    .eduPagenation{
-        margin-top: 0;
-    }
-}
-
-@media screen and (max-width: 780px){
-    .eduArrowWrap img{
-        width: 50px;
-        bottom: -4%;
-    }
-    .eduLeftArrow{
-        left: 20%;
-    }
-    .eduRightArrow{
-        right: 20%;
-    }
-    .eduSubBtn h3{
-        font-size: 3vw;
-    }
-}
-
-@media screen and (max-width: 600px){
-    .eduUnitL>h1{
-        font-size: 4vw;
-    }
-    .eduAnswer>h1{
-        font-size: 4vw;
-    }
-    .eduAnswer>div p{
-        font-size: 4vw;
-    }
-    .eduAnswer input{
-        font-size: 4vw;
-    }
-    .eduPagenation{
-        width: 100px;
-        font-size: 3vw;
-    }
+        padding-bottom: 50px;
+    }    
 }
 
 
@@ -368,8 +298,33 @@
     .eduPagenation{
         margin-top: 0;
     }
+    .eduQBtn div{
+        width: auto;
+    }
+    .basicQ{
+        top: -4%;
+        right: 53%;
+    }
+    .deepQ{
+        top: -4%;
+        right: 44%;
+    }
 }
-
+@media screen and (max-width: 1024px){
+    .basicQ{
+        top: -2%;
+        right: 52%;
+    }
+    .deepQ{
+        top: -2%;
+        right: 40%;
+    }
+    .basicQ::after{
+        width: 50%;
+        top: 45%;
+        right: -55%;
+    }
+}
 @media screen and (max-width: 780px){
     .eduArrowWrap img{
         width: 50px;
@@ -383,6 +338,22 @@
     }
     .eduSubBtn h3{
         font-size: 3vw;
+    }
+    .eduQBtn div{
+        border: 5px solid #fff;
+    }
+    .basicQ{
+        top: -1%;
+        right: 52%;
+    }
+    .deepQ{
+        top: -1%;
+        right: 37%;
+    }
+    .basicQ::after{
+        width: 80%;
+        top: 45%;
+        right: -80%;
     }
 }
 

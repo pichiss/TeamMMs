@@ -27,13 +27,13 @@ const AskNew = ()=>{
         }
         if(window.confirm(`${tit}을/를 등록 하시겠습니까?`)){
             CreateItem(tit,content,cate)
-            navigate('/mypage/ask/')
+            navigate('/ask')
          }
     };
 
     function cancleFunc(){
         reset()
-        return(navigate('/mypage/ask/'))}
+        return(navigate('/ask'))}
 
     return(
         <>

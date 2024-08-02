@@ -107,3 +107,15 @@
         top: 9%;
     }
 }
+
+@media screen and (max-width: 530px){
+    .firstStar{
+        bottom: 40%;
+    }
+    .secondStar{
+        bottom: 35%;
+    }
+    .thirdStar{
+        bottom: 40%;
+    }
+}

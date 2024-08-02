@@ -50,7 +50,7 @@ function EduMathQ1({ setPage, user, point, setHelpPop }) {
    const hintText = "이 도형은 우리가 사는 집이나 학교, 혹은 상자처럼 보일 수 있어."
 
     return (
-        <section className='eduTodaySec'>
+        <section className='eduTodaySec mathQ'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <div className='flex eduQBtn'>
                 <div className="basicQ active">기초문제</div>
@@ -103,6 +103,7 @@ function EduMathQ1({ setPage, user, point, setHelpPop }) {
                 </div>
                 <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
+            <div className='eduPagenation'>1 / 10</div>
             <EduFooter />
         </section>
     )

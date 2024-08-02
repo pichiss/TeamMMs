@@ -129,7 +129,7 @@ const notiReducer = (state, action) =>{
         case 'search' :
         return{
             ...state,
-            datas: state.datas.filter((item)=>item.name.includes(action.name)||item.text.includes(action.text))
+            datas: state.datas.filter((item)=>item.name.includes(action.name))
         }
         default :
         return state;

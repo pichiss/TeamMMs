@@ -72,15 +72,12 @@ main>section{
 }
 @keyframes hoverani{
     0%{
-        /* transform: translateY(-2deg); */
         transform: rotate(0deg);
     }
     50%{
-        /* transform: translateY(2deg); */
         transform: rotate(0deg);
     }
     100%{
-        /* transform: translateY(-2deg); */
         transform: rotate(0deg);
     }
 }

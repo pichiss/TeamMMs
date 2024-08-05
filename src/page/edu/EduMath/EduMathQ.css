@@ -217,13 +217,12 @@
     height: 150px;
     background-image: url(../../../assets/img/bubble.png);
     background-repeat: no-repeat;
-    position: absolute;
-    bottom: 180px;
     padding: 30px 15px 0;
     display: none;
 }
 .hintBubble.active {
     display: block;
+    position: absolute;
 }
 .hintBubble p {
     width: 200px;
@@ -247,11 +246,10 @@
     font-family: 'yg-jalnan';
 }
 
-@media screen and (max-width: 1919px){
-    .hintBubble {
-        transform: scale(0.9);
+@media screen and (max-width: 1919px) {
+    .hintBubble.active {
         bottom: 200px;
-    }
+     }
 }
 @media screen and (max-width: 1616px){
     .basicQ{
@@ -261,7 +259,7 @@
     .deepQ{
         top: 5%;
         right: 41%;
-    }   
+    }
 }
 @media screen and (max-width: 1440px){
     .scoreAnswer{
@@ -274,10 +272,11 @@
     }
     .eduAnswer{
         padding-bottom: 50px;
-    }    
-    .hintBubble {
-        bottom: 220px;
     }
+    .hintBubble.active {
+        bottom: 230px;
+     }   
+    
 }
 @media screen and (max-width: 1350px){
     .eduTodaySec.mathQ{
@@ -318,10 +317,6 @@
     .eduPagenation{
         margin-top: 0;
     }
-
-    .hintBubble {
-        bottom: 140px;
-    }
     .eduQBtn div{
         width: auto;
     }
@@ -333,6 +328,9 @@
         top: -4%;
         right: 44%;
     }
+    .hintBubble.active {
+        bottom: 150px;
+     } 
 }
 @media screen and (max-width: 1024px){
     .scoreAnswer{
@@ -403,6 +401,13 @@
         top: 45%;
         right: -80%;
     }
+    .hintBubble.active {
+        transform: scale(0.8);
+        bottom: 140px;
+     }
+     .hintBubble p {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -429,12 +434,9 @@
         width: 10%;
         top: 50px;
     }
-}
-
-@media screen and (max-width: 450px){
-    .hintBubble {
-        bottom: 120px;
-    }
+    .hintBubble.active {
+        bottom: 130px;
+     }
 }
 
 @media screen and (max-width: 360px){
@@ -445,7 +447,7 @@
     .scoreWrong{
         left: 40px;
     }
-    .hintBubble {
-        bottom: 130px;
-    }
+    .hintBubble.active {
+        bottom: 120px;
+     }
 }

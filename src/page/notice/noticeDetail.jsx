@@ -9,14 +9,18 @@ import SubHead from "../../component/common/Subhead";
 export default function NoticeDetail() {
   const { id } = useParams();
   const datas = useContext(noticeContext).reverse()
+  const data = datas.find(item => item.id === parseInt(id)); //search 해도 링크, 디테일페이지 id 일치하게
   const { editNoti, removeNoti } = useContext(editNotiContext);
   const [onUpdate, setOnUpdate] = useState(true);
   const [editNotis, setEditNotis] = useState({
-    id: datas[id].id,
-    notiType: datas[id].notiType,
-    name: datas[id].name,
-    text: datas[id].text,
+    id: data.id,
+    notiType: data.notiType,
+    name: data.name,
+    text: data.text,
   });
+
+  // console.log(id)
+  // console.log(data.id)
 
   const navigate = useNavigate();
 
@@ -24,10 +28,10 @@ export default function NoticeDetail() {
   function editBtn() {
     setOnUpdate(!onUpdate);
     setEditNotis({
-      id: datas[id].id,
-      notiType: datas[id].notiType,
-      name: datas[id].name,
-      text: datas[id].text,
+      id: data.id,
+      notiType: data.notiType,
+      name: data.name,
+      text: data.text,
     })
   }
   // 수정취소
@@ -56,7 +60,7 @@ export default function NoticeDetail() {
   //삭제
   function removeDetail() {
     if (window.confirm(`게시물을 삭제 하시겠습니까?`)) {
-      removeNoti(datas[id].id);
+      removeNoti(data.id);
       setEditNotis({
         id: "",
         notiType: "",
@@ -117,14 +121,14 @@ export default function NoticeDetail() {
         <h2 className="subtit">공지사항 & 이벤트</h2>
         {onUpdate ? (
           <div>
-            <h3>[{datas[id].notiType}] {datas[id].name}</h3>
+            <h3>[{data.notiType}] {data.name}</h3>
             <ul className="flex">
               <li>등록일</li>
-              <li>{datas[id].createDate}</li>
+              <li>{data.createDate}</li>
               <li>조회수</li>
-              <li>{datas[id].views}</li>
+              <li>{data.views}</li>
             </ul>
-            <p>{datas[id].text}</p>
+            <p>{data.text}</p>
           </div>
         ) : (
           <div className="noticeWriteText">

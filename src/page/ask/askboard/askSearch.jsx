@@ -6,11 +6,20 @@ import { editAskContext } from "../../../App";
 export default function AskSearch({ allList }) {
 
     const {searchItem} = useContext(editAskContext)
-
-    const [searchAsks, setSearchAsks] = useState('')
+    const [searchAsks, setSearchAsks] = useState('') 
+    const [filterAsk, setFilterAsk] = useState([])
 
     function changeSearchAsk(e){
-        setSearchAsks(e.target.value)
+        const value = e.target.value;
+        setSearchAsks(value);
+        filteringAsk(value);
+    }
+
+    function filteringAsk(searchFilter){
+        const filtered = searchItem.filter((search)=>{
+            return Object.values(search).join('').toLowerCase().includes(searchFilter.toLowerCase())
+        })
+        setFilterAsk(filtered)
     }
 
     function searchBtn(){
@@ -18,6 +27,7 @@ export default function AskSearch({ allList }) {
     }
     function EnterSearch(e){
         if (e.key === "Enter"){
+            e.preventDefault();
             searchBtn()
         }
     }
@@ -34,7 +44,7 @@ export default function AskSearch({ allList }) {
         <div className="flex searchWrap">
             <p>총 <span>{allList}</span> 건</p>
             <div className="flex search">
-                <input type="text" name="name" value={searchAsks} onChange={changeSearchAsk}onKeyDown={EnterSearch} />
+                <input type="text" name="name" value={searchAsks} onChange={changeSearchAsk} onKeyDown={EnterSearch} />
                 <Btn {...searchBtns} func={searchBtn}/>
             </div>
         </div>

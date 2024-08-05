@@ -7,19 +7,9 @@ export default function AskSearch({ allList }) {
 
     const {searchItem} = useContext(editAskContext)
     const [searchAsks, setSearchAsks] = useState('') 
-    const [filterAsk, setFilterAsk] = useState([])
 
     function changeSearchAsk(e){
-        const value = e.target.value;
-        setSearchAsks(value);
-        filteringAsk(value);
-    }
-
-    function filteringAsk(searchFilter){
-        const filtered = searchItem.filter((search)=>{
-            return Object.values(search).join('').toLowerCase().includes(searchFilter.toLowerCase())
-        })
-        setFilterAsk(filtered)
+        setSearchAsks(e.target.value)
     }
 
     function searchBtn(){

@@ -22,6 +22,7 @@ import EduQBtn from './EduQBtn';
 
 function EduMathQ3({ setPage, user, point, setHelpPop }) {
 
+    // 채점하기
     const [onPopUp, setPopUp] = useState(false);
 
     function checkQ(){
@@ -48,6 +49,21 @@ function EduMathQ3({ setPage, user, point, setHelpPop }) {
         setPopUp(false)
     }
 
+    // 기초문제 & 응용문제
+    const [btnBasic, setBtnBasic] = useState(true);
+    const [btnDeep, setBtnDeep] = useState(false);
+        
+    function onClickBasic(){
+        setBtnBasic(true)
+        setBtnDeep(false)
+    }
+        
+    function onClickDeep(){
+        setBtnBasic(false)
+        setBtnDeep(true)
+    }
+
+    // 없는 페이지
     function eduAlert(){
         alert("준비 중입니다.")
     }
@@ -59,7 +75,14 @@ function EduMathQ3({ setPage, user, point, setHelpPop }) {
         <section className='eduTodaySec mathQ'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <article className='flex eduUnitWrap'>
-            <EduQBtn />
+                <div className='flex eduQBtn'>
+                    <Link to={'/education/today/5/1'}>
+                        <div className={"basicQ " + (btnBasic ? "active" : "")} onClick={onClickBasic}>기초문제</div>
+                    </Link>
+                    <Link to={'/education/today/5/11'}>
+                        <div className={"deepQ " + (btnDeep ? "active" : "")} onClick={onClickDeep}>응용문제</div>
+                    </Link>
+                </div>
                 <div className='eduArrowWrap'>
                     <Link to={'/education/today/5/2'}>
                         <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />

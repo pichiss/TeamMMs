@@ -10,23 +10,24 @@ function AskDetail(){
     const navigate = useNavigate();
     const { id } = useParams();
     const items = useContext(itemContext).reverse();
+    const item = items.find(item => item.id === parseInt(id)); //search 해도 링크, 디테일페이지 id 일치하게
     const { editItem, removeItem } = useContext(editAskContext);
     const [askUpdate, setaskUpdate] = useState(true);
     const [editAskItem, setEditAskItem] = useState({
-      id: items[id].id,
-      category: items[id].category,
-      tit: items[id].tit,
-      content: items[id].content
+      id: item.id,
+      category: items.category,
+      tit: item.tit,
+      content: item.content
     });
 
     // 수정
   function editBtn() {
     setaskUpdate(!askUpdate);
     setEditAskItem({
-      id: items[id].id,
-      category: items[id].category,
-      tit: items[id].tit,
-      content: items[id].content
+      id: item.id,
+      category: item.category,
+      tit: item.tit,
+      content: item.content
     });
   }
   // 취소
@@ -37,7 +38,7 @@ function AskDetail(){
   }
   // 목록으로
   function listBtn() {
-    history.back();
+    navigate(-1);
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -54,7 +55,7 @@ function AskDetail(){
   }
   //삭제
   function removeDetail() {
-    removeItem(items[id].id);
+    removeItem(item[id].id);
     setEditAskItem({
       id: "",
       category: "",
@@ -81,9 +82,9 @@ function AskDetail(){
             <h2 className='subtit'>1:1 문의</h2>
             {askUpdate ? 
               <div>
-                <h3>[{items[id].category}] {items[id].tit}</h3>
-                <p><b>등록일</b><span>{items[id].createDate}</span></p>
-                <pre>{items[id].content}</pre>
+                <h3>[{item.category}] {item.tit}</h3>
+                <p><b>등록일</b><span>{item.createDate}</span></p>
+                <pre>{item.content}</pre>
                 <AskAnsure />
                 <div className='flex threeBtn'>
                   <ul className='flex '>

@@ -52,6 +52,37 @@ main>section{
 }
 .mainMonster>img{
     width: 100%;
+    animation: rot 2s ease infinite;
+    animation-name: rot;
+}
+.mainMonster>img:hover{
+    animation: hoverani;
+    animation-name: hoverani;
+}
+@keyframes rot{
+    0%{
+        transform: rotate(2deg);
+    }
+    50%{
+        transform: rotate(-2deg);
+    }
+    100%{
+        transform: rotate(2deg);
+    }
+}
+@keyframes hoverani{
+    0%{
+        /* transform: translateY(-2deg); */
+        transform: rotate(0deg);
+    }
+    50%{
+        /* transform: translateY(2deg); */
+        transform: rotate(0deg);
+    }
+    100%{
+        /* transform: translateY(-2deg); */
+        transform: rotate(0deg);
+    }
 }
 .mainMonster>h2{
     font-size: 50px;

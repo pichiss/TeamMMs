@@ -223,6 +223,7 @@
 .hintBubble.active {
     display: block;
     position: absolute;
+    bottom: 210px;
 }
 .hintBubble p {
     width: 200px;
@@ -248,7 +249,7 @@
 
 @media screen and (max-width: 1919px) {
     .hintBubble.active {
-        bottom: 200px;
+        bottom: 240px;
      }
 }
 @media screen and (max-width: 1616px){
@@ -260,6 +261,9 @@
         top: 5%;
         right: 41%;
     }
+    .hintBubble.active {
+        bottom: 230px;
+     }
 }
 @media screen and (max-width: 1440px){
     .scoreAnswer{
@@ -274,7 +278,7 @@
         padding-bottom: 50px;
     }
     .hintBubble.active {
-        bottom: 230px;
+        bottom: 260px;
      }   
     
 }

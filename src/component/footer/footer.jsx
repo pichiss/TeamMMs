@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer>
             <div className='w1440 flex footerWrap'>
-                <a href="/"> <img src={Logo} alt="logo" /></a>
+                <a href="/TeamMMs/"> <img src={Logo} alt="logo" /></a>
                 <div className='footerTxt'>
                 <ul className='flex footer_top'>
                     <li>개인정보처리방침<span></span></li>

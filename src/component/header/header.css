@@ -16,6 +16,10 @@ nav>h1 img{
     gap: 4vw;
     font-size: 20px;
 }
+.navTab a:hover>li{
+    color: var(--sub-blue);
+    transition: 0.2s;
+}
 .navLogin{
     background-color: var(--main-blue);
     padding: 10px 20px;

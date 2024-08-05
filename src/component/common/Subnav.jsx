@@ -52,12 +52,13 @@ function Subnav(props){
     
     const {pathname} = useLocation();
     let url = pathname.split('/');
-    // console.log(url);
+    // console.log(`url : ${url}`);
     
     let [activeColor, setActiveColor] = useState(0);
     function urls(link, id){
         let splitLink = link.split('/',2)
-        // console.log(splitLink)
+        // console.log(`splitLink : ${splitLink}`)
+        
         useEffect(()=>{       
             if(url[1] === splitLink[1]){
                 setActiveColor(id)

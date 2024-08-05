@@ -135,7 +135,7 @@ function EduMathQ2({ setPage, user, point, setHelpPop }) {
                 </div>
                 <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
-            <div className='eduPagenation'>2 / 10</div>
+            <div className='eduPagenation'>2 / 20</div>
             <EduFooter />
         </section>
     )

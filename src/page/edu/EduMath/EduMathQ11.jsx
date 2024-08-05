@@ -94,7 +94,7 @@ function EduMathQ11({ setPage, user, point, setHelpPop }) {
                 <div className='eduUnitL'>
                     <img src={score_answer} alt="" className={'scoreAnswer ' + (onScore !== null && onScore === true ? 'on' : '')} />
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
-                    <h1>11. 한 변의 길이가 5cm인 정육면체를 보고 모서리의<br />개수와 길이의 합을 작성하세요.</h1>
+                    <h1>11. 한 변의 길이가 5cm인 정육면체를 보고 모서리의 개수와 길이의 합을 작성하세요.</h1>
                     <Canvas
                         style={{ width: `100%`, height: `440px` }}
                         camera={{ fov: 75, near: 0.1, far: 100, position: [1, 1, 1] }}>
@@ -136,7 +136,7 @@ function EduMathQ11({ setPage, user, point, setHelpPop }) {
                 </div>
                 <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
-            <div className='eduPagenation'>1 / 10</div>
+            <div className='eduPagenation'>11 / 20</div>
             <EduFooter />
         </section>
     )

@@ -259,7 +259,7 @@
     .eduSpeechBln>p{
         line-height: 30px;
     }
-    .eduSelect>div{
+    .eduSelect>a>div{
         font-size: 2.7vw;
     }
 }
@@ -292,7 +292,7 @@
     .eduSubUnitBox>h3{
         font-size: 4vw;
     }
-    .eduSelect>div{
+    .eduSelect>a>div{
         font-size: 4vw;
     }
 }

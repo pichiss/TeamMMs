@@ -72,15 +72,12 @@ main>section{
 }
 @keyframes hoverani{
     0%{
-        /* transform: translateY(-2deg); */
         transform: rotate(0deg);
     }
     50%{
-        /* transform: translateY(2deg); */
         transform: rotate(0deg);
     }
     100%{
-        /* transform: translateY(-2deg); */
         transform: rotate(0deg);
     }
 }
@@ -301,10 +298,16 @@ main>section{
     font-family: 'yg-jalnan';
 }
 .sec2Tit p{
+    display: flex;
     font-size: var(--main-more-font);
 }
 .sec2Tit p>span{
+    display: block;
     margin-left: 10px;
+}
+.sec2Tit p:hover{
+    color: var(--sub-blue);
+    transition: 0.2s;
 }
 .sec2Info{
     border-top: 1px solid #ddd;

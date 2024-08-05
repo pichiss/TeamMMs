@@ -3,7 +3,7 @@
     padding: 0 90px;
     gap: 20px;
 }
-.eduMainUnit>h2, .eduSubUnitBox>h3, .eduSelect>div>a{
+.eduMainUnit>h2, .eduSubUnitBox>h3, .eduSelect>a>div{
     -webkit-text-stroke: 1px #fff;
     font-family: 'yg-jalnan';
 }
@@ -115,7 +115,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
 }
-.eduSelect>div{
+.eduSelect>a>div{
     width: 100%;
     margin: 0 auto;
     padding: 20px;
@@ -126,7 +126,8 @@
     text-align: center;
     cursor: pointer;
 }
-.eduSelect>div:not(:last-child){
+.eduSelect>a:not(:last-child){
+    display: block;
     margin-bottom: 25px;
 }
 .eduSelect::-webkit-scrollbar{

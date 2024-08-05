@@ -147,8 +147,9 @@
 
 /* 해설보기 */
 .exPart{
-    width: 92%; height: 100%;
+    width: 100%; height: 100%;
     position: absolute;
+    top: 0; left: 0;
     z-index: 5;
     border-radius: 20px;
     background-color: rgba(0,0,0,0.9);
@@ -170,7 +171,7 @@
     cursor: pointer;
 }
 .exImg{
-    width: 90%; height: 90%;
+    width: 100%; height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;

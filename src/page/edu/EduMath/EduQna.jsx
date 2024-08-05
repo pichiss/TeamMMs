@@ -14,9 +14,9 @@ export default function EduQna(){
         setOpenAskIcon(!openAskICon);
     }
     function askTeacher() {
-        if (askTextRef.current.value < 10 || askTextRef.current.value == null || askTextRef.current.value === undefined) {
+        if (askTextRef.current.value.length < 10 || askTextRef.current.value == null || askTextRef.current.value === undefined) {
             alert('질문 내용은 10글자 이상으로 입력해주세요.')
-            console.log(askTextRef.current.value)
+            console.log(askTextRef.current.value.length)
         }
         else {
             alert(`질문이 완료되었습니다.`);

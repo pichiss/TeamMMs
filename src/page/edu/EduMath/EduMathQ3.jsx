@@ -126,7 +126,7 @@ function EduMathQ3({ setPage, user, point, setHelpPop }) {
                 </div>
                 <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
-            <div className='eduPagenation'>3 / 10</div>
+            <div className='eduPagenation'>3 / 20</div>
             <EduFooter />
         </section>
     )

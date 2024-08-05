@@ -62,8 +62,8 @@ function EduTodayCont(props){
                     <div className={"eduSelect " + (onSelect ? "on" : "off")}>
                         {qDatas.filter((qData)=> qData.id === 1)
                         .map((qData, i) =>
-                            <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`}>
-                                <div key={i}>
+                            <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`} key={i}>
+                                <div>
                                     {qData.question}
                                 </div>
                             </Link>)}

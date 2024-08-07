@@ -18,10 +18,10 @@ import close from '../../../assets/img/icon/x.png';
 import './EduMathQ.css';
 import EduQna from './EduQna';
 import EduHint from './EduHint';
-import EduQBtn from './EduQBtn';
 
 function EduMathQ11({ setPage, user, point, setHelpPop }) {
 
+    // 채점하기
     const [onPopUp, setPopUp] = useState(false);
 
     function checkQ() {
@@ -53,6 +53,25 @@ function EduMathQ11({ setPage, user, point, setHelpPop }) {
         setPopUp(false)
     }
 
+    // 기초문제 & 응용문제
+    const [btnBasic, setBtnBasic] = useState(false);
+    const [btnDeep, setBtnDeep] = useState(true);
+
+    function onClickBasic(){
+        setBtnBasic(true)
+        setBtnDeep(false)
+    }
+
+    function onClickDeep(){
+        setBtnBasic(false)
+        setBtnDeep(true)
+    }
+
+    // 없는 페이지
+    function eduAlert(){
+        alert("준비 중입니다.")
+    }
+
     // 힌트보기
     const hintText="정육면체의 모서리는 모두 같은 길이야.";
 
@@ -60,19 +79,22 @@ function EduMathQ11({ setPage, user, point, setHelpPop }) {
         <section className='eduTodaySec mathQ'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <article className='flex eduUnitWrap'>
-            <EduQBtn />
+                <div className='flex eduQBtn'>
+                    <Link to={'/education/today/5/1'}>
+                        <div className={"basicQ " + (btnBasic ? "active" : "")} onClick={onClickBasic}>기초문제</div>
+                    </Link>
+                    <Link to={'/education/today/5/11'}>
+                        <div className={"deepQ " + (btnDeep ? "active" : "")} onClick={onClickDeep}>응용문제</div>
+                    </Link>
+                </div>
                 <div className='eduArrowWrap'>
-                    <Link to={'/education/today/5/10'}>
-                        <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />
-                    </Link>
-                    <Link to={'/education/today/5/12'}>
-                        <img src={right_arrow} alt="next-button" className='eduRightArrow' />
-                    </Link>
+                    <img src={left_arrow} alt="previous-button" className='eduLeftArrow' onClick={eduAlert} />
+                    <img src={right_arrow} alt="next-button" className='eduRightArrow' onClick={eduAlert} />
                 </div>
                 <div className='eduUnitL'>
                     <img src={score_answer} alt="" className={'scoreAnswer ' + (onScore !== null && onScore === true ? 'on' : '')} />
                     <img src={score_wrong} alt="" className={'scoreWrong ' + (onScore !== null && onScore === false ? 'on' : '')} />
-                    <h1>11. 한 변의 길이가 5cm인 정육면체를 보고 모서리의<br />개수와 길이의 합을 작성하세요.</h1>
+                    <h1>11. 한 변의 길이가 5cm인 정육면체를 보고 모서리의 개수와 길이의 합을 작성하세요.</h1>
                     <Canvas
                         style={{ width: `100%`, height: `440px` }}
                         camera={{ fov: 75, near: 0.1, far: 100, position: [1, 1, 1] }}>
@@ -114,7 +136,7 @@ function EduMathQ11({ setPage, user, point, setHelpPop }) {
                 </div>
                 <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
-            <div className='eduPagenation'>1 / 10</div>
+            <div className='eduPagenation'>11 / 20</div>
             <EduFooter />
         </section>
     )

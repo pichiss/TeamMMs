@@ -51,7 +51,7 @@
 }
 .scoreAnswer{
     width: 100px;
-    left: calc(10% - 50px);
+    left: calc(10% - 30px);
     position: absolute;
     display: none;
 }
@@ -59,7 +59,8 @@
     display: block;
 }
 .scoreWrong{
-    left: calc(10% - 50px);
+    left: calc(10% - 40px);
+    top: 210px;
     position: absolute;
     display: none;
 }
@@ -95,7 +96,7 @@
     gap: 10px;
 }
 .eduAnswer>div p{
-    font-size: 40px;
+    font-size: 2.1vw;
     font-weight: 700;
 }
 .eduAnswer>div:nth-child(2){
@@ -150,7 +151,7 @@
     border-radius: 20px;
     background-color:#fff;
     position: absolute;
-    top: 30%;
+    top: 38%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -223,6 +224,7 @@
 .hintBubble.active {
     display: block;
     position: absolute;
+    bottom: 210px;
 }
 .hintBubble p {
     width: 200px;
@@ -248,8 +250,16 @@
 
 @media screen and (max-width: 1919px) {
     .hintBubble.active {
-        bottom: 200px;
+        bottom: 240px;
      }
+}
+@media screen and (max-width: 1700px){
+    .scoreAnswer{
+        left: calc(10% - 10px);
+    }
+    .scoreWrong{
+        left: calc(10% - 10px);
+    }
 }
 @media screen and (max-width: 1616px){
     .basicQ{
@@ -260,21 +270,24 @@
         top: 5%;
         right: 41%;
     }
+    .hintBubble.active {
+        bottom: 230px;
+     }
 }
 @media screen and (max-width: 1440px){
     .scoreAnswer{
         top: 190px;
-        left: calc(10% - 90px);
+        left: calc(10% - 70px);
     }
     .scoreWrong{
         top: 190px;
-        left: calc(10% - 90px);
+        left: calc(10% - 70px);
     }
     .eduAnswer{
         padding-bottom: 50px;
     }
     .hintBubble.active {
-        bottom: 230px;
+        bottom: 260px;
      }   
     
 }
@@ -298,10 +311,10 @@
         right: 30%;
     }
     .scoreAnswer{
-        top: 40px;
+        top: 60px;
     }
     .scoreWrong{
-        top: 30px;
+        top: 60px;
         left: 30px;
     }
     .eduAnswer{
@@ -338,7 +351,7 @@
     }
     .scoreWrong{
         width: 8%;
-        top: 40px;
+        top: 60px;
     }
     .basicQ{
         top: -2%;
@@ -428,11 +441,11 @@
         font-size: 3vw;
     }
     .scoreAnswer{
-        top: 50px;
+        top: 75px;
     }
     .scoreWrong{
         width: 10%;
-        top: 50px;
+        top: 70px;
     }
     .hintBubble.active {
         bottom: 130px;
@@ -441,7 +454,6 @@
 
 @media screen and (max-width: 360px){
     .scoreAnswer{
-        top: 55px;
         left: 40px;
     }
     .scoreWrong{

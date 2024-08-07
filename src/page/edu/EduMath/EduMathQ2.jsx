@@ -18,10 +18,10 @@ import close from '../../../assets/img/icon/x.png';
 import './EduMathQ.css';
 import EduQna from './EduQna';
 import EduHint from './EduHint';
-import EduQBtn from './EduQBtn';
 
 function EduMathQ2({ setPage, user, point, setHelpPop }) {
 
+    // 채점하기
     const [onPopUp, setPopUp] = useState(false);
 
     function checkQ() {
@@ -53,14 +53,35 @@ function EduMathQ2({ setPage, user, point, setHelpPop }) {
         setPopUp(false)
     }
 
-     // 힌트보기
-     const hintText = "도형을 돌려서 모서리와 꼭짓점의 개수를 하나씩 세어봐!"
+    // 기초문제 & 응용문제
+    const [btnBasic, setBtnBasic] = useState(true);
+    const [btnDeep, setBtnDeep] = useState(false);
+    
+    function onClickBasic(){
+        setBtnBasic(true)
+        setBtnDeep(false)
+    }
+    
+    function onClickDeep(){
+        setBtnBasic(false)
+        setBtnDeep(true)
+    }
+
+    // 힌트보기
+    const hintText = "도형을 돌려서 모서리와 꼭짓점의 개수를 하나씩 세어봐!"
 
     return (
         <section className='eduTodaySec mathQ'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <article className='flex eduUnitWrap'>
-            <EduQBtn />
+                <div className='flex eduQBtn'>
+                    <Link to={'/education/today/5/1'}>
+                        <div className={"basicQ " + (btnBasic ? "active" : "")} onClick={onClickBasic}>기초문제</div>
+                    </Link>
+                    <Link to={'/education/today/5/11'}>
+                        <div className={"deepQ " + (btnDeep ? "active" : "")} onClick={onClickDeep}>응용문제</div>
+                    </Link>
+                </div>
                 <div className='eduArrowWrap'>
                     <Link to={'/education/today/5/1'}>
                         <img src={left_arrow} alt="previous-button" className='eduLeftArrow' />
@@ -114,7 +135,7 @@ function EduMathQ2({ setPage, user, point, setHelpPop }) {
                 </div>
                 <div className={'shadowBox ' + (onPopUp ? 'shadow' : '')}></div>
             </article>
-            <div className='eduPagenation'>2 / 10</div>
+            <div className='eduPagenation'>2 / 20</div>
             <EduFooter />
         </section>
     )

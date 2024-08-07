@@ -1,18 +1,16 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import EduHeader from './EduHeader.jsx';
 import video from '../../assets/img/icon/video.png';
 import today from '../../assets/img/monster/monster2.png';
 import note from '../../assets/img/icon/note.png';
 import pointshop from '../../assets/img/icon/pointshop.png';
-import EduHelp from './EduHelpSec/EduHelp.jsx';
 import './EduMain.css';
 
 function EduMain({setPage, user, point, setHelpPop}){
 
 
     return(
-        <section className='eduSec'>
+        <section className='eduSec eduMain'>
             <EduHeader setPage={setPage} user={user} point={point} setHelpPop={setHelpPop}/>
             <article className="flex eduMenu">
                 <Link to='/eduVideo'>
@@ -42,11 +40,6 @@ function EduMain({setPage, user, point, setHelpPop}){
                     </Link>
                 </div>
             </article>
-            {/* {helpPop ?
-                <EduHelp setHelpPop={setHelpPop}/>
-            :
-                null
-            } */}
         </section>
     )
 }

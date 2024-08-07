@@ -55,7 +55,7 @@ function AskDetail(){
   }
   //삭제
   function removeDetail() {
-    removeItem(item[id].id);
+    removeItem(item.id);
     setEditAskItem({
       id: "",
       category: "",

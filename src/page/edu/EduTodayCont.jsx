@@ -27,24 +27,24 @@ function EduTodayCont(props){
                     </div>
                     <div className='flex eduSubUnit'>
                         {data[unitId-1].subTitle1 == undefined ? null : 
-                        <div className='flex eduSubUnitBox'>
+                        <div className='flex eduSubUnitBox' onClick={onClickSelect}>
                             <div><span className={'' + (onSelect ? 'on' : null)}></span></div>
-                            <h3 onClick={onClickSelect}>{data[unitId-1].subTitle1}</h3>
+                            <h3>{data[unitId-1].subTitle1}</h3>
                         </div>}
                         {data[unitId-1].subTitle2 == undefined ? null : 
-                        <div className='flex eduSubUnitBox'>
+                        <div className='flex eduSubUnitBox' onClick={onClickSelect}>
                             <div><span></span></div>
-                            <h3 onClick={onClickSelect}>{data[unitId-1].subTitle2}</h3>
+                            <h3>{data[unitId-1].subTitle2}</h3>
                         </div>}
                         {data[unitId-1].subTitle3 == undefined ? null : 
-                        <div className='flex eduSubUnitBox'>
+                        <div className='flex eduSubUnitBox' onClick={onClickSelect}>
                             <div><span></span></div>
-                            <h3 onClick={onClickSelect}>{data[unitId-1].subTitle3}</h3>
+                            <h3>{data[unitId-1].subTitle3}</h3>
                         </div>}
                         {data[unitId-1].subTitle4 == undefined ? null : 
-                        <div className='flex eduSubUnitBox'>
+                        <div className='flex eduSubUnitBox' onClick={onClickSelect}>
                             <div><span></span></div>
-                            <h3 onClick={onClickSelect}>{data[unitId-1].subTitle4}</h3>
+                            <h3>{data[unitId-1].subTitle4}</h3>
                         </div>}
                     </div>
                 </div>
@@ -62,11 +62,11 @@ function EduTodayCont(props){
                     <div className={"eduSelect " + (onSelect ? "on" : "off")}>
                         {qDatas.filter((qData)=> qData.id === 1)
                         .map((qData, i) =>
-                            <div key={i}>
-                                <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`}>
+                            <Link to={`/education/today/${data[unitId-1].unitId}/${i+1}`} key={i}>
+                                <div>
                                     {qData.question}
-                                </Link>
-                            </div>)}
+                                </div>
+                            </Link>)}
                     </div>
                 </div>
             </article>

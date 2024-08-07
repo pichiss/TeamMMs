@@ -33,10 +33,6 @@ function Login({kakaoLogin}){
                         <img src={kakao} alt='kakao login'/>
                         <p onClick={kakaoLogin}>카카오 로그인</p>
                     </button>
-                    <button className='LoginNaver'>
-                        <img src={naver} alt='naver login'/>
-                        <p onClick={find}>네이버 로그인</p>
-                    </button>
                 </div>
                 <div className='LoginStart'>
                     <p onClick={find}>아이디/비밀번호를 잊으셨나요?</p>

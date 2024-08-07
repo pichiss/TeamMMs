@@ -1,14 +1,18 @@
-import { useState, useRef } from 'react';
+import { useState, useRef,useContext } from 'react';
+import { itemContext, editAskContext } from '../../../App'
 import AskAnsureList from './askAnsureList';
 
 function AskAnsure(){
-    const [ansure, setAnsure] = useState('');
+  const [ansure, setAnsure] = useState('');
   const [ansureList, setAnsureList]=useState( []);
+  const items = useContext(itemContext);
+  const { ansItem } = useContext(editAskContext);
+
   const ansurchange= (e)=>{
     setAnsure(e.target.value)
   };
 
-  let addId = useRef(2)
+  let addId = useRef(1)
 
   function addAnsur(){
     let anslist = {
@@ -18,6 +22,7 @@ function AskAnsure(){
     setAnsureList([...ansureList,anslist])
     setAnsure('')
     addId.current++;
+    ansItem(ansureList.id, ansureList.ansur, ansureList.ansText)
   }
   const deleteBtn = (targetId)=>{
   setAnsureList(

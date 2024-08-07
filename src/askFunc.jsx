@@ -39,8 +39,14 @@ const AskFunc = () => {
           text
         })
       }
+      const ansItem = (id,ansur,ansText)=>{
+        dispatch({
+          type : 'edit',
+          id,ansur,ansText
+        })
+      }
       const memoAsk= useMemo(()=>{
-        return {CreateItem,editItem,removeItem,searchItem}
+        return {CreateItem,editItem,removeItem,searchItem,ansItem}
       },[])
       
 

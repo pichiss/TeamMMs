@@ -38,7 +38,7 @@ function AskDetail(){
   }
   // 목록으로
   function listBtn() {
-    navigate(-1);
+    history.back()
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -55,7 +55,7 @@ function AskDetail(){
   }
   //삭제
   function removeDetail() {
-    removeItem(item[id].id);
+    removeItem(item.id);
     setEditAskItem({
       id: "",
       category: "",
@@ -71,8 +71,6 @@ function AskDetail(){
     navigate("/ask");
   }
 
-  // 답변
-  
     return(
       <>
       <SubHead chara={1} />
@@ -85,7 +83,7 @@ function AskDetail(){
                 <h3>[{item.category}] {item.tit}</h3>
                 <p><b>등록일</b><span>{item.createDate}</span></p>
                 <pre>{item.content}</pre>
-                <AskAnsure />
+                <AskAnsure items={items} item={item}/>
                 <div className='flex threeBtn'>
                   <ul className='flex '>
                     <li><button className='bluelineBtn' onClick={editBtn}>수정</button></li>

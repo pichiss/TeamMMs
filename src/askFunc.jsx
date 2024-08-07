@@ -41,7 +41,7 @@ const AskFunc = () => {
       }
       const ansItem = (id,ansur,ansText)=>{
         dispatch({
-          type : 'edit',
+          type : 'answer',
           id,ansur,ansText
         })
       }

@@ -14,12 +14,13 @@ function AskAnsure(){
 
   let addId = useRef(1)
 
+ 
   function addAnsur(){
     let anslist = {
       id : addId.current,
       ansure
     }
-    setAnsureList([...ansureList,anslist])
+    setAnsureList([...ansureList,anslist],)
     setAnsure('')
     addId.current++;
     ansItem(ansureList.id, ansureList.ansur, ansureList.ansText)

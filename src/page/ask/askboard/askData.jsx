@@ -81,7 +81,7 @@ const reducer = (state, action)=>{
                   ...state,
                   items: state.items.map((item)=>item.id===action.id?
                       {...item,
-                        ansur : action.ansur,
+                        ansur : true,
                         ansText : action.ansText
                       } :item)
               }      

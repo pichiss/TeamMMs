@@ -55,16 +55,18 @@
     display: flex;
     font-size: 14px;
     padding: 8px 15px;
-    background-color: #fff;
+    background-color: #fee500;
     border: 1px solid #ccc;
     border-radius: 5px;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .LoginSns>button>p{
+    font-weight: bold;
     margin-left: 14px;
 }
-.LoginNaver>img{
-    height: 100%;
+.LoginSns>button>img{
+    width: 10%;
 }
 .LoginStart{
     font-size: 14px;

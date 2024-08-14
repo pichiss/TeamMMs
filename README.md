@@ -1,4 +1,6 @@
 <div align= "center">
+![image](https://github.com/user-attachments/assets/b649a782-8475-4aa9-8623-560dfad44bc1)
+
     <img src="https://capsule-render.vercel.app/api?type=transparent&color=#b897ff&height=180&text=캐치!수학몬스터즈&animation=fadeIn&fontColor=000000&fontSize=60" />
     </div>
     <div style="text-align: left;"> 
